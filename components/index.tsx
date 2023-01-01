@@ -4,5 +4,6 @@ import Header from './Header';
 import Logo from './Logo';
 import Button from './Button';
 import Repo from './Repo';
+import Footer from './Footer';
 
-export { Hero, HeroTitle, HeroSubtitle, Container, Header, Logo, Button, Repo };
+export { Hero, HeroTitle, HeroSubtitle, Container, Header, Logo, Button, Repo, Footer };
