@@ -1,5 +1,17 @@
-const Container = ({ children }: { children: React.ReactNode }) => {
-  return <div className='max-w-[120rem] mx-auto px-8'>{children}</div>;
+import classNames from 'classnames';
+
+const Container = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div className={classNames('max-w-[85rem] mx-auto px-8', className)}>
+      {children}
+    </div>
+  );
 };
 
 export default Container;
