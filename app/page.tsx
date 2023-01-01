@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
-import { Container, Hero, HeroTitle, HeroSubtitle, Repo } from '../components';
+import { Container, Hero, HeroTitle, HeroSubtitle, Repo, ContactForm } from '../components';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <div>
+    <>
       <main>
         <Container>
           <Hero>
@@ -16,7 +16,7 @@ export default function Home() {
         <Repo />
         </Container>
       </main>
-      <footer></footer>
-    </div>
+      <ContactForm />
+    </>
   );
 }

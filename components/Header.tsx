@@ -50,7 +50,7 @@ const Header = () => {
           </nav>
         </div>
         <div className='flex items-center h-full ml-auto'>
-          <Button href='#'>Resume</Button>
+          {/* <Button href='#'>Resume</Button> */}
         </div>
         <button
           className='ml-6 md:hidden'

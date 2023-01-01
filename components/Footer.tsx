@@ -5,7 +5,7 @@ import { FiGithub, FiLinkedin } from 'react-icons/fi';
 const Footer = () => {
   return (
     <footer>
-      <Container className='p-4 sm:p-6'>
+      <Container className='py-4 sm:py-6'>
         <hr className='my-6 sm:mx-auto border-transparent-white lg:my-8' />
         <div className='text-center sm:items-center sm:flex sm:justify-between'>
           <span className='text-sm text-gray-400 sm:text-center '>
