@@ -30,6 +30,9 @@ module.exports = {
         'grey-dark': '#222326',
         'primary-text': '#c7c8d1',
       },
+      spacing: {
+        'navigation-height': 'var(--navigation-height)',
+      },
       backgroundImage: {
         'primary-gradient':
           'linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%)',

@@ -8,10 +8,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <head />
+      <head>
+        <meta
+          name='viewport'
+          content='width=device-width, height=device-height, initial-scale=1'
+        />
+      </head>
       <body>
         <Header />
-        <main className='pt-[var(--navigation-height)]'>{children}</main>
+        <main className='pt-navigation-height'>{children}</main>
         <footer>
           <Container>asd</Container>
         </footer>

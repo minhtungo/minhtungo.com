@@ -21,7 +21,7 @@ const buttonClasses = cva('rounded-full inline-flex items-center', {
   },
   defaultVariants: {
     variant: 'primary',
-    size: 'medium',
+    size: 'medium', 
   },
 });
 
