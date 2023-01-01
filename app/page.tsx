@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
-import { Container, Hero, HeroTitle, HeroSubtitle } from '../components';
+import { Container, Hero, HeroTitle, HeroSubtitle, Repo } from '../components';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -10,13 +10,10 @@ export default function Home() {
       <main>
         <Container>
           <Hero>
-            <HeroTitle>
-              Hello
-            </HeroTitle>
-            <HeroSubtitle>
-              World
-            </HeroSubtitle>
+            <HeroTitle>Hello</HeroTitle>
+            <HeroSubtitle>World</HeroSubtitle>
           </Hero>
+        <Repo />
         </Container>
       </main>
       <footer></footer>

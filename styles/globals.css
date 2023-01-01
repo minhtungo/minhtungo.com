@@ -4,11 +4,11 @@
 
 @layer base {
     :root {
-        --navigation-height: 4.8rem
+        --navigation-height: 4.2rem
     }
 
     html {
-        @apply bg-background font-sans text-white;
+        @apply font-sans text-white bg-background;
         /* font-size: 62.5%; */
     }
 }

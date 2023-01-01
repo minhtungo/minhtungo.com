@@ -25,6 +25,7 @@ module.exports = {
         white: '#f2f2f2',
         'off-white': '#f7f8f8',
         'transparent-white': 'rgba(255, 255, 255, 0.08)',
+        'transparent-black': 'rgba(13, 13, 13, 0.9)',
         background: '#000000',
         grey: '#c7c8d1',
         'grey-dark': '#222326',
