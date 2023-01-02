@@ -8,6 +8,7 @@ import Footer from './Footer';
 import ContactForm from './ContactForm';
 import DogModel from './DogModel';
 import About from './About';
+import ModelLoader, { DivContainer, DivSpinner } from './ModelLoader';
 
 export {
   Hero,
@@ -20,4 +21,7 @@ export {
   ContactForm,
   DogModel,
   About,
+  ModelLoader,
+  DivSpinner,
+  DivContainer,
 };

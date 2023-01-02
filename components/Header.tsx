@@ -49,11 +49,12 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-        <div className='flex items-center h-full ml-auto'>
+        <div className='flex items-center h-full ml-auto hidden md:block'>
           <Button href='#'>Resume</Button>
         </div>
+
         <button
-          className='ml-6 md:hidden'
+          className='ml-auto md:hidden'
           onClick={() => setIsMenuOpen((open) => !open)}
         >
           <span className='sr-only'>Toggle Menu</span>
