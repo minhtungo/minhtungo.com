@@ -10,8 +10,8 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className='fixed top-0 left-0 w-full border-b border-transparent-white backdrop-blur-[12px]'>
-      <Container className='flex h-navigation-height'>
+    <header className='fixed top-0 left-0 w-full backdrop-blur-[12px]'>
+      <Container className='flex h-navigation-height border-b border-transparent-white '>
         <Link className='flex items-center text-md' href='/'>
           <Logo className='mr-4 font-bold' />
         </Link>
@@ -50,7 +50,7 @@ const Header = () => {
           </nav>
         </div>
         <div className='flex items-center h-full ml-auto'>
-          {/* <Button href='#'>Resume</Button> */}
+          <Button href='#'>Resume</Button>
         </div>
         <button
           className='ml-6 md:hidden'

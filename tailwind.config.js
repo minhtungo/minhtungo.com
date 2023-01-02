@@ -41,6 +41,10 @@ module.exports = {
       boxShadow: {
         primary: 'rgb(80 63 205 / 50%) 0px 1px 40px',
       },
+      content: {
+        react: "url('/images/react.svg')",
+        moon: "url('/images/moon.png')",
+      },
     },
   },
   plugins: [],

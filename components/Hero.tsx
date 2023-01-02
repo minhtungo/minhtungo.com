@@ -1,40 +1,24 @@
-import classNames from 'classnames';
+import { DogModel } from './';
 
-interface HeroProps {
-  children: React.ReactNode;
-}
-
-interface HeroElementProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-export const HeroTitle = ({ children, className }: HeroElementProps) => {
+export const Hero = () => {
   return (
-    <h1
-      className={classNames(
-        'text-gradient my-6 text-6xl md:text-8xl',
-        className
-      )}
-    >
-      {children}
-    </h1>
-  );
-};
+    <>
+      <section id='home' className='flex md:flex-row flex-col'>
+        <div
+          className={`flex-1 flex justify-center items-start flex-col xl:px-0 sm:px-16 md:px-0 py-4`}
+        >
+          <h1 className='mb-4 text-4xl font-bold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white'>
+            Minh Tu Ngo
+          </h1>
+          <p className='mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400'>
+            Front End Developer
+          </p>
+        </div>
 
-export const HeroSubtitle = ({ children, className }: HeroElementProps) => {
-  return (
-    <p
-      className={classNames(
-        'mb-12 text-lg text-primary-text md:text-xl',
-        className
-      )}
-    >
-      {children}
-    </p>
+        <div className={`flex-1 flex justify-center items-center relative`}>
+          <DogModel />
+        </div>
+      </section>
+    </>
   );
-};
-
-export const Hero = ({ children }: HeroProps) => {
-  return <div className='text-center'>{children}</div>;
 };

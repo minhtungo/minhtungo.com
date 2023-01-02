@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { AiOutlineFolder } from 'react-icons/ai';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
+import Title from './Title';
 
 const RepoCard = () => {
   return (
@@ -32,13 +33,18 @@ const RepoCard = () => {
 
 const Repo = () => {
   return (
-    <section className='grid grid-cols-1 gap-4 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:mt-6'>
-      <RepoCard />
-      <RepoCard />
-      <RepoCard />
-      <RepoCard />
-      <RepoCard />
-    </section>
+    <>
+      <div className='text-center'>
+        <Title title='Other Noteworthy Projects' />
+      </div>
+      <section className='grid grid-cols-1 gap-4 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:mt-6'>
+        <RepoCard />
+        <RepoCard />
+        <RepoCard />
+        <RepoCard />
+        <RepoCard />
+      </section>
+    </>
   );
 };
 
