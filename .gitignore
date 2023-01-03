@@ -38,3 +38,5 @@ next-env.d.ts
 /public/dog-baked.glb
 /public/icons/*
 /public/images/*
+
+/components/Timeline.tsx

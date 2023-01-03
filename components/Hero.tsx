@@ -24,7 +24,7 @@ const Hero = () => {
       />
       {/* Dog Model */}
       <div className='basis-2/5 z-10 mt-4 md:mt-32 flex justify-center md:order-2 h-[280px] w-[280px] sm:w-[360px] sm:h-[360px] md:h-[480px] md:w-[480px] mx-auto md:mx-0'>
-        {/* <LazyDogModel /> */}
+        <LazyDogModel />
       </div>
       {/* Hero Text */}
       <div className='basis-2/5 -mt-14 text-center md:text-start'>

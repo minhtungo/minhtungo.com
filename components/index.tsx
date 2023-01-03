@@ -13,6 +13,7 @@ import Marquees from './common/Marquees';
 import TechStack from './TechStack';
 import Title from './common/Title';
 import CodeSnippet from './About/CodeSnippet';
+import Timeline from './Timeline'
 
 export {
   Hero,
@@ -31,5 +32,6 @@ export {
   Marquees,
   TechStack,
   Title,
+  Timeline,
   CodeSnippet,
 };

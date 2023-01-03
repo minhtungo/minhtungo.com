@@ -7,7 +7,7 @@ import {
   Repo,
   ContactForm,
   About,
-  TechStack,
+  TechStack,Timeline
 } from '../components';
 import Tech from '../components/Tech';
 
@@ -24,6 +24,7 @@ export default function Home() {
           <Hero />
           <About />
           <TechStack />
+          <Timeline />
           <Repo />
           <ContactForm />
           {/* <Tech /> */}
