@@ -1,27 +1,37 @@
+'use client';
+
 import { DogModel, Button, ModelLoader } from './';
 // import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-
+import Snowfall from 'react-snowfall';
+import { Suspense } from 'react';
 const LazyDogModel = dynamic(() => import('../components/DogModel'), {
   ssr: false,
   loading: () => <ModelLoader />,
 });
 
-export const Hero = () => {
+const Hero = () => {
   return (
     <section
       id='home'
       className='md:flex md:justify-between md:items-center gap-16 h-screen py-10 flex-1'
     >
+      <Snowfall
+        snowflakeCount={50}
+        radius={[0, 2.5]}
+        speed={[0, 1.5]}
+        wind={[-0.5, 2]}
+      />
       {/* Dog Model */}
       <div className='basis-2/5 z-10 mt-4 md:mt-32 flex justify-center md:order-2 h-[280px] w-[280px] sm:w-[360px] sm:h-[360px] md:h-[480px] md:w-[480px] mx-auto md:mx-0'>
         {/* <LazyDogModel /> */}
       </div>
       {/* Hero Text */}
       <div className='basis-2/5 -mt-14 text-center md:text-start'>
-        <p className=''>Hi there👋, I am</p>
+        <p className=''>Hi there, I am</p>
         <p className='text-2xl md:text-4xl lg:text-5xl text-center md:text-start'>
           Minh Tu Ngo
+          <span className='animate-wave'>👋</span>
         </p>
         <p className='mt-6 lg:mt-10 mb-7 text-sm'>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo
@@ -32,7 +42,7 @@ export const Hero = () => {
         {/* buttons */}
         <div className='flex mt-5 justify-center md:justify-start'>
           <Button href='/' className='mr-4'>
-            Contact Me
+            Let's Connect
           </Button>
           <Button href='' variant='secondary'>
             My Resume
@@ -42,3 +52,5 @@ export const Hero = () => {
     </section>
   );
 };
+
+export default Hero;

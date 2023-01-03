@@ -9,7 +9,7 @@ const About = () => {
         <div className='flex flex-col items-center text-center lg:items-start lg:text-left'>
           <div className='flex flex-col'>
             <h3 className='text-lg md:text-xl lg:text-2xl font-medium lg:font-semibold mb-2 text-gray-200'>
-              Hi, I'm Minh Tu Ngo 👋
+              Hi, I'm Minh Tu Ngo <span className='animate-wave'>👋</span>
             </h3>
             {/* <p className='text-sm md:text-base lg:text-lg mb-4 text-gray-200'>
               Web Developer

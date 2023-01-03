@@ -4,12 +4,12 @@ import Image from 'next/image';
 
 const TechStack = () => {
   return (
-    <section id='technologies' className=''>
+    <section id='technologies' className='mt-12 lg:mt-16'>
       <Title
         title='Technologies'
         subtitle='Some Technologies I Have Used Recently'
       />
-      <div className='h-48 mt-2 flex items-center'>
+      <div className='h-32 -mt-6 flex items-center'>
         <Marquees className='py-4'>
           {techStack.map((tech) => (
             <div

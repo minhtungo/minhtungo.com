@@ -1,4 +1,4 @@
-import { Hero } from './Hero';
+import Hero from './Hero';
 import Container from './common/Container';
 import Header from './Header';
 import Logo from './common/Logo';

@@ -13,7 +13,9 @@ const ContactForm = () => {
               Get In Touch
             </h3>
             <p className='mt-2 text-base font-light text-gray-400'>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              I'm always open to new projects and opportunities.
+              Whether you're a company looking to hire or you're just
+              looking to chat, I'd love to hear from you.
             </p>
           </div>
           {/* Info */}

@@ -2,8 +2,8 @@ import Image from 'next/image';
 import { Inter, Roboto_Mono } from '@next/font/google';
 
 import {
-  Container,
   Hero,
+  Container,
   Repo,
   ContactForm,
   About,
