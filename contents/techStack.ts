@@ -1,51 +1,51 @@
 const techStack = [
   {
     name: 'React',
-    src: '/images/stack/react.svg',
+    src: '/static/images/stack/react.svg',
   },
   {
     name: 'Node.js',
-    src: '/images/stack/nodejs.svg',
+    src: '/static/images/stack/nodejs.svg',
   },
   {
     name: 'Express',
-    src: '/images/stack/express.svg',
+    src: '/static/images/stack/express.svg',
   },
   {
     name: 'Next.js',
-    src: '/images/stack/next.svg',
+    src: '/static/images/stack/next.svg',
   },
   {
     name: 'MongoDB',
-    src: '/images/stack/mongodb.svg',
+    src: '/static/images/stack/mongodb.svg',
   },
   {
     name: 'TypeScript',
-    src: '/images/stack/typescript.svg',
+    src: '/static/images/stack/typescript.svg',
   },
   {
     name: 'JavaScript',
-    src: '/images/stack/javascript.svg',
+    src: '/static/images/stack/javascript.svg',
   },
   {
     name: 'Material UI',
-    src: '/images/stack/material-ui.svg',
+    src: '/static/images/stack/material-ui.svg',
   },
   {
     name: 'Tailwind',
-    src: '/images/stack/tailwind.svg',
+    src: '/static/images/stack/tailwind.svg',
   },
   {
     name: 'Bootstrap',
-    src: '/images/stack/bootstrap.svg',
+    src: '/static/images/stack/bootstrap.svg',
   },
   {
     name: 'Styled Components',
-    src: '/images/stack/styled-components.svg',
+    src: '/static/images/stack/styled-components.svg',
   },
   {
     name: 'Firebase',
-    src: '/images/stack/firebase.svg',
+    src: '/static/images/stack/firebase.svg',
   },
 ];
 
