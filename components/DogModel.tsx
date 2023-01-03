@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import classNames from 'classnames';
-import { Dog } from './Dog';
+import { Dog } from './common/Dog';
 
 interface DogModelTypes {
   className?: string;

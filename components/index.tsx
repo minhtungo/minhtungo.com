@@ -1,14 +1,18 @@
 import { Hero } from './Hero';
-import Container from './Container';
+import Container from './common/Container';
 import Header from './Header';
-import Logo from './Logo';
-import Button from './Button';
+import Logo from './common/Logo';
+import Button from './common/Button';
 import Repo from './Repo';
 import Footer from './Footer';
 import ContactForm from './ContactForm';
 import DogModel from './DogModel';
-import About from './About';
-import ModelLoader, { DivContainer, DivSpinner } from './ModelLoader';
+import About from './About/About';
+import ModelLoader, { DivContainer, DivSpinner } from './common/ModelLoader';
+import Marquees from './common/Marquees';
+import TechStack from './TechStack';
+import Title from './common/Title';
+import CodeSnippet from './About/CodeSnippet';
 
 export {
   Hero,
@@ -24,4 +28,8 @@ export {
   ModelLoader,
   DivSpinner,
   DivContainer,
+  Marquees,
+  TechStack,
+  Title,
+  CodeSnippet,
 };

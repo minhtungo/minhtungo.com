@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { AiOutlineFolder } from 'react-icons/ai';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import Title from './Title';
+import Title from './common/Title';
 
 const RepoCard = () => {
   return (

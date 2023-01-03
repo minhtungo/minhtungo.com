@@ -19,6 +19,7 @@ module.exports = {
           'Helvetica Neue',
           'sans-serif',
         ],
+        code: ['Roboto Mono', 'Roboto', 'monospace'],
       },
       colors: {
         transparent: 'transparent',

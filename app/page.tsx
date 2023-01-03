@@ -1,9 +1,20 @@
 import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import { Container, Hero, Repo, ContactForm, About } from '../components';
+import { Inter, Roboto_Mono } from '@next/font/google';
+
+import {
+  Container,
+  Hero,
+  Repo,
+  ContactForm,
+  About,
+  TechStack,
+} from '../components';
 import Tech from '../components/Tech';
 
 const inter = Inter({ subsets: ['latin'] });
+const robotoMono = Roboto_Mono({
+  weight: '400',
+});
 
 export default function Home() {
   return (
@@ -11,10 +22,11 @@ export default function Home() {
       <main>
         <Container>
           <Hero />
+          <About />
+          <TechStack />
           <Repo />
           <ContactForm />
-          <About />
-          <Tech />
+          {/* <Tech /> */}
         </Container>
       </main>
     </>

@@ -14,15 +14,16 @@ export const Hero = () => {
       className='md:flex md:justify-between md:items-center gap-16 h-screen py-10 flex-1'
     >
       {/* Dog Model */}
-      <div className='basis-2/5 z-10 mt-4 md:mt-32 flex justify-center md:order-2 h-[280px] w-[280px] md:h-[480px] lg:w-[480px]'>
+      <div className='basis-2/5 z-10 mt-4 md:mt-32 flex justify-center md:order-2 h-[280px] w-[280px] sm:w-[360px] sm:h-[360px] md:h-[480px] md:w-[480px] mx-auto md:mx-0'>
         <LazyDogModel />
       </div>
       {/* Hero Text */}
-      <div className='basis-2/5 -mt-14'>
-        <p className='text-2xl md:text-4xl lg:text-5xl font-play fair text-center md:text-start'>
+      <div className='basis-2/5 -mt-14 text-center md:text-start'>
+        <p className=''>Hi there👋, I am</p>
+        <p className='text-2xl md:text-4xl lg:text-5xl text-center md:text-start'>
           Minh Tu Ngo
         </p>
-        <p className='mt-6 lg:mt-10 mb-7 text-sm text-center md:text-start'>
+        <p className='mt-6 lg:mt-10 mb-7 text-sm'>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo
           modi omnis ratione consequuntur inventore necessitatibus perferendis
           cumque dolores, quasi facilis soluta nulla! Fuga, voluptate quia
