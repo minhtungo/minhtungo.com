@@ -40,7 +40,7 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-      {/* <SnowFall /> */}
+      <SnowFall />
     </section>
   );
 };
