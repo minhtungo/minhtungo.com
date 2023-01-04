@@ -1,6 +1,4 @@
-'use client';
-
-import { DogModel, Button, ModelLoader } from './';
+import { DogModel, Button, ModelLoader, SnowFall } from './';
 // import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import Snowfall from 'react-snowfall';
@@ -16,12 +14,7 @@ const Hero = () => {
       id='home'
       className='md:flex md:justify-between md:items-center gap-16 h-screen py-10 flex-1'
     >
-      <Snowfall
-        snowflakeCount={50}
-        radius={[0, 2.5]}
-        speed={[0, 1.5]}
-        wind={[-0.5, 2]}
-      />
+<SnowFall />
       {/* Dog Model */}
       <div className='basis-2/5 z-10 mt-4 md:mt-32 flex justify-center md:order-2 h-[280px] w-[280px] sm:w-[360px] sm:h-[360px] md:h-[480px] md:w-[480px] mx-auto md:mx-0'>
         <LazyDogModel />
