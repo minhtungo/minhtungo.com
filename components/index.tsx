@@ -15,7 +15,7 @@ import Title from './common/Title';
 import CodeSnippet from './About/CodeSnippet';
 import Timeline from './Timeline';
 import SnowFall from './SnowFall';
-// import Project from './Project';
+import Projects from './Project/Projects';
 
 export {
   Hero,
@@ -36,6 +36,6 @@ export {
   Title,
   Timeline,
   CodeSnippet,
-  SnowFall
-  // Project
+  SnowFall,
+  Projects,
 };

@@ -8,9 +8,9 @@ import {
   ContactForm,
   About,
   TechStack,
-  Project,
+  Projects,
 } from '../components';
-import Tech from '../components/Tech';
+import React from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 const robotoMono = Roboto_Mono({
@@ -25,10 +25,9 @@ export default function Home() {
           <Hero />
           <About />
           <TechStack />
+          <Projects />
           <Repo />
           <ContactForm />
-          {/* <Project /> */}
-          {/* <Tech /> */}
         </Container>
       </main>
     </>
