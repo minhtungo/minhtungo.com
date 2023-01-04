@@ -1,4 +1,5 @@
 import { Title, CodeSnippet, Button } from '..';
+import Journey from './Journey';
 
 const About = () => {
   return (
@@ -36,6 +37,7 @@ const About = () => {
           <Button href='/'>Resume</Button>
         </div>
       </div>
+      <Journey />
     </section>
   );
 };
