@@ -5,7 +5,7 @@ import { Container, Button } from './';
 
 const ContactForm = () => {
   return (
-    <div className='relative p-4 mb-10 rounded-md shadow-md bg-transparent-black md:p-8 lg:p-18 lg:px-19 mt-10'>
+    <div className='relative p-4 mb-10 rounded-md shadow-md md:p-8 lg:p-18 lg:px-19 mt-10'>
       <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
         <div className='md:ml-4'>
           <div>
@@ -13,9 +13,9 @@ const ContactForm = () => {
               Get In Touch
             </h3>
             <p className='mt-2 text-base font-light text-gray-400'>
-              I'm always open to new projects and opportunities.
-              Whether you're a company looking to hire or you're just
-              looking to chat, I'd love to hear from you.
+              I'm always open to new projects and opportunities. Whether you're
+              a company looking to hire or you're just looking to chat, I'd love
+              to hear from you.
             </p>
           </div>
           {/* Info */}
@@ -57,32 +57,74 @@ const ContactForm = () => {
           {/* Social */}
         </div>
         <form className='flex flex-col xs:p-3 s:p-4 rounded-lg'>
-          <div className='md:flex items-cente'>
-            <input
-              type='text'
-              className='leading-none text-gray-400 p-3 py-2 focus:outline-none border-0 bg-transparent-white rounded w-full md:w-1/2'
-              name='name'
-              placeholder='Name'
-            />
-            <input
-              type='email'
-              className='leading-none text-gray-400 p-3 py-2 focus:outline-none border-0 bg-transparent-white rounded w-full md:w-1/2 md:ml-3 mt-3 md:mt-0'
-              name='email'
-              placeholder='Email'
-            />
-          </div>
-          <input
-            type='text'
-            className='leading-none text-gray-400 p-3 py-2 focus:outline-none border-0 bg-transparent-white rounded w-full mt-3'
-            name='subject'
-            placeholder='Subject'
-          />
-          <textarea
-            rows={4}
-            className='h-40 text-base leading-none text-gray-400 p-3 focus:outline-none focus:border-blue-700 mt-3 bg-transparent-white border-0 rounded'
-            name='message'
-            placeholder='Message'
-          />
+          <>
+            <div className='w-full grid grid-cols-2 gap-6'>
+              <div className='relative z-0 w-full mb-6 group'>
+                <input
+                  type='text'
+                  name='name'
+                  id='floating_name'
+                  className='block py-2 mt-2 px-0 w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-transparent-white appearance-none dark:text-gray-200 dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-black peer'
+                  placeholder=' '
+                  required
+                />
+                <label
+                  htmlFor='floating_name'
+                  className='peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-gray-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+                >
+                  Your Name
+                </label>
+              </div>
+              <div className='relative z-0 w-full mb-6 group'>
+                <input
+                  type='email'
+                  name='email'
+                  id='email'
+                  className='block py-2 mt-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none dark:text-gray-200 dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-black peer'
+                  placeholder=' '
+                  required
+                />
+                <label
+                  htmlFor='email'
+                  className='peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-gray-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+                >
+                  Email
+                </label>
+              </div>
+            </div>
+            <div className='relative z-0 w-full mb-6 group'>
+              <input
+                type='subject'
+                name='subject'
+                id='floating_subject'
+                className='block py-2 mt-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none dark:text-gray-200 dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-black peer'
+                placeholder=' '
+                required
+              />
+              <label
+                htmlFor='floating_subject'
+                className='peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-gray-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+              >
+                Subject
+              </label>
+            </div>
+            <div className='relative z-0 w-full mb-6 group'>
+              <textarea
+                name='message'
+                id='floating_message'
+                className='block py-2 mt-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-blue-400 appearance-none dark:text-gray-200 dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0  peer min-h-[100px] resize-y focus:border-black'
+                placeholder=' '
+                required
+              />
+              <label
+                htmlFor='floating_message'
+                className='peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-gray-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+              >
+                Message
+              </label>
+            </div>
+          </>
+
           <div className='flex items-center justify-center w-full'>
             <Button href='/' className='flex items-center justify-center mt-6'>
               Send Message
