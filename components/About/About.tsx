@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section id='about'>
       <Title title='About Me' subtitle='Introduction' />
-      <div className='flex flex-col lg:flex-row gap-20'>
+      <div className='flex flex-col lg:flex-row gap-12 lg:gap-20'>
         <CodeSnippet className='md:mx-auto lg:mx-0 w-full' />
         <div className='flex flex-col items-center text-center lg:items-start lg:text-left'>
           <div className='flex flex-col'>

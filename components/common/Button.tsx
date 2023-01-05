@@ -34,6 +34,14 @@ const buttonClasses = cva('relative rounded-full inline-flex items-center', {
 });
 
 const Button = ({ children, href, variant, size, ...props }: ButtonProps) => {
+  if (!href)
+    return (
+      <button
+        className={buttonClasses({ variant, size, className: props.className })}
+      >
+        {children}
+      </button>
+    );
   return (
     <Link
       className={buttonClasses({ variant, size, className: props.className })}
@@ -43,4 +51,5 @@ const Button = ({ children, href, variant, size, ...props }: ButtonProps) => {
     </Link>
   );
 };
+
 export default Button;

@@ -9,12 +9,12 @@ interface TitleProps {
 
 const Title = ({ title, subtitle, className }: TitleProps) => {
   return (
-    <div className={classNames('text-center mb-12', className)}>
+    <div className={classNames('text-center mb-8 lg:mb-12', className)}>
       <h2 className='text-xl md:text-3xl lg:text-4xl font-medium lg:font-semibold mb-3'>
         {title}
       </h2>
       {subtitle && (
-        <h2 className='text-blue-500 text-xs uppercase mb-1 tracking-wider'>
+        <h2 className='text-blue-500 text-xs capitalize tracking-wider'>
           {subtitle}
         </h2>
       )}

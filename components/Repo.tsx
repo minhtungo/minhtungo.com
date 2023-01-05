@@ -37,7 +37,7 @@ const RepoCard = () => {
 
 const Repo = () => {
   return (
-    <>
+    <section id='repos' className='mt-12 lg:mt-16'>
       <div className='text-center'>
         <Title title='Repositories' subtitle='Other Noteworthy Projects' />
       </div>
@@ -48,7 +48,7 @@ const Repo = () => {
         <RepoCard />
         <RepoCard />
       </section>
-    </>
+    </section>
   );
 };
 

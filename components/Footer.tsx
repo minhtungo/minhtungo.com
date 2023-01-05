@@ -4,8 +4,8 @@ import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 const Footer = () => {
   return (
-    <footer>
-      <Container className='py-4 sm:py-6'>
+    <footer className='py-4 md:py-6 '>
+      <Container>
         <div className='flex items-center space-x-5  my-4 lg:my-6'>
           <div className='flex-1 h-px bg-transparent-white' />
           <div className=''>

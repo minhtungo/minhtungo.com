@@ -11,11 +11,11 @@ const Hero = () => {
   return (
     <section
       id='home'
-      className='md:flex md:justify-between md:items-center gap-16 h-screen py-10 flex-1'
+      className='md:flex md:justify-between md:items-center gap-16 h-screen flex-1'
     >
       {/* Dog Model */}
       <div className='basis-2/5 z-10 mt-4 md:mt-32 flex justify-center md:order-2 h-[280px] w-[280px] sm:w-[360px] sm:h-[360px] md:h-[480px] md:w-[480px] mx-auto md:mx-0'>
-        {/* <LazyDogModel /> */}
+        <LazyDogModel />
       </div>
       {/* Hero Text */}
       <div className='basis-2/5 -mt-14 text-center md:text-start'>
@@ -32,10 +32,10 @@ const Hero = () => {
         </p>
         {/* buttons */}
         <div className='flex mt-5 justify-center md:justify-start'>
-          <Button href='/' className='mr-4'>
+          <Button href='/contact' className='mr-4'>
             Let{"'"}s Connect
           </Button>
-          <Button href='' variant='secondary'>
+          <Button href='/Minh_Tu_Ngo_Resume.pdf' variant='secondary'>
             My Resume
           </Button>
         </div>

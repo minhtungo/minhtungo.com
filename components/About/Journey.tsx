@@ -87,9 +87,9 @@ const JourneyCard = ({journey } : JourneyProps ) => {
 
 const Journey = () => {
   return (
-    <section id='journey' className='max-w-3xl mx-auto pt-10'>
-      <Title title='My Journey' />
-      <ul className='relative mt-6 ml-3 border-l border-transparent-white dark:border-gray-700'>
+    <section id='journey' className='max-w-3xl mx-auto mt-12 lg:mt-16'>
+      <Title title='My Journey' subtitle='Learning and growing'/>
+      <ul className='relative mt-4 lg:mt-6 ml-3 border-l border-transparent-white dark:border-gray-700'>
         {journeys.slice(0, 2).map((item) => (
           <li key={item.title}>
             <JourneyCard journey={item} />

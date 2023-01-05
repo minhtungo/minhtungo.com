@@ -10,30 +10,28 @@ import { Title } from '..';
 const dummnyProjects = [
   {
     id: 1,
-    image:
-      'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
-    name: 'Project 1',
-    tools: ['React', 'Next.js', 'Tailwind CSS'],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    githubURL: 'https://github.com',
-    previewURL: 'https://github.com',
+    image: '/static/images/projects/cine-city.png',
+    name: 'CineCity',
+    tools: ['React', 'Express', 'NodeJS', 'MongoDB', 'Material UI', 'Firebase'],
+    description: 'a movie web app including features such as the ability for users to add reviews, favorite movies, and change passwords and profile pictures.',
+    githubURL: 'https://github.com/minhtungo/Cine-City',
+    previewURL: 'https://cine-city.vercel.app/',
   },
   {
     id: 2,
-    image:
-      'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg',
-    name: 'Project 2',
-    tools: ['React', 'Next.js', 'Tailwind CSS'],
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-    githubURL: 'https://github.com',
-    previewURL: 'https://github.com',
+    image: '/static/images/projects/cine-city.png',
+    name: 'CineCity 2',
+    tools: ['React', 'Express', 'NodeJS', 'MongoDB', 'Material UI', 'Firebase'],
+    description: 'a movie web app including features such as the ability for users to add reviews, favorite movies, and change passwords and profile pictures.',
+    githubURL: 'https://github.com/minhtungo/Cine-City',
+    previewURL: 'https://cine-city.vercel.app/',
   },
 ];
 
 const ProjectImage = ({ src, alt, className = '' }) => (
   <div
     className={classNames(
-      'relative -mt-[35%] sm:-mt-0 md:-ml-[35%] w-full sm:w-1/2 md:w-8/12 shrink-0 rounded-xl overflow-hidden shadow-2xl before:absolute before:inset-0 dark:before:bg-black/20 before:z-10',
+      'relative -mt-[35%] sm:-mt-0 md:-ml-[35%] w-full sm:w-1/2 md:w-8/12 shrink-0 rounded-xl overflow-hidden shadow-2xl before:absolute before:inset-0 before:bg-black/20 before:z-10',
       className
     )}
   >
@@ -107,14 +105,14 @@ const Project = ({ project }) => (
 
 const Projects = () => {
   return (
-    <>
+    <section id='projects' className='mt-12 lg:mt-16'>
       <Title title='Projects' />
-      <div className='grid grid-cols-1 gap-4 mx-auto md:ml-[20%] xl:ml-[24%]'>
+      <div className='grid grid-cols-1 gap-4 mx-auto md:ml-[20%] xl:ml-[24%] -mt-4 lg:-mt-8'>
         {dummnyProjects.map((project) => (
           <Project key={project.id} project={project} />
         ))}
       </div>
-    </>
+    </section>
   );
 };
 export default Projects;
