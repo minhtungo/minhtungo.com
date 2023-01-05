@@ -33,7 +33,7 @@ const Hero = () => {
         {/* buttons */}
         <div className='flex mt-5 justify-center md:justify-start'>
           <Button href='/' className='mr-4'>
-            Let's Connect
+            Let{"'"}s Connect
           </Button>
           <Button href='' variant='secondary'>
             My Resume

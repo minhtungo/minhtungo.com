@@ -36,6 +36,8 @@ export const DivSpinner = () => (
 export const DivContainer: React.FunctionComponent<DivContainerProps> =
   forwardRef(({ children }, ref) => <div ref={ref}>{children}</div>);
 
+DivContainer.displayName = 'DivContainer';
+
 const ModelLoader = () => {
   return (
     <DivContainer>
