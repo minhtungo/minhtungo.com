@@ -1,5 +1,6 @@
-
 import { MdMenu, MdClose } from 'react-icons/md';
+import { motion } from 'framer-motion';
+import { PopUp } from '../../lib/FramerMotionVariants';
 
 const HamBurger = ({
   open,
@@ -9,7 +10,13 @@ const HamBurger = ({
   handleClick: () => void;
 }) => {
   return (
-    <div className='sm:hidden' style={{ zIndex: 1000 }}>
+    <motion.div
+      style={{ zIndex: 1000 }}
+      initial='hidden'
+      animate='visible'
+      variants={PopUp}
+      className='sm:hidden'
+    >
       {!open ? (
         <MdMenu
           className='h-6 w-6 cursor-pointer select-none transform duration-300 rounded-md active:scale-50'
@@ -21,8 +28,8 @@ const HamBurger = ({
           onClick={handleClick}
         />
       )}
-    </div>
+    </motion.div>
   );
 };
 
-export default HamBurger
+export default HamBurger;

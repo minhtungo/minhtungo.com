@@ -1,6 +1,8 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
+import { motion } from 'framer-motion';
+import { PopUp } from '../../lib/FramerMotionVariants';
 
 interface NavItemProps {
   href: string;
@@ -18,9 +20,11 @@ const NavItem = ({ href, text }: NavItemProps) => {
         isActive ? 'font-bold text-gray-200' : 'font-normal text-gray-400'
       } sm:inline-block transition-all text-[17px] hidden px-2 md:px-3 py-[3px] hover:bg-neutral-700/50 rounded-md`}
     >
-      <p className='capitalize'>{text}</p>
+      <motion.p className='capitalize' variants={PopUp}>
+        {text}
+      </motion.p>
     </Link>
   );
 };
 
-export default NavItem
+export default NavItem;

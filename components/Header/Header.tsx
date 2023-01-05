@@ -4,6 +4,9 @@ import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
+import { motion, useAnimation, AnimatePresence } from 'framer-motion';
+
+import { FadeContainer } from '../../lib/FramerMotionVariants';
 
 import { Logo, Container } from '..';
 import HamBurger from './Hamburger';
@@ -19,18 +22,23 @@ const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
+  const control = useAnimation();
+
   // Adding Shadow, backdrop to the navbar as user scroll the screen
   const addShadowToNavbar = useCallback(() => {
     if (window.pageYOffset > 10) {
       navRef.current!.classList.add(
         ...['shadow', 'backdrop-blur-xl', 'bg-transparent-black']
       );
+      control.start('visible');
     } else {
       navRef.current!.classList.remove(
         ...['shadow', 'backdrop-blur-xl', 'bg-transparent-black']
       );
+      control.start('hidden');
+
     }
-  }, []);
+  }, [control]);
 
   useEffect(() => {
     window.addEventListener('scroll', addShadowToNavbar);
@@ -54,9 +62,11 @@ const Header = () => {
     <header className='fixed w-full top-0 z-50 print:hidden' ref={navRef}>
       <Container className='flex items-center justify-between py-[12px]'>
         <HamBurger open={navOpen} handleClick={handleClick} />
-        {navOpen && (
-          <MobileMenu links={navigationRoutes} handleClick={handleClick} />
-        )}
+        <AnimatePresence>
+          {navOpen && (
+            <MobileMenu links={navigationRoutes} handleClick={handleClick} />
+          )}
+        </AnimatePresence>
         <Link href='/' className='mr-3' aria-label='Link to Home Page'>
           <Logo className='hidden sm:inline-flex' />
           {/* <div className='w-full sm:!hidden'>
@@ -64,14 +74,19 @@ const Header = () => {
         </div> */}
         </Link>
         {/* Top Nav list */}
-        <nav className='hidden sm:flex z-10 md:inset-0 md:justify-center'>
-          <div className='flex items-center md:gap-2'>
+        <motion.nav className='hidden sm:flex z-10 md:inset-0 md:justify-center'>
+          <motion.div
+            initial='hidden'
+            animate='visible'
+            variants={FadeContainer}
+            className='flex items-center md:gap-2'
+          >
             {navigationRoutes.map((link, index) => {
               return <NavItem key={index} href={`${link}`} text={link} />;
             })}
-          </div>
-        </nav>
-        <div className='flex items-center space-x-4'>
+          </motion.div>
+        </motion.nav>
+        <motion.div className='flex items-center space-x-4'>
           <Link
             href='https://github.com/minhtungo'
             className='text-gray-400 hover:text-blue-500'
@@ -94,7 +109,7 @@ const Header = () => {
             sunColor='rgb(156 163 175)'
             moonColor='rgb(156 163 175'
           />
-        </div>
+        </motion.div>
       </Container>
     </header>
   );

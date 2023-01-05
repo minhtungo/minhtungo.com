@@ -1,4 +1,8 @@
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { HamFastFadeContainer } from '../../lib/FramerMotionVariants';
+
+
 
 const MobileMenu = ({
   links,
@@ -8,8 +12,14 @@ const MobileMenu = ({
   handleClick: () => void;
 }) => {
   return (
-    <div className='absolute font-normal bg-transparent-black w-screen h-screen top-0 left-0 z-10 sm:hidden'>
-      <nav className='mt-28 mx-8 flex flex-col'>
+    <motion.div
+      className='absolute font-normal bg-transparent-black w-screen h-screen top-0 left-0 z-10 sm:hidden'
+      variants={HamFastFadeContainer}
+      initial='hidden'
+      animate='visible'
+      exit='hidden'
+    >
+      <motion.nav className='mt-28 mx-8 flex flex-col'>
         {links.map((link, index) => {
           const navLink =
             link.toLowerCase() === 'home' ? '/' : `/${link.toLowerCase()}`;
@@ -20,12 +30,12 @@ const MobileMenu = ({
               onClick={handleClick}
               className='border-b border-gray-700 text-gray-100 font-semibold flex w-auto py-4 capitalize text-base cursor-pointer'
             >
-              <p>{link === 'rss' ? link.toUpperCase() : link}</p>
+              <motion.p>{link === 'rss' ? link.toUpperCase() : link}</motion.p>
             </Link>
           );
         })}
-      </nav>
-    </div>
+      </motion.nav>
+    </motion.div>
   );
 };
 
