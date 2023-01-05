@@ -90,7 +90,7 @@ const Journey = () => {
     <section id='journey' className='max-w-3xl mx-auto pt-10'>
       <Title title='My Journey' />
       <ul className='relative mt-6 ml-3 border-l border-transparent-white dark:border-gray-700'>
-        {journeys.slice(0, 2).map((item, index) => (
+        {journeys.slice(0, 2).map((item) => (
           <li key={item.title}>
             <JourneyCard journey={item} />
           </li>
