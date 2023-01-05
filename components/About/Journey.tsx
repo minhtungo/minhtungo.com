@@ -5,6 +5,7 @@ import { Title } from '..';
 import { BsMoonStars, BsSun } from 'react-icons/bs';
 
 interface JourneyProps {
+  journey: {
   title: string;
   description: string;
   icon: string;
@@ -13,6 +14,8 @@ interface JourneyProps {
   date: string;
   status?: string;
 }
+  }
+
 
 const journeys = [
   {
@@ -45,7 +48,7 @@ const journeys = [
   },
 ];
 
-const JourneyCard = ({journey } : JourneyProps[] ) => {
+const JourneyCard = ({journey } : JourneyProps ) => {
   return (
     <div className='mb-4 ml-6 md:ml-8 rounded-lg border-2 shadow-lg p-4 bg-transparent-black border-transparent-white'>
       <div></div>

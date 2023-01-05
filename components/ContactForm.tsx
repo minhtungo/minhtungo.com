@@ -13,8 +13,8 @@ const ContactForm = () => {
               Get In Touch
             </h3>
             <p className='mt-2 text-base font-light text-gray-400'>
-              I'm always open to new projects and opportunities. Whether you're
-              a company looking to hire or you're just looking to chat, I'd love
+              I{"'"}m always open to new projects and opportunities. Whether you{"'"}re
+              a company looking to hire or you{"'"}re just looking to chat, I{"'"}d love
               to hear from you.
             </p>
           </div>
@@ -63,13 +63,13 @@ const ContactForm = () => {
                 <input
                   type='text'
                   name='name'
-                  id='floating_name'
+                  id='name'
                   className='block py-2 mt-2 px-0 w-full text-sm text-gray-400 bg-transparent border-0 border-b-2 border-transparent-white appearance-none dark:text-gray-200 dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-black peer'
                   placeholder=' '
                   required
                 />
                 <label
-                  htmlFor='floating_name'
+                  htmlFor='name'
                   className='peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-gray-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
                 >
                   Your Name
@@ -96,13 +96,13 @@ const ContactForm = () => {
               <input
                 type='subject'
                 name='subject'
-                id='floating_subject'
+                id='subject'
                 className='block py-2 mt-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-slate-500 appearance-none dark:text-gray-200 dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-black peer'
                 placeholder=' '
                 required
               />
               <label
-                htmlFor='floating_subject'
+                htmlFor='subject'
                 className='peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-gray-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
               >
                 Subject
@@ -111,13 +111,13 @@ const ContactForm = () => {
             <div className='relative z-0 w-full mb-6 group'>
               <textarea
                 name='message'
-                id='floating_message'
+                id='message'
                 className='block py-2 mt-2 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-blue-400 appearance-none dark:text-gray-200 dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0  peer min-h-[100px] resize-y focus:border-black'
                 placeholder=' '
                 required
               />
               <label
-                htmlFor='floating_message'
+                htmlFor='message'
                 className='peer-focus:font-medium absolute text-sm text-slate-600 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-black dark:peer-focus:text-gray-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
               >
                 Message
