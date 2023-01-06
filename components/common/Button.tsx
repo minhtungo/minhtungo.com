@@ -1,6 +1,11 @@
+'use client'
+
 import Link from 'next/link';
 import { cva, VariantProps } from 'class-variance-authority';
 import { AnchorHTMLAttributes } from 'react';
+
+import { motion } from 'framer-motion';
+import { PopUp } from '../../lib/FramerMotionVariants';
 
 interface ButtonProps
   extends VariantProps<typeof buttonClasses>,
@@ -36,19 +41,27 @@ const buttonClasses = cva('relative rounded-full inline-flex items-center', {
 const Button = ({ children, href, variant, size, ...props }: ButtonProps) => {
   if (!href)
     return (
-      <button
-        className={buttonClasses({ variant, size, className: props.className })}
-      >
-        {children}
-      </button>
+      <motion.div initial='hidden' animate='visible' variants={PopUp}>
+        <button
+          className={buttonClasses({
+            variant,
+            size,
+            className: props.className,
+          })}
+        >
+          {children}
+        </button>
+      </motion.div>
     );
   return (
-    <Link
-      className={buttonClasses({ variant, size, className: props.className })}
-      href={href}
-    >
-      {children}
-    </Link>
+    <motion.div initial='hidden' animate='visible' variants={PopUp}>
+      <Link
+        className={buttonClasses({ variant, size, className: props.className })}
+        href={href}
+      >
+        {children}
+      </Link>
+    </motion.div>
   );
 };
 

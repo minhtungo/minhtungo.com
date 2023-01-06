@@ -1,11 +1,10 @@
 // @ts-nocheck
 
-import { BsGithub } from 'react-icons/bs';
-import { MdOutlineLink } from 'react-icons/md';
+import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import Link from 'next/link';
 import Image from 'next/image';
 import classNames from 'classnames';
-import { Title } from '..';
+import { Title, Icon } from '..';
 
 const dummnyProjects = [
   {
@@ -58,7 +57,7 @@ const Project = ({ project }) => (
   <div className='card'>
     <ProjectImage src={project.image} alt={project.name} />
     <div className={`flex flex-col justify-start gap-3`}>
-      <h1 className='font-bold capitalize text-neutral-900 dark:text-neutral-200'>
+      <h1 className='font-bold capitalize text-gray-200'>
         {project.name}
       </h1>
       <p className='text-sm text-gray-400 dark:text-neutral-400'>
@@ -69,7 +68,7 @@ const Project = ({ project }) => (
           return (
             <span
               key={`${tool}-${index}`}
-              className='bg-gray-100 dark:bg-darkPrimary text-gray-500 rounded px-2 py-1 text-xs'
+              className='bg-transparent-white text-gray-500 rounded px-2 py-1 text-xs'
             >
               {tool}
             </span>
@@ -77,26 +76,30 @@ const Project = ({ project }) => (
         })}
       </div>
       <div className='mt-auto p-2 w-fit flex items-center gap-4'>
+        <Icon>
         <Link
           href={project.githubURL}
           title='Source Code on GitHub'
           target='_blank'
           rel='noopener noreferrer'
-          className='text-gray-500 hover:text-black dark:hover:text-white'
+          className='text-gray-400 hover:text-blue-500'
         >
-          <BsGithub className='w-6 h-6 hover:scale-110 active:scale-90 transition-all' />
+          <FiGithub className='w-5 h-5 hover:scale-110 active:scale-90 transition-all' />
         </Link>
+        </Icon>
 
         {project.previewURL && (
+          <Icon>
           <Link
             href={project.previewURL}
             title='Live Preview'
             target='_blank'
             rel='noopener noreferrer'
-            className='text-gray-500 hover:text-black dark:hover:text-white'
+            className='text-gray-400 hover:text-blue-500'
           >
-            <MdOutlineLink className='w-6 h-6 hover:scale-110 active:scale-90 transition-all' />
+            <FiExternalLink className='w-5 h-5 hover:scale-110 active:scale-90 transition-all' />
           </Link>
+          </Icon>
         )}
       </div>
     </div>
@@ -105,7 +108,7 @@ const Project = ({ project }) => (
 
 const Projects = () => {
   return (
-    <section id='projects' className='mt-12 lg:mt-16'>
+    <section id='projects' className='mt-12 lg:mt-16 max-w-4xl mx-auto'>
       <Title title='Projects' />
       <div className='grid grid-cols-1 gap-4 mx-auto md:ml-[20%] xl:ml-[24%] -mt-4 lg:-mt-8'>
         {dummnyProjects.map((project) => (

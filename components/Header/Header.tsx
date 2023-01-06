@@ -6,9 +6,13 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 
-import { FadeContainer } from '../../lib/FramerMotionVariants';
+import {
+  FadeContainer,
+  PopUp,
+  FromLeftVariant,
+} from '../../lib/FramerMotionVariants';
 
-import { Logo, Container } from '..';
+import { Logo, Container, Icon } from '..';
 import HamBurger from './Hamburger';
 import NavItem from './NavItem';
 import MobileMenu from './MobileMenu';
@@ -36,7 +40,6 @@ const Header = () => {
         ...['shadow', 'backdrop-blur-xl', 'bg-transparent-black']
       );
       control.start('hidden');
-
     }
   }, [control]);
 
@@ -68,7 +71,13 @@ const Header = () => {
           )}
         </AnimatePresence>
         <Link href='/' className='mr-3' aria-label='Link to Home Page'>
-          <Logo className='hidden sm:inline-flex' />
+          <motion.div
+            initial='hidden'
+            animate='visible'
+            variants={FromLeftVariant}
+          >
+            <Logo className='hidden sm:inline-flex' />
+          </motion.div>
           {/* <div className='w-full sm:!hidden'>
           <p>Minh Tu Ngo</p>
         </div> */}
@@ -87,28 +96,35 @@ const Header = () => {
           </motion.div>
         </motion.nav>
         <motion.div className='flex items-center space-x-4'>
-          <Link
-            href='https://github.com/minhtungo'
-            className='text-gray-400 hover:text-blue-500'
-            target='_blank'
-          >
-            <FiGithub className='w-5 h-5' />
-          </Link>
-          <Link
-            href='https://www.linkedin.com/in/minhtungo/'
-            className='text-gray-400 hover:text-blue-500'
-            target='_blank'
-          >
-            <FiLinkedin className='w-5 h-5' />
-          </Link>
-          {/* DarkMode Container */}
-          <DarkModeSwitch
-            checked={isDarkMode}
-            onChange={() => setIsDarkMode(!isDarkMode)}
-            size={24}
-            sunColor='rgb(156 163 175)'
-            moonColor='rgb(156 163 175'
-          />
+          <Icon>
+            <Link
+              href='https://github.com/minhtungo'
+              className='text-gray-400 hover:text-blue-500'
+              target='_blank'
+            >
+              <FiGithub className='w-5 h-5' />
+            </Link>
+          </Icon>
+
+          <Icon>
+            <Link
+              href='https://www.linkedin.com/in/minhtungo/'
+              className='text-gray-400 hover:text-blue-500'
+              target='_blank'
+            >
+              <FiLinkedin className='w-5 h-5' />
+            </Link>
+          </Icon>
+          <Icon>
+            {/* DarkMode Container */}
+            <DarkModeSwitch
+              checked={isDarkMode}
+              onChange={() => setIsDarkMode(!isDarkMode)}
+              size={24}
+              sunColor='rgb(156 163 175)'
+              moonColor='rgb(156 163 175'
+            />
+          </Icon>
         </motion.div>
       </Container>
     </header>

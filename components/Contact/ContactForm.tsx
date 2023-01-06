@@ -1,8 +1,22 @@
+'use client';
+
+import { FadeContainer } from '../../lib/FramerMotionVariants';
 import { Button } from '..';
+import { motion } from 'framer-motion';
+
+
+const handleSubmit = () => {};
 
 const ContactForm = () => {
   return (
-    <form className='flex flex-col xs:p-3 s:p-4 rounded-lg'>
+    <motion.form
+      className='flex flex-col xs:p-3 s:p-4 rounded-lg'
+      initial='hidden'
+      whileInView='visible'
+      variants={FadeContainer}
+      viewport={{ once: true }}
+      onClick={handleSubmit}
+    >
       <>
         <div className='w-full grid grid-cols-2 gap-6'>
           <div className='relative z-0 w-full mb-6 group'>
@@ -76,7 +90,7 @@ const ContactForm = () => {
           Send Message
         </Button>
       </div>
-    </form>
+    </motion.form>
   );
 };
 export default ContactForm;

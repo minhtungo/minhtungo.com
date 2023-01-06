@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
-import { Container, Button, Title } from '..';
+import { Title, AnimatedText } from '..';
+import {
+  PopUpFromBottom
+} from '../../lib/FramerMotionVariants';
+
 import ContactForm from './ContactForm';
 
 const Contact = () => {
@@ -12,15 +16,15 @@ const Contact = () => {
         <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
           <div className='md:ml-4'>
             <div>
-              <h3 className='text-2xl font-semibold text-gray-200'>
+              <AnimatedText variants={PopUpFromBottom} className='text-2xl font-semibold text-gray-200'>
                 Get In Touch
-              </h3>
-              <p className='mt-2 text-base font-light text-gray-400'>
+              </AnimatedText>
+              <AnimatedText variants={PopUpFromBottom} className='mt-2 text-base font-light text-gray-400'>
                 I{"'"}m always open to new projects and opportunities. Whether
                 you
                 {"'"}re a company looking to hire or you{"'"}re just looking to
                 chat, I{"'"}d love to hear from you.
-              </p>
+              </AnimatedText>
             </div>
             {/* Info */}
             <div className='inline-flex flex-col mt-12 mb-6 space-y-4'>

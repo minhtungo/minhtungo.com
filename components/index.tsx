@@ -12,9 +12,13 @@ import ModelLoader, { DivContainer, DivSpinner } from './common/ModelLoader';
 import Marquees from './common/Marquees';
 import TechStack from './TechStack';
 import Title from './common/Title';
+import Icon from './common/Icon';
 import CodeSnippet from './About/CodeSnippet';
 import SnowFall from './common/SnowFall';
 import Projects from './Project/Projects';
+import AnimatedDiv from './FramerMotion/AnimatedDiv';
+import AnimatedHeading from './FramerMotion/AnimatedHeading';
+import AnimatedText from './FramerMotion/AnimatedText';
 
 export {
   Hero,
@@ -36,4 +40,8 @@ export {
   CodeSnippet,
   SnowFall,
   Projects,
+  AnimatedDiv,
+  AnimatedHeading,
+  AnimatedText,
+  Icon
 };

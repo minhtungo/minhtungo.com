@@ -1,7 +1,12 @@
+'use client'
+
 import Link from 'next/link';
 import { AiOutlineFolder } from 'react-icons/ai';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import Title from './common/Title';
+import { Title, Icon, AnimatedDiv } from './';
+import { FadeContainer, PopUp } from '../lib/FramerMotionVariants';
+import { motion } from 'framer-motion';
+
 
 const RepoCard = () => {
   return (
@@ -14,12 +19,16 @@ const RepoCard = () => {
           </h2>
         </div>
         <div className='flex ml-auto text-[22px] gap-3 items-center'>
-          <Link href='/' className='text-gray-400 hover:text-blue-500'>
-            <FiGithub className='' />
-          </Link>
-          <Link href='/' className='hover:text-blue-500 text-gray-400'>
-            <FiExternalLink />
-          </Link>
+          <Icon>
+            <Link href='/' className='text-gray-400 hover:text-blue-500'>
+              <FiGithub className='' />
+            </Link>
+          </Icon>
+          <Icon>
+            <Link href='/' className='hover:text-blue-500 text-gray-400'>
+              <FiExternalLink />
+            </Link>
+          </Icon>
         </div>
       </div>
       <p className='my-3 text-base font-normal text-gray-400'>
@@ -41,13 +50,27 @@ const Repo = () => {
       <div className='text-center'>
         <Title title='Repositories' subtitle='Other Noteworthy Projects' />
       </div>
-      <section className='grid grid-cols-1 gap-4 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:mt-6'>
-        <RepoCard />
-        <RepoCard />
-        <RepoCard />
-        <RepoCard />
-        <RepoCard />
-      </section>
+      <AnimatedDiv
+        variants={FadeContainer}
+        className='grid grid-cols-1 gap-4 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:mt-6'
+      >
+        <motion.div variants={PopUp}>
+          <RepoCard />
+        </motion.div>
+        <motion.div variants={PopUp}>
+          <RepoCard />
+        </motion.div>
+        <motion.div variants={PopUp}>
+          <RepoCard />
+        </motion.div>
+        <motion.div variants={PopUp}>
+          <RepoCard />
+        </motion.div>
+        <motion.div variants={PopUp}>
+          <RepoCard />
+        </motion.div>
+
+      </AnimatedDiv>
     </section>
   );
 };

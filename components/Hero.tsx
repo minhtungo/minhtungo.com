@@ -1,3 +1,5 @@
+'use client';
+
 import { Button, ModelLoader, SnowFall } from './';
 // import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
@@ -32,12 +34,13 @@ const Hero = () => {
         </p>
         {/* buttons */}
         <div className='flex mt-5 justify-center md:justify-start'>
-          <Button href='/contact' className='mr-4'>
-            Let{"'"}s Connect
-          </Button>
-          <Button href='/Minh_Tu_Ngo_Resume.pdf' variant='secondary'>
-            My Resume
-          </Button>
+            <Button href='/contact' className='mr-4'>
+              Let{"'"}s Connect
+            </Button>
+
+            <Button href='/Minh_Tu_Ngo_Resume.pdf' variant='secondary'>
+              My Resume
+            </Button>
         </div>
       </div>
       <SnowFall />
