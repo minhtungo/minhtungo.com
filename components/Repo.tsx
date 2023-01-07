@@ -18,7 +18,7 @@ interface RepoProps {
 }
 const RepoCard = ({ repo }: RepoProps) => {
   return (
-    <div className='p-5 bg-transparent-black hover:text-shadow hover:shadow-primary'>
+    <div className='p-5 bg-transparent-black hover:text-shadow hover:shadow-primary h-full'>
       <div className='flex items-center mb-3'>
         <div className='flex items-center space-x-1'>
           <AiOutlineFolder className='text-blue-500 text-2xl' />
@@ -48,13 +48,13 @@ const RepoCard = ({ repo }: RepoProps) => {
         </div>
       </div>
       <p className='my-3 text-base font-normal text-gray-400'>
-        Decentralized movie streaming platform
+        {repo.description}
       </p>
       {/* Tech Stack */}
       <div className='flex gap-4 text-gray-500'>
-        <span>React</span>
-        <span>React</span>
-        <span>React</span>
+        {repo.tech.map((item) => (
+          <span key={`${repo.name}-${item}`}>{item}</span>
+        ))}
       </div>
     </div>
   );
