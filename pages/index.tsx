@@ -5,7 +5,7 @@ import {
   Hero,
   Container,
   Repo,
-  ContactForm,
+  Contact,
   About,
   TechStack,
   Projects,
@@ -32,7 +32,7 @@ export default function Home() {
           <TechStack />
           <Projects />
           <Repo />
-    
+          <Contact />
         </Container>
         <Footer />
       </main>

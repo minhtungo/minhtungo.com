@@ -6,7 +6,17 @@ import { FadeContainer, PopUp } from '../lib/FramerMotionVariants';
 import { motion } from 'framer-motion';
 import { repos } from '../contents/repo';
 
-const RepoCard = ({ repo }) => {
+interface RepoProps {
+  repo: {
+    name: string;
+    githubURL: string;
+    liveURL?: string;
+    description: string;
+    tech: string[];
+    id: number;
+  };
+}
+const RepoCard = ({ repo }: RepoProps) => {
   return (
     <div className='p-5 bg-transparent-black hover:text-shadow hover:shadow-primary'>
       <div className='flex items-center mb-3'>

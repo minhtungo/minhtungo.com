@@ -1,5 +1,4 @@
 
-import { useRef } from 'react';
 import { Suspense } from 'react';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
@@ -10,7 +9,6 @@ interface DogModelTypes {
 }
 
 const DogModel = ({ className }: DogModelTypes) => {
-  const orbitControlsRef = useRef();
   return (
     <Canvas
       camera={{ position: [15, 5, 18], fov: 30 }}
@@ -23,7 +21,7 @@ const DogModel = ({ className }: DogModelTypes) => {
       <Suspense fallback={null}>
         <Dog />
       </Suspense>
-      <OrbitControls ref={orbitControlsRef} autoRotate />
+      <OrbitControls autoRotate />
     </Canvas>
   );
 };

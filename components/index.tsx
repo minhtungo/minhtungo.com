@@ -5,7 +5,7 @@ import Logo from './common/Logo';
 import Button from './common/Button';
 import Repo from './Repo';
 import Footer from './Footer';
-import ContactForm from './Contact/Contact';
+import Contact from './Contact/Contact';
 import DogModel from './DogModel';
 import About from './About/About';
 import ModelLoader, { DivContainer, DivSpinner } from './common/ModelLoader';
@@ -28,7 +28,7 @@ export {
   Button,
   Repo,
   Footer,
-  ContactForm,
+  Contact,
   DogModel,
   About,
   ModelLoader,

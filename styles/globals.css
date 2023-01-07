@@ -8,8 +8,9 @@
     }
 
     html {
-        @apply font-sans text-white bg-background;
+        @apply font-sans text-gray-100 bg-background scroll-smooth;
         /* font-size: 62.5%; */
+        scroll-behavior: smooth !important;
     }
 }
 
