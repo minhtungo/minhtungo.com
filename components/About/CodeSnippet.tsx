@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import classNames from 'classnames';
 
@@ -32,7 +33,10 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
         </p>
         <p>
           &nbsp;&nbsp;&nbsp;&nbsp;name:{' '}
-          <span className='text-yellow-300'>'Minh Tu Ngo'</span>,
+          <span className='text-yellow-300'>
+            {"'"}Minh Tu Ngo{"'"}
+          </span>
+          ,
         </p>
         <p>
           &nbsp;&nbsp;&nbsp;&nbsp;email:{' '}
@@ -42,7 +46,7 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
               target='_blank'
               className='text-yellow-300 hover:underline focus:border-none'
             >
-              'mn.minhtungo@gmail.com'
+              {"'"}mn.minhtungo@gmail.com{"'"}
             </Link>
           </span>
           ,
@@ -57,7 +61,7 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
             >
               minhtungo.com
             </Link>
-            '
+            {"'"}
           </span>
           ,
         </p>

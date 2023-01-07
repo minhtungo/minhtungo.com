@@ -1,4 +1,4 @@
-'use client';
+
 
 import * as THREE from 'three';
 import React, { useRef, Suspense } from 'react';

@@ -1,4 +1,4 @@
-'use client';
+
 
 import Snowfall from 'react-snowfall';
 import { useState, useEffect } from 'react';

@@ -1,5 +1,6 @@
 // @ts-nocheck
 
+
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -11,19 +12,31 @@ const dummnyProjects = [
     id: 1,
     image: '/static/images/projects/cine-city.png',
     name: 'CineCity',
-    tools: ['React', 'Express', 'NodeJS', 'MongoDB', 'Material UI', 'Firebase'],
-    description: 'a movie web app including features such as the ability for users to add reviews, favorite movies, and change passwords and profile pictures.',
+    tools: ['React', 'Redux', 'Express', 'NodeJS', 'MongoDB', 'Material UI', 'Firebase'],
+    description:
+      'a movie web app including features such as the ability for users to add reviews, favorite movies, and change passwords and profile pictures.',
     githubURL: 'https://github.com/minhtungo/Cine-City',
     previewURL: 'https://cine-city.vercel.app/',
   },
   {
     id: 2,
-    image: '/static/images/projects/cine-city.png',
-    name: 'CineCity 2',
-    tools: ['React', 'Express', 'NodeJS', 'MongoDB', 'Material UI', 'Firebase'],
-    description: 'a movie web app including features such as the ability for users to add reviews, favorite movies, and change passwords and profile pictures.',
-    githubURL: 'https://github.com/minhtungo/Cine-City',
-    previewURL: 'https://cine-city.vercel.app/',
+    image: '/static/images/projects/kanban.png',
+    name: 'Kanban',
+    tools: ['React', 'Express', 'NodeJS', 'MongoDB', 'Material UI'],
+    description:
+      'A Kanban app that features drag and drop, allowing users to easily organize and prioritize tasks',
+    githubURL: 'https://github.com/minhtungo/kanban/',
+    previewURL: 'https://minh-kanban.netlify.app/',
+  },
+  {
+    id: 3,
+    image: '/static/images/projects/job-tracker.png',
+    name: 'Kanban',
+    tools: ['React', 'Express', 'NodeJS', 'MongoDB', 'Material UI'],
+    description:
+      'A web app for job seekers to keep track of job applications during the job search/',
+    githubURL: 'https://github.com/minhtungo/job-tracking-app',
+    previewURL: 'https://minh-job-tracker.herokuapp.com/',
   },
 ];
 
@@ -40,8 +53,8 @@ const ProjectImage = ({ src, alt, className = '' }) => (
       src={src}
       width={1200}
       height={630}
-      placeholder='blur'
-      blurDataURL={src}
+      // placeholder='blur'
+      // blurDataURL={src}
       quality={25}
       className='lg:group-hover:scale-110 transition-all duration-300 backdrop-blur-xl'
       style={{
@@ -57,48 +70,46 @@ const Project = ({ project }) => (
   <div className='card'>
     <ProjectImage src={project.image} alt={project.name} />
     <div className={`flex flex-col justify-start gap-3`}>
-      <h1 className='font-bold capitalize text-gray-200'>
-        {project.name}
-      </h1>
+      <h1 className='font-bold capitalize text-gray-200'>{project.name}</h1>
       <p className='text-sm text-gray-400 dark:text-neutral-400'>
         {project.description}
       </p>
       <div className='flex items-center gap-1 flex-wrap'>
-        {project.tools!.map((tool, index) => {
+        {project.tech?.map((tech, index) => {
           return (
             <span
               key={`${tool}-${index}`}
               className='bg-transparent-white text-gray-500 rounded px-2 py-1 text-xs'
             >
-              {tool}
+              {tech}
             </span>
           );
         })}
       </div>
       <div className='mt-auto p-2 w-fit flex items-center gap-4'>
         <Icon>
-        <Link
-          href={project.githubURL}
-          title='Source Code on GitHub'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='text-gray-400 hover:text-blue-500'
-        >
-          <FiGithub className='w-5 h-5 hover:scale-110 active:scale-90 transition-all' />
-        </Link>
-        </Icon>
-
-        {project.previewURL && (
-          <Icon>
           <Link
-            href={project.previewURL}
-            title='Live Preview'
+            href={project.githubURL}
+            title='Source Code on GitHub'
             target='_blank'
             rel='noopener noreferrer'
             className='text-gray-400 hover:text-blue-500'
           >
-            <FiExternalLink className='w-5 h-5 hover:scale-110 active:scale-90 transition-all' />
+            <FiGithub className='w-5 h-5 hover:scale-110 active:scale-90 transition-all' />
           </Link>
+        </Icon>
+
+        {project.previewURL && (
+          <Icon>
+            <Link
+              href={project.previewURL}
+              title='Live Preview'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='text-gray-400 hover:text-blue-500'
+            >
+              <FiExternalLink className='w-5 h-5 hover:scale-110 active:scale-90 transition-all' />
+            </Link>
           </Icon>
         )}
       </div>
@@ -109,13 +120,14 @@ const Project = ({ project }) => (
 const Projects = () => {
   return (
     <section id='projects' className='mt-12 lg:mt-16 max-w-4xl mx-auto'>
-      <Title title='Projects' />
+      <Title title='Projects' subtitle='My Work'/>
       <div className='grid grid-cols-1 gap-4 mx-auto md:ml-[20%] xl:ml-[24%] -mt-4 lg:-mt-8'>
-        {dummnyProjects.map((project) => (
+        {dummnyProjects?.map((project) => (
           <Project key={project.id} project={project} />
         ))}
       </div>
     </section>
   );
 };
+
 export default Projects;

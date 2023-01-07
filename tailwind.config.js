@@ -60,7 +60,7 @@ module.exports = {
         },
       },
       animation: {
-        wave: 'wave 1.5s infinite',
+        wave: 'wave 1.5s ease-in-out infinite [origin-70% 70%]',
       },
     },
   },

@@ -1,4 +1,4 @@
-'use client';
+
 
 import { FadeContainer } from '../../lib/FramerMotionVariants';
 import { Button } from '..';

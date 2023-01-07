@@ -1,6 +1,5 @@
-'use client';
-
 import { Button, ModelLoader, SnowFall } from './';
+import { TypeAnimation } from 'react-type-animation';
 // import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 
@@ -24,26 +23,36 @@ const Hero = () => {
         <p className=''>Hi there, I am</p>
         <p className='text-2xl md:text-4xl lg:text-5xl text-center md:text-start'>
           Minh Tu Ngo
-          <span className='animate-wave'>👋</span>
+          <span className='wave'>👋</span>
         </p>
-        <p className='mt-6 lg:mt-10 mb-7 text-sm'>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo
-          modi omnis ratione consequuntur inventore necessitatibus perferendis
-          cumque dolores, quasi facilis soluta nulla! Fuga, voluptate quia
-          consectetur incidunt autem nisi quod!
+        <p className='mt-4 lg:mt-8 mb-7 text-lg font-semibold'>
+          &lt;&gt;
+          <TypeAnimation
+            cursor={true}
+            sequence={[
+              'I Love Bubble Tea.',
+              1000,
+              'But I Love Building Things For The Web More.',
+              1000,
+              '',
+            ]}
+            wrapper='span'
+            repeat={Infinity}
+          />
+          &lt;/&gt;
         </p>
         {/* buttons */}
         <div className='flex mt-5 justify-center md:justify-start'>
-            <Button href='/contact' className='mr-4'>
-              Let{"'"}s Connect
-            </Button>
+          <Button href='#contact' className='mr-4'>
+            Let{"'"}s Connect
+          </Button>
 
-            <Button href='/Minh_Tu_Ngo_Resume.pdf' variant='secondary'>
-              My Resume
-            </Button>
+          <Button href='/Minh_Tu_Ngo_Resume.pdf' variant='secondary'>
+            My Resume
+          </Button>
         </div>
       </div>
-      <SnowFall />
+      {/* <SnowFall /> */}
     </section>
   );
 };
