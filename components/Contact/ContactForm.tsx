@@ -1,13 +1,40 @@
-
-
+import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { FadeContainer } from '../../lib/FramerMotionVariants';
 import { Button } from '..';
-import { motion } from 'framer-motion';
-
-
-const handleSubmit = () => {};
 
 const ContactForm = () => {
+  const form = useRef<HTMLFormElement>(null);
+
+  console.log(process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    console.log(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+
+    e.preventDefault();
+
+    if (!form.current) return;
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        form.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+      .then(
+        (result) => {
+          alert('message sent successfully...');
+          console.log(result);
+
+          // console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <motion.form
       className='flex flex-col xs:p-3 s:p-4 rounded-lg'
@@ -15,7 +42,8 @@ const ContactForm = () => {
       whileInView='visible'
       variants={FadeContainer}
       viewport={{ once: true }}
-      onClick={handleSubmit}
+      onSubmit={handleSubmit}
+      ref={form}
     >
       <>
         <div className='w-full grid grid-cols-2 gap-6'>
@@ -86,7 +114,7 @@ const ContactForm = () => {
       </>
 
       <div className='flex items-center justify-center w-full'>
-        <Button href='/' className='flex items-center justify-center mt-6'>
+        <Button className='flex items-center justify-center mt-6'>
           Send Message
         </Button>
       </div>

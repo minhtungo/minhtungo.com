@@ -2,8 +2,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { HamFastFadeContainer } from '../../lib/FramerMotionVariants';
 
-
-
 const MobileMenu = ({
   links,
   handleClick,
@@ -22,7 +20,7 @@ const MobileMenu = ({
       <motion.nav className='mt-28 mx-8 flex flex-col'>
         {links.map((link, index) => {
           const navLink =
-            link.toLowerCase() === 'home' ? '/' : `/${link.toLowerCase()}`;
+            link.toLowerCase() === 'home' ? '/' : `#${link.toLowerCase()}`;
           return (
             <Link
               href={navLink}
