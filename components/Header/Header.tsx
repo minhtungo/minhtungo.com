@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
@@ -76,7 +74,7 @@ const Header = () => {
             animate='visible'
             variants={FromLeftVariant}
           >
-            <Logo className='hidden sm:inline-flex' />
+            <Logo className='hidden sm:inline-flex font-semibold text-lg' />
           </motion.div>
           {/* <div className='w-full sm:!hidden'>
           <p>Minh Tu Ngo</p>

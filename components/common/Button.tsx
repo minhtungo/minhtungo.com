@@ -10,6 +10,7 @@ interface ButtonProps
     AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
   href?: string;
+  disabled?: boolean;
 }
 
 const buttonClasses = cva('relative rounded-full inline-flex items-center', {
@@ -38,6 +39,7 @@ const buttonClasses = cva('relative rounded-full inline-flex items-center', {
 
 const Button = ({
   children,
+  disabled,
   href,
   variant,
   size,
@@ -47,6 +49,7 @@ const Button = ({
     return (
       <motion.div initial='hidden' animate='visible' variants={PopUp}>
         <button
+          disabled={disabled}
           className={buttonClasses({
             variant,
             size,

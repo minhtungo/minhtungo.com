@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { ToastContainer } from 'react-toastify';
+
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
 import { Title, AnimatedText } from '..';
@@ -71,6 +73,7 @@ const Contact = () => {
           <ContactForm />
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };

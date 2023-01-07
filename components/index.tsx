@@ -19,6 +19,8 @@ import Projects from './Project/Projects';
 import AnimatedDiv from './FramerMotion/AnimatedDiv';
 import AnimatedHeading from './FramerMotion/AnimatedHeading';
 import AnimatedText from './FramerMotion/AnimatedText';
+import { toastifySuccess, toastifyFailure } from './common/ToastMessage';
+import LoadingSpinner from './common/LoadingSpinner';
 
 export {
   Hero,
@@ -43,5 +45,8 @@ export {
   AnimatedDiv,
   AnimatedHeading,
   AnimatedText,
-  Icon
+  Icon,
+  toastifySuccess,
+  toastifyFailure,
+  LoadingSpinner,
 };

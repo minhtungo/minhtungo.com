@@ -1,10 +1,8 @@
 
 
 import * as THREE from 'three';
-import React, { useRef, Suspense } from 'react';
-import { useGLTF, OrbitControls } from '@react-three/drei';
+import { useGLTF } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
-import { Canvas } from '@react-three/fiber';
 
 type GLTFResult = GLTF & {
   nodes: {
