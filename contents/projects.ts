@@ -5,7 +5,7 @@ export const projects = [
     name: 'CineCity',
     tools: ['React', 'Redux', 'Express', 'NodeJS', 'MongoDB', 'Material UI', 'Firebase'],
     description:
-      'a movie web app including features such as the ability for users to add reviews, favorite movies, and change passwords and profile pictures.',
+      'A movie web app including features such as the ability for users to add reviews, favorite movies, and change passwords and profile pictures.',
     githubURL: 'https://github.com/minhtungo/Cine-City',
     previewURL: 'https://cine-city.vercel.app/',
   },

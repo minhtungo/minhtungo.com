@@ -88,7 +88,7 @@ const Project = ({ project }) => (
 
 const Projects = () => {
   return (
-    <section id='projects' className='mt-12 lg:mt-16 max-w-4xl mx-auto'>
+    <section id='projects' className='pt-12 lg:pt-16 max-w-4xl mx-auto'>
       <Title title='Projects' subtitle='My Work' />
       <div className='grid grid-cols-1 gap-4 mx-auto md:ml-[20%] xl:ml-[24%] -mt-4 lg:-mt-8'>
         {projects?.map((project) => (

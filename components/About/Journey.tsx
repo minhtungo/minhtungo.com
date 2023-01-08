@@ -1,5 +1,3 @@
-
-
 import { Disclosure, Transition } from '@headlessui/react';
 import { Title } from '..';
 import { BsMoonStars, BsSun } from 'react-icons/bs';
@@ -8,6 +6,7 @@ import { AiOutlineCaretDown } from 'react-icons/ai';
 import { motion } from 'framer-motion';
 
 import { PopUpFromBottom } from '../../lib/FramerMotionVariants';
+import { journeys } from '../../contents/journeys';
 
 interface JourneyProps {
   journey: {
@@ -20,54 +19,6 @@ interface JourneyProps {
     status?: string;
   };
 }
-
-const journeys = [
-  {
-    title: 'Looking for new opportunities',
-    description:
-      'I am currently seeking new opportunities and am open to exploring new challenges in my career.',
-    icon: 'developer',
-    color: 'bg-blue-600',
-    dark_color: 'dark:bg-green-900',
-    date: 'Sep 2022 – Oct 2022',
-    status: 'Present',
-  },
-  {
-    title: 'Volunteer - Web Developer',
-    description:
-      'Migrated the company’s legacy website to React and provided inputs for front-end development.',
-    icon: 'developer',
-    color: '',
-    dark_color: 'dark:bg-green-900',
-    date: 'Sep 2022 – Oct 2022',
-  },
-  {
-    title: 'Web Developer Intern',
-    description:
-      'Developed a platform that provides build and deploy services for web applications and websites, primarily contributing to the front end using Vue.',
-    icon: 'developer',
-    color: 'bg-primary-400',
-    dark_color: 'dark:bg-green-900',
-    date: 'Sep 2021 – Apr 2022',
-  },
-  {
-    title: 'Freelance Web Developer',
-    description:
-      'Built a website for a local restaurant with 500+ visitors per month using React and Bootstrap.',
-    icon: 'jobsearch',
-    color: 'bg-primary-400',
-    dark_color: 'dark:bg-green-900',
-    date: 'Sep 2021 – Oct 2021',
-  },
-  {
-    title: 'Graduated from St. Lawrence College',
-    description: 'Advanced Diploma in Computer Programmer Analyst.',
-    icon: 'jobsearch',
-    color: 'bg-primary-400',
-    dark_color: 'dark:bg-green-900',
-    date: 'Apr 2022',
-  },
-];
 
 const JourneyCard = ({ journey }: JourneyProps) => {
   return (
@@ -89,7 +40,10 @@ const JourneyCard = ({ journey }: JourneyProps) => {
           </>
         ) : null}
 
-        <BsMoonStars type={journey.icon} className='h-3 w-3 text-gray-600 dark:text-white' />
+        <BsMoonStars
+          type={journey.icon}
+          className='h-3 w-3 text-gray-600 dark:text-white'
+        />
       </span>
       <h3 className='flex m-0 w-full text-lg font-medium tracking-tight text-gray-800 dark:text-gray-300'>
         {journey.title}
@@ -112,7 +66,7 @@ const JourneyCard = ({ journey }: JourneyProps) => {
 
 const Journey = () => {
   return (
-    <section id='journey' className='max-w-4xl mx-auto mt-12 lg:mt-16'>
+    <section id='journey' className='max-w-4xl mx-auto pt-12 lg:pt-16'>
       <Title title='My Journey' subtitle='Learning and growing' />
       <ul className='relative mt-4 lg:mt-6 ml-3 border-l border-gray-400 dark:border-gray-800'>
         {journeys.slice(0, 2).map((item) => (

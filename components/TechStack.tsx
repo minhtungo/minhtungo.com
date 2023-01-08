@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const TechStack = () => {
   return (
-    <section id='technologies' className='mt-12 lg:mt-16'>
+    <section id='technologies' className='pt-12 lg:pt-16'>
       <Title
         title='Technologies'
         subtitle='Some Technologies I Have Used Recently'

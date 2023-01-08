@@ -1,14 +1,23 @@
-
 import { Suspense } from 'react';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
 import { Dog } from './common/Dog';
-
+import { useState, useEffect } from 'react';
 interface DogModelTypes {
   className?: string;
 }
 
 const DogModel = ({ className }: DogModelTypes) => {
+  const [autoRotate, setAutoRotate] = useState(false);
+  const [autoRotateSpeed, setAutoRotateSpeed] = useState(0.01);
+
+  useEffect(() => {
+    setAutoRotateSpeed(800);
+
+    setTimeout(() => {
+      setAutoRotateSpeed(2);
+    }, 800);
+  }, []);
   return (
     <Canvas
       camera={{ position: [15, 5, 18], fov: 30 }}
@@ -21,7 +30,7 @@ const DogModel = ({ className }: DogModelTypes) => {
       <Suspense fallback={null}>
         <Dog />
       </Suspense>
-      <OrbitControls autoRotate />
+      <OrbitControls autoRotate autoRotateSpeed={autoRotateSpeed} />
     </Canvas>
   );
 };

@@ -62,7 +62,7 @@ const RepoCard = ({ repo }: RepoProps) => {
 
 const Repo = () => {
   return (
-    <section id='repos' className='mt-12 lg:mt-16'>
+    <section id='repos' className='pt-12 lg:pt-16'>
       <div className='text-center'>
         <Title title='Repositories' subtitle='Other Noteworthy Projects' />
       </div>
