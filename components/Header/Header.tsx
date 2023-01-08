@@ -8,7 +8,6 @@ import { useTheme } from 'next-themes';
 
 import {
   FadeContainer,
-  PopUp,
   FromLeftVariant,
 } from '../../lib/FramerMotionVariants';
 
@@ -16,9 +15,14 @@ import { Logo, Container, Icon } from '..';
 import HamBurger from './Hamburger';
 import NavItem from './NavItem';
 import MobileMenu from './MobileMenu';
-// import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 
-const navigationRoutes: string[] = ['home', 'about', 'projects', 'contact'];
+const navigationRoutes: string[] = [
+  'home',
+  'about',
+  'journey',
+  'projects',
+  'contact',
+];
 
 const Header = () => {
   const navRef = useRef<HTMLDivElement>(null);
@@ -33,12 +37,22 @@ const Header = () => {
   const addShadowToNavbar = useCallback(() => {
     if (window.pageYOffset > 10) {
       navRef.current!.classList.add(
-        ...['shadow', 'backdrop-blur-xl', 'bg-transparent-whiter', 'dark:bg-transparent-black']
+        ...[
+          'shadow',
+          'backdrop-blur-xl',
+          'bg-transparent-whiter',
+          'dark:bg-transparent-black',
+        ]
       );
       control.start('visible');
     } else {
       navRef.current!.classList.remove(
-        ...['shadow', 'backdrop-blur-xl', 'bg-transparent-whiter', 'dark:bg-transparent-black']
+        ...[
+          'shadow',
+          'backdrop-blur-xl',
+          'bg-transparent-whiter',
+          'dark:bg-transparent-black',
+        ]
       );
       control.start('hidden');
     }
@@ -68,7 +82,7 @@ const Header = () => {
   };
 
   return (
-    <header className='fixed w-full top-0 z-50 print:hidden' ref={navRef}>
+    <header className='fixed w-full top-0 left-0 right-0 z-50' ref={navRef}>
       <Container className='flex items-center justify-between py-[12px]'>
         <HamBurger open={navOpen} handleClick={handleClick} />
         <AnimatePresence>

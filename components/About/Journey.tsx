@@ -23,14 +23,23 @@ interface JourneyProps {
 
 const journeys = [
   {
-    title: 'Volunteer - Web Developer',
+    title: 'Looking for new opportunities',
     description:
-      'Migrated the company’s legacy website to React and provided inputs for front-end development.',
+      'I am currently seeking new opportunities and am open to exploring new challenges in my career.',
     icon: 'developer',
     color: 'bg-blue-600',
     dark_color: 'dark:bg-green-900',
     date: 'Sep 2022 – Oct 2022',
     status: 'Present',
+  },
+  {
+    title: 'Volunteer - Web Developer',
+    description:
+      'Migrated the company’s legacy website to React and provided inputs for front-end development.',
+    icon: 'developer',
+    color: '',
+    dark_color: 'dark:bg-green-900',
+    date: 'Sep 2022 – Oct 2022',
   },
   {
     title: 'Web Developer Intern',
@@ -49,6 +58,14 @@ const journeys = [
     color: 'bg-primary-400',
     dark_color: 'dark:bg-green-900',
     date: 'Sep 2021 – Oct 2021',
+  },
+  {
+    title: 'Graduated from St. Lawrence College',
+    description: 'Advanced Diploma in Computer Programmer Analyst.',
+    icon: 'jobsearch',
+    color: 'bg-primary-400',
+    dark_color: 'dark:bg-green-900',
+    date: 'Apr 2022',
   },
 ];
 
@@ -97,7 +114,7 @@ const Journey = () => {
   return (
     <section id='journey' className='max-w-4xl mx-auto mt-12 lg:mt-16'>
       <Title title='My Journey' subtitle='Learning and growing' />
-      <ul className='relative mt-4 lg:mt-6 ml-3 border-l border-transparent-white dark:border-gray-700'>
+      <ul className='relative mt-4 lg:mt-6 ml-3 border-l border-gray-400 dark:border-gray-800'>
         {journeys.slice(0, 2).map((item) => (
           <li key={item.title}>
             <JourneyCard journey={item} />
