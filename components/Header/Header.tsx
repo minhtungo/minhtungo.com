@@ -6,10 +6,7 @@ import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 
 import { useTheme } from 'next-themes';
 
-import {
-  FadeContainer,
-  FromLeftVariant,
-} from '../../lib/FramerMotionVariants';
+import { FadeContainer, FromLeftVariant } from '../../lib/FramerMotionVariants';
 
 import { Logo, Container, Icon } from '..';
 import HamBurger from './Hamburger';
@@ -25,11 +22,40 @@ const navigationRoutes: string[] = [
 ];
 
 const Header = () => {
-  const navRef = useRef<HTMLDivElement>(null);
-  const { theme, setTheme } = useTheme();
+  const { systemTheme, theme, setTheme } = useTheme();
 
   const [navOpen, setNavOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    const currentTheme = theme === 'system' ? systemTheme : theme;
+    if (currentTheme === 'dark') {
+      setIsDarkMode(true);
+    } else {
+      setIsDarkMode(false);
+    }
+  }, [mounted])
+  
+
+  const renderThemeChanger = () => {
+    if (!mounted) return null;
+    return (
+      <DarkModeSwitch
+        checked={isDarkMode}
+        onChange={toggleDarkMode}
+        size={24}
+        moonColor='#FFD700'
+        sunColor='#FFD700'
+      />
+    );
+  };
 
   const control = useAnimation();
 
@@ -137,13 +163,7 @@ const Header = () => {
           </Icon>
           <Icon>
             {/* DarkMode Container */}
-            <DarkModeSwitch
-              checked={isDarkMode}
-              onChange={toggleDarkMode}
-              size={24}
-              sunColor='#FFD600'
-              moonColor='#FFD600'
-            />
+            {renderThemeChanger()}
           </Icon>
         </motion.div>
       </Container>
