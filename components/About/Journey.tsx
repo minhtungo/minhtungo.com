@@ -55,7 +55,7 @@ const journeys = [
 const JourneyCard = ({ journey }: JourneyProps) => {
   return (
     <motion.div
-      className='mb-4 ml-6 md:ml-8 rounded-lg border-2 shadow-lg p-4 px-6 bg-transparent-black border-transparent-white'
+      className='mb-4 ml-6 md:ml-8 rounded-lg border-1 dark:border-2 shadow-lg p-4 px-6 bg-transparent-whiter border-transparent-black dark:bg-transparent-black dark:border-transparent-white'
       initial='hidden'
       animate='visible'
       variants={PopUpFromBottom}
@@ -72,9 +72,9 @@ const JourneyCard = ({ journey }: JourneyProps) => {
           </>
         ) : null}
 
-        <BsMoonStars type={journey.icon} className='h-3 w-3 text-white' />
+        <BsMoonStars type={journey.icon} className='h-3 w-3 text-gray-600 dark:text-white' />
       </span>
-      <h3 className='flex m-0 w-full text-lg font-medium tracking-tight text-gray-200'>
+      <h3 className='flex m-0 w-full text-lg font-medium tracking-tight text-gray-800 dark:text-gray-300'>
         {journey.title}
 
         {journey.status ? (
@@ -86,7 +86,7 @@ const JourneyCard = ({ journey }: JourneyProps) => {
       <time className='text-sm font-normal leading-none text-gray-500 dark:text-gray-500'>
         {journey.date}
       </time>
-      <p className='text-sm text-gray-700 max-w-none dark:text-gray-400 my-1 '>
+      <p className='text-sm text-gray-600 dark:text-gray-400 max-w-none my-1 '>
         {journey.description}
       </p>
     </motion.div>

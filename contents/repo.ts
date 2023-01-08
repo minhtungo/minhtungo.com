@@ -18,6 +18,15 @@ export const repos = [
     githubURL: 'https://github.com/minhtungo/vaccine-management',
   },
   {
+    id: 3,
+    name: 'Crypto Tracker',
+    description:
+      'Stay up-to-date with daily live crypto prices, coin stats and market trends.',
+    tech: ['React', 'Firebase'],
+    liveURL: 'https://minh-crypto-tracker.netlify.app/',
+    githubURL: 'https://github.com/minhtungo/crypto-tracker-v2',
+  },
+  {
     id: 2,
     name: 'Portfolio v1',
     description: 'My portfolio v1.',
@@ -33,15 +42,7 @@ export const repos = [
     liveURL: 'https://phochopstix.ca/',
     githubURL: 'https://github.com/minhtungo/Pho-Chopstix',
   },
-  {
-    id: 3,
-    name: 'Crypto Tracker',
-    description:
-      'Stay up-to-date with daily live crypto prices, coin stats and market trends.',
-    tech: ['React', 'Firebase'],
-    liveURL: 'https://minh-crypto-tracker.netlify.app/',
-    githubURL: 'https://github.com/minhtungo/crypto-tracker-v2',
-  },
+
   {
     id: 3,
     name: 'Tech Shop',

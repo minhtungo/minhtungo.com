@@ -1,10 +1,10 @@
-
-
 // import LineGradient from './LineGradient';
 import { AnimatedHeading, AnimatedText } from '../';
 import classNames from 'classnames';
-import { FromLeftVariant, PopUpFromBottom } from '../../lib/FramerMotionVariants';
-
+import {
+  FromLeftVariant,
+  PopUpFromBottom,
+} from '../../lib/FramerMotionVariants';
 
 interface TitleProps {
   title: string;
@@ -15,11 +15,17 @@ interface TitleProps {
 const Title = ({ title, subtitle, className }: TitleProps) => {
   return (
     <div className={classNames('text-center mb-8 lg:mb-12', className)}>
-      <AnimatedHeading variants={FromLeftVariant} className='text-xl md:text-3xl lg:text-4xl font-medium lg:font-semibold mb-3 text-gray-200'>
+      <AnimatedHeading
+        variants={FromLeftVariant}
+        className='text-xl md:text-3xl lg:text-4xl font-medium lg:font-semibold mb-3'
+      >
         {title}
       </AnimatedHeading>
       {subtitle && (
-        <AnimatedText variants={PopUpFromBottom} className='text-blue-500 text-xs capitalize tracking-wider'>
+        <AnimatedText
+          variants={PopUpFromBottom}
+          className='text-blue-600 dark:text-blue-500 text-xs capitalize tracking-wider'
+        >
           {subtitle}
         </AnimatedText>
       )}

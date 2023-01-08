@@ -18,11 +18,10 @@ const buttonClasses = cva('relative rounded-full inline-flex items-center', {
     variant: {
       primary: [
         'bg-primary-gradient hover:text-shadow hover:shadow-primary transition-[shadow,text-shadow]',
-        '[&_.highlight]:ml-2',
+        '[&_.highlight]:ml-2 text-white dark:text-gray-100',
       ],
       secondary: [
-        'text-off-white bg-white bg-opacity-10 border border-transparent-white backdrop-filter-[12px] hover:bg-opacity-20 transition-colors ease-in',
-        '[&_.highlight]:bg-transparent-white [&_.highlight]:rounded-full [&_.highlight]:px-2 [&_.highlight:last-child]:ml-2 [&_.highlight:last-child]:-mr-2 [&_.highlight:first-child]:-ml-2 [&_.highlight:first-child]:mr-2',
+        'bg-white border-transparent-black bg-opacity-5 dark:bg-white dark:bg-opacity-10 border border-transparent-white backdrop-filter-[12px] hover:bg-opacity-20 dark:hover:bg-opacity-20 transition-colors ease-in text-gray-900 dark:text-gray-100',
       ],
     },
     size: {

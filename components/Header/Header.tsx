@@ -4,6 +4,8 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 
+import { useTheme } from 'next-themes';
+
 import {
   FadeContainer,
   PopUp,
@@ -20,9 +22,10 @@ const navigationRoutes: string[] = ['home', 'about', 'projects', 'contact'];
 
 const Header = () => {
   const navRef = useRef<HTMLDivElement>(null);
+  const { theme, setTheme } = useTheme();
 
   const [navOpen, setNavOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const control = useAnimation();
 
@@ -30,12 +33,12 @@ const Header = () => {
   const addShadowToNavbar = useCallback(() => {
     if (window.pageYOffset > 10) {
       navRef.current!.classList.add(
-        ...['shadow', 'backdrop-blur-xl', 'bg-transparent-black']
+        ...['shadow', 'backdrop-blur-xl', 'bg-transparent-whiter', 'dark:bg-transparent-black']
       );
       control.start('visible');
     } else {
       navRef.current!.classList.remove(
-        ...['shadow', 'backdrop-blur-xl', 'bg-transparent-black']
+        ...['shadow', 'backdrop-blur-xl', 'bg-transparent-whiter', 'dark:bg-transparent-black']
       );
       control.start('hidden');
     }
@@ -57,6 +60,11 @@ const Header = () => {
   const handleClick = () => {
     lockScroll();
     setNavOpen(!navOpen);
+  };
+
+  const toggleDarkMode = (checked: boolean) => {
+    setIsDarkMode(checked);
+    setTheme(checked ? 'dark' : 'light');
   };
 
   return (
@@ -93,11 +101,11 @@ const Header = () => {
             })}
           </motion.div>
         </motion.nav>
-        <motion.div className='flex items-center space-x-4'>
+        <motion.div className='flex items-center space-x-4 text-gray-500 dark:text-gray-300'>
           <Icon>
             <Link
               href='https://github.com/minhtungo'
-              className='text-gray-400 hover:text-blue-500'
+              className='hover:text-blue-500'
               target='_blank'
             >
               <FiGithub className='w-5 h-5' />
@@ -107,7 +115,7 @@ const Header = () => {
           <Icon>
             <Link
               href='https://www.linkedin.com/in/minhtungo/'
-              className='text-gray-400 hover:text-blue-500'
+              className='hover:text-blue-500'
               target='_blank'
             >
               <FiLinkedin className='w-5 h-5' />
@@ -117,10 +125,10 @@ const Header = () => {
             {/* DarkMode Container */}
             <DarkModeSwitch
               checked={isDarkMode}
-              onChange={() => setIsDarkMode(!isDarkMode)}
+              onChange={toggleDarkMode}
               size={24}
-              sunColor='rgb(156 163 175)'
-              moonColor='rgb(156 163 175'
+              sunColor='#FFD600'
+              moonColor='#FFD600'
             />
           </Icon>
         </motion.div>

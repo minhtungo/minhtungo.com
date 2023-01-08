@@ -4,6 +4,10 @@ const techStack = [
     src: '/static/images/stack/react.svg',
   },
   {
+    name: 'Redux',
+    src: '/static/images/stack/redux.svg',
+  },
+  {
     name: 'Node.js',
     src: '/static/images/stack/nodejs.svg',
   },

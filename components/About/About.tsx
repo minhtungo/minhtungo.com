@@ -20,14 +20,11 @@ const About = () => {
         <div className='flex flex-col items-center text-center lg:items-start lg:text-left w-full lg:w-2/3'>
           <AnimatedDiv variants={OpacityVariant}>
             <div className='flex flex-col'>
-              <h3 className='text-lg md:text-xl lg:text-2xl font-medium lg:font-semibold mb-2 text-gray-200'>
+              <h3 className='text-lg md:text-xl lg:text-2xl font-medium lg:font-semibold mb-2 text-gray-700 dark:text-gray-200'>
                 Hi, I{"'"}m Minh Tu Ngo <span className='wave'>👋</span>
               </h3>
-              {/* <p className='text-sm md:text-base lg:text-lg mb-4 text-gray-200'>
-              Web Developer
-            </p> */}
               <hr className='mb-3 border-b border-transparent-white' />
-              <p className='text-sm mb-4 text-gray-400 leading-relaxed'>
+              <p className='text-sm mb-4 text-gray-600 dark:text-gray-400 leading-relaxed'>
                 From the moment I produced {'"'}Hello World{'"'} in the console
                 of my first application, I knew I was hooked into the world of
                 web development. It has never been {'"'}just a job{'"'} for me,
@@ -36,7 +33,7 @@ const About = () => {
                 started with a simple
                 {'"'}Hello World{'"'} has become a passion.
               </p>
-              <p className='text-sm mb-4 text-gray-400 leading-relaxed'>
+              <p className='text-sm mb-4 text-gray-600 dark:text-gray-400 leading-relaxed'>
                 I am a web developer with experience building web apps with
                 HTML, CSS, Javascript, React, Nodes.js, Express and MongoDB. I
                 am focused on being a valuable part of any team I am on and

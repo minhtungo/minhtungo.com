@@ -18,7 +18,7 @@ interface RepoProps {
 }
 const RepoCard = ({ repo }: RepoProps) => {
   return (
-    <div className='p-5 bg-transparent-black hover:text-shadow hover:shadow-primary h-full'>
+    <div className='p-5 bg-transparent-whiter dark:bg-transparent-black hover:text-shadow hover:shadow-primary h-full'>
       <div className='flex items-center mb-3'>
         <div className='flex items-center space-x-1'>
           <AiOutlineFolder className='text-blue-500 text-2xl' />
@@ -30,7 +30,7 @@ const RepoCard = ({ repo }: RepoProps) => {
           <Icon>
             <Link
               href={repo.githubURL}
-              className='text-gray-400 hover:text-blue-500'
+              className='text-gray-500 dark:text-gray-400 hover:text-blue-500'
             >
               <FiGithub className='' />
             </Link>
@@ -39,7 +39,7 @@ const RepoCard = ({ repo }: RepoProps) => {
             <Icon>
               <Link
                 href={repo.liveURL}
-                className='hover:text-blue-500 text-gray-400'
+                className='hover:text-blue-500 text-gray-500 dark:text-gray-400'
               >
                 <FiExternalLink />
               </Link>
@@ -47,7 +47,7 @@ const RepoCard = ({ repo }: RepoProps) => {
           )}
         </div>
       </div>
-      <p className='my-3 text-base font-normal text-gray-400'>
+      <p className='my-3 text-base font-normal text-gray-600 dark:text-gray-400'>
         {repo.description}
       </p>
       {/* Tech Stack */}

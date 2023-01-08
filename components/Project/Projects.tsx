@@ -37,8 +37,10 @@ const Project = ({ project }) => (
   <div className='card'>
     <ProjectImage src={project.image} alt={project.name} />
     <div className={`flex flex-col justify-start gap-3`}>
-      <h1 className='font-bold capitalize text-gray-200'>{project.name}</h1>
-      <p className='text-sm text-gray-400 dark:text-neutral-400'>
+      <h1 className='font-bold capitalize text-gray-800 dark:text-gray-300'>
+        {project.name}
+      </h1>
+      <p className='text-sm text-gray-600 dark:text-gray-400'>
         {project.description}
       </p>
       <div className='flex items-center gap-1 flex-wrap'>
@@ -60,7 +62,7 @@ const Project = ({ project }) => (
             title='Source Code on GitHub'
             target='_blank'
             rel='noopener noreferrer'
-            className='text-gray-400 hover:text-blue-500'
+            className='text-gray-600 dark:text-gray-400 hover:text-blue-500'
           >
             <FiGithub className='w-5 h-5 hover:scale-110 active:scale-90 transition-all' />
           </Link>
@@ -73,7 +75,7 @@ const Project = ({ project }) => (
               title='Live Preview'
               target='_blank'
               rel='noopener noreferrer'
-              className='text-gray-400 hover:text-blue-500'
+              className='text-gray-600 dark:text-gray-400 hover:text-blue-500'
             >
               <FiExternalLink className='w-5 h-5 hover:scale-110 active:scale-90 transition-all' />
             </Link>

@@ -18,13 +18,13 @@ const Contact = () => {
             <div>
               <AnimatedText
                 variants={PopUpFromBottom}
-                className='text-2xl font-semibold text-gray-200'
+                className='text-2xl font-semibold text-gray-800 dark:text-gray-300'
               >
                 Get In Touch
               </AnimatedText>
               <AnimatedText
                 variants={PopUpFromBottom}
-                className='mt-2 text-base font-light text-gray-400'
+                className='mt-2 text-base font-light text-gray-700 dark:text-gray-400'
               >
                 I{"'"}m always open to new projects and opportunities. Whether
                 you
@@ -34,20 +34,28 @@ const Contact = () => {
             </div>
             {/* Info */}
             <div className='inline-flex flex-col mt-12 mb-6 space-y-4'>
-              <div className='flex flex-row items-center space-x-6 hover:text-blue-500'>
-                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-transparent-white'>
+              <Link
+                href='mailto:mn.minhtungo@gmail.com'
+                className='flex flex-row items-center space-x-6 hover:text-blue-500'
+              >
+                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-transparent-whiter dark:bg-transparent-white'>
                   <MdOutlineEmail className='w-4 h-4 ' />
                 </div>
-                <p className='text-sm font-light text-gray-200'>
+                <p className='text-sm font-light text-gray-800 dark:text-gray-300'>
                   mn.minhtungo@gmail.com
                 </p>
-              </div>
-              <div className='flex flex-row items-center space-x-6 hover:text-blue-500'>
-                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-transparent-white'>
+              </Link>
+              <Link
+                href='tel:613-453-6449'
+                className='flex flex-row items-center space-x-6 hover:text-blue-500'
+              >
+                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-transparent-whiter dark:bg-transparent-white'>
                   <MdOutlinePhone className='w-4 h-4' />
                 </div>
-                <p className='text-sm font-light text-gray-200'>613-453-6449</p>
-              </div>
+                <p className='text-sm font-light text-gray-800 dark:text-gray-300'>
+                  613-453-6449
+                </p>
+              </Link>
             </div>
             {/* Info */}
 
@@ -58,14 +66,14 @@ const Contact = () => {
                 target='_blank'
                 className='flex items-center justify-center w-10 h-10 rounded-full cursor-pointer hover:bg-transparent-white'
               >
-                <FiGithub className='w-5 h-5 text-gray-200' />
+                <FiGithub className='w-5 h-5 text-gray-600 dark:text-gray-300' />
               </Link>
               <Link
                 href='https://www.linkedin.com/in/minhtungo'
                 target='_blank'
                 className='flex items-center justify-center w-10 h-10 rounded-full cursor-pointer hover:bg-transparent-white'
               >
-                <FiLinkedin className='w-5 h-5 text-gray-200' />
+                <FiLinkedin className='w-5 h-5 text-gray-600 dark:text-gray-300' />
               </Link>
             </div>
             {/* Social */}
