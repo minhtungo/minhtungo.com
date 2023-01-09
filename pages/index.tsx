@@ -1,4 +1,7 @@
 import Head from 'next/head';
+// import { previewData } from 'next/headers';
+import { groq } from 'next-sanity';
+import { PreviewSuspense } from 'next-sanity/preview';
 import { Inter } from '@next/font/google';
 
 import {
@@ -12,10 +15,23 @@ import {
   Header,
   Footer,
 } from '../components';
+import { client } from '../lib/sanity.client';
 
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home() {
+const query = groq`
+  *[_type == "project"] {
+    ...,
+  } 
+`;
+
+export const getStaticProps = async () => {
+  const data = await client.fetch(query);
+
+  return { props: { data } };
+};
+
+export default function Home({ data }: any) {
   return (
     <>
       <Head>
@@ -30,7 +46,7 @@ export default function Home() {
           <Hero />
           <About />
           <TechStack />
-          <Projects />
+          <Projects projects={data} />
           <Repo />
           <Contact />
         </Container>

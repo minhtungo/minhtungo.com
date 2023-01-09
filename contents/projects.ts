@@ -15,17 +15,17 @@ export const projects = [
     name: 'Kanban',
     tools: ['React', 'Express', 'NodeJS', 'MongoDB', 'Material UI'],
     description:
-      'A Kanban app that features drag and drop, allowing users to easily organize and prioritize tasks',
+      'A Kanban app that features drag and drop, allowing users to easily organize and prioritize tasks.',
     githubURL: 'https://github.com/minhtungo/kanban/',
     previewURL: 'https://minh-kanban.netlify.app/',
   },
   {
     id: 3,
     image: '/static/images/projects/job-tracker.png',
-    name: 'Kanban',
-    tools: ['React', 'Express', 'NodeJS', 'MongoDB', 'Material UI'],
+    name: 'Job Tracker',
+    tools: ['React', 'Express', 'NodeJS', 'MongoDB'],
     description:
-      'A web app for job seekers to keep track of job applications during the job search/',
+      'A web app for job seekers to keep track of job applications during the job search.',
     githubURL: 'https://github.com/minhtungo/job-tracking-app',
     previewURL: 'https://minh-job-tracker.herokuapp.com/',
   },

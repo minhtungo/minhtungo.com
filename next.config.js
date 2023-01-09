@@ -8,6 +8,9 @@ const nextConfig = {
     // !! WARN !!
     ignoreBuildErrors: true,
   },
+  images: {
+    domains: ['images.unsplash.com', 'cdn.sanity.io'],
+  },
 };
 
 module.exports = nextConfig;
