@@ -3,7 +3,7 @@ import Container from './common/Container';
 import Header from './Header/Header';
 import Logo from './common/Logo';
 import Button from './common/Button';
-import Repo from './Repo';
+import Repo from './Repo/Repos';
 import Footer from './Footer';
 import Contact from './Contact/Contact';
 import DogModel from './DogModel';

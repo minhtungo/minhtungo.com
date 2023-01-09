@@ -11,6 +11,7 @@ interface ButtonProps
   children: React.ReactNode;
   href?: string;
   disabled?: boolean;
+  onClick?: () => void;
 }
 
 const buttonClasses = cva('relative rounded-full inline-flex items-center', {
@@ -42,6 +43,7 @@ const Button = ({
   href,
   variant,
   size,
+  onClick,
   ...props
 }: ButtonProps) => {
   if (!href)
@@ -49,6 +51,7 @@ const Button = ({
       <motion.div initial='hidden' animate='visible' variants={PopUp}>
         <button
           disabled={disabled}
+          onClick={onClick}
           className={buttonClasses({
             variant,
             size,
@@ -63,7 +66,7 @@ const Button = ({
     <motion.div initial='hidden' animate='visible' variants={PopUp}>
       <Link
         className={buttonClasses({ variant, size, className: props.className })}
-        href={href}
+        href={href} onClick={onClick}
       >
         {children}
       </Link>

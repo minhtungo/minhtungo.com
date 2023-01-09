@@ -1,4 +1,6 @@
 import { createClient } from 'next-sanity';
+import { groq } from 'next-sanity';
+
 
 export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
@@ -10,3 +12,14 @@ export const client = createClient({
   apiVersion,
   useCdn: false,
 });
+
+  export const projectQuery = groq`
+  *[_type == "project"] {
+    ...,
+  } 
+`;
+  export const repoQuery = groq`
+  *[_type == "repo"] {
+    ...,
+  } 
+`;

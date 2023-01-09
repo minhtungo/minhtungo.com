@@ -1,5 +1,3 @@
-
-
 import { motion } from 'framer-motion';
 import { Variants } from 'framer-motion';
 
@@ -19,6 +17,7 @@ export default function AnimatedDiv({
   return (
     <motion.div
       initial='hidden'
+      animate='visible'
       whileInView='visible'
       viewport={{ once: !infinity }}
       variants={variants}

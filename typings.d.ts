@@ -7,9 +7,17 @@ type Base = {
 };
 
 interface Project extends Base {
+  name: string;
   description: string;
   image: Image;
+  githubURL: string;
+  liveURL: string;
+  tools: string[];
+}
+
+interface Repo extends Base {
   name: string;
+  description: string;
   githubURL: string;
   liveURL: string;
   tools: string[];
