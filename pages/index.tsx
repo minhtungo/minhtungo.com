@@ -1,5 +1,7 @@
 import Head from 'next/head';
 import { Inter } from '@next/font/google';
+import ScrollToTop from 'react-scroll-to-top';
+import {BiArrowToTop} from 'react-icons/bi';
 
 import {
   Hero,
@@ -11,21 +13,29 @@ import {
   Projects,
   Header,
   Footer,
+  Journey
 } from '../components';
-import { client, projectQuery, repoQuery } from '../lib/sanity.client';
+import { client, projectQuery, repoQuery, journeyQuery } from '../lib/sanity.client';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const getStaticProps = async () => {
-  const [projects, repos] = await Promise.all([
+  const [projects, repos, journeys] = await Promise.all([
     await client.fetch(projectQuery),
     await client.fetch(repoQuery),
+    await client.fetch(journeyQuery),
   ]);
 
-  return { props: { projects, repos } };
+  return { props: { projects, repos, journeys } };
 };
 
-export default function Home({ projects, repos }: any) {
+interface HomeProps {
+  projects: Project[],
+  repos: Repo[],
+  journeys: Journey[]
+}
+
+export default function Home({ projects, repos, journeys }: HomeProps) {
   return (
     <>
       <Head>
@@ -39,12 +49,18 @@ export default function Home({ projects, repos }: any) {
         <Container>
           <Hero />
           <About />
+          <Journey journeys={journeys} />
           <TechStack />
           <Projects projects={projects} />
           <Repo repos={repos} />
           <Contact />
         </Container>
         <Footer />
+        <ScrollToTop
+          smooth
+          className='!rounded-full bg-primary-gradient'
+          component={<BiArrowToTop className='mx-auto h-6 w-6 text-white' />}
+        />
       </main>
     </>
   );

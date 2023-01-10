@@ -11,7 +11,7 @@ const MobileMenu = ({
 }) => {
   return (
     <motion.div
-      className='absolute font-normal bg-transparent-whiter dark:bg-transparent-black w-screen h-screen top-0 left-0 z-10 sm:hidden'
+      className='absolute font-normal bg-transparent-background-white dark:bg-transparent-blacker w-screen h-screen top-0 left-0 z-10 sm:hidden'
       variants={HamFastFadeContainer}
       initial='hidden'
       animate='visible'
@@ -26,7 +26,7 @@ const MobileMenu = ({
               href={navLink}
               key={`mobileNav-${index}`}
               onClick={handleClick}
-              className='border-b border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-100 font-semibold flex w-auto py-4 capitalize text-base cursor-pointer'
+              className='border-b border-gray-300 dark:border-gray-700 font-semibold flex w-auto py-4 capitalize text-base cursor-pointer'
             >
               <motion.p>{link === 'rss' ? link.toUpperCase() : link}</motion.p>
             </Link>

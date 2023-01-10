@@ -41,8 +41,7 @@ const Header = () => {
     } else {
       setIsDarkMode(false);
     }
-  }, [mounted])
-  
+  }, [mounted]);
 
   const renderThemeChanger = () => {
     if (!mounted) return null;
@@ -130,18 +129,18 @@ const Header = () => {
         </Link>
         {/* Top Nav list */}
         <motion.nav className='hidden sm:flex z-10 md:inset-0 md:justify-center'>
-          <motion.div
+          <motion.ul
             initial='hidden'
             animate='visible'
             variants={FadeContainer}
             className='flex items-center md:gap-2'
           >
             {navigationRoutes.map((link, index) => {
-              return <NavItem key={index} href={`${link}`} text={link} />;
+              return <li key={index}><NavItem  href={`${link}`} text={link} /></li> 
             })}
-          </motion.div>
+          </motion.ul>
         </motion.nav>
-        <motion.div className='flex items-center space-x-4 text-gray-500 dark:text-gray-300'>
+        <motion.div className='flex items-center space-x-4 text-gray-600 dark:text-gray-300'>
           <Icon>
             <Link
               href='https://github.com/minhtungo'

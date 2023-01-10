@@ -10,7 +10,7 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
   return (
     <div
       className={classNames(
-        'rounded-lg shadow-xl bg-transparent-black text-off-white',
+        'rounded-lg shadow-xl bg-transparent-background-black text-off-white',
         className
       )}
     >

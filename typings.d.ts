@@ -23,6 +23,15 @@ interface Repo extends Base {
   tools: string[];
 }
 
+interface Journey extends Base {
+  title: string;
+  description: string;
+  icon: string;
+  color: string;
+  date: string;
+  status: string;
+}
+
 interface Image {
   _type: 'image';
   asset: Reference;

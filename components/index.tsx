@@ -21,6 +21,7 @@ import AnimatedHeading from './FramerMotion/AnimatedHeading';
 import AnimatedText from './FramerMotion/AnimatedText';
 import { toastifySuccess, toastifyFailure } from './common/ToastMessage';
 import LoadingSpinner from './common/LoadingSpinner';
+import Journey from './Journey/Journey';
 
 export {
   Hero,
@@ -49,4 +50,5 @@ export {
   toastifySuccess,
   toastifyFailure,
   LoadingSpinner,
+  Journey
 };

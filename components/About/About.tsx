@@ -2,7 +2,6 @@
 import {motion} from 'framer-motion';
 import { Title, CodeSnippet, Button, AnimatedDiv } from '..';
 import { OpacityVariant, PopUpFromBottom } from '../../lib/FramerMotionVariants';
-import Journey from './Journey';
 
 const About = () => {
   return (
@@ -48,7 +47,6 @@ const About = () => {
           <Button href='/'>Resume</Button>
         </div>
       </div>
-      <Journey />
     </section>
   );
 };
