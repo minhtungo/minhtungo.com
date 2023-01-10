@@ -8,10 +8,16 @@ interface JourneyCardProps {
 }
 
 const JourneyCard = ({ journey }: JourneyCardProps) => {
+  const bgColor =
+    journey.icon === 'Work'
+      ? 'bg-purple-500'
+      : journey.icon === 'Graduate'
+      ? 'bg-indigo-500'
+      : 'bg-blue-500';
   return (
     <div className='mb-4 ml-6 md:ml-8 rounded-lg border-1 dark:border-2 shadow-lg p-4 px-6 bg-transparent-whiter border-transparent-black dark:bg-transparent-black dark:border-transparent-white'>
       <span
-        className={`absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full text-black ${journey.color} ring-1 ring-transparent-black dark:ring-gray-700`}
+        className={`absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full text-black ${bgColor} ring-1 ring-transparent-black dark:ring-gray-700`}
       >
         {journey.status ? (
           <>

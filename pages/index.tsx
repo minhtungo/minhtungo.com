@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Inter } from '@next/font/google';
 import ScrollToTop from 'react-scroll-to-top';
-import {BiArrowToTop} from 'react-icons/bi';
+import { BiArrowToTop } from 'react-icons/bi';
 
 import {
   Hero,
@@ -13,9 +13,14 @@ import {
   Projects,
   Header,
   Footer,
-  Journey
+  Journey,
 } from '../components';
-import { client, projectQuery, repoQuery, journeyQuery } from '../lib/sanity.client';
+import {
+  client,
+  projectQuery,
+  repoQuery,
+  journeyQuery,
+} from '../lib/sanity.client';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,13 +31,13 @@ export const getStaticProps = async () => {
     await client.fetch(journeyQuery),
   ]);
 
-  return { props: { projects, repos, journeys } };
+  return { props: { projects, repos, journeys }, revalidate: 60 * 60 };
 };
 
 interface HomeProps {
-  projects: Project[],
-  repos: Repo[],
-  journeys: Journey[]
+  projects: Project[];
+  repos: Repo[];
+  journeys: Journey[];
 }
 
 export default function Home({ projects, repos, journeys }: HomeProps) {
