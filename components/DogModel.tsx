@@ -20,8 +20,9 @@ const DogModel = ({ className }: DogModelTypes) => {
   }, []);
   return (
     <Canvas
-      camera={{ position: [15, 9, 18], fov: 27 }}
+      camera={{ position: [15, 8, 18], fov: 27 }}
       style={{ width: '100%', height: '100%' }}
+      className='!absolute left-0 md:left-[10px] lg:left-[70px] xl:left-[95px]'
     >
       <pointLight position={[5, 5, 5]} intensity={0.5} />
       <pointLight position={[-3, -3, 2]} intensity={0.5} />

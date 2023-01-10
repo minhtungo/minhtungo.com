@@ -15,7 +15,7 @@ interface MarqueesProps {
 
 const Marquees: FC<MarqueesProps> = ({
   className = '',
-  speed = 33,
+  speed = 35,
   style = {},
   pauseOnHover = false,
   gradient = false,
