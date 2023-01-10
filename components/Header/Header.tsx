@@ -67,6 +67,9 @@ const Header = () => {
           'backdrop-blur-xl',
           'bg-transparent-whiter',
           'dark:bg-transparent-black',
+          'border-b',
+          'border-gray-200',
+          'dark:border-transparent-white'
         ]
       );
       control.start('visible');
@@ -77,6 +80,9 @@ const Header = () => {
           'backdrop-blur-xl',
           'bg-transparent-whiter',
           'dark:bg-transparent-black',
+          'border-b',
+          'border-gray-200',
+          'dark:border-transparent-white'
         ]
       );
       control.start('hidden');
@@ -107,7 +113,10 @@ const Header = () => {
   };
 
   return (
-    <header className='fixed w-full top-0 left-0 right-0 z-50' ref={navRef}>
+    <header
+      className='fixed w-full top-0 left-0 right-0 z-50 backdrop-filter'
+      ref={navRef}
+    >
       <Container className='flex items-center justify-between py-[12px]'>
         <HamBurger open={navOpen} handleClick={handleClick} />
         <AnimatePresence>
@@ -136,7 +145,11 @@ const Header = () => {
             className='flex items-center md:gap-2'
           >
             {navigationRoutes.map((link, index) => {
-              return <li key={index}><NavItem  href={`${link}`} text={link} /></li> 
+              return (
+                <li key={index}>
+                  <NavItem href={`${link}`} text={link} />
+                </li>
+              );
             })}
           </motion.ul>
         </motion.nav>
