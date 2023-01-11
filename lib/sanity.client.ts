@@ -26,7 +26,7 @@ export const repoQuery = groq`
 export const journeyQuery = groq`
   *[_type == "journey"] {
     ...,
-  } | order(_createdAt asc)
+  } | order(_createdAt desc)
 `;
 
 export const resumeQuery = groq`
