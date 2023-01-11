@@ -23,16 +23,16 @@ const RepoCard = ({ repo }: RepoProps) => {
               href={repo.githubURL}
               className='text-gray-500 dark:text-gray-400 hover:text-blue-500'
             >
-              <FiGithub className='' />
+              <FiGithub className='hover:text-blue-500' />
             </Link>
           </Icon>
           {repo.liveURL && (
             <Icon>
               <Link
                 href={repo.liveURL}
-                className='hover:text-blue-500 text-gray-500 dark:text-gray-400'
+                className=' text-gray-500 dark:text-gray-400'
               >
-                <FiExternalLink />
+                <FiExternalLink className='hover:text-blue-500'/>
               </Link>
             </Icon>
           )}

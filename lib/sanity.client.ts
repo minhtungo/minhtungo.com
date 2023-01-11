@@ -9,7 +9,7 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: false,
+  useCdn: true,
 });
 
 export const projectQuery = groq`
@@ -20,11 +20,17 @@ export const projectQuery = groq`
 export const repoQuery = groq`
   *[_type == "repo"] {
     ...,
-  } 
+  } | order(order asc, _createdAt asc)
 `;
 
 export const journeyQuery = groq`
   *[_type == "journey"] {
     ...,
-  } | order(_createdAt desc)
+  } | order(_createdAt asc)
+`;
+
+export const resumeQuery = groq`
+  *[_type == "resume"] {
+    "resume": resume.asset->url
+  }
 `;

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Inter } from '@next/font/google';
+import { Inter, Roboto, Roboto_Mono } from '@next/font/google';
 import ScrollToTop from 'react-scroll-to-top';
 import { BiArrowToTop } from 'react-icons/bi';
 
@@ -20,27 +20,40 @@ import {
   projectQuery,
   repoQuery,
   journeyQuery,
+  resumeQuery,
 } from '../lib/sanity.client';
 
 const inter = Inter({ subsets: ['latin'] });
 
+
+
 export const getStaticProps = async () => {
-  const [projects, repos, journeys] = await Promise.all([
+  const [projects, repos, journeys, resume] = await Promise.all([
     await client.fetch(projectQuery),
     await client.fetch(repoQuery),
     await client.fetch(journeyQuery),
+    await client.fetch(resumeQuery),
   ]);
-
-  return { props: { projects, repos, journeys }, revalidate: 60 * 60 };
+  const resumeURL = resume[0].resume;
+  return {
+    props: { projects, repos, journeys, resumeURL },
+    revalidate: 60 * 60,
+  };
 };
 
 interface HomeProps {
   projects: Project[];
   repos: Repo[];
   journeys: Journey[];
+  resumeURL: string;
 }
 
-export default function Home({ projects, repos, journeys }: HomeProps) {
+export default function Home({
+  projects,
+  repos,
+  journeys,
+  resumeURL,
+}: HomeProps) {
   return (
     <>
       <Head>
@@ -52,8 +65,8 @@ export default function Home({ projects, repos, journeys }: HomeProps) {
       <main>
         <Header />
         <Container>
-          <Hero />
-          <About />
+          <Hero resumeURL={resumeURL} />
+          <About resumeURL={resumeURL} />
           <Journey journeys={journeys} />
           <TechStack />
           <Projects projects={projects} />

@@ -8,7 +8,11 @@ const LazyDogModel = dynamic(() => import('../components/DogModel'), {
   loading: () => <ModelLoader />,
 });
 
-const Hero = () => {
+interface HeroProps {
+  resumeURL: string;
+}
+
+const Hero = ({ resumeURL }: HeroProps) => {
   return (
     <section
       id='home'
@@ -47,7 +51,13 @@ const Hero = () => {
             Let{"'"}s Connect
           </Button>
 
-          <Button href='/Minh_Tu_Ngo_Resume.pdf' variant='secondary'>
+          <Button
+            href={
+              'https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
+            }
+            target='_blank'
+            variant='secondary'
+          >
             My Resume
           </Button>
         </div>

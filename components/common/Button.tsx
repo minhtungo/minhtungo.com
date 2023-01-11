@@ -66,7 +66,7 @@ const Button = ({
     <motion.div initial='hidden' animate='visible' variants={PopUp}>
       <Link
         className={buttonClasses({ variant, size, className: props.className })}
-        href={href} onClick={onClick}
+        href={href} onClick={onClick} target='_blank'
       >
         {children}
       </Link>

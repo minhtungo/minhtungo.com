@@ -2,21 +2,23 @@
 import {motion} from 'framer-motion';
 import { Title, CodeSnippet, Button, AnimatedDiv } from '..';
 import { OpacityVariant, PopUpFromBottom } from '../../lib/FramerMotionVariants';
-
-const About = () => {
+interface AboutProps {
+  resumeURL: string;
+}
+const About = ({resumeURL}: AboutProps) => {
   return (
     <section id='about'>
       <Title title='About Me' subtitle='Introduction' />
-      <div className='flex flex-col lg:flex-row gap-12 lg:gap-20'>
+      <div className='flex flex-col lg:flex-row gap-10 lg:gap-18'>
         <motion.div
           initial='hidden'
           animate='visible'
           variants={PopUpFromBottom}
           className='w-full lg:w-1/3'
         >
-          <CodeSnippet className='md:mx-auto lg:mx-0l' />
+          <CodeSnippet className='md:mx-auto lg:mx-0 w-full' />
         </motion.div>
-        <div className='flex flex-col items-center text-center lg:items-start lg:text-left w-full lg:w-2/3'>
+        <div className='flex flex-col items-center text-center lg:items-start lg:text-left w-full lg:w-3/5'>
           <AnimatedDiv variants={OpacityVariant}>
             <div className='flex flex-col'>
               <h3 className='text-lg md:text-xl lg:text-2xl font-medium lg:font-semibold mb-2 text-gray-700 dark:text-gray-200'>
@@ -44,7 +46,13 @@ const About = () => {
               </p>
             </div>
           </AnimatedDiv>
-          <Button href='/'>Resume</Button>
+          <Button
+            href={
+              'https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
+            }
+          >
+            My Resume
+          </Button>
         </div>
       </div>
     </section>

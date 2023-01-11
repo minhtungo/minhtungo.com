@@ -17,7 +17,7 @@ const Title = ({ title, subtitle, className }: TitleProps) => {
     <div className={classNames('text-center mb-8 lg:mb-12', className)}>
       <AnimatedHeading
         variants={FromLeftVariant}
-        className='text-xl md:text-3xl lg:text-4xl font-medium lg:font-semibold mb-3'
+        className='text-2xl md:text-3xl lg:text-4xl font-medium lg:font-semibold mb-3'
       >
         {title}
       </AnimatedHeading>

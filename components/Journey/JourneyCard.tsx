@@ -31,7 +31,7 @@ const JourneyCard = ({ journey }: JourneyCardProps) => {
         ) : null}
         <IconHelper type={journey.icon} className='h-4 w-4 z-10' />
       </span>
-      <h3 className='flex m-0 w-full text-lg font-medium tracking-tight text-gray-800 dark:text-gray-300'>
+      <h3 className='flex m-0 w-full text-base lg:text-lg font-medium tracking-tight text-gray-800 dark:text-gray-300'>
         {journey.title}
 
         {journey.status ? (

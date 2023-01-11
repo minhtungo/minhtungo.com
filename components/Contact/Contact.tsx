@@ -18,13 +18,13 @@ const Contact = () => {
             <div>
               <AnimatedText
                 variants={PopUpFromBottom}
-                className='text-2xl font-semibold text-gray-800 dark:text-gray-300'
+                className='text-lg md:text-xl lg:text-2xl font-semibold text-gray-800 dark:text-gray-300'
               >
                 Get In Touch
               </AnimatedText>
               <AnimatedText
                 variants={PopUpFromBottom}
-                className='mt-2 text-base font-light text-gray-700 dark:text-gray-400'
+                className='mt-2 text-sm md:text-base font-light text-gray-700 dark:text-gray-400'
               >
                 I{"'"}m always open to new projects and opportunities. Whether
                 you
