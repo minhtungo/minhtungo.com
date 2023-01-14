@@ -15,7 +15,7 @@ export const client = createClient({
 export const projectQuery = groq`
   *[_type == "project"] {
     ...,
-  } 
+  } | order(order asc, _createdAt asc)
 `;
 export const repoQuery = groq`
   *[_type == "repo"] {
