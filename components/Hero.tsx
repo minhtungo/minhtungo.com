@@ -57,6 +57,7 @@ const Hero = ({ resumeURL }: HeroProps) => {
             }
             target='_blank'
             variant='secondary'
+            newTab
           >
             My Resume
           </Button>

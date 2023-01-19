@@ -12,6 +12,7 @@ interface ButtonProps
   href?: string;
   disabled?: boolean;
   onClick?: () => void;
+  newTab?: boolean;
 }
 
 const buttonClasses = cva('relative rounded-full inline-flex items-center', {
@@ -44,6 +45,7 @@ const Button = ({
   variant,
   size,
   onClick,
+  newTab,
   ...props
 }: ButtonProps) => {
   if (!href)
@@ -66,7 +68,9 @@ const Button = ({
     <motion.div initial='hidden' animate='visible' variants={PopUp}>
       <Link
         className={buttonClasses({ variant, size, className: props.className })}
-        href={href} onClick={onClick} target='_blank'
+        href={href}
+        onClick={onClick}
+        target={newTab ? '_blank' : '_self'}
       >
         {children}
       </Link>

@@ -1,11 +1,13 @@
-
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Title, CodeSnippet, Button, AnimatedDiv } from '..';
-import { OpacityVariant, PopUpFromBottom } from '../../lib/FramerMotionVariants';
+import {
+  OpacityVariant,
+  PopUpFromBottom,
+} from '../../lib/FramerMotionVariants';
 interface AboutProps {
   resumeURL: string;
 }
-const About = ({resumeURL}: AboutProps) => {
+const About = ({ resumeURL }: AboutProps) => {
   return (
     <section id='about'>
       <Title title='About Me' subtitle='Introduction' />
@@ -50,6 +52,7 @@ const About = ({resumeURL}: AboutProps) => {
             href={
               'https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
             }
+            newTab
           >
             My Resume
           </Button>
