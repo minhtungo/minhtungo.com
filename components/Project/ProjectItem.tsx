@@ -26,7 +26,7 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
               key={`${tool}-${index}`}
               className='bg-gray-200 dark:bg-transparent-white text-gray-500 rounded px-2 py-1 text-xs'
             >
-              <IconHelper type={tool} className='w-4 h-4' />
+              {/* <IconHelper type={tool} className='w-4 h-4' /> */}
               {tool}
             </span>
           );

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
+import { Inter } from '@next/font/google';
 
 import { useTheme } from 'next-themes';
 
@@ -12,6 +13,8 @@ import { Logo, Container, Icon } from '..';
 import HamBurger from './Hamburger';
 import NavItem from './NavItem';
 import MobileMenu from './MobileMenu';
+
+const inter = Inter({ subsets: ['latin'] });
 
 const navigationRoutes: string[] = [
   'home',
@@ -51,7 +54,7 @@ const Header = () => {
         onChange={toggleDarkMode}
         size={24}
         moonColor='#FFD700'
-        sunColor='#FFD700'
+        sunColor='#ffcd1a'
       />
     );
   };
@@ -69,7 +72,7 @@ const Header = () => {
           'dark:bg-transparent-black',
           'border-b',
           'border-gray-200',
-          'dark:border-transparent-white'
+          'dark:border-transparent-white',
         ]
       );
       control.start('visible');
@@ -82,7 +85,7 @@ const Header = () => {
           'dark:bg-transparent-black',
           'border-b',
           'border-gray-200',
-          'dark:border-transparent-white'
+          'dark:border-transparent-white',
         ]
       );
       control.start('hidden');
@@ -114,7 +117,7 @@ const Header = () => {
 
   return (
     <header
-      className='fixed w-full top-0 left-0 right-0 z-50 backdrop-filter'
+      className={`${inter.className} fixed w-full top-0 left-0 right-0 z-50 backdrop-filter`}
       ref={navRef}
     >
       <Container className='flex items-center justify-between py-[12px]'>

@@ -20,10 +20,10 @@ const buttonClasses = cva('relative rounded-full inline-flex items-center', {
     variant: {
       primary: [
         'bg-primary-gradient hover:text-shadow hover:shadow-primary transition-[shadow,text-shadow]',
-        '[&_.highlight]:ml-2 text-white dark:text-gray-100',
+        '[&_.highlight]:ml-2 text-white dark:text-gray-100 font-semibold',
       ],
       secondary: [
-        'bg-white border-transparent-black bg-opacity-5 dark:bg-white dark:bg-opacity-10 border border-transparent-white backdrop-filter-[12px] hover:bg-opacity-20 dark:hover:bg-opacity-20 transition-colors ease-in text-gray-900 dark:text-gray-100',
+        'bg-white dark:border-transparent-black dark:bg-white dark:bg-opacity-10 border border-gray-300 backdrop-filter-[12px] hover:bg-gray-300 dark:hover:bg-opacity-20 transition-colors ease-in text-gray-900 dark:text-gray-100 font-semibold hover:border-transparent-black',
       ],
     },
     size: {

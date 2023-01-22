@@ -5,6 +5,9 @@ import {
   FromLeftVariant,
   PopUpFromBottom,
 } from '../../lib/FramerMotionVariants';
+import { Inter } from '@next/font/google';
+import LineGradient from './LineGradient';
+const inter = Inter({ subsets: ['latin'] });
 
 interface TitleProps {
   title: string;
@@ -14,7 +17,16 @@ interface TitleProps {
 
 const Title = ({ title, subtitle, className }: TitleProps) => {
   return (
-    <div className={classNames('text-center mb-8 lg:mb-12', className)}>
+    <div
+      className={classNames(
+        'text-center mb-8 lg:mb-12',
+        inter.className,
+        className
+      )}
+    >
+      {/* <div className='flex justify-center mb-4'>
+        <LineGradient width='w-1/6' />
+      </div> */}
       <AnimatedHeading
         variants={FromLeftVariant}
         className='text-2xl md:text-3xl lg:text-4xl font-medium lg:font-semibold mb-3'
@@ -29,9 +41,6 @@ const Title = ({ title, subtitle, className }: TitleProps) => {
           {subtitle}
         </AnimatedText>
       )}
-      {/* <div className='flex justify-center mt-4'>
-        <LineGradient width='w-1/6' />
-      </div> */}
     </div>
   );
 };

@@ -24,9 +24,9 @@ const Hero = ({ resumeURL }: HeroProps) => {
       </div>
       {/* Hero Text */}
       <div className='basis-2/5 -mt-14 text-center md:text-start'>
-        <p className=''>Hi there, I am</p>
-        <p className='text-2xl md:text-4xl lg:text-5xl text-center md:text-start'>
-          Minh Tu Ngo
+        <p className='pl-[3px] mb-[5px]'>Hi there, I am</p>
+        <p className='text-2xl md:text-4xl lg:text-5xl text-center md:text-start font-semibold'>
+          Minh Tu Ngo.
           <span className='wave'>👋</span>
         </p>
         <p className='mt-4 lg:mt-8 mb-7 text-lg font-semibold'>
@@ -52,9 +52,7 @@ const Hero = ({ resumeURL }: HeroProps) => {
           </Button>
 
           <Button
-            href={
-              'https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
-            }
+            href='https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
             target='_blank'
             variant='secondary'
             newTab

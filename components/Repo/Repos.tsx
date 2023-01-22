@@ -18,6 +18,10 @@ const Repo = ({ repos }: ReposProps) => {
     setDisplayCount((prevCount) => prevCount + SKIP);
   };
 
+  const onLoadLess = () => {
+    setDisplayCount(SKIP);
+  };
+
   return (
     <section id='repos' className='pt-12 lg:pt-16'>
       <div className='text-center'>
@@ -37,6 +41,13 @@ const Repo = ({ repos }: ReposProps) => {
         <div className='text-center mt-4 lg:mt-6'>
           <Button onClick={onLoadMore} variant='secondary'>
             Show More
+          </Button>
+        </div>
+      )}
+      {displayCount > repos.length && (
+        <div className='text-center mt-4 lg:mt-6'>
+          <Button onClick={onLoadLess} variant='secondary'>
+            Show Less
           </Button>
         </div>
       )}

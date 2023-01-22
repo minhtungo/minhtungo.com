@@ -9,15 +9,15 @@ const techStack = [
   },
   {
     name: 'Node.js',
-    src: '/static/images/stack/nodejs.svg',
+    src: '/static/images/stack/nodejs.png',
   },
   {
     name: 'Express',
-    src: '/static/images/stack/express.svg',
+    src: '/static/images/stack/express.png',
   },
   {
     name: 'Next.js',
-    src: '/static/images/stack/next.svg',
+    src: '/static/images/stack/next.png',
   },
   {
     name: 'MongoDB',
@@ -45,7 +45,7 @@ const techStack = [
   },
   {
     name: 'Styled Components',
-    src: '/static/images/stack/styled-components.svg',
+    src: '/static/images/stack/styled-components.png',
   },
   {
     name: 'Firebase',
