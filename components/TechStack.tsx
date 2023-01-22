@@ -16,7 +16,13 @@ const TechStack = () => {
               key={tech.name}
               className='px-4 lg:px-6 transition duration-200 ease-linear'
             >
-              <Image className='h-auto w-8 md:w-12  lg:w-14' src={tech.src} alt={tech.name} height={56} width={56} />
+              <Image
+                className='h-auto w-8 md:w-12 lg:w-14'
+                src={tech.src}
+                alt={tech.name}
+                height={56}
+                width={56}
+              />
             </div>
           ))}
         </Marquees>

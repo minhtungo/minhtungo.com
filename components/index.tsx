@@ -13,7 +13,7 @@ import Marquees from './common/Marquees';
 import TechStack from './TechStack';
 import Title from './common/Title';
 import Icon from './common/Icon';
-import CodeSnippet from './About/CodeSnippet';
+import CodeSnippet from './common/CodeSnippet';
 import SnowFall from './common/SnowFall';
 import Projects from './Project/Projects';
 import AnimatedDiv from './FramerMotion/AnimatedDiv';

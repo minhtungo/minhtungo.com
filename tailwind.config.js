@@ -29,6 +29,7 @@ module.exports = {
         'transparent-white': 'rgba(255, 255, 255, 0.08)',
         'transparent-whiter': 'rgba(255, 255, 255, 0.7)',
         'transparent-background-white': 'rgba(255, 255, 255, 0.8)',
+        'transparent-border-black': 'rgba(38, 38, 38,0.12)',
         'transparent-black': 'rgba(38, 38, 38,0.5)',
         'transparent-background-black': 'rgba(38, 38, 38,0.95)',
         'transparent-blacker': 'rgba(38, 38, 38,0.7)',

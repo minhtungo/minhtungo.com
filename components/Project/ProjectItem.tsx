@@ -1,12 +1,12 @@
-
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import Link from 'next/link';
-import {Icon } from '..';
+import { Icon } from '..';
 import ProjectImage from './ProjectImage';
+import IconHelper from '../common/IconHelper';
 import urlFor from '../../lib/urlFor';
 
 interface ProjectItemProps {
-    project: Project;
+  project: Project;
 }
 
 const ProjectItem = ({ project }: ProjectItemProps) => (
@@ -24,8 +24,9 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
           return (
             <span
               key={`${tool}-${index}`}
-              className='bg-transparent-white text-gray-500 rounded px-2 py-1 text-xs'
+              className='bg-gray-200 dark:bg-transparent-white text-gray-500 rounded px-2 py-1 text-xs'
             >
+              <IconHelper type={tool} className='w-4 h-4' />
               {tool}
             </span>
           );

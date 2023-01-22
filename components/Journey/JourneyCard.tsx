@@ -1,6 +1,3 @@
-import { motion } from 'framer-motion';
-
-import { PopUpFromBottom } from '../../lib/FramerMotionVariants';
 import IconHelper from '../common/IconHelper';
 
 interface JourneyCardProps {

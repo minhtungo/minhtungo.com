@@ -7,7 +7,7 @@ interface JourneyProps {
   journeys: Journey[];
 }
 
-const Journey = ({journeys}: JourneyProps) => {
+const Journey = ({ journeys }: JourneyProps) => {
   return (
     <section id='journey' className='max-w-4xl mx-auto pt-12 lg:pt-16'>
       <Title title='My Journey' subtitle='Learning and growing' />
@@ -24,7 +24,7 @@ const Journey = ({journeys}: JourneyProps) => {
               <Disclosure.Button>
                 <div className='text-small ml-1.5 flex pt-2'>
                   <AiOutlineCaretDown
-                    className={`h-5 w-5 text-gray-400 ${
+                    className={`h-4 w-4 md:h-5 md:w-5 text-gray-400 ${
                       open ? 'rotate-180 transform ' : ''
                     }`}
                   />

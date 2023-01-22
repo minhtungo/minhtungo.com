@@ -14,7 +14,7 @@ import TypeScript from 'public/static/images/stack/typescript.svg';
 import Code from 'public/static/icons/code.svg';
 import Graduate from 'public/static/icons/graduate.svg';
 import Job from 'public/static/icons/job.svg';
-import {MdOutlineWork as Work} from 'react-icons/md';
+import { MdOutlineWork as Work } from 'react-icons/md';
 import classNames from 'classnames';
 
 const iconMap: Record<string, React.ComponentType> = {
@@ -39,10 +39,16 @@ const iconMap: Record<string, React.ComponentType> = {
 
 interface getIconProps {
   type: string;
-  className: string;
+  className?: string;
 }
 
 const IconHelper = ({ type, className }: getIconProps) => {
+  //remove space and capitalize the type string
+  type = type.charAt(0).toUpperCase() + type.slice(1).replace(/\s/g, '');
+
+  if (type === 'Express') {
+    console.log('type', type);
+  }
   const Icon = iconMap[type];
   if (!Icon) return null;
 

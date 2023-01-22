@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Inter, Roboto, Roboto_Mono } from '@next/font/google';
+import { Open_Sans } from '@next/font/google';
 import ScrollToTop from 'react-scroll-to-top';
 import { BiArrowToTop } from 'react-icons/bi';
 
@@ -23,9 +23,7 @@ import {
   resumeQuery,
 } from '../lib/sanity.client';
 
-const inter = Inter({ subsets: ['latin'] });
-
-
+const open_sans = Open_Sans({ subsets: ['latin'] });
 
 export const getStaticProps = async () => {
   const [projects, repos, journeys, resume] = await Promise.all([
@@ -37,7 +35,6 @@ export const getStaticProps = async () => {
   const resumeURL = resume[0].resume;
   return {
     props: { projects, repos, journeys, resumeURL },
-    revalidate: 60 * 60,
   };
 };
 
@@ -62,7 +59,7 @@ export default function Home({
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main>
+      <main className={open_sans.className}>
         <Header />
         <Container>
           <Hero resumeURL={resumeURL} />

@@ -13,7 +13,7 @@ const RepoCard = ({ repo }: RepoProps) => {
       <div className='flex items-center'>
         <div className='flex items-center space-x-1'>
           <AiOutlineFolder className='text-blue-500 text-2xl' />
-          <h2 className='text-lg font-semibold text-transparent bg-clip-text bg-primary-gradient'>
+          <h2 className='font-semibold text-transparent bg-clip-text bg-primary-gradient'>
             {repo.name}
           </h2>
         </div>
@@ -23,7 +23,7 @@ const RepoCard = ({ repo }: RepoProps) => {
               href={repo.githubURL}
               className='text-gray-500 dark:text-gray-400 hover:text-blue-500'
             >
-              <FiGithub className='hover:text-blue-500' />
+              <FiGithub className='hover:text-blue-500 w-5 h-5' />
             </Link>
           </Icon>
           {repo.liveURL && (
@@ -32,7 +32,7 @@ const RepoCard = ({ repo }: RepoProps) => {
                 href={repo.liveURL}
                 className=' text-gray-500 dark:text-gray-400'
               >
-                <FiExternalLink className='hover:text-blue-500'/>
+                <FiExternalLink className='hover:text-blue-500 w-5 h-5' />
               </Link>
             </Icon>
           )}
@@ -42,7 +42,7 @@ const RepoCard = ({ repo }: RepoProps) => {
         {repo.description}
       </p>
       {/* Tech Stack */}
-      <div className='flex gap-4 text-gray-500 text-[13px]'>
+      <div className='flex gap-3 text-gray-500 text-xs md:text-[13px] flex-wrap'>
         {repo.tools.map((item) => (
           <span key={`${repo.name}-${item}`}>{item}</span>
         ))}
