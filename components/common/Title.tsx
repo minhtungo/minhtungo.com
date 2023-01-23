@@ -36,7 +36,7 @@ const Title = ({ title, subtitle, className }: TitleProps) => {
       {subtitle && (
         <AnimatedText
           variants={PopUpFromBottom}
-          className='text-blue-600 dark:text-blue-500 text-xs capitalize tracking-wider'
+          className='text-blue-600 dark:text-blue-500 text-xs tracking-wider uppercase'
         >
           {subtitle}
         </AnimatedText>

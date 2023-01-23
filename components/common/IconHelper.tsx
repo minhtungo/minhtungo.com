@@ -1,11 +1,13 @@
 import Bootstrap from 'public/static/images/stack/bootstrap.svg';
-import Express from 'public/static/images/stack/express.svg';
+// import Express from 'public/static/images/stack/express.svg';
+import { SiExpress as Express } from 'react-icons/si';
+import { IoLogoNodejs as NodeJS } from 'react-icons/io';
 import Firebase from 'public/static/images/stack/firebase.svg';
 import JavaScript from 'public/static/images/stack/javascript.svg';
 import MaterialUI from 'public/static/images/stack/material-ui.svg';
 import MongoDB from 'public/static/images/stack/mongodb.svg';
-import Next from 'public/static/images/stack/next.svg';
-import NodeJS from 'public/static/images/stack/nodejs.svg';
+import NextJS from 'public/static/images/stack/next.svg';
+// import NodeJS from 'public/static/images/stack/nodejs.svg';
 import React from 'public/static/images/stack/react.svg';
 import Redux from 'public/static/images/stack/redux.svg';
 import StyledComponents from 'public/static/images/stack/styled-components.svg';
@@ -24,7 +26,7 @@ const iconMap: Record<string, React.ComponentType> = {
   JavaScript,
   MaterialUI,
   MongoDB,
-  Next,
+  NextJS,
   NodeJS,
   React,
   Redux,
@@ -46,14 +48,14 @@ const IconHelper = ({ type, className }: getIconProps) => {
   //remove space and capitalize the type string
   type = type.charAt(0).toUpperCase() + type.slice(1).replace(/\s/g, '');
 
-  if (type === 'Express') {
-    console.log('type', type);
-  }
+  const customClasses =
+    type === 'Express' || type === 'NodeJS' ? 'text-green-600' : '';
+
   const Icon = iconMap[type];
   if (!Icon) return null;
 
   // @ts-ignore
-  return <Icon className={classNames('', className)} />;
+  return <Icon className={classNames('', customClasses, className)} />;
 };
 
 export default IconHelper;

@@ -21,9 +21,6 @@ const ProjectImage = ({ src, alt, className = '' }:ProjectImageProps ) => (
       src={src}
       width={1200}
       height={630}
-      // placeholder='blur'
-      // blurDataURL={src}
-      quality={25}
       className='lg:group-hover:scale-110 transition-all duration-300 backdrop-blur-xl'
       style={{
         width: '100%',
