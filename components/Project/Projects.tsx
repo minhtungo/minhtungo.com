@@ -7,9 +7,9 @@ interface ProjectsProp {
 
 const Projects = ({ projects }: ProjectsProp) => {
   return (
-    <section id='projects' className='pt-12 lg:pt-16 max-w-4xl mx-auto'>
+    <section id='projects' className='pt-12 lg:pt-16 mx-auto'>
       <Title title='Projects' subtitle='My Work' />
-      <div className='grid grid-cols-1 gap-4 mx-auto md:ml-[20%] xl:ml-[24%] -mt-4 lg:-mt-8'>
+      <div className='grid grid-cols-1 gap-12 sm:gap-4 mx-auto -mt-4 lg:-mt-8'>
         {projects?.map((project) => (
           <ProjectItem key={project._id} project={project} />
         ))}

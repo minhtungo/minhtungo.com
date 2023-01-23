@@ -120,7 +120,7 @@ const Header = () => {
       className={`${inter.className} fixed w-full top-0 left-0 right-0 z-50 backdrop-filter`}
       ref={navRef}
     >
-      <Container className='flex items-center justify-between py-[12px]'>
+      <Container className='flex items-center justify-between py-[10px]'>
         <HamBurger open={navOpen} handleClick={handleClick} />
         <AnimatePresence>
           {navOpen && (

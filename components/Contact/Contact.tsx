@@ -3,7 +3,7 @@ import { ToastContainer } from 'react-toastify';
 
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
-import { Title, AnimatedText } from '..';
+import { Title, AnimatedText, Icon } from '..';
 import { PopUpFromBottom } from '../../lib/FramerMotionVariants';
 
 import ContactForm from './ContactForm';
@@ -38,7 +38,7 @@ const Contact = () => {
                 href='mailto:mn.minhtungo@gmail.com'
                 className='flex flex-row items-center space-x-6 hover:text-blue-500'
               >
-                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-card-background-light dark:bg-transparent-white'>
+                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-gray-300 dark:bg-transparent-white'>
                   <MdOutlineEmail className='w-4 h-4 ' />
                 </div>
                 <p className='text-sm font-light text-gray-800 dark:text-gray-300'>
@@ -49,7 +49,7 @@ const Contact = () => {
                 href='tel:613-453-6449'
                 className='flex flex-row items-center space-x-6 hover:text-blue-500'
               >
-                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-card-background-light dark:bg-transparent-white'>
+                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-gray-300 dark:bg-transparent-white'>
                   <MdOutlinePhone className='w-4 h-4' />
                 </div>
                 <p className='text-sm font-light text-gray-800 dark:text-gray-300'>
@@ -61,20 +61,24 @@ const Contact = () => {
 
             {/* Social */}
             <div className='flex flex-row items-center space-x-4'>
-              <Link
-                href='https://github.com/minhtungo'
-                target='_blank'
-                className='flex items-center justify-center w-10 h-10 rounded-full cursor-pointer hover:bg-transparent-white'
-              >
-                <FiGithub className='w-5 h-5 text-gray-600 dark:text-gray-300' />
-              </Link>
-              <Link
-                href='https://www.linkedin.com/in/minhtungo'
-                target='_blank'
-                className='flex items-center justify-center w-10 h-10 rounded-full cursor-pointer hover:bg-transparent-white'
-              >
-                <FiLinkedin className='w-5 h-5 text-gray-600 dark:text-gray-300' />
-              </Link>
+              <Icon>
+                <Link
+                  href='https://github.com/minhtungo'
+                  className='text-gray-600 dark:text-gray-400 hover:text-blue-500'
+                  target='_blank'
+                >
+                  <FiGithub className='w-5 h-5' />
+                </Link>
+              </Icon>
+              <Icon>
+                <Link
+                  href='https://www.linkedin.com/in/minhtungo/'
+                  className='text-gray-600 dark:text-gray-400 hover:text-blue-500'
+                  target='_blank'
+                >
+                  <FiLinkedin className='w-5 h-5' />
+                </Link>
+              </Icon>
             </div>
             {/* Social */}
           </div>

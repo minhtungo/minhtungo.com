@@ -24,7 +24,7 @@
 
 @layer components {
   .card {
-    @apply bg-card-background-light dark:bg-card-background-dark p-4 sm:p-8 flex flex-col sm:flex-row gap-8 items-center shadow-md rounded-lg mt-[30%] sm:mt-8 transition-all;
+    @apply  flex flex-col md:flex-row items-center mt-[30%] sm:mt-8 transition-all gap-4 md:gap-0;
   }
 }
 

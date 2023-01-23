@@ -33,10 +33,13 @@ const Hero = ({ resumeURL }: HeroProps) => {
           &lt;&gt;
           <TypeAnimation
             cursor={true}
+            speed={50}
             sequence={[
               'I Love Bubble Tea.',
               1000,
-              'But I Love Building Things For The Web More.',
+              'I Love Building Things For The Web.',
+              1000,
+              'I Love React.',
               1000,
               '',
             ]}

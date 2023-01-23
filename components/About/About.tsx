@@ -12,7 +12,7 @@ const About = ({ resumeURL }: AboutProps) => {
   return (
     <section id='about'>
       <Title title='About Me' subtitle='Introduction' />
-      <div className='flex flex-col md:flex-row gap-8 md:gap-4 lg:gap-18'>
+      <div className='flex flex-col items-center md:flex-row gap-8 md:gap-4 lg:gap-18'>
         <motion.div
           initial='hidden'
           animate='visible'
@@ -22,7 +22,7 @@ const About = ({ resumeURL }: AboutProps) => {
           {/* <CodeSnippet className='md:mx-auto lg:mx-0 w-full' /> */}
           <ProfileCard />
         </motion.div>
-        <div className='flex flex-col items-center text-center lg:items-start md:text-left w-full lg:w-3/5'>
+        <div className='flex flex-col items-center justify-center text-center lg:items-start md:text-left w-full lg:w-3/5'>
           <AnimatedDiv variants={OpacityVariant}>
             <div className='flex flex-col'>
               <h3 className='text-lg md:text-xl lg:text-2xl font-medium lg:font-semibold mb-2 text-gray-700 dark:text-gray-200'>
@@ -37,14 +37,13 @@ const About = ({ resumeURL }: AboutProps) => {
                 improve my skills in creating high-quality websites.
               </p>
               <p className='text-sm mb-4 text-gray-600 dark:text-gray-400 leading-relaxed'>
-                I am a web developer with experience building web apps with
-                HTML, CSS, Javascript, React, Nodes.js, Express and MongoDB. I
-                am focused on being a valuable part of any team I am on and
-                believe in the team rising together. I love working with
-                dedicated teams to build efficient and robust applications
-                suited to the user{"'"}s needs. Currently, I am looking for an
-                opportunity to continuously learn, grow and make positive
-                contributions to the company.
+                I am a passionate Web Developer with experience building web
+                apps using React, NextJS, TypeScript and NodeJS. I am focused on
+                being a valuable part of any team I am on and believe in the
+                team rising together. I love working with dedicated teams to create
+                amazing web applications to make the internet a better place.
+                Currently, I am looking for an opportunity to continuously
+                learn, grow and make positive contributions to the company.
               </p>
             </div>
           </AnimatedDiv>

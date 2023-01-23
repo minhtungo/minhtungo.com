@@ -36,7 +36,6 @@ const Footer = () => {
           </span>
           <div className='flex justify-center mt-4 space-x-6 sm:mt-0'>
             <Icon>
-              {' '}
               <Link
                 href='https://github.com/minhtungo'
                 className='text-gray-600 dark:text-gray-400 hover:text-blue-500'
