@@ -22,7 +22,7 @@ const Input = ({
           name={name}
           id={name}
           value={value}
-          className='block py-2 mt-2 px-0 w-full text-sm text-gray-800 bg-transparent border-0 border-b-2 border-slate-500 appearance-none dark:text-gray-300 dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0  peer min-h-[100px] resize-y focus:border-black'
+          className='block py-2 mt-2 px-0 w-full text-sm text-gray-800 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-300 dark:border-gray-600 dark:focus:border-white focus:outline-none focus:ring-0  peer min-h-[100px] resize-y focus:border-black'
           placeholder=' '
         onChange={onChange}
           required
@@ -32,7 +32,7 @@ const Input = ({
           type={type}
           name={name}
           id={name}
-          className='block py-2 mt-2 px-0 w-full text-sm text-gray-800 dark:text-gray-300 bg-transparent border-0 border-b-2 border-slate-500 appearance-none  dark:border-gray-400 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-black peer'
+          className='block py-2 mt-2 px-0 w-full text-sm text-gray-800 dark:text-gray-300 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-white focus:outline-none focus:ring-0 focus:border-black peer'
           placeholder=' '
           value={value}
           onChange={onChange}

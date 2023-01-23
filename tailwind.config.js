@@ -53,9 +53,14 @@ module.exports = {
           '70%': { transform: 'rotate(0.0deg)' },
           '100%': { transform: 'rotate(0.0deg)' },
         },
+        border: {
+          '0%, 100%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+        },
       },
       animation: {
         wave: 'wave 1.5s ease-in-out infinite [origin-70% 70%]',
+        border: 'border 4s ease infinite',
       },
     },
   },

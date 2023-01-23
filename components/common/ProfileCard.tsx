@@ -5,8 +5,7 @@ import Button from './Button';
 
 const ProfileCard = () => {
   return (
-    <div>
-          <div className=' max-w-sm overflow-hidden shadow-md rounded-xl  bg-card-background-light dark:text-gray-100 dark:bg-card-background-dark mx-auto w-full pb-4'>
+    <div className=' max-w-sm overflow-hidden shadow-md rounded-xl  bg-card-background-light dark:text-gray-100 dark:bg-card-background-dark mx-auto w-full pb-4'>
       <Image
         src='/static/images/background.jpg'
         className='w-full h-32 bg-cover'
@@ -16,14 +15,19 @@ const ProfileCard = () => {
       />
 
       <div className='flex justify-center -mt-8'>
-        <Link href='https://www.linkedin.com/in/minhtungo/' target='_blank'>
-          <Image
-            src='/static/images/avatar.png'
-            alt='Avatar'
-            height={50}
-            width={50}
-            className='-mt-6 w-28 h-28 md:w-24 md:h-24 rounded-full bg-blue-500 dark:bg-gray-700 ring-2 ring-blue-300 dark:ring-blue-300'
-          />
+        <Link
+          href='href=https://www.linkedin.com/in/minhtungo/'
+          target='_blank'
+        >
+          <div className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-[length:400%_400%] p-[2px] w-full rounded-full -mt-3 animate-border'>
+            <Image
+              src='/static/images/avatar.png'
+              alt='Avatar'
+              height={50}
+              width={50}
+              className='w-24 h-24 md:w-20 md:h-20 rounded-full bg-blue-200 dark:bg-gray-700 '
+            />
+          </div>
         </Link>
       </div>
       <div className='text-center px-3 pb-4 pt-2 space-y-1'>
@@ -74,8 +78,6 @@ const ProfileCard = () => {
         </div> */}
       </div>
     </div>
-    </div>
-
   );
 };
 
