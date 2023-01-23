@@ -68,8 +68,8 @@ const Header = () => {
         ...[
           'shadow',
           'backdrop-blur-xl',
-          'bg-transparent-whiter',
-          'dark:bg-transparent-black',
+          'bg-card-background-light',
+          'dark:bg-card-background-dark',
           'border-b',
           'border-gray-200',
           'dark:border-transparent-white',
@@ -81,8 +81,8 @@ const Header = () => {
         ...[
           'shadow',
           'backdrop-blur-xl',
-          'bg-transparent-whiter',
-          'dark:bg-transparent-black',
+          'bg-card-background-light',
+          'dark:bg-card-background-dark',
           'border-b',
           'border-gray-200',
           'dark:border-transparent-white',

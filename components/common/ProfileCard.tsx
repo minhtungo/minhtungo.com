@@ -5,7 +5,7 @@ import Button from './Button';
 
 const ProfileCard = () => {
   return (
-    <div className=' max-w-sm overflow-hidden shadow-md rounded-xl  bg-transparent-whiter dark:text-gray-100 dark:bg-transparent-black mx-auto w-full'>
+    <div className=' max-w-sm overflow-hidden shadow-md rounded-xl  bg-card-background-light dark:text-gray-100 dark:bg-card-background-dark mx-auto w-full'>
       <Image
         src='/static/images/background.jpg'
         className='w-full h-32 bg-cover'
@@ -20,7 +20,7 @@ const ProfileCard = () => {
           alt='Avatar'
           height={50}
           width={50}
-          className='-mt-6 w-24 h-24 md:w-20 md:h-20 rounded-full bg-blue-500 dark:bg-gray-700 border-2 border-gray-50'
+          className='-mt-6 w-24 h-24 md:w-20 md:h-20 rounded-full bg-blue-500 dark:bg-gray-700 ring-2 ring-blue-300 dark:ring-blue-300'
         />
       </div>
       <div className='text-center px-3 pb-4 pt-2 space-y-1'>
@@ -32,7 +32,7 @@ const ProfileCard = () => {
         </p> */}
       </div>
 
-      <div className='space-y-4 divide-y divide-transparent-border-black dark:divide-transparent-white w-full'>
+      <div className='space-y-4 divide-y divide-custom-border-black dark:divide-transparent-white w-full'>
         <div className='flex space-x-3 items-center justify-center'>
           <Button
             href='mailto:mn.minhtungo@gmail.com'

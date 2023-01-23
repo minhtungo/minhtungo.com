@@ -16,11 +16,11 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
     <div className={`${roboto_mono.className}`}>
       <div
         className={classNames(
-          'rounded-lg shadow-xl transparent-whiter dark:bg-transparent-background-black text-off-white',
+          'rounded-lg shadow-xl card-background-light dark:bg-transparent-background-black text-off-white',
           className
         )}
       >
-        <div className='border-b border-transparent-border-black dark:border-transparent-white px-6 py-3'>
+        <div className='border-b border-custom-border-black dark:border-transparent-white px-6 py-3'>
           <div className='inline-block w-3 h-3 mr-2 rounded-full bg-red-500'></div>
           <div className='inline-block w-3 h-3 mr-2 rounded-full bg-yellow-300'></div>
           <div className='inline-block w-3 h-3 mr-2 rounded-full bg-green-400'></div>

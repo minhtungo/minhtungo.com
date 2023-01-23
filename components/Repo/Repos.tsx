@@ -29,7 +29,7 @@ const Repo = ({ repos }: ReposProps) => {
       </div>
       <AnimatedDiv
         variants={FadeContainer}
-        className='grid grid-cols-1 gap-4 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:mt-6'
+        className='grid grid-cols-1 gap-3 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:mt-6'
       >
         {repoList.slice(0, displayCount).map((repo) => (
           <motion.div variants={PopUp} key={repo.name}>

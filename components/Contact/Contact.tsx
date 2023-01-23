@@ -38,7 +38,7 @@ const Contact = () => {
                 href='mailto:mn.minhtungo@gmail.com'
                 className='flex flex-row items-center space-x-6 hover:text-blue-500'
               >
-                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-transparent-whiter dark:bg-transparent-white'>
+                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-card-background-light dark:bg-transparent-white'>
                   <MdOutlineEmail className='w-4 h-4 ' />
                 </div>
                 <p className='text-sm font-light text-gray-800 dark:text-gray-300'>
@@ -49,7 +49,7 @@ const Contact = () => {
                 href='tel:613-453-6449'
                 className='flex flex-row items-center space-x-6 hover:text-blue-500'
               >
-                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-transparent-whiter dark:bg-transparent-white'>
+                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-card-background-light dark:bg-transparent-white'>
                   <MdOutlinePhone className='w-4 h-4' />
                 </div>
                 <p className='text-sm font-light text-gray-800 dark:text-gray-300'>

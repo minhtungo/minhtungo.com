@@ -28,7 +28,7 @@ const About = ({ resumeURL }: AboutProps) => {
               <h3 className='text-lg md:text-xl lg:text-2xl font-medium lg:font-semibold mb-2 text-gray-700 dark:text-gray-200'>
                 Hi, I{"'"}m Minh Tu Ngo <span className='wave'>👋</span>
               </h3>
-              <hr className='mb-3 border-b border-transparent-border-black dark:border-transparent-white' />
+              <hr className='mb-3 border-b border-custom-border-black dark:border-transparent-white' />
               <p className='text-sm mb-4 text-gray-600 dark:text-gray-400 leading-relaxed'>
                 From the moment I produced {'"'}Hello World{'"'} in the console
                 of my first application, I knew I was hooked into the world of

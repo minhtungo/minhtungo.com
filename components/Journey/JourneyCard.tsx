@@ -6,7 +6,7 @@ interface JourneyCardProps {
 
 const JourneyCard = ({ journey }: JourneyCardProps) => {
   return (
-    <div className='mb-4 ml-6 md:ml-8 rounded-lg border-1 dark:border-2 shadow-lg p-4 px-6 bg-transparent-whiter border-transparent-black dark:bg-transparent-black dark:border-transparent-white'>
+    <div className='mb-4 ml-6 md:ml-8 rounded-lg border-1 dark:border-2 shadow-lg p-4 px-6 bg-card-background-light border-custom-border-black dark:bg-card-background-dark dark:border-transparent-white'>
       <span
         className={`absolute flex items-center justify-center w-6 h-6 bg-blue-200 rounded-full -left-3 ring-8 ring-gray-200 dark:ring-gray-900 dark:bg-blue-900`}
       >

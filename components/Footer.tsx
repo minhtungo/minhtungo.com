@@ -11,7 +11,6 @@ const Footer = () => {
           <div className='flex-1 h-px bg-transparent-black-tight dark:bg-transparent-white' />
           <div className=''>
             <Icon>
-              {' '}
               😸
               <span className='text-xl font-bold text-primary text-transparent bg-clip-text bg-primary-gradient'>
                 Minh Tu Ngo
