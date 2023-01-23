@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
-  purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.tsx'],
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -9,17 +8,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: [
-          'SF Pro Display',
-          'Segoe UI',
-          'Roboto',
-          'Oxygen',
-          'Ubuntu',
-          'Cantarell',
-          'Open Sans',
-          'Helvetica Neue',
-          'sans-serif',
-        ],
         code: ['Roboto Mono', 'Roboto', 'monospace'],
       },
       colors: {
