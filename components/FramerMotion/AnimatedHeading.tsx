@@ -1,5 +1,3 @@
-
-
 import { motion } from 'framer-motion';
 import { Variants } from 'framer-motion';
 
@@ -18,11 +16,12 @@ export default function AnimatedHeading({
 }: AnimatedHeadingProps) {
   return (
     <motion.h2
-      initial="hidden"
-      whileInView="visible"
+      initial='hidden'
+      whileInView='visible'
       viewport={{ once: !infinity }}
       variants={variants}
       className={className}
+      transition={{ delay: 0.5 }}
     >
       {children}
     </motion.h2>

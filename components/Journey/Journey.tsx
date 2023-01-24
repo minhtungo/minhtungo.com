@@ -2,6 +2,8 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { Title } from '..';
 import { AiOutlineCaretDown } from 'react-icons/ai';
 import JourneyCard from './JourneyCard';
+import { motion } from 'framer-motion';
+import { PopUpFromBottom } from '../../lib/FramerMotionVariants';
 
 interface JourneyProps {
   journeys: Journey[];
@@ -13,9 +15,14 @@ const Journey = ({ journeys }: JourneyProps) => {
       <Title title='My Journey' subtitle='Learning and growing' />
       <ul className='relative mt-4 lg:mt-6 ml-3 border-l border-gray-400 dark:border-gray-800'>
         {journeys.slice(0, 2).map((item) => (
-          <li key={item.title}>
+          <motion.li
+            key={item.title}
+            initial='hidden'
+            whileInView='visible'
+            variants={PopUpFromBottom}
+          >
             <JourneyCard journey={item} />
-          </li>
+          </motion.li>
         ))}
 
         <Disclosure>

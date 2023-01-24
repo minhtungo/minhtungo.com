@@ -17,9 +17,8 @@ export default function AnimatedDiv({
   return (
     <motion.div
       initial='hidden'
-      animate='visible'
       whileInView='visible'
-      viewport={{ once: !infinity }}
+      viewport={{ once: false }}
       variants={variants}
       className={className}
       // style={style}
