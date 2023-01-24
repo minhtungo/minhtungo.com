@@ -56,10 +56,8 @@ const Repo = ({ repos }: ReposProps) => {
               <motion.div
                 variants={PopUp}
                 key={repo.name}
-                transition={{ delay: 0.1, type: 'spring' }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 20 }}
               >
                 <RepoCard repo={repo} />
               </motion.div>
