@@ -17,6 +17,8 @@ module.exports = {
         'transparent-white': 'rgba(255, 255, 255, 0.08)',
         'card-background-light': 'rgba(255, 255, 255, 0.5)',
         'card-background-dark': 'rgba(38, 38, 38,0.35)',
+        'background-dark': 'rgba(38, 38, 38,0.9)',
+        'background-light': 'rgba(255, 255, 255, 0.95)',
         'transparent-background-white': 'rgba(255, 255, 255, 0.8)',
         'custom-border-black': 'rgba(38, 38, 38,0.12)',
         'transparent-black': 'rgba(38, 38, 38,0.5)',

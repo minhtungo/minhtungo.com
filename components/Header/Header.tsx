@@ -1,27 +1,28 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
-import Link from 'next/link';
-import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
-import { motion, useAnimation, AnimatePresence } from 'framer-motion';
-import { Inter } from '@next/font/google';
+import React, { useEffect, useState, useRef, useCallback } from "react";
+import Link from "next/link";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+import { FiGithub, FiLinkedin } from "react-icons/fi";
+import { motion, useAnimation, AnimatePresence } from "framer-motion";
+import { Inter } from "@next/font/google";
 
-import { useTheme } from 'next-themes';
+import { useTheme } from "next-themes";
 
-import { FadeContainer, FromLeftVariant } from '../../lib/FramerMotionVariants';
+import { FadeContainer, FromLeftVariant } from "../../lib/FramerMotionVariants";
 
-import { Logo, Container, Icon } from '..';
-import HamBurger from './Hamburger';
-import NavItem from './NavItem';
-import MobileMenu from './MobileMenu';
+import { Logo, Container, Icon } from "..";
+import HamBurger from "./Hamburger";
+import NavItem from "./NavItem";
+import MobileMenu from "./MobileMenu";
+import DropdownMenu from "./DropdownMenu";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 const navigationRoutes: string[] = [
-  'home',
-  'about',
-  'journey',
-  'projects',
-  'contact',
+  "home",
+  "about",
+  "journey",
+  "projects",
+  "contact",
 ];
 
 const Header = () => {
@@ -38,8 +39,8 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const currentTheme = theme === 'system' ? systemTheme : theme;
-    if (currentTheme === 'dark') {
+    const currentTheme = theme === "system" ? systemTheme : theme;
+    if (currentTheme === "dark") {
       setIsDarkMode(true);
     } else {
       setIsDarkMode(false);
@@ -53,8 +54,8 @@ const Header = () => {
         checked={isDarkMode}
         onChange={toggleDarkMode}
         size={24}
-        moonColor='#FFD700'
-        sunColor='#ffcd1a'
+        moonColor="#FFD700"
+        sunColor="#ffcd1a"
       />
     );
   };
@@ -66,43 +67,43 @@ const Header = () => {
     if (window.pageYOffset > 10) {
       navRef.current!.classList.add(
         ...[
-          'shadow',
-          'backdrop-blur-xl',
-          'bg-card-background-light',
-          'dark:bg-card-background-dark',
-          'border-b',
-          'border-gray-200',
-          'dark:border-transparent-white',
+          "shadow",
+          "backdrop-blur-xl",
+          "bg-card-background-light",
+          "dark:bg-card-background-dark",
+          "border-b",
+          "border-gray-200",
+          "dark:border-transparent-white",
         ]
       );
-      control.start('visible');
+      control.start("visible");
     } else {
       navRef.current!.classList.remove(
         ...[
-          'shadow',
-          'backdrop-blur-xl',
-          'bg-card-background-light',
-          'dark:bg-card-background-dark',
-          'border-b',
-          'border-gray-200',
-          'dark:border-transparent-white',
+          "shadow",
+          "backdrop-blur-xl",
+          "bg-card-background-light",
+          "dark:bg-card-background-dark",
+          "border-b",
+          "border-gray-200",
+          "dark:border-transparent-white",
         ]
       );
-      control.start('hidden');
+      control.start("hidden");
     }
   }, [control]);
 
   useEffect(() => {
-    window.addEventListener('scroll', addShadowToNavbar);
+    window.addEventListener("scroll", addShadowToNavbar);
     return () => {
-      window.removeEventListener('scroll', addShadowToNavbar);
+      window.removeEventListener("scroll", addShadowToNavbar);
     };
   }, [addShadowToNavbar]);
 
   // to lock the scroll when mobile is open
   const lockScroll = () => {
-    const root = document.getElementsByTagName('html')[0];
-    root.classList.toggle('lock-scroll');
+    const root = document.getElementsByTagName("html")[0];
+    root.classList.toggle("lock-scroll");
   };
 
   const handleClick = () => {
@@ -112,7 +113,7 @@ const Header = () => {
 
   const toggleDarkMode = (checked: boolean) => {
     setIsDarkMode(checked);
-    setTheme(checked ? 'dark' : 'light');
+    setTheme(checked ? "dark" : "light");
   };
 
   return (
@@ -120,32 +121,32 @@ const Header = () => {
       className={`${inter.className} fixed w-full top-0 left-0 right-0 z-50 backdrop-filter`}
       ref={navRef}
     >
-      <Container className='flex items-center justify-between py-[10px]'>
+      <Container className="flex items-center justify-between py-[8px]">
         <HamBurger open={navOpen} handleClick={handleClick} />
         <AnimatePresence>
           {navOpen && (
             <MobileMenu links={navigationRoutes} handleClick={handleClick} />
           )}
         </AnimatePresence>
-        <Link href='/' className='mr-3' aria-label='Link to Home Page'>
+        <Link href="/" className="mr-3" aria-label="Link to Home Page">
           <motion.div
-            initial='hidden'
-            animate='visible'
+            initial="hidden"
+            animate="visible"
             variants={FromLeftVariant}
           >
-            <Logo className='hidden sm:inline-flex font-semibold text-lg' />
+            <Logo className="hidden sm:inline-flex font-semibold text-lg" />
           </motion.div>
           {/* <div className='w-full sm:!hidden'>
           <p>Minh Tu Ngo</p>
         </div> */}
         </Link>
         {/* Top Nav list */}
-        <motion.nav className='hidden sm:flex z-10 md:inset-0 md:justify-center'>
+        <motion.nav className="hidden sm:flex z-10 md:inset-0 md:justify-center">
           <motion.ul
-            initial='hidden'
-            animate='visible'
+            initial="hidden"
+            animate="visible"
             variants={FadeContainer}
-            className='flex items-center md:gap-2'
+            className="flex items-center md:gap-2"
           >
             {navigationRoutes.map((link, index) => {
               return (
@@ -156,31 +157,36 @@ const Header = () => {
             })}
           </motion.ul>
         </motion.nav>
-        <motion.div className='flex items-center space-x-4 text-gray-600 dark:text-gray-300'>
-          <Icon>
-            <Link
-              href='https://github.com/minhtungo'
-              className='hover:text-blue-500'
-              target='_blank'
-            >
-              <FiGithub className='w-5 h-5' />
-            </Link>
-          </Icon>
+        <div className="flex items-center space-x-4">
+          <motion.div className="hidden md:flex items-center space-x-4 text-gray-600 dark:text-gray-300">
+            <Icon>
+              <Link
+                href="https://github.com/minhtungo"
+                className="hover:text-blue-500"
+                target="_blank"
+              >
+                <FiGithub className="w-5 h-5" />
+              </Link>
+            </Icon>
 
-          <Icon>
-            <Link
-              href='https://www.linkedin.com/in/minhtungo/'
-              className='hover:text-blue-500'
-              target='_blank'
-            >
-              <FiLinkedin className='w-5 h-5' />
-            </Link>
-          </Icon>
-          <Icon>
-            {/* DarkMode Container */}
-            {renderThemeChanger()}
-          </Icon>
-        </motion.div>
+            <Icon>
+              <Link
+                href="https://www.linkedin.com/in/minhtungo/"
+                className="hover:text-blue-500"
+                target="_blank"
+              >
+                <FiLinkedin className="w-5 h-5" />
+              </Link>
+            </Icon>
+          </motion.div>
+          <div className="flex items-center space-x-3">
+            <Icon>
+              {/* DarkMode Container */}
+              {renderThemeChanger()}
+            </Icon>
+            <DropdownMenu />
+          </div>
+        </div>
       </Container>
     </header>
   );
