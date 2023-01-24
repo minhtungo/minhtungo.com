@@ -2,7 +2,6 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 import Link from "next/link";
 import { Icon } from "..";
 import ProjectImage from "./ProjectImage";
-import IconHelper from "../common/IconHelper";
 import urlFor from "../../lib/urlFor";
 import { renderTech } from "../../util/renderTech";
 
@@ -12,7 +11,11 @@ interface ProjectItemProps {
 
 const ProjectItem = ({ project }: ProjectItemProps) => (
   <div className="card">
-    <ProjectImage src={urlFor(project.image).url()} alt={project.name} />
+    <ProjectImage
+      src={urlFor(project.image).url()}
+      alt={project.name}
+      url={project.liveURL}
+    />
 
     <div className="flex flex-col justify-start gap-3 bg-card-background-light dark:bg-card-background-dark p-4 pt-14 lg:p-5 lg:pl-7 md:-ml-1 shadow-md rounded-lg -mt-14 md:mt-0 w-full">
       <h1 className="text-md font-semibold capitalize text-gray-800 dark:text-gray-300 text-lg">
@@ -28,7 +31,7 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
               key={`${tool}-${index}`}
               className="bg-gray-200 dark:bg-transparent-white text-gray-500 dark:text-gray-400 rounded px-2 py-1 text-xs sm:text-sm"
             >
-              <div className="flex gap-2 sm:gap-3">
+              <div className="flex items-center gap-1">
                 {renderTech(tool)}
                 {tool}
               </div>
