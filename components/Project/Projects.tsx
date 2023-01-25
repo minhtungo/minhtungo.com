@@ -11,7 +11,7 @@ const Projects = ({ projects }: ProjectsProp) => {
   return (
     <section id='projects' className='pt-12 lg:pt-16 mx-auto'>
       <Title title='Projects' subtitle='My Work' />
-      <div className='grid grid-cols-1 gap-12 sm:gap-4 mx-auto mt-6 lg:-mt-8'>
+      <div className='grid grid-cols-1 gap-12 sm:gap-4 mx-auto mt-6 lg:-mt-9'>
         {projects?.map((project) => (
           <motion.div
             key={project._id}

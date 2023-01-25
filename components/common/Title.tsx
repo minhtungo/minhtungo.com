@@ -29,14 +29,14 @@ const Title = ({ title, subtitle, className }: TitleProps) => {
       </div> */}
       <AnimatedHeading
         variants={FromLeftVariant}
-        className='text-2xl md:text-3xl lg:text-4xl font-medium lg:font-semibold mb-3'
+        className='text-2xl md:text-3xl lg:text-4xl font-semibold lg:font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-700 to-blue-600 bg-[length:400%_400%] animate-border'
       >
         {title}
       </AnimatedHeading>
       {subtitle && (
         <AnimatedText
           variants={PopUpFromBottom}
-          className='text-blue-600 dark:text-blue-500 text-xs tracking-wider uppercase'
+          className='text-gray-900 dark:text-gray-200 text-xs tracking-wider uppercase'
         >
           {subtitle}
         </AnimatedText>
