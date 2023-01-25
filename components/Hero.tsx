@@ -31,7 +31,7 @@ const Hero = ({ resumeURL }: HeroProps) => {
           variants={FromLeftVariant}
           className='text-2xl md:text-4xl lg:text-5xl text-center md:text-start'
         >
-          <span className=' font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-[length:400%_400%] animate-border'>
+          <span className='font-semibold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-[length:400%_400%] animate-border'>
             Minh Tu Ngo.
           </span>
           <span className='wave'>👋</span>
