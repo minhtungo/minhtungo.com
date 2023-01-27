@@ -1,5 +1,3 @@
-
-
 import { CSSProperties, FC } from 'react';
 import Marquee from 'react-fast-marquee';
 import classNames from 'classnames';

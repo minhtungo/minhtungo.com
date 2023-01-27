@@ -1,28 +1,31 @@
-import { Marquees, Title } from "./";
-import techStack from "../contents/techStack";
-import Image from "next/image";
+import { Marquees, Title } from './';
+import techStack from '../contents/techStack';
+import Image from 'next/image';
 
 const TechStack = () => {
   return (
-    <section id="technologies" className="pt-12 lg:pt-16">
+    <section id='technologies' className='pt-12 lg:pt-16'>
       <Title
-        title="Technologies"
-        subtitle="Some Technologies I Have Used Recently"
+        title='Technologies'
+        subtitle='Some Technologies I Have Used Recently'
       />
-      <div className="h-30 -mt-6 flex items-center">
-        <Marquees className="py-4">
+      <div className='-mt-5 flex items-center -mb-3'>
+        <Marquees className='py-4'>
           {techStack.map((tech) => (
             <div
               key={tech.name}
-              className="px-4 lg:px-6 transition duration-200 ease-linear"
+              className='px-4 lg:px-6 transition duration-200 ease-linear flex justify-center group relative'
             >
               <Image
-                className="h-auto w-8 md:w-12 lg:w-14"
+                className='h-auto w-8 md:w-12'
                 src={tech.src}
                 alt={tech.name}
                 height={56}
                 width={56}
               />
+              <span className='absolute top-0 md:top-[45px] scale-0 rounded bg-background-light dark:bg-background-dark p-1 text-xs group-hover:scale-100 text-gray-800 dark:text-gray-300 transition-all'>
+                {tech.name}
+              </span>
             </div>
           ))}
         </Marquees>

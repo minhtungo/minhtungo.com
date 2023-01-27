@@ -54,7 +54,7 @@ export default function Home({
   return (
     <>
       <Head>
-        <title>Minh Tu Ngo Portfolio</title>
+        <title>Minh Tu Ngo</title>
         <meta
           name='description'
           content='My personal portfolio to showcase my work. Built with NextJS, Tailwind CSS and Sanity.'
