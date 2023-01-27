@@ -6,7 +6,6 @@ import {
   PopUpFromBottom,
 } from '../../lib/FramerMotionVariants';
 import { Inter } from '@next/font/google';
-import LineGradient from './LineGradient';
 const inter = Inter({ subsets: ['latin'] });
 
 interface TitleProps {

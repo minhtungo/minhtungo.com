@@ -70,35 +70,6 @@ const Repo = ({ repos }: ReposProps) => {
         </AnimatePresence>
       )}
 
-      {/* <AnimatedDiv
-        variants={FadeContainer}
-        className='grid grid-cols-1 gap-3 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:mt-6'
-      >
-        <AnimatePresence>
-          {repoList.slice(0, SKIP).map((repo) => (
-            <motion.div
-              variants={PopUp}
-              key={repo.name}
-              transition={{ delay: 0.5 }}
-            >
-              <RepoCard repo={repo} />
-            </motion.div>
-          ))}
-
-          {isMore &&
-            repoList.slice(SKIP, displayCount).map((repo) => (
-              <motion.div
-                variants={PopUp}
-                key={repo.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                <RepoCard repo={repo} />
-              </motion.div>
-            ))}
-        </AnimatePresence>
-      </AnimatedDiv> */}
-
       {displayCount < repos.length && (
         <div className='text-center mt-4 lg:mt-6'>
           <Button onClick={onLoadMore} variant='secondary'>
