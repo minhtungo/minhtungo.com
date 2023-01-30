@@ -10,7 +10,7 @@ import ContactForm from './ContactForm';
 
 const Contact = () => {
   return (
-    <section id='contact' className='pt-12 lg:pt-16'>
+    <section id='contact' className='pt-12 lg:pt-20'>
       <Title title='Contact' subtitle="Let's connect" />
       <div className='relative'>
         <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>

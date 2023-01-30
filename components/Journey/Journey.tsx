@@ -11,7 +11,7 @@ interface JourneyProps {
 
 const Journey = ({ journeys }: JourneyProps) => {
   return (
-    <section id='journey' className='max-w-4xl mx-auto pt-12 lg:pt-16'>
+    <section id='journey' className='max-w-4xl mx-auto pt-12 lg:pt-20'>
       <Title title='My Journey' subtitle='Learning and growing' />
       <ul className='relative mt-4 lg:mt-6 ml-3 border-l border-gray-400 dark:border-gray-800'>
         {journeys.slice(0, 2).map((item) => (

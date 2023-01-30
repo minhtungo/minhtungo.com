@@ -18,7 +18,7 @@ const Title = ({ title, subtitle, className }: TitleProps) => {
   return (
     <div
       className={classNames(
-        'text-center mb-8 lg:mb-12',
+        'text-center mb-8 lg:mb-8',
         inter.className,
         className
       )}

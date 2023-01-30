@@ -10,7 +10,7 @@ const TechStack = () => {
         subtitle='Some Technologies I Have Used Recently'
       />
       <div className='-mt-5 flex items-center -mb-3'>
-        <Marquees className='py-4'>
+        <Marquees className='py-4 pb-6'>
           {techStack.map((tech) => (
             <div
               key={tech.name}

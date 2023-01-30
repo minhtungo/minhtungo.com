@@ -10,7 +10,7 @@ interface AboutProps {
 }
 const About = ({ resumeURL }: AboutProps) => {
   return (
-    <section id='about'>
+    <section id='about' className='pt-20 -mt-16'>
       <Title title='About Me' subtitle='Introduction' />
       <div className='flex flex-col items-center md:flex-row gap-8 md:gap-4 lg:gap-18'>
         <motion.div
