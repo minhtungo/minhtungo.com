@@ -15,7 +15,7 @@ const HamBurger = ({
       initial='hidden'
       animate='visible'
       variants={PopUp}
-      className='sm:hidden'
+      className='lg:hidden'
     >
       {!open ? (
         <MdMenu

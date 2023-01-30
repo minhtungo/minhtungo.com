@@ -49,7 +49,7 @@ const ContactForm = () => {
 
   return (
     <motion.form
-      className='flex flex-col xs:p-3 s:p-4 rounded-lg'
+      className='flex flex-col rounded-lg mt-2 lg:mt-0'
       initial='hidden'
       whileInView='visible'
       variants={FadeContainer}
@@ -57,7 +57,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       ref={form}
     >
-      <div className='w-full grid grid-cols-2 gap-6'>
+      <div className='w-full grid grid-cols-2 gap-4 lg:gap-6'>
         <Input
           type='text'
           name='name'
@@ -80,8 +80,8 @@ const ContactForm = () => {
         value={subject}
         onChange={(e) => setSubject(e.target.value)}
       />
-            <Input
-            textarea
+      <Input
+        textarea
         type='message'
         name='message'
         label='Message'
@@ -90,8 +90,8 @@ const ContactForm = () => {
       />
       <div className='flex items-center justify-center w-full'>
         <Button
-          disabled={isSending}
-          className='flex items-center justify-center mt-6'
+          disabled={isSending || !name || !email || !subject || !message}
+          className={`flex items-center justify-center mt-6 disabled:opacity-50 disabled:cursor-not-allowed`}
           variant={isSending ? 'secondary' : 'primary'}
         >
           {isSending ? (

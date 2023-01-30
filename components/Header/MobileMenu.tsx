@@ -11,7 +11,7 @@ const MobileMenu = ({
 }) => {
   return (
     <motion.div
-      className='absolute font-normal bg-transparent-background-white dark:bg-transparent-blacker w-screen h-screen top-0 left-0 z-10 sm:hidden'
+      className='absolute font-normal bg-transparent-background-white dark:bg-transparent-blacker w-screen h-screen top-0 left-0 z-10 lg:hidden'
       variants={HamFastFadeContainer}
       initial='hidden'
       animate='visible'

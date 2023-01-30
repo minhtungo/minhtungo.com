@@ -134,19 +134,16 @@ const Header = () => {
             animate='visible'
             variants={FromLeftVariant}
           >
-            <Logo className='hidden sm:inline-flex font-semibold text-lg' />
+            <Logo className='hidden lg:inline-flex font-semibold text-lg' />
           </motion.div>
-          {/* <div className='w-full sm:!hidden'>
-          <p>Minh Tu Ngo</p>
-        </div> */}
         </Link>
         {/* Top Nav list */}
-        <motion.nav className='hidden sm:flex z-10 md:inset-0 md:justify-center'>
+        <motion.nav className='hidden lg:flex z-10 lg:inset-0 lg:justify-center'>
           <motion.ul
             initial='hidden'
             animate='visible'
             variants={FadeContainer}
-            className='flex items-center md:gap-2'
+            className='flex items-center lg:gap-2'
           >
             {navigationRoutes.map((link, index) => {
               return (
@@ -158,7 +155,7 @@ const Header = () => {
           </motion.ul>
         </motion.nav>
         <div className='flex items-center space-x-4'>
-          <motion.div className='hidden md:flex items-center space-x-4 text-gray-600 dark:text-gray-300'>
+          <motion.div className='hidden lg:flex items-center space-x-4 text-gray-600 dark:text-gray-300'>
             <Icon>
               <Link
                 href='https://github.com/minhtungo'

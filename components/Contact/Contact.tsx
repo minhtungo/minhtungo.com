@@ -18,7 +18,7 @@ const Contact = () => {
             <div>
               <AnimatedText
                 variants={PopUpFromBottom}
-                className='text-lg md:text-xl lg:text-2xl font-semibold text-gray-800 dark:text-gray-300'
+                className='text-md md:text-lg lg:text-xl font-semibold text-gray-800 dark:text-gray-300'
               >
                 Get In Touch
               </AnimatedText>
@@ -33,12 +33,12 @@ const Contact = () => {
               </AnimatedText>
             </div>
             {/* Info */}
-            <div className='inline-flex flex-col mt-12 mb-6 space-y-4'>
+            <div className='inline-flex flex-col mt-8 mb-6 space-y-4'>
               <Link
                 href='mailto:mn.minhtungo@gmail.com'
-                className='flex flex-row items-center space-x-6 hover:text-blue-500'
+                className='flex flex-row items-center space-x-4 hover:text-blue-500'
               >
-                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-gray-300 dark:bg-transparent-white'>
+                <div className='flex items-center justify-center w-9 h-9 rounded-full bg-gray-300 dark:bg-transparent-white'>
                   <MdOutlineEmail className='w-4 h-4 ' />
                 </div>
                 <p className='text-sm font-light text-gray-800 dark:text-gray-300'>
@@ -47,9 +47,9 @@ const Contact = () => {
               </Link>
               <Link
                 href='tel:613-453-6449'
-                className='flex flex-row items-center space-x-6 hover:text-blue-500'
+                className='flex flex-row items-center space-x-4 hover:text-blue-500'
               >
-                <div className='flex items-center justify-center w-10 h-10 rounded-full bg-gray-300 dark:bg-transparent-white'>
+                <div className='flex items-center justify-center w-9 h-9 rounded-full bg-gray-300 dark:bg-transparent-white'>
                   <MdOutlinePhone className='w-4 h-4' />
                 </div>
                 <p className='text-sm font-light text-gray-800 dark:text-gray-300'>
@@ -60,23 +60,23 @@ const Contact = () => {
             {/* Info */}
 
             {/* Social */}
-            <div className='flex flex-row items-center space-x-4'>
+            <div className='flex flex-row items-center space-x-4 ml-2'>
               <Icon>
                 <Link
                   href='https://github.com/minhtungo'
-                  className='text-gray-600 dark:text-gray-400 hover:text-blue-500'
+                  className='text-gray-600 dark:text-gray-400 '
                   target='_blank'
                 >
-                  <FiGithub className='w-5 h-5' />
+                  <FiGithub className='w-5 h-5 hover:text-blue-500' />
                 </Link>
               </Icon>
               <Icon>
                 <Link
                   href='https://www.linkedin.com/in/minhtungo/'
-                  className='text-gray-600 dark:text-gray-400 hover:text-blue-500'
+                  className='text-gray-600 dark:text-gray-400 '
                   target='_blank'
                 >
-                  <FiLinkedin className='w-5 h-5' />
+                  <FiLinkedin className='w-5 h-5 hover:text-blue-500' />
                 </Link>
               </Icon>
             </div>
