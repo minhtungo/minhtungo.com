@@ -39,6 +39,14 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'gifImage',
+      title: 'Gif Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'tools',
       title: 'Tools',
       type: 'array',

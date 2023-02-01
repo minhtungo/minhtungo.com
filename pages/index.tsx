@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Open_Sans } from '@next/font/google';
 import ScrollToTop from 'react-scroll-to-top';
-import { BiArrowToTop } from 'react-icons/bi';
+import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
 
 import {
   Hero,
@@ -77,7 +77,9 @@ export default function Home({
         <ScrollToTop
           smooth
           className='!rounded-full bg-primary-gradient'
-          component={<BiArrowToTop className='mx-auto h-6 w-6 text-white' />}
+          component={
+            <MdOutlineKeyboardArrowUp className='mx-auto h-6 w-6 text-white' />
+          }
         />
       </main>
     </>

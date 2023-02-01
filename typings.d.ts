@@ -10,6 +10,7 @@ interface Project extends Base {
   name: string;
   description: string;
   image: Image;
+  gifImage: Image;
   githubURL: string;
   liveURL: string;
   tools: string[];
