@@ -42,6 +42,7 @@ const ProjectImage = ({
         width={800}
         height={400}
         className='duration-300 backdrop-blur-xl object-cover w-full h-full hidden group-hover:inline-block'
+        priority
       />
     )}
   </Link>
