@@ -82,7 +82,7 @@ const Repo = ({ repos }: ReposProps) => {
         </div>
       )}
 
-      {repoList && displayCount > repoList?.length && (
+      {repoList && isMore && (
         <div className='text-center mt-4 lg:mt-6'>
           <Button onClick={onLoadLess} variant='secondary'>
             Show Less
