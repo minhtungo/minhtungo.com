@@ -11,7 +11,7 @@ interface RepoProps {
 
 const RepoCard = ({ repo }: RepoProps) => {
   return (
-    <div className='p-4 bg-card-background-light dark:bg-card-background-dark hover:text-shadow hover:shadow-primary h-full rounded'>
+    <div className='p-5 bg-card-background-light dark:bg-card-background-dark hover:text-shadow hover:shadow-primary h-full rounded'>
       <div className='flex items-center'>
         <div className='flex items-center space-x-2'>
           <AiOutlineFolder className='text-blue-500 text-2xl' />
@@ -42,23 +42,23 @@ const RepoCard = ({ repo }: RepoProps) => {
           )}
         </div>
       </div>
-      <p className='my-3 mt-2 text-gray-600 dark:text-gray-400 text-sm'>
-        {repo.description}
-      </p>
       {/* Tech Stack */}
-      <div className='flex gap-1 text-gray-500 text-xs md:text-[13px] flex-wrap'>
+      <div className='flex space-x-2 items-center flex-wrap mt-2'>
         {repo.tools.map((tool) => (
           <span
+            className='flex gap-1 items-center transition duration-200 ease-linear group relative'
             key={`${repo.name}-${tool}`}
-            className='bg-gray-200 dark:bg-transparent-white text-gray-500 dark:text-gray-400 rounded px-2 py-1 text-xs'
           >
-            <div className='flex gap-1 items-center'>
-              {renderTech(tool)}
+            {renderTech(tool, 'w-5 h-5')}
+            <span className='absolute -top-7 -left-[50%] w-max scale-0 bg-background-light dark:bg-background-dark px-2 py-1 text-sm group-hover:scale-100 text-gray-800 dark:text-gray-300 transition-all rounded font-medium shadow'>
               {tool}
-            </div>
+            </span>
           </span>
         ))}
       </div>
+      <p className='mt-4 text-gray-600 dark:text-gray-400 text-sm'>
+        {repo.description}
+      </p>
     </div>
   );
 };

@@ -23,7 +23,7 @@ const TechStack = () => {
                 height={56}
                 width={56}
               />
-              <span className='absolute top-0 md:top-[45px] scale-0 rounded bg-background-light dark:bg-background-dark p-1 text-xs group-hover:scale-100 text-gray-800 dark:text-gray-300 transition-all'>
+              <span className='absolute -top-5 w-max scale-0 bg-background-light dark:bg-background-dark px-2 py-1 text-sm group-hover:scale-100 text-gray-800 dark:text-gray-300 transition-all rounded font-medium shadow'>
                 {tech.name}
               </span>
             </div>
