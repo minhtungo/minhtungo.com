@@ -1,10 +1,10 @@
 import { Marquees, Title } from './';
-import techStack from '../contents/techStack';
+import techStack from '../content/techStack';
 import Image from 'next/image';
 
 const TechStack = () => {
   return (
-    <section id='technologies' className='pt-12 lg:pt-16'>
+    <section id='technologies' className='pt-16 lg:pt-20'>
       <Title
         title='Technologies'
         subtitle='Some Technologies I Have Used Recently'

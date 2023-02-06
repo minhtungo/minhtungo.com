@@ -32,7 +32,7 @@ const ProjectImage = ({
       src={src}
       width={1000}
       height={500}
-      className='duration-300 backdrop-blur-xl object-cover w-full h-full group-hover:hidden'
+      className='duration-300 backdrop-blur-xl object-cover w-full h-full hidden lg:inline-block lg:group-hover:hidden'
     />
     {gifSrc && (
       <Image
@@ -41,7 +41,7 @@ const ProjectImage = ({
         src={gifSrc}
         width={750}
         height={350}
-        className='duration-300 backdrop-blur-xl object-cover w-full h-full hidden group-hover:inline-block'
+        className='duration-300 backdrop-blur-xl object-cover w-full h-full inline-block lg:hidden lg:group-hover:inline-block'
         priority
       />
     )}

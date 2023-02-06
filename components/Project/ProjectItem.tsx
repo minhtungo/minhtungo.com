@@ -18,7 +18,7 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
       url={project.liveURL}
     />
 
-    <div className='flex flex-col justify-start gap-3 bg-card-background-light dark:bg-card-background-dark p-4 pt-14 lg:p-5 lg:pl-7 md:-ml-1 shadow-md rounded-lg -mt-14 md:mt-0 w-full'>
+    <div className='flex flex-col justify-start gap-3 bg-card-background-light dark:bg-card-background-dark p-4 pt-14 md:p-5 md:-ml-1 shadow-md rounded-lg -mt-14 md:mt-0 w-full'>
       <div>
         <h1 className='text-md font-semibold capitalize text-gray-800 dark:text-gray-300 lg:text-lg'>
           {project.name}

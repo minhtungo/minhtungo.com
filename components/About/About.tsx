@@ -5,6 +5,7 @@ import {
   PopUpFromBottom,
 } from '../../lib/FramerMotionVariants';
 import ProfileCard from '../common/ProfileCard';
+
 interface AboutProps {
   resumeURL: string;
 }
@@ -12,20 +13,19 @@ const About = ({ resumeURL }: AboutProps) => {
   return (
     <section id='about' className='pt-20 -mt-16'>
       <Title title='About Me' subtitle='Introduction' />
-      <div className='flex flex-col items-center md:flex-row gap-8 md:gap-4 lg:gap-18'>
+      <div className='flex flex-col items-center lg:flex-row gap-8  lg:gap-18'>
         <motion.div
           initial='hidden'
           whileInView='visible'
           variants={PopUpFromBottom}
           className='w-full lg:w-1/3'
         >
-          {/* <CodeSnippet className='md:mx-auto lg:mx-0 w-full' /> */}
           <ProfileCard />
         </motion.div>
-        <div className='flex flex-col items-center justify-center text-left r w-full lg:w-3/5'>
+        <div className='flex flex-col items-center justify-center text-left r w-full lg:w-2/3'>
           <AnimatedDiv variants={OpacityVariant}>
             <div className='flex flex-col'>
-              <h3 className='text-lg md:text-xl lg:text-2xl font-medium lg:font-semibold mb-2 text-gray-700 dark:text-gray-200'>
+              <h3 className='text-lg lg:text-xl lg:text-2xl font-medium lg:font-semibold mb-2 text-gray-700 dark:text-gray-200'>
                 Hi, I{"'"}m Minh Tu Ngo <span className='wave'>👋</span>
               </h3>
               <hr className='mb-3 border-b border-custom-border-black dark:border-transparent-white' />
@@ -48,14 +48,6 @@ const About = ({ resumeURL }: AboutProps) => {
               </p>
             </div>
           </AnimatedDiv>
-          {/* <Button
-            href={
-              'https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
-            }
-            newTab
-          >
-            My Resume
-          </Button> */}
         </div>
       </div>
     </section>

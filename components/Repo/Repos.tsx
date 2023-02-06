@@ -36,7 +36,7 @@ const Repo = ({ repos }: ReposProps) => {
   };
 
   return (
-    <section id='repos' className='pt-12 lg:pt-20'>
+    <section id='repos' className='pt-16 lg:pt-20'>
       <div className='text-center'>
         <Title title='Repositories' subtitle='Other Noteworthy Projects' />
       </div>
