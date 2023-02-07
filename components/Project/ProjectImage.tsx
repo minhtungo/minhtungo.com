@@ -6,18 +6,19 @@ import Link from 'next/link';
 interface ProjectImageProps {
   src: string;
   gifSrc: string;
-  alt: string;
+  name: string;
   url: string;
   className?: string;
 }
 
 const ProjectImage = ({
   src,
-  alt,
+  name,
   className = '',
   url,
   gifSrc,
 }: ProjectImageProps) => (
+  //replace the space in the name variable with a dash
   <Link
     className={classNames(
       'relative -mt-[30%] sm:-mt-4 md:mt-0 w-[95%] md:w-[60%] shrink-0 rounded-xl overflow-hidden shadow-2xl before:absolute before:inset-0 before:bg-black/20 before:z-10 group',
@@ -27,24 +28,27 @@ const ProjectImage = ({
     target='_blank'
   >
     <Image
-      title={alt}
-      alt={alt}
+      title={name}
+      alt={name}
       src={src}
       width={1000}
       height={500}
-      className='duration-300 backdrop-blur-xl object-cover w-full h-full hidden lg:inline-block lg:group-hover:hidden'
+      className='backdrop-blur-xl object-cover w-full h-full hidden lg:inline-block lg:group-hover:hidden'
     />
-    {gifSrc && (
-      <Image
-        title={alt}
-        alt={alt}
-        src={gifSrc}
-        width={750}
-        height={350}
-        className='duration-300 backdrop-blur-xl object-cover w-full h-full inline-block lg:hidden lg:group-hover:inline-block'
-        priority
+
+    <video
+      autoPlay
+      loop
+      className='w-full h-full block lg:hidden lg:group-hover:block'
+    >
+      <source
+        src={`/static/images/projects/${name
+          .toLowerCase()
+          .split(' ')
+          .join('-')}.webm`}
+        type='video/webm'
       />
-    )}
+    </video>
   </Link>
 );
 

@@ -1,3 +1,5 @@
+const withVideos = require('next-videos');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -9,7 +11,14 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['images.unsplash.com', 'cdn.sanity.io'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/images/**',
+      },
+    ],
   },
   webpack(config) {
     config.module.rules.push({
@@ -21,5 +30,6 @@ const nextConfig = {
     return config;
   },
 };
+
 
 module.exports = nextConfig;

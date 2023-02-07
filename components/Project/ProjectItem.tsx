@@ -14,7 +14,7 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
     <ProjectImage
       src={urlFor(project.image).url()}
       gifSrc={urlFor(project.gifImage).url()}
-      alt={project.name}
+      name={project.name}
       url={project.liveURL}
     />
 
