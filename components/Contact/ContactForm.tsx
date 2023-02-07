@@ -61,6 +61,7 @@ const ContactForm = () => {
         <Input
           type='text'
           name='name'
+          aria-label='name'
           label='Name'
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -68,6 +69,7 @@ const ContactForm = () => {
         <Input
           type='email'
           name='email'
+          aria-label='Email Address'
           label='Email Address'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -76,6 +78,7 @@ const ContactForm = () => {
       <Input
         type='subject'
         name='subject'
+        aria-label='Subject'
         label='Subject'
         value={subject}
         onChange={(e) => setSubject(e.target.value)}
@@ -84,6 +87,7 @@ const ContactForm = () => {
         textarea
         type='message'
         name='message'
+        aria-label='Message'
         label='Message'
         value={message}
         onChange={(e) => setMessage(e.target.value)}
@@ -93,6 +97,7 @@ const ContactForm = () => {
           disabled={isSending || !name || !email || !subject || !message}
           className={`flex items-center justify-center mt-6 disabled:opacity-50 disabled:cursor-not-allowed`}
           variant={isSending ? 'secondary' : 'primary'}
+          aria-label='Send Message'
         >
           {isSending ? (
             <>

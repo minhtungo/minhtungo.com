@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { PopUpFromBottom } from '@/lib/FramerMotionVariants';
 import Lottie from 'react-lottie-player';
 import animationData from '@/content/animation.json';
+import { Fragment } from 'react';
 
 interface JourneyProps {
   journeys: Journey[];
@@ -25,49 +26,50 @@ const Journey = ({ journeys }: JourneyProps) => {
           />
         </div>
 
-        <ul className='relative -mt-8 lg:mt-2 border-l border-gray-400 dark:border-gray-800 w-full lg:w-2/3'>
-          {journeys.slice(0, 2).map((item) => (
-            <motion.li
-              key={item.title}
-              initial='hidden'
-              whileInView='visible'
-              variants={PopUpFromBottom}
-            >
-              <JourneyCard journey={item} />
-            </motion.li>
-          ))}
-
-          <Disclosure>
-            {({ open }) => (
-              <>
-                <Disclosure.Button>
-                  <div className='text-small ml-1.5 flex pt-2'>
-                    <AiOutlineCaretDown
-                      className={`h-4 w-4 lg:h-5 md:w-5 text-gray-400 ${
-                        open ? 'rotate-180 transform ' : ''
-                      }`}
-                    />
-                  </div>
-                </Disclosure.Button>
-                <Transition
-                  show={open}
-                  enter='transition duration-400 ease-in-out'
-                  enterFrom='transform scale-95 opacity-0'
-                  enterTo='transform scale-400 opacity-100'
-                  leave='transition duration-75 ease-out'
-                  leaveFrom='transform scale-100 opacity-100'
-                  leaveTo='transform scale-95 opacity-0'
-                >
-                  <Disclosure.Panel>
-                    {journeys.slice(2).map((journey) => (
-                      <JourneyCard key={journey.title} journey={journey} />
-                    ))}
-                  </Disclosure.Panel>
-                </Transition>
-              </>
-            )}
-          </Disclosure>
-        </ul>
+        <div className='relative -mt-8 lg:mt-2  w-full lg:w-2/3'>
+          <ul className='border-l border-gray-400 dark:border-gray-800 w-full'>
+            {journeys.slice(0, 2).map((item) => (
+              <motion.li
+                key={item.title}
+                initial='hidden'
+                whileInView='visible'
+                variants={PopUpFromBottom}
+              >
+                <JourneyCard journey={item} />
+              </motion.li>
+            ))}
+            <Disclosure>
+              {({ open }) => (
+                <>
+                  <Disclosure.Button as={Fragment}>
+                    <button aria-label='Load More Journey'>
+                      <AiOutlineCaretDown
+                        className={`h-4 w-4 ml-1.5 lg:h-5 md:w-5 text-gray-400 ${
+                          open ? 'rotate-180 transform ' : ''
+                        }`}
+                      />
+                    </button>
+                  </Disclosure.Button>
+                  <Transition
+                    show={open}
+                    enter='transition duration-400 ease-in-out'
+                    enterFrom='transform scale-95 opacity-0'
+                    enterTo='transform scale-400 opacity-100'
+                    leave='transition duration-75 ease-out'
+                    leaveFrom='transform scale-100 opacity-100'
+                    leaveTo='transform scale-95 opacity-0'
+                  >
+                    <Disclosure.Panel>
+                      {journeys.slice(2).map((journey) => (
+                        <JourneyCard key={journey.title} journey={journey} />
+                      ))}
+                    </Disclosure.Panel>
+                  </Transition>
+                </>
+              )}
+            </Disclosure>
+          </ul>
+        </div>
       </div>
     </section>
   );
