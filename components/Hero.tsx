@@ -1,10 +1,8 @@
-import { Button, ModelLoader, SnowFall } from './';
-import { TypeAnimation } from 'react-type-animation';
-import { FromLeftVariant } from '../lib/FramerMotionVariants';
-import { AnimatedHeading } from './';
 import { motion } from 'framer-motion';
-
 import dynamic from 'next/dynamic';
+import { TypeAnimation } from 'react-type-animation';
+
+import { Button, ModelLoader, SnowFall } from './';
 
 const LazyDogModel = dynamic(() => import('../components/DogModel'), {
   ssr: false,

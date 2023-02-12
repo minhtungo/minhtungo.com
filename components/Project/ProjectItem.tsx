@@ -1,9 +1,9 @@
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import Link from 'next/link';
-import { Icon } from '..';
+
+import { Icon } from '@/components';
+import urlFor from '@/lib/urlFor';
+import { renderTech } from '@/util/renderTech';
 import ProjectImage from './ProjectImage';
-import urlFor from '../../lib/urlFor';
-import { renderTech } from '../../util/renderTech';
 
 interface ProjectItemProps {
   project: Project;
@@ -33,7 +33,7 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
           return (
             <span
               key={`${tool}-${index}`}
-              className='bg-gray-200 dark:bg-transparent-white text-gray-500 dark:text-gray-400 rounded px-2 py-1 text-xs sm:text-sm'
+              className='bg-gray-200 dark:bg-transparent-white text-gray-500 dark:text-gray-400 rounded px-2 py-1 text-xs sm:text-[0.8rem]'
             >
               <div className='flex items-center gap-1'>
                 {renderTech(tool)}
@@ -45,28 +45,28 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
       </div>
       <div className='mt-auto p-2 w-fit flex items-center mx-auto md:m-0 gap-4'>
         <Icon>
-          <Link
+          <a
             href={project.githubURL}
             title='Source Code on GitHub'
             target='_blank'
-            rel='noopener noreferrer'
+            rel='noreferrer'
             className='text-gray-600 dark:text-gray-400 '
           >
             <FiGithub className='w-5 h-5 hover:scale-110 active:scale-90 transition-all hover:text-blue-500' />
-          </Link>
+          </a>
         </Icon>
 
         {project.liveURL && (
           <Icon>
-            <Link
+            <a
               href={project.liveURL}
               title='Live Preview'
               target='_blank'
-              rel='noopener noreferrer'
+              rel='noreferrer'
               className='text-gray-600 dark:text-gray-400 '
             >
               <FiExternalLink className='w-5 h-5 hover:scale-110 active:scale-90 transition-all hover:text-blue-500' />
-            </Link>
+            </a>
           </Icon>
         )}
       </div>

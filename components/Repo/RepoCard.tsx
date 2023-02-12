@@ -1,9 +1,8 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { AiOutlineFolder } from 'react-icons/ai';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import { Icon } from '..';
-import { renderTech } from '../../util/renderTech';
+
+import { Icon } from '@/components';
+import { renderTech } from '@/util/renderTech';
 
 interface RepoProps {
   repo: Repo;
@@ -21,23 +20,25 @@ const RepoCard = ({ repo }: RepoProps) => {
         </div>
         <div className='flex ml-auto text-[22px] gap-3 items-center'>
           <Icon>
-            <Link
+            <a
               href={repo.githubURL}
               className='text-gray-500 dark:text-gray-400 hover:text-blue-500'
               target='_blank'
+              rel='noreferrer'
             >
               <FiGithub className='hover:text-blue-500 w-5 h-5' />
-            </Link>
+            </a>
           </Icon>
           {repo.liveURL && (
             <Icon>
-              <Link
+              <a
                 href={repo.liveURL}
                 className=' text-gray-500 dark:text-gray-400'
                 target='_blank'
+                rel='noreferrer'
               >
                 <FiExternalLink className='hover:text-blue-500 w-5 h-5' />
-              </Link>
+              </a>
             </Icon>
           )}
         </div>

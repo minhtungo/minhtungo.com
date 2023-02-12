@@ -1,15 +1,9 @@
+import { AnimatedDiv, Title } from '@/components';
+import ProfileCard from '@/components/common/ProfileCard';
+import { OpacityVariant, PopUpFromBottom } from '@/lib/FramerMotionVariants';
 import { motion } from 'framer-motion';
-import { Title, AnimatedDiv } from '@/components';
-import {
-  OpacityVariant,
-  PopUpFromBottom,
-} from '../../lib/FramerMotionVariants';
-import ProfileCard from '../common/ProfileCard';
 
-interface AboutProps {
-  resumeURL: string;
-}
-const About = ({ resumeURL }: AboutProps) => {
+const About = () => {
   return (
     <section id='about' className='pt-20 -mt-16'>
       <Title title='About Me' subtitle='Introduction' />

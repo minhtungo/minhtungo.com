@@ -1,7 +1,7 @@
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { AnimatedDiv, Button, Title } from '..';
-import { FadeContainer, PopUp } from '../../lib/FramerMotionVariants';
+import { FadeContainer, PopUpFromBottom } from '../../lib/FramerMotionVariants';
 import RepoCard from './RepoCard';
 
 interface ReposProps {
@@ -46,7 +46,7 @@ const Repo = ({ repos }: ReposProps) => {
         className='grid grid-cols-1 gap-3 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:mt-6'
       >
         {repoList?.slice(0, SKIP).map((repo) => (
-          <motion.div variants={PopUp} key={repo.name}>
+          <motion.div variants={PopUpFromBottom} key={repo.name}>
             <RepoCard repo={repo} />
           </motion.div>
         ))}
@@ -61,12 +61,7 @@ const Repo = ({ repos }: ReposProps) => {
             className='grid grid-cols-1 gap-3 mx-auto md:grid-cols-2 lg:grid-cols-3 mt-3'
           >
             {repoList?.slice(SKIP, displayCount).map((repo) => (
-              <motion.div
-                variants={PopUp}
-                key={repo.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-              >
+              <motion.div variants={PopUpFromBottom} key={repo.name}>
                 <RepoCard repo={repo} />
               </motion.div>
             ))}

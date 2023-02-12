@@ -5,10 +5,10 @@ import Image from 'next/image';
 const TechStack = () => {
   return (
     <section id='technologies' className='pt-6'>
-      {/* <Title
+      <Title
         title='Technologies'
         subtitle='Some Technologies I Have Used Recently'
-      /> */}
+      />
       <div className='-mt-5 flex items-center -mb-4'>
         <Marquees className='py-4 pb-6'>
           {techStack.map((tech) => (

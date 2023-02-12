@@ -10,7 +10,7 @@ export const FadeContainer: Variants = {
 
 export const PopUp: Variants = {
   hidden: { scale: 0, opacity: 0 },
-  
+
   visible: {
     opacity: 1,
     scale: 1,

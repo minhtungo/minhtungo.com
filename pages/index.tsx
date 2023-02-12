@@ -61,9 +61,9 @@ export default function Home({
       <main className={open_sans.className}>
         <Container>
           <Hero resumeURL={resumeURL} />
-          <About resumeURL={resumeURL} />
+          <About />
           <Journey journeys={journeys} />
-          {/* <TechStack /> */}
+          <TechStack />
           <Projects projects={projects} />
           <Repo repos={repos} />
           <Contact />
