@@ -11,11 +11,14 @@ interface NavItemProps {
 
 const NavItem = ({ href, text }: NavItemProps) => {
   const router = useRouter();
-  const isActive = router.asPath === (href === '/home' ? '/' : `/#${href}`);
+  const path = router.asPath;
+  const isActive = path === (href === '/home' ? '/' : `/#${href}`);
+  const hrefLink =
+    href === 'uses' ? `/${href}` : href === '/home' ? '/' : `/#${href}`;
 
   return (
     <Link
-      href={href === '/home' ? '/' : `#${href}`}
+      href={hrefLink}
       className={`${
         isActive
           ? 'font-bold text-gray-800 dark:text-gray-200'

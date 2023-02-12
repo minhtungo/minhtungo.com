@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
 const SnowFall = () => {
-  const {theme } = useTheme();
+  const { theme } = useTheme();
 
   const [showChild, setShowChild] = useState(false);
   // Wait until after client-side hydration to show

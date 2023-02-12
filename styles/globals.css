@@ -26,6 +26,10 @@
   .card {
     @apply flex flex-col md:flex-row items-center mt-[30%] sm:mt-8 transition-all gap-4 md:gap-0;
   }
+
+  .headline {
+    @apply font-bold text-transparent bg-clip-text bg-primary-gradient
+  }
 }
 
 /* Scroll bar */

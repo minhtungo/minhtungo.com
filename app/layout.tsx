@@ -1,5 +1,11 @@
-import { Footer, Header } from '@/components';
-import '@styles/global.css';
+import { Container, Footer, Header } from '@/components';
+import { Open_Sans } from '@next/font/google';
+
+import '@/styles/globals.css';
+import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
+import ScrollToTop from 'react-scroll-to-top';
+
+const open_sans = Open_Sans({ subsets: ['latin'] });
 
 export const metadata = {
   title: {
@@ -29,8 +35,15 @@ export default function RootLayout({
     <html lang='en' className='dark'>
       <body>
         <Header />
-        <main>{children}</main>
+        <Container className={open_sans.className}>{children}</Container>
         <Footer />
+        <ScrollToTop
+          smooth
+          className='!rounded-full bg-primary-gradient'
+          component={
+            <MdOutlineKeyboardArrowUp className='mx-auto h-6 w-6 text-white' />
+          }
+        />
       </body>
     </html>
   );

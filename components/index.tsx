@@ -50,5 +50,5 @@ export {
   toastifySuccess,
   toastifyFailure,
   LoadingSpinner,
-  Journey
+  Journey,
 };

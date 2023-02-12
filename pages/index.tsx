@@ -1,25 +1,21 @@
-import Head from 'next/head';
 import { Open_Sans } from '@next/font/google';
-import ScrollToTop from 'react-scroll-to-top';
-import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
+import Head from 'next/head';
 
 import {
-  Hero,
-  Container,
-  Repo,
-  Contact,
   About,
-  TechStack,
-  Projects,
-  Header,
-  Footer,
+  Contact,
+  Container,
+  Hero,
   Journey,
+  Projects,
+  Repo,
+  TechStack,
 } from '../components';
 import {
   client,
+  journeyQuery,
   projectQuery,
   repoQuery,
-  journeyQuery,
   resumeQuery,
 } from '../lib/sanity.client';
 
@@ -63,24 +59,15 @@ export default function Home({
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={open_sans.className}>
-        <Header />
         <Container>
           <Hero resumeURL={resumeURL} />
           <About resumeURL={resumeURL} />
           <Journey journeys={journeys} />
-          <TechStack />
+          {/* <TechStack /> */}
           <Projects projects={projects} />
           <Repo repos={repos} />
           <Contact />
         </Container>
-        <Footer />
-        <ScrollToTop
-          smooth
-          className='!rounded-full bg-primary-gradient'
-          component={
-            <MdOutlineKeyboardArrowUp className='mx-auto h-6 w-6 text-white' />
-          }
-        />
       </main>
     </>
   );

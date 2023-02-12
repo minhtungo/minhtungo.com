@@ -121,7 +121,7 @@ const Header = () => {
       className={`${inter.className} fixed w-full top-0 left-0 right-0 z-50 backdrop-filter`}
       ref={navRef}
     >
-      <Container className='flex items-center justify-between py-[8px]'>
+      <div className='flex items-center justify-between py-2 px-4 sm:px-6 lg:px-12'>
         <HamBurger open={navOpen} handleClick={handleClick} />
         <AnimatePresence>
           {navOpen && (
@@ -184,7 +184,7 @@ const Header = () => {
             <DropdownMenu />
           </div>
         </div>
-      </Container>
+      </div>
     </header>
   );
 };

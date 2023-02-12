@@ -37,8 +37,11 @@ const ProjectImage = ({
     />
 
     <video
+      webkit-playsinline
+      playsInline
       autoPlay
       loop
+      muted
       className='w-full h-full block lg:hidden lg:group-hover:block'
     >
       <source

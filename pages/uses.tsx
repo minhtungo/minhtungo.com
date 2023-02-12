@@ -1,6 +1,13 @@
+import Head from 'next/head';
+
 const uses = () => {
   return (
-    <div>uses</div>
-  )
-}
-export default uses
+    <>
+      <Head>
+        <title>Uses</title>
+      </Head>
+      <div>uses</div>
+    </>
+  );
+};
+export default uses;

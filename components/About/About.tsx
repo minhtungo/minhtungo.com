@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Title, AnimatedDiv } from '..';
+import { Title, AnimatedDiv } from '@/components';
 import {
   OpacityVariant,
   PopUpFromBottom,
