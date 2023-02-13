@@ -1,19 +1,17 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
-import Link from 'next/link';
-import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
-import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { Inter } from '@next/font/google';
-
+import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
+import { Icon, Logo } from '..';
 import { FadeContainer, FromLeftVariant } from '../../lib/FramerMotionVariants';
-
-import { Logo, Container, Icon } from '..';
-import HamBurger from './Hamburger';
-import NavItem from './NavItem';
-import MobileMenu from './MobileMenu';
 import DropdownMenu from './DropdownMenu';
+import HamBurger from './Hamburger';
+import MobileMenu from './MobileMenu';
+import NavItem from './NavItem';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,6 +20,7 @@ const navigationRoutes: string[] = [
   'about',
   'journey',
   'projects',
+  'uses',
   'contact',
 ];
 
@@ -53,9 +52,9 @@ const Header = () => {
       <DarkModeSwitch
         checked={isDarkMode}
         onChange={toggleDarkMode}
-        size={24}
+        size={22}
         moonColor='#FFD700'
-        sunColor='#ffcd1a'
+        sunColor='#e6c300'
       />
     );
   };
@@ -121,7 +120,7 @@ const Header = () => {
       className={`${inter.className} fixed w-full top-0 left-0 right-0 z-50 backdrop-filter`}
       ref={navRef}
     >
-      <div className='flex items-center justify-between py-2 px-4 sm:px-6 lg:px-12'>
+      <div className='flex items-center justify-between py-2 px-4 lg:px-6 xl:px-12'>
         <HamBurger open={navOpen} handleClick={handleClick} />
         <AnimatePresence>
           {navOpen && (

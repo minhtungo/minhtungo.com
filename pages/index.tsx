@@ -58,17 +58,16 @@ export default function Home({
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className={open_sans.className}>
-        <Container>
-          <Hero resumeURL={resumeURL} />
-          <About />
-          <Journey journeys={journeys} />
-          <TechStack />
-          <Projects projects={projects} />
-          <Repo repos={repos} />
-          <Contact />
-        </Container>
-      </main>
+
+      <Container>
+        <Hero resumeURL={resumeURL} />
+        <About />
+        <Journey journeys={journeys} />
+        <TechStack />
+        <Projects projects={projects} />
+        <Repo repos={repos} />
+        <Contact />
+      </Container>
     </>
   );
 }

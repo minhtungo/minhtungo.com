@@ -2,6 +2,7 @@ import { AnimatedDiv, Title } from '@/components';
 import ProfileCard from '@/components/common/ProfileCard';
 import { OpacityVariant, PopUpFromBottom } from '@/lib/FramerMotionVariants';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const About = () => {
   return (

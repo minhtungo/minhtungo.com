@@ -14,7 +14,7 @@ import Link from 'next/link';
 export default function DropdownMenu() {
   const [enabled, setEnabled] = useState(false);
   return (
-    <Menu as='span' className='flex lg:hidden items-center'>
+    <Menu as='span' className='flex lg:hidden items-center mt-[6px] lg:mt-0'>
       {({ open }) => (
         <>
           <Menu.Button>

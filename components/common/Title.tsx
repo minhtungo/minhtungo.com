@@ -32,6 +32,7 @@ const Title = ({ title, subtitle, className }: TitleProps) => {
       >
         {title}
       </AnimatedHeading>
+
       {subtitle && (
         <AnimatedText
           variants={PopUpFromBottom}
