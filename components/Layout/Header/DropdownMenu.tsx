@@ -1,6 +1,6 @@
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment, useState } from 'react';
-import Avatar from '../common/Avatar';
+import Avatar from '../../common/Avatar';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { IoDocumentTextOutline } from 'react-icons/io5';
 

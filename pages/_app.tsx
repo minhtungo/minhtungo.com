@@ -8,7 +8,7 @@ import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
 import ScrollToTop from 'react-scroll-to-top';
 
 import type { AppProps } from 'next/app';
-import MDXComponents from '@/components/common/MDXComponents';
+import MDXComponents from '@/components/MDXComponents/MDXComponents';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (

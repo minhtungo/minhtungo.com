@@ -6,8 +6,11 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
-import { Icon, Logo } from '..';
-import { FadeContainer, FromLeftVariant } from '../../lib/FramerMotionVariants';
+import { Icon, Logo } from '../..';
+import {
+  FadeContainer,
+  FromLeftVariant,
+} from '../../../lib/FramerMotionVariants';
 import DropdownMenu from './DropdownMenu';
 import HamBurger from './Hamburger';
 import MobileMenu from './MobileMenu';

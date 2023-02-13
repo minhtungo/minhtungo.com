@@ -42,3 +42,10 @@ interface Reference {
   _ref: string;
   _type: 'reference';
 }
+
+interface Item {
+  image: string;
+  name: string;
+  description: string;
+  url: string;
+}

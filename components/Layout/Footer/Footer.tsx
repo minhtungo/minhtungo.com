@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { Container, Icon } from './';
+import { Container, Icon } from '../..';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
-import { PopUpFromBottom } from '../lib/FramerMotionVariants';
+import { PopUpFromBottom } from '../../../lib/FramerMotionVariants';
 
 const Footer = () => {
   return (

@@ -1,3 +1,4 @@
+import Meta from '@/components/Layout/Meta';
 import { Open_Sans } from '@next/font/google';
 import Head from 'next/head';
 
@@ -49,16 +50,7 @@ export default function Home({
 }: HomeProps) {
   return (
     <>
-      <Head>
-        <title>Minh Tu Ngo</title>
-        <meta
-          name='description'
-          content='My personal portfolio to showcase my work. Built with NextJS, Tailwind CSS and Sanity.'
-        />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
+      <Meta />
       <Container>
         <Hero resumeURL={resumeURL} />
         <About />

@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { TypeAnimation } from 'react-type-animation';
 
-import { Button, ModelLoader, SnowFall } from './';
+import { Button, ModelLoader, SnowFall } from '..';
 
-const LazyDogModel = dynamic(() => import('../components/DogModel'), {
+const LazyDogModel = dynamic(() => import('./Model/DogModel'), {
   ssr: false,
   loading: () => <ModelLoader />,
 });

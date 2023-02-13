@@ -1,5 +1,5 @@
-import { Marquees, Title } from './';
-import techStack from '../content/techStack';
+import { Marquees, Title } from '..';
+import techStack from '../../config/techStack';
 import Image from 'next/image';
 
 const TechStack = () => {

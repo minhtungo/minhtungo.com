@@ -1,6 +1,6 @@
 import { MdMenu, MdClose } from 'react-icons/md';
 import { motion } from 'framer-motion';
-import { PopUp } from '../../lib/FramerMotionVariants';
+import { PopUp } from '../../../lib/FramerMotionVariants';
 
 const HamBurger = ({
   open,

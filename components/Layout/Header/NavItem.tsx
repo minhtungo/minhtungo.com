@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 import { motion } from 'framer-motion';
-import { PopUp } from '../../lib/FramerMotionVariants';
+import { PopUp } from '../../../lib/FramerMotionVariants';
 
 interface NavItemProps {
   href: string;

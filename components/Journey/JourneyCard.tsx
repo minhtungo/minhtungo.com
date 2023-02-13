@@ -6,44 +6,44 @@ interface JourneyCardProps {
 
 const JourneyCard = ({ journey }: JourneyCardProps) => {
   return (
-    <div className='mb-4 ml-6 md:ml-8 rounded-lg border-1 dark:border-2 shadow-lg p-3 px-4 md:px-6 bg-card-background-light border-custom-border-black dark:bg-card-background-dark dark:border-transparent-white'>
+    <div className='mb-4 ml-6 rounded-lg border border-custom-border-black bg-card-background-light p-3 px-4 shadow-lg dark:border-transparent-white dark:bg-card-background-dark md:ml-8 md:px-6'>
       <span
-        className={`absolute flex items-center justify-center w-6 h-6 bg-blue-200 rounded-full -left-3 ring-8 ring-gray-200 dark:ring-gray-900 dark:bg-blue-900`}
+        className={`absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-200 ring-8 ring-gray-200 dark:bg-blue-900 dark:ring-gray-900`}
       >
         {journey.status ? (
           <>
             <div
-              className={`absolute bg-blue-200  rounded-full w-6 h-6 animate-ping`}
+              className={`absolute h-6  w-6 animate-ping rounded-full bg-blue-200`}
             />
-            <div className={`absolute rounded-full w-6 h-6`} />
+            <div className={`absolute h-6 w-6 rounded-full`} />
           </>
         ) : null}
         <IconHelper
           type={journey.icon}
-          className='w-3 h-3 text-blue-800 dark:text-blue-300 z-10'
+          className='z-10 h-3 w-3 text-blue-800 dark:text-blue-300'
         />
       </span>
       <div className='flex w-full items-center'>
-        <h3 className='text-base md:text-md font-semibold text-gray-800 dark:text-gray-300'>
+        <h3 className='md:text-md text-base font-semibold text-gray-800 dark:text-gray-300'>
           {journey.title}
         </h3>
         {journey.status ? (
-          <span className='hidden md:inline bg-blue-200 text-blue-800 text-xs md:text-sm font-medium px-2 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3 flex-'>
+          <span className='flex- ml-3 hidden rounded bg-blue-200 px-2 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300 md:inline md:text-sm'>
             {journey.status}
           </span>
         ) : null}
       </div>
 
-      <time className='text-xs md:text-sm font-normal leading-none text-gray-400 dark:text-gray-500'>
+      <time className='text-xs font-normal leading-none text-gray-400 dark:text-gray-500 md:text-sm'>
         {journey.status ? (
-          <span className='md:hidden bg-blue-200 text-blue-800 text-xs md:text-sm font-medium px-2 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 flex-'>
+          <span className='flex- rounded bg-blue-200 px-2 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300 md:hidden md:text-sm'>
             {journey.status}
           </span>
         ) : (
           journey.date
         )}
       </time>
-      <p className='text-sm sm:text-base text-gray-600 dark:text-gray-400 max-w-none my-1 '>
+      <p className='my-1 max-w-none text-sm text-gray-600 dark:text-gray-400 sm:text-base '>
         {journey.description}
       </p>
     </div>

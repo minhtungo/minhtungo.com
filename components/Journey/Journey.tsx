@@ -5,7 +5,7 @@ import JourneyCard from './JourneyCard';
 import { motion } from 'framer-motion';
 import { PopUpFromBottom } from '@/lib/FramerMotionVariants';
 import Lottie from 'react-lottie-player';
-import animationData from '@/content/animation.json';
+import animationData from '@/config/animation.json';
 import { Fragment } from 'react';
 
 interface JourneyProps {

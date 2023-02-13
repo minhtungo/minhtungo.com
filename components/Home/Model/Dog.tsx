@@ -1,5 +1,3 @@
-
-
 import * as THREE from 'three';
 import { useGLTF } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
@@ -17,7 +15,7 @@ type GLTFResult = GLTF & {
 
 export function Dog(props: JSX.IntrinsicElements['group']) {
   // @ts-ignore
-  const { nodes, materials } = useGLTF('/dog-baked.glb') as GLTFResult;
+  const { nodes, materials } = useGLTF('/model/dog-baked.glb') as GLTFResult;
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -36,4 +34,4 @@ export function Dog(props: JSX.IntrinsicElements['group']) {
   );
 }
 
-useGLTF.preload('/dog-baked.glb');
+useGLTF.preload('/model/dog-baked.glb');

@@ -1,4 +1,9 @@
 import { Container } from '@/components';
+import Head from 'next/head';
+import Meta from '@/components/Layout/Meta';
+import { OFFICE_ITEMS, CODING, OTHER_TECH } from '@/config/uses';
+
+<Meta title='Uses' />
 
 ## Uses
 
@@ -6,26 +11,16 @@ Here's my current technology setup for coding, gaming, and daily life.
 
 ### Computer / Office
 
-- Asus TUF Gaming F15 FX506 Laptop
-- Dell 32 Curved 4K UHD Monitor - S3221QS
-- ASUS ROG Falchion Wireless 65% Mechanical Keyboard
-- HyperX Pulsefire Haste Mouse
-- Sennheiser CX 300S In Ear Headphone
-- Razer Seiren X Microphone
-- Logitech Webcam C925e
-- Quntis Computer Monitor Light
+<ItemGrid items={OFFICE_ITEMS} />
 
 ### Coding
 
-- Editor: VSCode
-- Theme: Halcyon
+<ItemGrid items={CODING} />
 
 ### Other Tech
 
-- Samsung Galaxy S23 Green
-- Samsung Galaxy Buds2 Pro
-- RENPHO Air Purifier
+<ItemGrid items={OTHER_TECH} />
 
 export default ({ children }) => (
-  <Container className='pt-16'>{children}</Container>
+  <Container className='max-w-6xl pt-20'>{children}</Container>
 );

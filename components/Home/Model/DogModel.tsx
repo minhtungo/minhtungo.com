@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
-import { Dog } from './common/Dog';
+import { Dog } from './Dog';
 import { useState, useEffect } from 'react';
 interface DogModelTypes {
   className?: string;

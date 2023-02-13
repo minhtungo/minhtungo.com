@@ -1,7 +1,10 @@
 import { FromLeftVariant, PopUpFromBottom } from '@/lib/FramerMotionVariants';
 import { motion } from 'framer-motion';
+
 import AnimatedHeading from '../FramerMotion/AnimatedHeading';
 import AnimatedText from '../FramerMotion/AnimatedText';
+import Image from './Image';
+import ItemGrid from './ItemGrid';
 
 interface Props {
   children: React.ReactElement;
@@ -11,7 +14,7 @@ const Heading = {
   H2: ({ children }: Props) => (
     <AnimatedHeading
       variants={FromLeftVariant}
-      className='text-3xl lg:text-4xl font-semibold lg:font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-700 to-blue-600 bg-[length:400%_400%] animate-border'
+      className='mb-3 animate-border bg-gradient-to-r from-cyan-700 to-blue-600 bg-[length:400%_400%] bg-clip-text text-3xl font-semibold text-transparent lg:text-4xl lg:font-bold'
     >
       {children}
     </AnimatedHeading>
@@ -22,7 +25,7 @@ const Heading = {
       whileInView='visible'
       viewport={{ once: true }}
       variants={PopUpFromBottom}
-      className='text-lg md:text-xl lg:text-2xl text-black dark:text-white'
+      className='text-lg text-black dark:text-gray-50 md:text-xl lg:text-2xl'
     >
       {children}
     </motion.h3>
@@ -30,7 +33,10 @@ const Heading = {
 };
 
 const p = ({ children }: Props) => (
-  <AnimatedText variants={PopUpFromBottom} className='mt-2 mb-6'>
+  <AnimatedText
+    variants={PopUpFromBottom}
+    className='mt-2 mb-6 text-gray-900 dark:text-gray-200'
+  >
     {children}
   </AnimatedText>
 );
@@ -47,7 +53,7 @@ const ul = ({ children }: Props) => (
   </motion.ul>
 );
 
-const li = ({ children }: Props) => <li className='pl-2 mb-2'>{children}</li>;
+const li = ({ children }: Props) => <li className='mb-2 pl-2'>{children}</li>;
 
 const MDXComponents = {
   h2: Heading.H2,
@@ -55,6 +61,9 @@ const MDXComponents = {
   p,
   li,
   ul,
+  Image,
+  // Custom components
+  ItemGrid,
 };
 
 export default MDXComponents;

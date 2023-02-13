@@ -28,7 +28,11 @@
   }
 
   .headline {
-    @apply font-bold text-transparent bg-clip-text bg-primary-gradient
+    @apply font-bold text-transparent bg-clip-text bg-primary-gradient;
+  }
+
+  .secondary-gradient {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500;
   }
 }
 
