@@ -6,12 +6,12 @@ import Link from '../common/Link';
 
 const ProfileCard = () => {
   return (
-    <div className=' mx-auto w-full max-w-sm overflow-hidden  rounded-xl bg-card-background-light pb-4 shadow-md dark:bg-card-background-dark dark:text-gray-100'>
+    <div className=' mx-auto w-full max-w-sm overflow-hidden rounded-xl bg-card-background-light pb-4 shadow-md dark:bg-card-background-dark dark:text-gray-100'>
       <Link href='https://tenor.com/bCgDy.gif' animation={false}>
         {/* "GIF courtesy of Author's Dudun from https://tenor.com/bCgDy.gif" */}
         <Image
           src='/static/images/astronaut.gif'
-          className='h-32 w-full object-cover'
+          className='h-32 w-full object-cover OBJECT-'
           alt='astronaut playing'
           height={200}
           width={600}
