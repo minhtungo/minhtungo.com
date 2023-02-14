@@ -1,9 +1,8 @@
-import Link from 'next/link';
-import { cva, VariantProps } from 'class-variance-authority';
-import { AnchorHTMLAttributes } from 'react';
-
-import { motion } from 'framer-motion';
+import Link from '@/components/common/Link';
 import { PopUp } from '@/lib/FramerMotionVariants';
+import { cva, VariantProps } from 'class-variance-authority';
+import { motion } from 'framer-motion';
+import { AnchorHTMLAttributes } from 'react';
 
 interface ButtonProps
   extends VariantProps<typeof buttonClasses>,
@@ -12,7 +11,6 @@ interface ButtonProps
   href?: string;
   disabled?: boolean;
   onClick?: () => void;
-  newTab?: boolean;
 }
 
 const buttonClasses = cva('relative rounded-full inline-flex items-center', {
@@ -45,7 +43,6 @@ const Button = ({
   variant,
   size,
   onClick,
-  newTab,
   ...props
 }: ButtonProps) => {
   if (!href)
@@ -69,8 +66,7 @@ const Button = ({
       <Link
         className={buttonClasses({ variant, size, className: props.className })}
         href={href}
-        onClick={onClick}
-        target={newTab ? '_blank' : '_self'}
+        animation={false}
       >
         {children}
       </Link>

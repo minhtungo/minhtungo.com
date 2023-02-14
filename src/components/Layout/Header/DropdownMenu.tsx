@@ -81,39 +81,6 @@ export default function DropdownMenu() {
                   )}
                 </Menu.Item>
               </div>
-              {/* <div className="px-1 py-1">
-                <Menu.Item>
-                  {({ active }) => (
-                    <Switch
-                      checked={enabled}
-                      onChange={setEnabled}
-                      className={`${
-                        enabled
-                          ? "bg-blue-500 text-gray-50"
-                          : "text-gray-600 dark:text-gray-300"
-                      } relative inline-flex h-6 w-11 items-center rounded-full`}
-                    >
-                      <span className="sr-only">Enable notifications</span>
-                      <span
-                        className={`${
-                          enabled ? "translate-x-6" : "translate-x-1"
-                        } inline-block h-4 w-4 transform rounded-full bg-white transition`}
-                      />
-                    </Switch>
-
-                    // <button
-                    //   className={`${
-                    //     active
-                    //       ? "bg-blue-500 text-gray-50"
-                    //       : "text-gray-600 dark:text-gray-300"
-                    //   } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
-                    // >
-                    //   {renderThemeChanger()}
-                    //   {isDarkMode ? "Dark Mode" : "Light Mode"}
-                    // </button>
-                  )}
-                </Menu.Item>
-              </div> */}
             </Menu.Items>
           </Transition>
         </>

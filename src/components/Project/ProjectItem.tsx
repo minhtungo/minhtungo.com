@@ -1,8 +1,9 @@
-import { FiExternalLink, FiGithub } from 'react-icons/fi';
-
 import { Icon } from '@/components';
+import Link from '@/components/common/Link';
 import urlFor from '@/lib/urlFor';
 import { renderTech } from '@/util/renderTech';
+import { FiExternalLink, FiGithub } from 'react-icons/fi';
+
 import ProjectImage from './ProjectImage';
 
 interface ProjectItemProps {
@@ -45,28 +46,24 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
       </div>
       <div className='mx-auto mt-auto flex w-fit items-center gap-4 p-2 md:m-0'>
         <Icon>
-          <a
+          <Link
             href={project.githubURL}
-            title='Source Code on GitHub'
-            target='_blank'
-            rel='noreferrer'
-            className='text-gray-600 dark:text-gray-400 '
+            className='text-gray-600 dark:text-gray-400'
+            animation={false}
           >
             <FiGithub className='h-5 w-5 transition-all hover:scale-110 hover:text-blue-500 active:scale-90' />
-          </a>
+          </Link>
         </Icon>
 
         {project.liveURL && (
           <Icon>
-            <a
+            <Link
               href={project.liveURL}
-              title='Live Preview'
-              target='_blank'
-              rel='noreferrer'
-              className='text-gray-600 dark:text-gray-400 '
+              className='text-gray-600 dark:text-gray-400'
+              animation={false}
             >
               <FiExternalLink className='h-5 w-5 transition-all hover:scale-110 hover:text-blue-500 active:scale-90' />
-            </a>
+            </Link>
           </Icon>
         )}
       </div>

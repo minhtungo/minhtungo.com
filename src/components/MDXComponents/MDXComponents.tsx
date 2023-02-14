@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import AnimatedHeading from '@/components/FramerMotion/AnimatedHeading';
 import AnimatedText from '@/components/FramerMotion/AnimatedText';
-import Image from './Image';
+import Image from '../common/Image';
 import ItemGrid from './ItemGrid';
 
 interface Props {

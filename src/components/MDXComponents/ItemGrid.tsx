@@ -1,4 +1,4 @@
-import Image from './Image';
+import Image from '../common/Image';
 import Link from '@/components/common/Link';
 
 type ItemGridProps = {

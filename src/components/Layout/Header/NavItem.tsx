@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import Link from 'next/link';
+import Link from '@/components/common/Link';
 
 import { motion } from 'framer-motion';
 import { PopUp } from '@/lib/FramerMotionVariants';
@@ -23,7 +23,7 @@ const NavItem = ({ href, text }: NavItemProps) => {
         isActive
           ? 'font-bold text-gray-800 dark:text-gray-200'
           : 'font-normal text-gray-700 dark:text-gray-300'
-      } hidden rounded-md px-2 py-[3px] text-base transition-all hover:bg-gray-300 dark:hover:bg-neutral-700/50 lg:inline-block lg:px-3`}
+      } mx-2 hidden rounded-md text-base transition-all lg:inline-block`}
     >
       <motion.p className='capitalize' variants={PopUp}>
         {text}

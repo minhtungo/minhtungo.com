@@ -15,7 +15,7 @@ const Meta = ({ title = 'Minh Tu Ngo' }: { title?: string }) => {
         content='g1-44M24PQ6GQhldbE7NCu17OA9nz5bGWZyNrGiw_5M'
       />
       <meta name='viewport' content='width=device-width, initial-scale=1' />
-      <link rel='icon' href='/favicon.ico' />
+      <link rel='icon' href='/favicon/favicon.ico' />
     </Head>
   );
 };

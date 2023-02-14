@@ -1,7 +1,7 @@
 import { Inter } from '@next/font/google';
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import Link from 'next/link';
+import Link from '@/components/common/Link';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
@@ -127,7 +127,12 @@ const Header = () => {
             <MobileMenu links={navigationRoutes} handleClick={handleClick} />
           )}
         </AnimatePresence>
-        <Link href='/' className='mr-3' aria-label='Link to Home Page'>
+        <Link
+          href='/'
+          className='mr-3'
+          aria-label='Link to Home Page'
+          animation={false}
+        >
           <motion.div
             initial='hidden'
             animate='visible'
@@ -159,7 +164,7 @@ const Header = () => {
               <Link
                 href='https://github.com/minhtungo'
                 className='hover:text-blue-500'
-                target='_blank'
+                animation={false}
               >
                 <FiGithub className='h-5 w-5' />
               </Link>
@@ -169,7 +174,7 @@ const Header = () => {
               <Link
                 href='https://www.linkedin.com/in/minhtungo/'
                 className='hover:text-blue-500'
-                target='_blank'
+                animation={false}
               >
                 <FiLinkedin className='h-5 w-5' />
               </Link>

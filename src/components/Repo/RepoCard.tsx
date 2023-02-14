@@ -1,8 +1,8 @@
+import { Icon } from '@/components';
+import Link from '@/components/common/Link';
+import { renderTech } from '@/util/renderTech';
 import { AiOutlineFolder } from 'react-icons/ai';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
-
-import { Icon } from '@/components';
-import { renderTech } from '@/util/renderTech';
 
 interface RepoProps {
   repo: Repo;
@@ -10,54 +10,52 @@ interface RepoProps {
 
 const RepoCard = ({ repo }: RepoProps) => {
   return (
-    <div className='p-4 bg-card-background-light dark:bg-card-background-dark hover:text-shadow hover:shadow-primary h-full rounded'>
+    <div className='hover:text-shadow h-full rounded bg-card-background-light p-4 hover:shadow-primary dark:bg-card-background-dark'>
       <div className='flex items-center'>
         <div className='flex items-center space-x-2'>
-          <AiOutlineFolder className='text-blue-500 text-2xl' />
-          <h2 className='text-base lg:text-md font-semibold text-gray-800 dark:text-gray-300'>
+          <AiOutlineFolder className='text-2xl text-blue-500' />
+          <h2 className='lg:text-md text-base font-semibold text-gray-800 dark:text-gray-300'>
             {repo.name}
           </h2>
         </div>
-        <div className='flex ml-auto text-[22px] gap-3 items-center'>
+        <div className='ml-auto flex items-center gap-3 text-[22px]'>
           <Icon>
-            <a
+            <Link
               href={repo.githubURL}
-              className='text-gray-500 dark:text-gray-400 hover:text-blue-500'
-              target='_blank'
-              rel='noreferrer'
+              className='text-gray-500 hover:text-blue-500 dark:text-gray-400'
+              animation={false}
             >
-              <FiGithub className='hover:text-blue-500 w-5 h-5' />
-            </a>
+              <FiGithub className='h-5 w-5 hover:text-blue-500' />
+            </Link>
           </Icon>
           {repo.liveURL && (
             <Icon>
-              <a
+              <Link
                 href={repo.liveURL}
                 className=' text-gray-500 dark:text-gray-400'
-                target='_blank'
-                rel='noreferrer'
+                animation={false}
               >
-                <FiExternalLink className='hover:text-blue-500 w-5 h-5' />
-              </a>
+                <FiExternalLink className='h-5 w-5 hover:text-blue-500' />
+              </Link>
             </Icon>
           )}
         </div>
       </div>
       {/* Tech Stack */}
-      <div className='flex space-x-2 items-center flex-wrap mt-2'>
+      <div className='mt-2 flex flex-wrap items-center space-x-2'>
         {repo.tools.map((tool) => (
-          <span
-            className='flex gap-1 items-center transition duration-200 ease-linear group relative'
+          <p
+            className='group relative flex items-center gap-1 transition duration-200 ease-linear'
             key={`${repo.name}-${tool}`}
           >
             {renderTech(tool, 'w-5 h-5')}
-            <span className='absolute -top-7 -left-[50%] w-max scale-0 bg-background-light dark:bg-background-dark px-2 py-1 text-sm group-hover:scale-100 text-gray-800 dark:text-gray-300 transition-all rounded font-medium shadow'>
+            <span className='absolute -top-7 -left-[50%] w-max scale-0 rounded bg-background-light px-2 py-1 text-sm font-medium text-gray-800 shadow transition-all group-hover:scale-100 dark:bg-background-dark dark:text-gray-300'>
               {tool}
             </span>
-          </span>
+          </p>
         ))}
       </div>
-      <p className='mt-4 text-gray-600 dark:text-gray-400 text-sm'>
+      <p className='mt-4 text-sm text-gray-600 dark:text-gray-400'>
         {repo.description}
       </p>
     </div>
