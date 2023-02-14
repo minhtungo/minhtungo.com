@@ -23,14 +23,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.sanity.io',
-        port: '',
-        pathname: '/images/**',
-      },
-    ],
+    domains: ['cdn.sanity.io', 'res.cloudinary.com'],
   },
   webpack(config) {
     config.module.rules.push({

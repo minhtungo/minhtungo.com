@@ -1,6 +1,15 @@
 import React from 'react';
 import Image from '@/components/common/Image';
 import classNames from 'classnames';
+
+const videoSrc = {
+  cinecity:
+    'https://res.cloudinary.com/dks1prxi5/video/upload/v1676348436/cinecity_cpog2b.webm',
+  'job-tracker':
+    'https://res.cloudinary.com/dks1prxi5/video/upload/v1676348435/job-tracker_pjmfs7.webm',
+  kanban:
+    'https://res.cloudinary.com/dks1prxi5/video/upload/v1676348435/kanban_zjghha.webm',
+};
 interface ProjectImageProps {
   src: string;
   name: string;
@@ -16,10 +25,10 @@ const ProjectImage = ({
   url,
   gifSrc,
 }: ProjectImageProps) => {
-  const videoSrc = `/static/images/projects/${name
-    .toLowerCase()
-    .split(' ')
-    .join('-')}.webm`;
+  const videoLink = `${name.toLowerCase().split(' ').join('-')}`;
+
+  console.log(videoLink);
+
   return (
     <a
       className={classNames(
@@ -30,32 +39,32 @@ const ProjectImage = ({
       target='_blank'
       rel='noreferrer'
     >
-      {/* <Image
+      <Image
         title={name}
         alt={name}
         src={src}
         width={800}
         height={400}
         className='hidden h-full w-full object-cover backdrop-blur-xl lg:inline-block lg:group-hover:hidden'
-      /> */}
-      <Image
+      />
+      {/* <Image
         title={name}
         alt={name}
         src={gifSrc}
         width={800}
         height={400}
         className='h-full w-full object-cover backdrop-blur-xl'
-      />
+      /> */}
 
-      {/* <video
+      <video
         playsInline
         autoPlay
         loop
         muted
         className='block h-full w-full lg:hidden lg:group-hover:block'
       >
-        <source src={videoSrc} type='video/webm' />
-      </video> */}
+        <source src={videoSrc[videoLink]} type='video/webm' />
+      </video>
     </a>
   );
 };
