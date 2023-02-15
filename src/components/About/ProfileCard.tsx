@@ -2,7 +2,7 @@ import Image from '@/components/common/Image';
 import { TypeAnimation } from 'react-type-animation';
 
 import Button from '@/components/common/Button';
-import Link from '../common/Link';
+import Link from '@/components/common/Link';
 
 const ProfileCard = () => {
   return (
@@ -10,8 +10,8 @@ const ProfileCard = () => {
       <Link href='https://tenor.com/bCgDy.gif' animation={false}>
         {/* "GIF courtesy of Author's Dudun from https://tenor.com/bCgDy.gif" */}
         <Image
-          src='/static/images/astronaut.gif'
-          className='h-32 w-full object-cover OBJECT-'
+          src='https://res.cloudinary.com/dks1prxi5/image/upload/v1676391641/astronaut_sqtoxy.gif'
+          className='OBJECT- h-32 w-full object-cover'
           alt='astronaut playing'
           height={200}
           width={600}
@@ -27,7 +27,7 @@ const ProfileCard = () => {
               alt='Avatar'
               height={100}
               width={100}
-              className='h-24 w-24 rounded-full bg-blue-200 dark:bg-gray-700 md:h-[4.6rem] md:w-[4.6rem] '
+              className='h-24 w-24 rounded-full bg-blue-200 dark:bg-gray-700 md:h-[4.6rem] md:w-[4.6rem]'
             />
           </div>
         </Link>
