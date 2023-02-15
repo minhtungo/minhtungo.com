@@ -24,11 +24,11 @@
 
 @layer components {
   .card {
-    @apply flex flex-col md:flex-row items-center mt-[30%] sm:mt-8 transition-all gap-4 md:gap-0;
+    @apply mt-[30%] flex flex-col items-center gap-4 transition-all sm:mt-8 md:flex-row md:gap-0;
   }
 
   .headline {
-    @apply font-bold text-transparent bg-clip-text bg-primary-gradient;
+    @apply bg-primary-gradient bg-clip-text font-bold text-transparent;
   }
 
   .secondary-gradient {
@@ -38,26 +38,15 @@
 
 /* Scroll bar */
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 3px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background: transparent;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #404040;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.lock-scroll {
-  overflow: hidden !important;
+  @apply bg-blue-500 dark:bg-gray-600;
 }
 
 .wave {
