@@ -2,8 +2,23 @@ import { AnimatedHeading } from '@/components';
 import { LoginBtn } from '@/components/Auth';
 import { Meta, Container } from '@/components/Layout';
 import { FromLeftVariant } from '@/lib/FramerMotionVariants';
+import { useSession } from 'next-auth/react';
 
 const GuestBookPage = () => {
+  const { data: session } = useSession();
+  console.log(session);
+
+  const fetchComments = async () => {
+    const data = await fetch('/api/guestbook', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    const res = await data.json();
+    console.log(res);
+  };
+  fetchComments();
   return (
     <>
       <Meta title='Guestbook' />

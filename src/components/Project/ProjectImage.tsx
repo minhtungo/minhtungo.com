@@ -27,8 +27,6 @@ const ProjectImage = ({
 }: ProjectImageProps) => {
   const videoLink = `${name.toLowerCase().split(' ').join('-')}`;
 
-  console.log(videoLink);
-
   return (
     <a
       className={classNames(
