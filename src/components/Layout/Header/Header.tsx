@@ -1,33 +1,23 @@
-import { Inter } from '@next/font/google';
-import { AnimatePresence, motion, useAnimation } from 'framer-motion';
-import { useTheme } from 'next-themes';
+import { Icon, Logo } from '@/components';
+import Avatar from '@/components/common/Avatar';
 import Link from '@/components/common/Link';
+import { NAVIGATION_ROUTES } from '@/config/routes';
+import { FadeContainer, FromLeftVariant } from '@/lib/FramerMotionVariants';
+import { Inter } from '@next/font/google';
+import { motion, useAnimation } from 'framer-motion';
+import { useTheme } from 'next-themes';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
-import { Icon, Logo } from '@/components';
-import { FadeContainer, FromLeftVariant } from '@/lib/FramerMotionVariants';
-import DropdownMenu from './DropdownMenu';
-import HamBurger from './Hamburger';
 import MobileMenu from './MobileMenu';
 import NavItem from './NavItem';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const navigationRoutes: string[] = [
-  'home',
-  'about',
-  'journey',
-  'projects',
-  'uses',
-  'contact',
-];
-
 const Header = () => {
   const { systemTheme, theme, setTheme } = useTheme();
 
-  const [navOpen, setNavOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -99,17 +89,6 @@ const Header = () => {
     };
   }, [addShadowToNavbar]);
 
-  // to lock the scroll when mobile is open
-  const lockScroll = () => {
-    const root = document.getElementsByTagName('html')[0];
-    root.classList.toggle('lock-scroll');
-  };
-
-  const handleClick = () => {
-    lockScroll();
-    setNavOpen(!navOpen);
-  };
-
   const toggleDarkMode = (checked: boolean) => {
     setIsDarkMode(checked);
     setTheme(checked ? 'dark' : 'light');
@@ -121,12 +100,6 @@ const Header = () => {
       ref={navRef}
     >
       <div className='flex items-center justify-between py-2 px-4 lg:px-6 xl:px-12'>
-        <HamBurger open={navOpen} handleClick={handleClick} />
-        <AnimatePresence>
-          {navOpen && (
-            <MobileMenu links={navigationRoutes} handleClick={handleClick} />
-          )}
-        </AnimatePresence>
         <Link
           href='/'
           className='mr-3'
@@ -138,18 +111,19 @@ const Header = () => {
             animate='visible'
             variants={FromLeftVariant}
           >
-            <Logo className='hidden text-lg font-semibold lg:inline-flex' />
+            <Avatar isMobile width={8} height={8} />
+            <Logo />
           </motion.div>
         </Link>
-        {/* Top Nav list */}
-        <motion.nav className='z-10 hidden lg:inset-0 lg:flex lg:justify-center'>
+        {/* Top Nav list on Desktop*/}
+        <motion.nav className='z-10 hidden md:flex'>
           <motion.ul
             initial='hidden'
             animate='visible'
             variants={FadeContainer}
             className='flex items-center lg:gap-2'
           >
-            {navigationRoutes.map((link, index) => {
+            {NAVIGATION_ROUTES.map((link, index) => {
               return (
                 <li key={index}>
                   <NavItem href={`${link}`} text={link} />
@@ -172,7 +146,7 @@ const Header = () => {
 
             <Icon>
               <Link
-                href='https://www.linkedin.com/in/minhtungo/'
+                href='https://linkedin.com/in/minhtungo/'
                 className='hover:text-blue-500'
                 animation={false}
               >
@@ -185,7 +159,7 @@ const Header = () => {
               {/* DarkMode Container */}
               {renderThemeChanger()}
             </Icon>
-            <DropdownMenu />
+            <MobileMenu routes={NAVIGATION_ROUTES} />
           </div>
         </div>
       </div>

@@ -22,12 +22,12 @@ const NavItem = ({ href, text }: NavItemProps) => {
       className={`${
         isActive
           ? 'font-bold text-gray-800 dark:text-gray-200'
-          : 'font-normal text-gray-700 dark:text-gray-300'
-      } mx-2 hidden rounded-md text-base transition-all lg:inline-block`}
+          : 'font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 hover:dark:text-gray-100'
+      } mx-2.5 hidden rounded-md text-base transition-all md:inline-block`}
     >
-      <motion.p className='capitalize' variants={PopUp}>
+      <motion.span className='capitalize' variants={PopUp}>
         {text}
-      </motion.p>
+      </motion.span>
     </Link>
   );
 };

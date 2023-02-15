@@ -1,6 +1,8 @@
 import Image from '@/components/common/Image';
 import { TypeAnimation } from 'react-type-animation';
 
+import astronaut from 'public/static/images/astronaut.gif';
+
 import Button from '@/components/common/Button';
 import Link from '@/components/common/Link';
 
@@ -10,7 +12,7 @@ const ProfileCard = () => {
       <Link href='https://tenor.com/bCgDy.gif' animation={false}>
         {/* "GIF courtesy of Author's Dudun from https://tenor.com/bCgDy.gif" */}
         <Image
-          src='https://res.cloudinary.com/dks1prxi5/image/upload/v1676391641/astronaut_sqtoxy.gif'
+          src={astronaut}
           className='OBJECT- h-32 w-full object-cover'
           alt='astronaut playing'
           height={200}

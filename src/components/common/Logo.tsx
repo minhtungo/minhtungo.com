@@ -1,11 +1,12 @@
-import classNames from 'classnames';
 import Avatar from './Avatar';
 
 const Logo = ({ className }: { className?: string }) => {
   return (
-    <div className='flex items-center gap-0 md:gap-3'>
-      <Avatar width={8} height={8} />
-      <span className={classNames(className, '')}>Minh Tu Ngo</span>
+    <div className='flex items-center justify-center gap-0 md:gap-3'>
+      <Avatar width={8} height={8} className='mt-1' />
+      <span className='hidden text-lg font-semibold lg:inline'>
+        Minh Tu Ngo
+      </span>
     </div>
   );
 };
