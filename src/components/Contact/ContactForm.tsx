@@ -5,7 +5,7 @@ import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 
-import Input from './Input';
+import Input from '../common/Input';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
@@ -62,7 +62,6 @@ const ContactForm = () => {
         <Input
           type='text'
           name='name'
-          aria-label='name'
           label='Name'
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -70,7 +69,6 @@ const ContactForm = () => {
         <Input
           type='email'
           name='email'
-          aria-label='Email Address'
           label='Email Address'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -79,7 +77,6 @@ const ContactForm = () => {
       <Input
         type='subject'
         name='subject'
-        aria-label='Subject'
         label='Subject'
         value={subject}
         onChange={(e) => setSubject(e.target.value)}
@@ -88,7 +85,6 @@ const ContactForm = () => {
         textarea
         type='message'
         name='message'
-        aria-label='Message'
         label='Message'
         value={message}
         onChange={(e) => setMessage(e.target.value)}
@@ -98,12 +94,11 @@ const ContactForm = () => {
           disabled={isSending || !name || !email || !subject || !message}
           className={`mt-6 flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50`}
           variant={isSending ? 'secondary' : 'primary'}
-          aria-label='Send Message'
         >
           {isSending ? (
             <>
               <LoadingSpinner className='mr-3 inline h-4 w-4 animate-spin text-blue-500' />
-              {' Sending...'}
+              {'Sending...'}
             </>
           ) : (
             'Send Message'

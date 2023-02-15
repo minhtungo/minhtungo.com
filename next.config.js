@@ -23,7 +23,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['cdn.sanity.io', 'res.cloudinary.com'],
+    domains: ['cdn.sanity.io', 'res.cloudinary.com', 'tenor.com'],
   },
   webpack(config) {
     config.module.rules.push({

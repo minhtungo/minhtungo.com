@@ -13,7 +13,7 @@ interface ButtonProps
   onClick?: () => void;
 }
 
-const buttonClasses = cva('relative rounded-full inline-flex items-center', {
+const buttonClasses = cva('relative inline-flex items-center', {
   variants: {
     variant: {
       primary: [
@@ -21,7 +21,7 @@ const buttonClasses = cva('relative rounded-full inline-flex items-center', {
         '[&_.highlight]:ml-2 text-white dark:text-gray-100 font-semibold',
       ],
       secondary: [
-        'bg-white dark:border-transparent-black dark:bg-white dark:bg-opacity-10 border border-gray-300 backdrop-filter-[12px] hover:bg-gray-300 dark:hover:bg-opacity-20 transition-colors ease-in text-gray-900 dark:text-gray-100 font-semibold hover:border-transparent-black',
+        'bg-white dark:border-transparent-black dark:bg-[#24292F] border border-gray-300 backdrop-filter-[12px] hover:bg-gray-300 dark:hover:bg-[#24292F]/70 transition-colors ease-in text-gray-900 dark:text-gray-100 font-semibold',
       ],
     },
     size: {
@@ -29,10 +29,15 @@ const buttonClasses = cva('relative rounded-full inline-flex items-center', {
       medium: 'text-sm px-4 h-8',
       large: 'text-md px-6 h-12',
     },
+    rounded: {
+      full: 'rounded-full',
+      large: 'rounded-lg',
+    },
   },
   defaultVariants: {
     variant: 'primary',
     size: 'medium',
+    rounded: 'full',
   },
 });
 
@@ -42,6 +47,7 @@ const Button = ({
   href,
   variant,
   size,
+  rounded,
   onClick,
   ...props
 }: ButtonProps) => {
@@ -54,6 +60,7 @@ const Button = ({
           className={buttonClasses({
             variant,
             size,
+            rounded,
             className: props.className,
           })}
         >
@@ -64,7 +71,12 @@ const Button = ({
   return (
     <motion.div initial='hidden' animate='visible' variants={PopUp}>
       <Link
-        className={buttonClasses({ variant, size, className: props.className })}
+        className={buttonClasses({
+          variant,
+          size,
+          rounded,
+          className: props.className,
+        })}
         href={href}
         animation={false}
       >
