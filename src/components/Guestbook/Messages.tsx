@@ -2,11 +2,13 @@ import Image from '@/components/common/Image';
 import fetcher from '@/lib/fetcher';
 import useSWR from 'swr';
 
-const Comment = ({ fallback }) => {
-  const { data: comments } = useSWR('/api/guestbook', fetcher, { fallback });
+const Messages = ({ initialMessage }: { initialMessage: Message[] }) => {
+  const { data: messages } = useSWR('/api/guestbook', fetcher, {
+    fallback: initialMessage,
+  });
   return (
     <>
-      {comments?.map((comment: any) => (
+      {messages?.map((comment: any) => (
         <article className='my-6 rounded-lg text-base' key={comment.id}>
           <footer className='mb-2 flex items-center'>
             <p className='mr-3 inline-flex items-center text-sm'>
@@ -35,4 +37,5 @@ const Comment = ({ fallback }) => {
     </>
   );
 };
-export default Comment;
+
+export default Messages;

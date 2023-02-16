@@ -49,3 +49,12 @@ interface Item {
   description: string;
   url: string;
 }
+
+interface Message {
+  id: string;
+  content: string;
+  image: string;
+  createdBy: string;
+  updatedAt: string;
+  createdAt: string;
+}
