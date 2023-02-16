@@ -7,6 +7,7 @@ import { ThemeProvider } from 'next-themes';
 import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
 import ScrollToTop from 'react-scroll-to-top';
 import { SessionProvider } from 'next-auth/react';
+import { Toaster } from 'react-hot-toast';
 
 import type { AppProps } from 'next/app';
 import MDXComponents from '@/components/MDXComponents/MDXComponents';
@@ -22,6 +23,7 @@ export default function App({
         {/* @ts-ignore */}
         <MDXProvider components={MDXComponents}>
           <Component {...pageProps} />
+          <Toaster />
         </MDXProvider>
         <Footer />
         <ScrollToTop

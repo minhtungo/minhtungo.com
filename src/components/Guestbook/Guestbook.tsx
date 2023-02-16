@@ -6,6 +6,7 @@ import DOMPurify from 'dompurify';
 import { signOut, useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 import { useSWRConfig } from 'swr';
+import { toast } from 'react-hot-toast';
 
 const Guestbook = ({ messages }: { messages: Message[] }) => {
   const { data: session } = useSession();
@@ -15,6 +16,7 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
 
   const submitMessage = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const loading = toast.loading('Signing');
 
     const rawContent = JSON.stringify({
       content: DOMPurify.sanitize(content),
@@ -29,12 +31,21 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
     };
 
     try {
-      await fetch('/api/guestbook', requestOptions);
+      const res = await fetch('/api/guestbook', requestOptions);
       setContent('');
+      if (!res.ok) {
+        toast.dismiss(loading);
+        toast.error('Something went wrong. Please try again later.');
+        return;
+      }
+      toast.dismiss(loading);
+      toast.success('Added successfully');
+
       mutate('/api/guestbook');
     } catch (error) {
       setContent('');
-      console.log(error);
+      toast.dismiss(loading);
+      toast.error('Something went wrong. Please try again later.');
     }
   };
 
