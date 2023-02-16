@@ -1,25 +1,28 @@
 import { useSession, signIn, signOut } from 'next-auth/react';
+import { useRef, useState } from 'react';
 import { BsGithub } from 'react-icons/bs';
 import Button from '../common/Button';
-import Input from '../common/Input';
+import Image from 'next/image';
 
 export default function Component() {
   const { data: session } = useSession();
+
   if (session) {
     return (
       <>
-        Signed in as {session?.user?.name} <br />
-        <Input
-          type='text'
-          name='comment'
-          label='Comment'
-          value=''
-          onChange={() => {}}
+        <Image
+          src={session.user?.image!}
+          alt={`${session.user?.name}-avatar`}
+          width={48}
+          height={48}
+          className='rounded-full'
         />
         <button onClick={() => signOut()}>Sign out</button>
+        Leave a comment below, it can be totally random
       </>
     );
   }
+
   return (
     <Button
       variant='secondary'

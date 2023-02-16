@@ -1,12 +1,34 @@
-import { AnimatedHeading } from '@/components';
+import { AnimatedHeading, Button } from '@/components';
 import { LoginBtn } from '@/components/Auth';
-import { Meta, Container } from '@/components/Layout';
+import Input from '@/components/common/Input';
+import { Container, Meta } from '@/components/Layout';
 import { FromLeftVariant } from '@/lib/FramerMotionVariants';
 import { useSession } from 'next-auth/react';
+import { useState } from 'react';
 
 const GuestBookPage = () => {
   const { data: session } = useSession();
-  console.log(session);
+  const [content, setContent] = useState('');
+
+  const createComment = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ body: content }),
+    };
+
+    try {
+      const data = await fetch('/api/guestbook', requestOptions);
+      const res = await data.json();
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const fetchComments = async () => {
     const data = await fetch('/api/guestbook', {
@@ -30,6 +52,22 @@ const GuestBookPage = () => {
           Guestbook
         </AnimatedHeading>
         <LoginBtn />
+        {session && (
+          <form className='mb-16 w-full' onSubmit={(e) => createComment(e)}>
+            <Input
+              type='text'
+              name='comment'
+              label='Comment'
+              value={content}
+              onChange={(e) => {
+                setContent(e.target.value);
+              }}
+            />
+            <Button type='submit' className='mt-4'>
+              Sign
+            </Button>
+          </form>
+        )}
       </Container>
     </>
   );

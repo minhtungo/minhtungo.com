@@ -9,7 +9,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === 'GET') {
-    const comments = await prisma.GuestBook.findMany({
+    const comments = await prisma.guestBook.findMany({
       orderBy: {
         updated_at: 'desc',
       },
@@ -29,12 +29,12 @@ export default async function handler(
   const { body: content } = req.body;
 
   if (req.method === 'POST') {
-    if (!content.trim()) {
+    if (!content) {
       return res.status(400).send("The comment can't be empty.");
     }
-    const newComment = await prisma.GuestBook.create({
+    const newComment = await prisma.guestBook.create({
       data: {
-        content,
+        body: content,
         email,
         image,
         created_by: name,
