@@ -3,28 +3,37 @@ import { LoginBtn } from '@/components/Auth';
 import Input from '@/components/common/Input';
 import { Container, Meta } from '@/components/Layout';
 import { FromLeftVariant } from '@/lib/FramerMotionVariants';
+import DOMPurify from 'dompurify';
 import { useSession } from 'next-auth/react';
 import { useState } from 'react';
+import { useSWRConfig } from 'swr';
 
 const GuestBookPage = () => {
   const { data: session } = useSession();
+  const { mutate } = useSWRConfig();
   const [content, setContent] = useState('');
 
   const createComment = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const rawContent = JSON.stringify({
+      body: DOMPurify.sanitize(content),
+    });
 
     const requestOptions = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ body: content }),
+      body: rawContent,
     };
 
     try {
       const data = await fetch('/api/guestbook', requestOptions);
       const res = await data.json();
       console.log(res);
+      setContent('');
+      mutate('/api/guestbook');
     } catch (error) {
       console.log(error);
     }
