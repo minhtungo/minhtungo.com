@@ -38,6 +38,7 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
         toast.error('Something went wrong. Please try again later.');
         return;
       }
+      fetch('/api/revalidateGuestbook');
       toast.dismiss(loading);
       toast.success('Added successfully');
 

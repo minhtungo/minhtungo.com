@@ -4,7 +4,7 @@ import { Container, Meta } from '@/components/Layout';
 import { FromLeftVariant } from '@/lib/FramerMotionVariants';
 import prisma from '@/lib/prismadb';
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const messages = await prisma.guestBook.findMany({
     orderBy: {
       createdAt: 'desc',
