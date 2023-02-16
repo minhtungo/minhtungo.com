@@ -16,6 +16,9 @@ const nextConfig = {
   // Configure pageExtensions to include md and mdx
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   reactStrictMode: true,
+  experimental: {
+    swcPlugins: [['next-superjson-plugin', {}]],
+  },
   // experimental: {
   //   appDir: true,
   // },

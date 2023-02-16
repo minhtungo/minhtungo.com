@@ -14,7 +14,7 @@ export default async function handler(
         updated_at: 'desc',
       },
     });
-
+    console.log(comments);
     return res.json([...comments]);
   }
 

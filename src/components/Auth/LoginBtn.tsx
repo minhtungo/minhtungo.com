@@ -17,7 +17,6 @@ export default function Component() {
           height={48}
           className='rounded-full'
         />
-        <button onClick={() => signOut()}>Sign out</button>
         Leave a comment below, it can be totally random
       </>
     );

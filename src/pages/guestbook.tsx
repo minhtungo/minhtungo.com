@@ -5,11 +5,26 @@ import Comment from '@/components/Guestbook/Comment';
 import { Container, Meta } from '@/components/Layout';
 import { FromLeftVariant } from '@/lib/FramerMotionVariants';
 import DOMPurify from 'dompurify';
-import { useSession } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 import { useState } from 'react';
 import { useSWRConfig } from 'swr';
+import prisma from '@/lib/prismadb';
 
-const GuestBookPage = () => {
+export const getServerSideProps = async () => {
+  const comments = await prisma.guestBook.findMany({
+    orderBy: {
+      created_at: 'desc',
+    },
+  });
+
+  return {
+    props: {
+      comments,
+    },
+  };
+};
+
+const GuestBookPage = ({ comments }) => {
   const { data: session } = useSession();
   const { mutate } = useSWRConfig();
   const [content, setContent] = useState('');
@@ -63,24 +78,26 @@ const GuestBookPage = () => {
         >
           Guestbook
         </AnimatedHeading>
-        <LoginBtn />
-        {session && (
-          <form className='mb-16 w-full' onSubmit={(e) => createComment(e)}>
-            <Input
-              type='text'
-              name='comment'
-              label='Comment'
-              value={content}
-              onChange={(e) => {
-                setContent(e.target.value);
-              }}
-            />
-            <Button type='submit' className='mt-4'>
-              Sign
-            </Button>
-          </form>
+        <Comment fallback={comments} />
+        {session ? (
+          <>
+            <form className='w-full' onSubmit={(e) => createComment(e)}>
+              <Input
+                type='text'
+                name='comment'
+                label='Comment'
+                value={content}
+                onChange={(e) => {
+                  setContent(e.target.value);
+                }}
+              />
+            </form>
+          </>
+        ) : (
+          <>
+            <LoginBtn />
+          </>
         )}
-        <Comment />
       </Container>
     </>
   );

@@ -8,11 +8,9 @@ interface ContainerProps {
 
 const Container = ({ children, className }: ContainerProps) => {
   return (
-    <>
       <main className={classNames('mx-auto max-w-7xl px-6', className)}>
         {children}
       </main>
-    </>
   );
 };
 
