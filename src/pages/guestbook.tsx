@@ -1,6 +1,7 @@
 import { AnimatedHeading, Button } from '@/components';
 import { LoginBtn } from '@/components/Auth';
 import Input from '@/components/common/Input';
+import Comment from '@/components/Guestbook/Comment';
 import { Container, Meta } from '@/components/Layout';
 import { FromLeftVariant } from '@/lib/FramerMotionVariants';
 import DOMPurify from 'dompurify';
@@ -49,7 +50,9 @@ const GuestBookPage = () => {
     const res = await data.json();
     console.log(res);
   };
+
   fetchComments();
+
   return (
     <>
       <Meta title='Guestbook' />
@@ -77,8 +80,10 @@ const GuestBookPage = () => {
             </Button>
           </form>
         )}
+        <Comment />
       </Container>
     </>
   );
 };
+
 export default GuestBookPage;
