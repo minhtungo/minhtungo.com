@@ -23,15 +23,18 @@ export default function Component() {
   }
 
   return (
-    <Button
-      variant='secondary'
-      size='medium'
-      rounded='large'
-      className='inline-flex items-center rounded-lg px-5 py-4 text-sm font-medium'
-      onClick={() => signIn('github')}
-    >
-      <BsGithub className='mr-2 -ml-1 h-4 w-4' />
-      Sign in with Github
-    </Button>
+    <div className='mt-4 flex flex-wrap items-center'>
+      <Button
+        variant='secondary'
+        size='medium'
+        rounded='large'
+        className='inline-flex items-center rounded-lg px-5 py-4 text-xs font-medium sm:text-sm'
+        onClick={() => signIn('github')}
+      >
+        <BsGithub className='mr-2 -ml-1 h-4 w-4' />
+        <span>Sign in with Github</span>
+      </Button>
+      <span className='ml-2 text-xs sm:text-sm'>to leave a comment.</span>
+    </div>
   );
 }

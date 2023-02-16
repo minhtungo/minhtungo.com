@@ -17,6 +17,8 @@ import TypeScript from 'public/static/images/stack/typescript.svg';
 import { FaUserGraduate as Graduate } from 'react-icons/fa';
 import { IoLogoNodejs as NodeJS } from 'react-icons/io';
 import { MdOutlineWork as Work } from 'react-icons/md';
+import { CgComment as Guestbook } from 'react-icons/cg';
+
 import {
   RiUserSearchFill as Job,
   RiContactsLine as Contact,
@@ -59,6 +61,7 @@ const iconMap: Record<string, React.ComponentType> = {
   Projects,
   Uses,
   Contact,
+  Guestbook,
 };
 
 interface getIconProps {

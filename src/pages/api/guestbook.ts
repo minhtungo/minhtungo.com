@@ -11,7 +11,7 @@ export default async function handler(
   if (req.method === 'GET') {
     const comments = await prisma.guestBook.findMany({
       orderBy: {
-        updated_at: 'desc',
+        updatedAt: 'desc',
       },
     });
     console.log(comments);
@@ -26,7 +26,8 @@ export default async function handler(
   }
 
   const { email, image, name } = session?.user;
-  const { body: content } = req.body;
+
+  const { content } = req.body;
 
   if (req.method === 'POST') {
     if (!content) {
@@ -34,17 +35,17 @@ export default async function handler(
     }
     const newComment = await prisma.guestBook.create({
       data: {
-        body: content,
         email,
         image,
-        created_by: name,
+        content,
+        createdBy: name,
       },
     });
     return res.status(201).json({
       id: newComment.id,
-      body: newComment.body,
-      created_by: newComment.created_by,
-      updated_at: newComment.updated_at,
+      content: newComment.content,
+      createdBy: newComment.createdBy,
+      updatedAt: newComment.updatedAt,
     });
   }
 

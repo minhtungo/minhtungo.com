@@ -12,7 +12,11 @@ interface MobileMenuProps {
 }
 
 const checkLink = (link: string) =>
-  link === 'uses' ? `/${link}` : link === 'home' ? '/' : `/#${link}`;
+  link === 'uses' || link === 'guestbook'
+    ? `/${link}`
+    : link === 'home'
+    ? '/'
+    : `/#${link}`;
 
 export default function MobileMenu({ routes }: MobileMenuProps) {
   return (

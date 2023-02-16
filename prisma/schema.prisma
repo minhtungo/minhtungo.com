@@ -46,7 +46,6 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  guestbooks     GuestBook[]
 }
 
 model VerificationToken {
@@ -59,8 +58,10 @@ model VerificationToken {
 
 model GuestBook {
   id         Int      @id @default(autoincrement())
-  content    String   @db.VarChar(500)
-  created_at DateTime @default(now()) @db.DateTime(6)
-  userId     String
-  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  email      String   @db.VarChar(256)
+  image      String   @db.VarChar(256)
+  content       String   @db.VarChar(500)
+  createdBy String   @db.VarChar(256)
+  createdAt DateTime @default(now()) @db.DateTime(6)
+  updatedAt DateTime @default(now()) @db.DateTime(6)
 }

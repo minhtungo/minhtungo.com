@@ -4,5 +4,6 @@ export const NAVIGATION_ROUTES: string[] = [
   'journey',
   'projects',
   'uses',
+  'guestbook',
   'contact',
 ];

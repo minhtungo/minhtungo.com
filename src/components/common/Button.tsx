@@ -32,6 +32,7 @@ const buttonClasses = cva('relative inline-flex items-center', {
     rounded: {
       full: 'rounded-full',
       large: 'rounded-lg',
+      medium: 'rounded-md',
     },
   },
   defaultVariants: {

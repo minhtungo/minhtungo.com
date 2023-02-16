@@ -14,7 +14,11 @@ const NavItem = ({ href, text }: NavItemProps) => {
   const path = router.asPath;
   const isActive = path === (href === '/home' ? '/' : `/#${href}`);
   const hrefLink =
-    href === 'uses' ? `/${href}` : href === '/home' ? '/' : `/#${href}`;
+    href === 'uses' || href === 'guestbook'
+      ? `/${href}`
+      : href === '/home'
+      ? '/'
+      : `/#${href}`;
 
   return (
     <Link
