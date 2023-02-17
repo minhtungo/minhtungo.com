@@ -1,8 +1,9 @@
-import { AnimatedHeading } from '@/components';
+import { AnimatedHeading, AnimatedText } from '@/components';
 import Guestbook from '@/components/Guestbook/Guestbook';
 import { Container, Meta } from '@/components/Layout';
-import { FromLeftVariant } from '@/lib/FramerMotionVariants';
+import { FromLeftVariant, PopUpFromBottom } from '@/lib/FramerMotionVariants';
 import prisma from '@/lib/prismadb';
+import { useSession } from 'next-auth/react';
 
 export const getStaticProps = async () => {
   const messages = await prisma.guestBook.findMany({
@@ -19,6 +20,8 @@ export const getStaticProps = async () => {
 };
 
 const GuestBookPage = ({ messages }: { messages: Message[] }) => {
+  const { data: session } = useSession();
+
   return (
     <>
       <Meta title='Guestbook' />
@@ -29,7 +32,15 @@ const GuestBookPage = ({ messages }: { messages: Message[] }) => {
         >
           Guestbook
         </AnimatedHeading>
-        <h3>Leave a comment below, it can be totally random 👇</h3>
+
+        <AnimatedText
+          variants={PopUpFromBottom}
+          className='text-gray-900 dark:text-gray-200'
+        >
+          {session
+            ? 'Leave a comment below, it can be totally random 👇.'
+            : 'Sign in to leave a comment.'}
+        </AnimatedText>
         <Guestbook messages={messages} />
       </Container>
     </>

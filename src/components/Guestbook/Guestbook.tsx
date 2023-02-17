@@ -1,12 +1,12 @@
 import { Button } from '@/components';
-import { LoginBtn } from '@/components/Auth';
 import Image from '@/components/common/Image';
+import { LoginBtn } from '@/components/Guestbook/Auth';
 import Messages from '@/components/Guestbook/Messages';
 import DOMPurify from 'dompurify';
 import { signOut, useSession } from 'next-auth/react';
-import { useEffect, useState } from 'react';
-import { useSWRConfig } from 'swr';
+import { useState } from 'react';
 import { toast } from 'react-hot-toast';
+import { useSWRConfig } from 'swr';
 
 const Guestbook = ({ messages }: { messages: Message[] }) => {
   const { data: session } = useSession();
@@ -50,26 +50,11 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
     }
   };
 
-  const getMessages = async () => {
-    const data = await fetch('/api/guestbook', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    const res = await data.json();
-    console.log(res);
-  };
-
-  useEffect(() => {
-    getMessages();
-  }, []);
-
   return (
     <div className='mx-auto max-w-3xl'>
       {session ? (
         <>
-          <div className='mt-4 flex w-full flex-col items-center gap-2'>
+          <div className='mt-6 flex w-full flex-col items-center gap-2'>
             <div className='flex w-full items-center gap-0 sm:gap-2'>
               <Image
                 src={session.user?.image!}
@@ -101,7 +86,7 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
                 </button>
               </form>
             </div>
-            <div className='mr-auto'>
+            <div className='mr-auto mt-1'>
               <Button
                 variant='secondary'
                 size='small'

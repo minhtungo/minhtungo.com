@@ -20,7 +20,7 @@ const Hero = ({ resumeURL }: HeroProps) => {
       className='h-screen flex-1 gap-16 pt-8 md:flex md:items-center md:justify-between lg:pt-0'
     >
       {/* Dog Model */}
-      <div className='relative z-10 mx-auto mt-4 flex h-[280px] w-[280px] basis-2/5 justify-center sm:h-[360px] sm:w-[360px] md:order-2 md:mx-0 md:mt-[6.6rem] md:h-[480px] md:w-[480px]'>
+      <div className='relative z-10 mx-auto mt-4 flex h-[270px] w-[270px] basis-2/5 justify-center sm:h-[360px] sm:w-[360px] md:order-2 md:mx-0 md:mt-[6.6rem] md:h-[460px] md:w-[460px]'>
         <LazyDogModel />
       </div>
       {/* Hero Text */}
@@ -40,11 +40,11 @@ const Hero = ({ resumeURL }: HeroProps) => {
             Minh Tu Ngo.
           </span>
           <span className='wave text-2xl md:text-4xl lg:text-5xl'>👋</span>
-          <p className='mt-4 mb-7 text-lg font-semibold lg:mt-8'>
+          <p className='mt-4 mb-7 text-sm font-semibold md:text-base lg:mt-8 lg:text-lg'>
             &lt;&gt;
             <TypeAnimation
               cursor={true}
-              speed={50}
+              speed={53}
               sequence={[
                 'I Love Bubble Tea.',
                 1000,
@@ -62,10 +62,8 @@ const Hero = ({ resumeURL }: HeroProps) => {
         </motion.div>
 
         {/* buttons */}
-        <div className='mt-5 flex justify-center md:justify-start'>
-          <Button href='#contact' className='mr-4'>
-            Let{"'"}s Connect
-          </Button>
+        <div className='mt-5 flex flex-col justify-center gap-3 sm:flex-row md:justify-start'>
+          <Button href='#contact'>Let{"'"}s Connect</Button>
 
           <Button
             href='https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
