@@ -7,9 +7,9 @@ type ItemGridProps = {
 
 const ItemGrid = ({ items }: ItemGridProps) => {
   return (
-    <div className='mt-5 mb-9 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-4'>
+    <ul className='mt-5 mb-9 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-4'>
       {items.map((item, i) => (
-        <div
+        <li
           key={item.name}
           className='flex items-center gap-3 rounded-lg border border-custom-border-black p-[0.35rem] shadow-lg dark:border-transparent-white dark:bg-card-background-dark sm:flex-col sm:gap-2 sm:p-3'
         >
@@ -33,9 +33,9 @@ const ItemGrid = ({ items }: ItemGridProps) => {
               {item.description}
             </span>
           </div>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

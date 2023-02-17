@@ -1,7 +1,7 @@
 import { Title } from '..';
 import ProjectItem from './ProjectItem';
 import { motion } from 'framer-motion';
-import { OpacityVariant } from '@/lib/FramerMotionVariants';
+import { OpacityVariant } from '@/lib/frammerVariants';
 
 interface ProjectsProp {
   projects: Project[];

@@ -1,3 +1,4 @@
+import { FadeContainer, FromLeftVariant, PopUp } from '@/lib/frammerVariants';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { TypeAnimation } from 'react-type-animation';
@@ -25,21 +26,16 @@ const Hero = ({ resumeURL }: HeroProps) => {
       </div>
       {/* Hero Text */}
       <div className='-mt-14 basis-2/5 text-center md:text-start'>
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-        >
-          <p className='mb-[5px] pl-[3px]'>Hi there, I am</p>
-          <span className='primary-gradient bg-clip-text text-2xl font-bold text-transparent md:text-4xl lg:text-5xl'>
-            Minh Tu Ngo.
-          </span>
-          <span className='wave text-2xl md:text-4xl lg:text-5xl'>👋</span>
+        <motion.div initial='hidden' animate='visible' variants={FadeContainer}>
+          <motion.p className='mb-[5px] pl-[3px]' variants={FromLeftVariant}>
+            Hi there, I am
+          </motion.p>
+          <motion.p variants={FromLeftVariant}>
+            <span className='primary-gradient bg-clip-text text-2xl font-bold text-transparent md:text-4xl lg:text-5xl'>
+              Minh Tu Ngo.
+            </span>
+            <span className='wave text-2xl md:text-4xl lg:text-5xl'>👋</span>
+          </motion.p>
           <p className='mt-4 mb-7 text-sm font-semibold md:text-base lg:mt-8 lg:text-lg'>
             &lt;&gt;
             <TypeAnimation

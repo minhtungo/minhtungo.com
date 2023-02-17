@@ -1,6 +1,9 @@
 import { Button, LoadingSpinner } from '@/components';
-import { toastifyFailure, toastifySuccess } from '@/components/common/ToastMessage';
-import { FadeContainer } from '@/lib/FramerMotionVariants';
+import {
+  toastifyFailure,
+  toastifySuccess,
+} from '@/components/common/ToastMessage';
+import { FadeContainer } from '@/lib/frammerVariants';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';

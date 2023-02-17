@@ -2,7 +2,7 @@ import { Icon, Logo } from '@/components';
 import Avatar from '@/components/common/Avatar';
 import Link from '@/components/common/Link';
 import { NAVIGATION_ROUTES } from '@/config/routes';
-import { FadeContainer, FromLeftVariant } from '@/lib/FramerMotionVariants';
+import { FadeContainer, FromLeftVariant } from '@/lib/frammerVariants';
 import { Inter } from '@next/font/google';
 import { motion, useAnimation } from 'framer-motion';
 import { useTheme } from 'next-themes';
@@ -116,7 +116,7 @@ const Header = () => {
           </motion.div>
         </Link>
         {/* Top Nav list on Desktop*/}
-        <motion.nav className='z-10 hidden md:flex'>
+        <nav className='z-10 hidden md:flex'>
           <motion.ul
             initial='hidden'
             animate='visible'
@@ -131,7 +131,7 @@ const Header = () => {
               );
             })}
           </motion.ul>
-        </motion.nav>
+        </nav>
         <div className='flex items-center space-x-4'>
           <motion.div className='hidden items-center space-x-4 text-gray-600 dark:text-gray-300 lg:flex'>
             <Icon>

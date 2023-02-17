@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
 import { Title, AnimatedText, Icon } from '..';
-import { PopUpFromBottom } from '@/lib/FramerMotionVariants';
+import { PopUpFromBottom } from '@/lib/frammerVariants';
 
 import ContactForm from './ContactForm';
 

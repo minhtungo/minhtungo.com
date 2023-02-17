@@ -1,4 +1,4 @@
-import { FromLeftVariant, PopUpFromBottom } from '@/lib/FramerMotionVariants';
+import { FromLeftVariant, PopUpFromBottom } from '@/lib/frammerVariants';
 import { motion } from 'framer-motion';
 
 import AnimatedHeading from '@/components/FramerMotion/AnimatedHeading';
@@ -14,7 +14,7 @@ const Heading = {
   H2: ({ children }: Props) => (
     <AnimatedHeading
       variants={FromLeftVariant}
-      className='mb-3 animate-border bg-gradient-to-r from-cyan-700 to-blue-600 bg-[length:400%_400%] bg-clip-text text-3xl font-semibold text-transparent lg:text-4xl lg:font-bold'
+      className='primary-gradient mb-3 bg-clip-text text-3xl font-semibold text-transparent lg:text-4xl lg:font-bold'
     >
       {children}
     </AnimatedHeading>

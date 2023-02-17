@@ -1,7 +1,7 @@
 import { AnimatePresence, motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { AnimatedDiv, Button, Title } from '..';
-import { FadeContainer, PopUpFromBottom } from '@/lib/FramerMotionVariants';
+import { FadeContainer, PopUpFromBottom } from '@/lib/frammerVariants';
 import RepoCard from './RepoCard';
 
 interface ReposProps {

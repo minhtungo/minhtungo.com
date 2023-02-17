@@ -1,7 +1,7 @@
 // import LineGradient from './LineGradient';
 import { AnimatedHeading, AnimatedText } from '@/components';
 import classNames from 'classnames';
-import { FromLeftVariant, PopUpFromBottom } from '@/lib/FramerMotionVariants';
+import { FromLeftVariant, PopUpFromBottom } from '@/lib/frammerVariants';
 import { Inter } from '@next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 

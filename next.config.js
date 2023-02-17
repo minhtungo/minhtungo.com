@@ -26,11 +26,27 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: [
-      'cdn.sanity.io',
-      'res.cloudinary.com',
-      'tenor.com',
-      'avatars.githubusercontent.com',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'tenor.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.googleusercontent.com',
+      },
     ],
   },
   webpack(config) {

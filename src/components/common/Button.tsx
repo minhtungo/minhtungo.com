@@ -1,5 +1,5 @@
 import Link from '@/components/common/Link';
-import { PopUp } from '@/lib/FramerMotionVariants';
+import { PopUp } from '@/lib/frammerVariants';
 import { cva, VariantProps } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { AnchorHTMLAttributes } from 'react';

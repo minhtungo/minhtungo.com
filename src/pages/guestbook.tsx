@@ -1,7 +1,7 @@
 import { AnimatedHeading, AnimatedText } from '@/components';
 import Guestbook from '@/components/Guestbook/Guestbook';
 import { Container, Meta } from '@/components/Layout';
-import { FromLeftVariant, PopUpFromBottom } from '@/lib/FramerMotionVariants';
+import { FromLeftVariant, PopUpFromBottom } from '@/lib/frammerVariants';
 import prisma from '@/lib/prismadb';
 import { useSession } from 'next-auth/react';
 
@@ -28,7 +28,7 @@ const GuestBookPage = ({ messages }: { messages: Message[] }) => {
       <Container className='max-w-5xl pt-20'>
         <AnimatedHeading
           variants={FromLeftVariant}
-          className='mb-6 animate-border bg-gradient-to-r from-cyan-700 to-blue-600 bg-[length:400%_400%] bg-clip-text text-3xl font-semibold text-transparent lg:text-4xl lg:font-bold'
+          className='primary-gradient mb-6 bg-clip-text text-3xl font-semibold text-transparent lg:text-4xl lg:font-bold'
         >
           Guestbook
         </AnimatedHeading>

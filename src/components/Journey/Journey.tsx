@@ -3,7 +3,7 @@ import { Title } from '..';
 import { AiOutlineCaretDown } from 'react-icons/ai';
 import JourneyCard from './JourneyCard';
 import { motion } from 'framer-motion';
-import { PopUpFromBottom } from '@/lib/FramerMotionVariants';
+import { PopUpFromBottom } from '@/lib/frammerVariants';
 import Lottie from 'react-lottie-player';
 import animationData from '@/config/animation.json';
 import { Fragment } from 'react';
@@ -14,10 +14,10 @@ interface JourneyProps {
 
 const Journey = ({ journeys }: JourneyProps) => {
   return (
-    <section id='journey' className='mx-auto pt-16 lg:pt-20 pt-10 lg:pt-16'>
+    <section id='journey' className='mx-auto pt-16 pt-10 lg:pt-20 lg:pt-16'>
       <Title title='My Journey' subtitle='Learning and growing' />
-      <div className='flex flex-col lg:flex-row gap-8 lg:gap-4 lg:gap-18'>
-        <div className='lg:w-1/3 -mt-12 lg:-mt-24 mx-auto'>
+      <div className='lg:gap-18 flex flex-col gap-8 lg:flex-row lg:gap-4'>
+        <div className='mx-auto -mt-12 lg:-mt-24 lg:w-1/3'>
           <Lottie
             loop
             animationData={animationData}
@@ -26,8 +26,8 @@ const Journey = ({ journeys }: JourneyProps) => {
           />
         </div>
 
-        <div className='relative -mt-8 lg:mt-2  w-full lg:w-2/3'>
-          <ul className='border-l border-gray-400 dark:border-gray-800 w-full'>
+        <div className='relative -mt-8 w-full  lg:mt-2 lg:w-2/3'>
+          <ul className='w-full border-l border-gray-400 dark:border-gray-800'>
             {journeys.slice(0, 2).map((item) => (
               <motion.li
                 key={item.title}
@@ -44,7 +44,7 @@ const Journey = ({ journeys }: JourneyProps) => {
                   <Disclosure.Button as={Fragment}>
                     <button aria-label='Load More Journey'>
                       <AiOutlineCaretDown
-                        className={`h-4 w-4 ml-1.5 lg:h-5 md:w-5 text-gray-400 ${
+                        className={`ml-1.5 h-4 w-4 text-gray-400 md:w-5 lg:h-5 ${
                           open ? 'rotate-180 transform ' : ''
                         }`}
                       />
