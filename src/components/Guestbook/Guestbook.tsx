@@ -80,7 +80,7 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
                 />
                 <button
                   type='submit'
-                  className='hover:text-shadow absolute bottom-[4.8px] right-1 rounded-md bg-primary-gradient px-4 py-1 text-sm font-medium text-gray-200 transition-[shadow,text-shadow] hover:shadow-primary focus:outline-none'
+                  className='hover:text-shadow primary-gradient absolute bottom-[4.8px] right-1 rounded-md px-4 py-1 text-sm font-medium  text-white transition-[shadow,text-shadow] hover:shadow-primary focus:outline-none dark:text-black'
                 >
                   Sign
                 </button>
