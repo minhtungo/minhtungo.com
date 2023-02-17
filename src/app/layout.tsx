@@ -39,7 +39,7 @@ export default function RootLayout({
         <Footer />
         <ScrollToTop
           smooth
-          className='!rounded-full bg-primary-gradient'
+          className='primary-gradient !rounded-full'
           component={
             <MdOutlineKeyboardArrowUp className='mx-auto h-6 w-6 text-white' />
           }

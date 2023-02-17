@@ -28,9 +28,9 @@ export default function App({
         <Footer />
         <ScrollToTop
           smooth
-          className='!rounded-full bg-primary-gradient'
+          className='primary-gradient !rounded-full'
           component={
-            <MdOutlineKeyboardArrowUp className='mx-auto h-6 w-6 text-white' />
+            <MdOutlineKeyboardArrowUp className='mx-auto h-6 w-6 text-gray-50 dark:text-gray-900' />
           }
         />
       </ThemeProvider>

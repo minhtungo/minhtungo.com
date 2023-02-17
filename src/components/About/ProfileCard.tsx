@@ -8,7 +8,7 @@ import Link from '@/components/common/Link';
 
 const ProfileCard = () => {
   return (
-    <div className=' mx-auto w-full max-w-sm overflow-hidden rounded-xl bg-card-background-light pb-4 shadow-md dark:bg-card-background-dark dark:text-gray-100'>
+    <div className='mx-auto w-full max-w-sm overflow-hidden rounded-xl bg-card-background-light pb-4 shadow-md dark:bg-card-background-dark dark:text-gray-100'>
       <Link href='https://tenor.com/bCgDy.gif' animation={false}>
         {/* "GIF courtesy of Author's Dudun from https://tenor.com/bCgDy.gif" */}
         <Image
@@ -23,7 +23,7 @@ const ProfileCard = () => {
 
       <div className='-mt-8 flex justify-center'>
         <Link href='https://linkedin.com/in/minhtungo/' animation={false}>
-          <div className='z-50 -mt-3 w-full animate-border rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-[length:400%_400%] p-[2px]'>
+          <div className='primary-gradient z-50 -mt-3 w-full animate-border rounded-full bg-gradient-to-r bg-[length:400%_400%] p-[2px]'>
             <Image
               src='/static/images/avatar.png'
               alt='Avatar'
@@ -38,7 +38,7 @@ const ProfileCard = () => {
         <h2 className='text-lg font-semibold text-gray-700 dark:text-gray-200 '>
           Minh Tu Ngo
         </h2>
-        <p className='text-sm text-blue-500'>
+        <p className='text-sm text-gray-600 dark:text-gray-300'>
           <TypeAnimation
             cursor={true}
             speed={65}

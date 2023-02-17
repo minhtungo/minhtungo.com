@@ -53,7 +53,7 @@ export default function MobileMenu({ routes }: MobileMenuProps) {
                         href={checkLink(link)}
                         className={`${
                           active
-                            ? 'text-gray-5 bg-blue-500'
+                            ? 'primary-gradient text-gray-50 dark:text-gray-900'
                             : 'text-gray-600 dark:text-gray-300'
                         } group flex w-full items-center gap-4 rounded-md px-2 py-2 text-sm`}
                       >

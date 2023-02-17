@@ -25,7 +25,7 @@ const Title = ({ title, subtitle, className }: TitleProps) => {
       </div> */}
       <AnimatedHeading
         variants={FromLeftVariant}
-        className='mb-2 bg-gradient-to-r from-cyan-700 to-blue-600 bg-[length:400%_400%] bg-clip-text text-2xl font-semibold text-transparent md:text-3xl lg:text-4xl lg:font-bold'
+        className='mb-2 bg-gradient-to-r from-cyan-700 to-blue-600 bg-clip-text text-2xl font-semibold text-transparent dark:from-[#a2facf] dark:to-[#64acff] md:text-3xl lg:text-4xl lg:font-bold'
       >
         {title}
       </AnimatedHeading>

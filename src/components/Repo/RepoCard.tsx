@@ -13,7 +13,7 @@ const RepoCard = ({ repo }: RepoProps) => {
     <div className='hover:text-shadow h-full rounded bg-card-background-light p-4 hover:shadow-primary dark:bg-card-background-dark'>
       <div className='flex items-center'>
         <div className='flex items-center space-x-2'>
-          <AiOutlineFolder className='text-2xl text-blue-500' />
+          <AiOutlineFolder className='text-2xl text-blue-500 dark:text-blue-400' />
           <h2 className='lg:text-md text-base font-semibold text-gray-800 dark:text-gray-300'>
             {repo.name}
           </h2>

@@ -31,6 +31,10 @@
     @apply bg-primary-gradient bg-clip-text font-bold text-transparent;
   }
 
+  .primary-gradient {
+    @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-[#86f9c1] dark:to-[#4da0ff];
+  }
+
   .secondary-gradient {
     @apply bg-gradient-to-r from-cyan-500 to-blue-500;
   }

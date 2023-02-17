@@ -36,7 +36,7 @@ const Hero = ({ resumeURL }: HeroProps) => {
           }}
         >
           <p className='mb-[5px] pl-[3px]'>Hi there, I am</p>
-          <span className='animate-border bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-[length:400%_400%] bg-clip-text text-2xl font-bold text-transparent md:text-4xl lg:text-5xl'>
+          <span className='primary-gradient bg-clip-text text-2xl font-bold text-transparent md:text-4xl lg:text-5xl'>
             Minh Tu Ngo.
           </span>
           <span className='wave text-2xl md:text-4xl lg:text-5xl'>👋</span>

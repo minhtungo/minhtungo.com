@@ -12,7 +12,7 @@ const Footer = () => {
           <div className=''>
             <Icon>
               😸
-              <span className='bg-primary-gradient bg-clip-text text-xl font-bold text-transparent'>
+              <span className='primary-gradient bg-clip-text text-xl font-bold text-transparent'>
                 Minh Tu Ngo
               </span>
               🐶
