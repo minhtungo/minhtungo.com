@@ -12,7 +12,13 @@ interface NavItemProps {
 const NavItem = ({ href, text }: NavItemProps) => {
   const router = useRouter();
   const path = router.asPath;
-  const isActive = path === (href === '/home' ? '/' : `/#${href}`);
+  const isActive =
+    path ===
+    (href === '/home'
+      ? '/'
+      : href === '/guestbook' || href === '/uses'
+      ? `/${href}`
+      : `/#${href}`);
   const hrefLink =
     href === 'uses' || href === 'guestbook'
       ? `/${href}`

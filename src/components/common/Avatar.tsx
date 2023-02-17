@@ -40,7 +40,7 @@ const Avatar = ({
     <span>
       <div
         className={classNames(
-          'w-full animate-border rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-[length:400%_400%] p-[1.5px]',
+          'primary-gradient w-full animate-border rounded-full bg-[length:400%_400%] p-[1.5px]',
           !isMobile && 'hidden md:inline-flex',
           isMobile && 'flex md:hidden',
           className
