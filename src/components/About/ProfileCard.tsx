@@ -27,8 +27,8 @@ const ProfileCard = () => {
             <Image
               src='/static/images/avatar.png'
               alt='Avatar'
-              height={100}
-              width={100}
+              height={96}
+              width={96}
               className='h-24 w-24 rounded-full bg-blue-200 dark:bg-gray-700 md:h-[4.6rem] md:w-[4.6rem]'
             />
           </div>

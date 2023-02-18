@@ -5,7 +5,9 @@ import '@/styles/globals.css';
 import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
 import ScrollToTop from 'react-scroll-to-top';
 
-const open_sans = Open_Sans({ subsets: ['latin'] });
+const open_sans = Open_Sans({
+  subsets: ['latin'],
+});
 
 export const metadata = {
   title: {

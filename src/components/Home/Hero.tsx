@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { TypeAnimation } from 'react-type-animation';
 
 import { Button, ModelLoader, SnowFall } from '..';
+import Link from '../common/Link';
 
 const LazyDogModel = dynamic(() => import('./Model/DogModel'), {
   ssr: false,
@@ -28,7 +29,7 @@ const Hero = ({ resumeURL }: HeroProps) => {
       <div className='-mt-14 basis-2/5 text-center md:text-start'>
         <motion.div initial='hidden' animate='visible' variants={FadeContainer}>
           <motion.p className='mb-[5px] pl-[3px]' variants={FromLeftVariant}>
-            Hi there, I am
+            Hi, I am
           </motion.p>
           <motion.p variants={FromLeftVariant}>
             <span className='primary-gradient bg-clip-text text-2xl font-bold text-transparent md:text-4xl lg:text-5xl'>
@@ -36,8 +37,7 @@ const Hero = ({ resumeURL }: HeroProps) => {
             </span>
             <span className='wave text-2xl md:text-4xl lg:text-5xl'>👋</span>
           </motion.p>
-          <p className='mt-4 mb-7 text-sm font-semibold md:text-base lg:mt-8 lg:text-lg'>
-            &lt;&gt;
+          <p className='text-md mt-3 font-medium dark:text-neutral-300 md:text-base lg:mt-4 lg:text-lg'>
             <TypeAnimation
               cursor={true}
               speed={53}
@@ -53,7 +53,16 @@ const Hero = ({ resumeURL }: HeroProps) => {
               wrapper='span'
               repeat={Infinity}
             />
-            &lt;/&gt;
+          </p>
+          <p className='lg:text-md mt-4 text-sm dark:text-neutral-400 md:text-base lg:mt-3'>
+            {"Don't forget to sign my"}{' '}
+            <Link
+              href='/guestbook'
+              className='primary-gradient bg-clip-text text-transparent'
+            >
+              guestbook
+            </Link>
+            !
           </p>
         </motion.div>
 

@@ -2,8 +2,6 @@
 import { AnimatedHeading, AnimatedText } from '@/components';
 import classNames from 'classnames';
 import { FromLeftVariant, PopUpFromBottom } from '@/lib/frammerVariants';
-import { Inter } from '@next/font/google';
-const inter = Inter({ subsets: ['latin'] });
 
 interface TitleProps {
   title: string;
@@ -13,13 +11,7 @@ interface TitleProps {
 
 const Title = ({ title, subtitle, className }: TitleProps) => {
   return (
-    <div
-      className={classNames(
-        'mb-8 text-center lg:mb-8',
-        inter.className,
-        className
-      )}
-    >
+    <div className={classNames('mb-8 text-center lg:mb-8', className)}>
       {/* <div className='flex justify-center mb-4'>
         <LineGradient width='w-1/6' />
       </div> */}

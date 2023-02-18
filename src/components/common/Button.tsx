@@ -33,12 +33,13 @@ const buttonClasses = cva('relative inline-flex items-center', {
       full: 'rounded-full',
       large: 'rounded-lg',
       medium: 'rounded-md',
+      small: 'rounded-sm',
     },
   },
   defaultVariants: {
     variant: 'primary',
     size: 'medium',
-    rounded: 'medium',
+    rounded: 'small',
   },
 });
 

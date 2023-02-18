@@ -1,5 +1,7 @@
 import Meta from '@/components/Layout/Meta';
-import { Open_Sans } from '@next/font/google';
+import { Inter } from '@next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 import {
   About,
@@ -18,8 +20,6 @@ import {
   repoQuery,
   resumeQuery,
 } from '@/lib/sanity.client';
-
-const open_sans = Open_Sans({ subsets: ['latin'] });
 
 export const getStaticProps = async () => {
   const [projects, repos, journeys, resume] = await Promise.all([
@@ -50,7 +50,7 @@ export default function Home({
   return (
     <>
       <Meta />
-      <Container>
+      <Container className={inter.className}>
         <Hero resumeURL={resumeURL} />
         <About />
         <Journey journeys={journeys} />
