@@ -1,11 +1,9 @@
 import { Disclosure, Transition } from '@headlessui/react';
-import { Title } from '..';
+import { CodeSnippet, Title } from '..';
 import { AiOutlineCaretDown } from 'react-icons/ai';
 import JourneyCard from './JourneyCard';
 import { motion } from 'framer-motion';
 import { PopUpFromBottom } from '@/lib/framerVariants';
-import Lottie from 'react-lottie-player';
-import animationData from '@/config/animation.json';
 import { Fragment } from 'react';
 
 interface JourneyProps {
@@ -14,23 +12,15 @@ interface JourneyProps {
 
 const Journey = ({ journeys }: JourneyProps) => {
   return (
-    <section id='journey' className='mx-auto pt-16 lg:pt-20 '>
-      <Title
-        title='My Journey'
-        subtitle='Learning and growing'
-        className='text-center'
-      />
-      <div className='lg:gap-18 flex flex-col gap-8 lg:flex-row lg:gap-4'>
-        <div className='mx-auto -mt-12 lg:-mt-24 lg:w-1/3'>
-          <Lottie
-            loop
-            animationData={animationData}
-            play
-            className='max-w-[300px] md:max-w-[350px] lg:max-w-[450px]'
-          />
+    <section id='journey' className='mx-auto pt-6'>
+      <h3 className='mb-2 bg-clip-text text-lg font-semibold md:text-xl lg:text-2xl lg:font-bold'>
+        My Journey
+      </h3>
+      <div className='lg:gap-18 mt-3 flex flex-col gap-8 lg:flex-row lg:gap-6'>
+        <div className='mx-auto mt-4 lg:w-1/3'>
+          <CodeSnippet />
         </div>
-
-        <div className='relative -mt-8 w-full  lg:mt-2 lg:w-2/3'>
+        <div className='relative mt-4 w-full lg:w-2/3'>
           <ul className='w-full border-l border-gray-400 dark:border-gray-800'>
             {journeys.slice(0, 2).map((item) => (
               <motion.li

@@ -2,12 +2,18 @@ import { AnimatedDiv, Title } from '@/components';
 import ProfileCard from '@/components/About/ProfileCard';
 import { OpacityVariant, PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
+import classNames from 'classnames';
 
-const About = () => {
+const About = ({ home, className }: { home?: boolean; className?: string }) => {
   return (
-    <section id='about' className='-mt-16 pt-20'>
-      <Title title='About Me' subtitle='Introduction' className='text-center' />
-      <div className='lg:gap-18 flex flex-col items-center gap-8  lg:flex-row'>
+    <section id='about' className={classNames('pt-10 lg:pt-16', className)}>
+      <Title
+        title='About Me'
+        subtitle={home ? 'Introduction' : ''}
+        home={home}
+        className='mb-4'
+      />
+      <div className='lg:gap-18 flex flex-col items-center gap-8 md:flex-row-reverse'>
         <motion.div
           initial='hidden'
           whileInView='visible'
@@ -16,13 +22,13 @@ const About = () => {
         >
           <ProfileCard />
         </motion.div>
-        <div className='r flex w-full flex-col items-center justify-center text-left lg:w-2/3'>
+        <div className='flex w-full flex-col items-center justify-center text-left lg:w-2/3'>
           <AnimatedDiv variants={OpacityVariant}>
             <div className='flex flex-col'>
-              <h3 className='mb-2 text-lg font-medium text-gray-700 dark:text-gray-200 lg:text-xl lg:text-2xl lg:font-semibold'>
-                Hi, I{"'"}m Minh Tu Ngo <span className='wave'>👋</span>
+              <h3 className='secondary-gradient mb-2 bg-clip-text text-xl font-bold text-transparent md:text-2xl lg:text-3xl'>
+                Minh Tu Ngo
               </h3>
-              <hr className='mb-3 border-b border-custom-border-black dark:border-transparent-white' />
+              {/* <hr className='mb-3 border-b border-custom-border-black dark:border-transparent-white' /> */}
               <p className='mb-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400 sm:text-base'>
                 From the moment I produced {'"'}Hello World{'"'} in the console
                 of my first application, I knew I was hooked into the world of

@@ -1,7 +1,4 @@
 import Meta from '@/components/Layout/Meta';
-import { Inter } from '@next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
 
 import {
   About,
@@ -41,10 +38,8 @@ export default function Home({ projects, repos, journeys }: HomeProps) {
   return (
     <>
       <Meta />
-      <Container className={inter.className}>
+      <Container>
         <Hero />
-        <About />
-        <Journey journeys={journeys} />
         <TechStack />
         <Projects projects={projects} home />
         <Repo repos={repos} />

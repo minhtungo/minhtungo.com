@@ -1,10 +1,6 @@
-import { AnimatedHeading, Container, Projects, Title } from '@/components';
+import { Container, Projects } from '@/components';
 import { Meta } from '@/components/Layout';
-import { FromLeftVariant } from '@/lib/framerVariants';
 import { client, projectQuery } from '@/lib/sanity.client';
-import { Inter } from '@next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const getStaticProps = async () => {
   const projects = await client.fetch(projectQuery);
@@ -17,7 +13,7 @@ export const getStaticProps = async () => {
 const ProjectsPage = ({ projects }: { projects: Project[] }) => {
   return (
     <>
-      <Meta title='Guestbook' />
+      <Meta title='Projects' />
       <Container className='pt-20'>
         <Projects projects={projects} className='lg:pt-1' />
       </Container>

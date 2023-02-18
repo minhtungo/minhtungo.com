@@ -17,7 +17,11 @@ const Projects = ({ projects, className, home }: ProjectsProp) => {
       id='projects'
       className={classNames(className, 'mx-auto pt-10 lg:pt-16')}
     >
-      <Title title='Projects' subtitle='My Work' className='text-center' />
+      <Title
+        title='Projects'
+        subtitle={home ? 'My Work' : 'Showcase of my works on web development.'}
+        home={home}
+      />
 
       <div className='mx-auto -mt-2 grid grid-cols-1 gap-6 sm:gap-4 lg:-mt-9'>
         {projects?.map((project) => (
