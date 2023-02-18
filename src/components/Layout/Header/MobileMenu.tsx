@@ -2,13 +2,14 @@ import IconHelper from '@/components/common/IconHelper';
 import Link from '@/components/common/Link';
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { HiOutlineMenuAlt4 } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
-import { IoDocumentTextOutline } from 'react-icons/io5';
 
 interface MobileMenuProps {
-  routes: string[];
+  links: {
+    href: string;
+    label: string;
+  };
 }
 
 const checkLink = (link: string) =>
@@ -18,7 +19,7 @@ const checkLink = (link: string) =>
     ? '/'
     : `/#${link}`;
 
-export default function MobileMenu({ routes }: MobileMenuProps) {
+export default function MobileMenu({ links }: MobileMenuProps[]) {
   return (
     <Menu as='span' className='flex items-center md:hidden'>
       {({ open }) => (
@@ -45,20 +46,20 @@ export default function MobileMenu({ routes }: MobileMenuProps) {
               className='absolute top-[35px] right-5 mt-2 w-56 origin-top-right divide-y divide-custom-border-black rounded-md bg-background-light shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:divide-transparent-white dark:bg-background-dark'
             >
               <nav className='px-1 py-1 '>
-                {routes.map((link) => (
-                  <Menu.Item key={link}>
+                {links.map((link) => (
+                  <Menu.Item key={link.label}>
                     {({ active }: { active: boolean }) => (
                       <Link
                         animation={false}
-                        href={checkLink(link)}
+                        href={link.href}
                         className={`${
                           active
                             ? 'primary-gradient text-gray-50 dark:text-gray-900'
                             : 'text-gray-600 dark:text-gray-300'
                         } group flex w-full items-center gap-4 rounded-md px-2 py-2 text-sm`}
                       >
-                        <IconHelper type={link} className='h-5 w-5' />
-                        <span className='capitalize'>{link}</span>
+                        <IconHelper type={link.label} className='h-5 w-5' />
+                        <span className='capitalize'>{link.label}</span>
                       </Link>
                     )}
                   </Menu.Item>

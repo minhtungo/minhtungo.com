@@ -1,7 +1,7 @@
 import { Icon, Logo } from '@/components';
 import Avatar from '@/components/common/Avatar';
 import Link from '@/components/common/Link';
-import { NAVIGATION_ROUTES } from '@/config/routes';
+import { links } from '@/config/routes';
 import { FadeContainer, FromLeftVariant } from '@/lib/framerVariants';
 import { Inter } from '@next/font/google';
 import { motion, useAnimation } from 'framer-motion';
@@ -123,10 +123,10 @@ const Header = () => {
             variants={FadeContainer}
             className='flex items-center lg:gap-2'
           >
-            {NAVIGATION_ROUTES.map((link, index) => {
+            {links.map((link, index) => {
               return (
                 <li key={index}>
-                  <NavItem href={`${link}`} text={link} />
+                  <NavItem href={link.href} label={link.label} />
                 </li>
               );
             })}
@@ -159,7 +159,7 @@ const Header = () => {
               {/* DarkMode Container */}
               {renderThemeChanger()}
             </Icon>
-            <MobileMenu routes={NAVIGATION_ROUTES} />
+            <MobileMenu links={links} />
           </div>
         </div>
       </div>

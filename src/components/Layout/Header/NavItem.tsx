@@ -6,29 +6,17 @@ import { PopUp } from '@/lib/framerVariants';
 
 interface NavItemProps {
   href: string;
-  text: string;
+  label: string;
 }
 
-const NavItem = ({ href, text }: NavItemProps) => {
+const NavItem = ({ href, label }: NavItemProps) => {
   const router = useRouter();
   const path = router.asPath;
-  const isActive =
-    path ===
-    (href === '/home'
-      ? '/'
-      : href === '/guestbook' || href === '/uses'
-      ? `/${href}`
-      : `/#${href}`);
-  const hrefLink =
-    href === 'uses' || href === 'guestbook'
-      ? `/${href}`
-      : href === '/home'
-      ? '/'
-      : `/#${href}`;
+  const isActive = path === href;
 
   return (
     <Link
-      href={hrefLink}
+      href={href}
       className={`${
         isActive
           ? 'font-bold text-gray-800 dark:text-gray-200'
@@ -36,7 +24,7 @@ const NavItem = ({ href, text }: NavItemProps) => {
       } mx-2.5 hidden rounded-md text-base transition-all md:inline-block`}
     >
       <motion.span className='capitalize' variants={PopUp}>
-        {text}
+        {label}
       </motion.span>
     </Link>
   );

@@ -1,5 +1,7 @@
 import { FromLeftVariant } from '@/lib/framerVariants';
 import dynamic from 'next/dynamic';
+import { useEffect } from 'react';
+import { toast } from 'react-hot-toast';
 import { TypeAnimation } from 'react-type-animation';
 
 import { AnimatedText, Button, ModelLoader, SnowFall } from '..';
@@ -11,6 +13,15 @@ const LazyDogModel = dynamic(() => import('./Model/DogModel'), {
 });
 
 const Hero = () => {
+  useEffect(() => {
+    toast.success(
+      'I am making some improvements to my site. If you have any suggestions or comments, please feel free to reach out to me by email or leave a message in the guestbook.',
+      {
+        duration: 4000,
+        position: 'top-center',
+      }
+    );
+  }, []);
   return (
     <section
       id='home'
