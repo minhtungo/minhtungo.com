@@ -49,7 +49,7 @@ const RepoCard = ({ repo }: RepoProps) => {
             key={`${repo.name}-${tool}`}
           >
             {renderTech(tool, 'w-5 h-5')}
-            <span className='-left-[100%%] absolute -top-7 w-max scale-0 rounded bg-background-light px-2 py-1 text-sm font-medium text-gray-800 shadow transition-all group-hover:scale-100 dark:bg-background-dark dark:text-gray-300'>
+            <span className='absolute -left-[75%] -top-7 mx-auto w-max scale-0 rounded bg-background-light px-2 py-1 text-sm font-medium text-gray-800 shadow transition-all group-hover:scale-100 dark:bg-background-dark dark:text-gray-300'>
               {tool}
             </span>
           </div>
