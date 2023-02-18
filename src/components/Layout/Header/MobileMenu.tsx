@@ -5,21 +5,7 @@ import { Fragment } from 'react';
 import { HiOutlineMenuAlt4 } from 'react-icons/hi';
 import { IoMdClose } from 'react-icons/io';
 
-interface MobileMenuProps {
-  links: {
-    href: string;
-    label: string;
-  };
-}
-
-const checkLink = (link: string) =>
-  link === 'uses' || link === 'guestbook'
-    ? `/${link}`
-    : link === 'home'
-    ? '/'
-    : `/#${link}`;
-
-export default function MobileMenu({ links }: MobileMenuProps[]) {
+export default function MobileMenu({ links }: { links: Link[] }) {
   return (
     <Menu as='span' className='flex items-center md:hidden'>
       {({ open }) => (
@@ -64,57 +50,6 @@ export default function MobileMenu({ links }: MobileMenuProps[]) {
                     )}
                   </Menu.Item>
                 ))}
-                {/* <Menu.Item>
-                  {({ active }: { active: boolean }) => (
-                    <Link
-                      animation={false}
-                      href='https://github.com/minhtungo'
-                      className={`${
-                        active
-                          ? 'text-gray-5 bg-blue-500'
-                          : 'text-gray-600 dark:text-gray-300'
-                      } group flex w-full items-center gap-4 rounded-md px-2 py-2 text-sm`}
-                    >
-                      <FiGithub className='h-5 w-5' aria-hidden='true' />
-                      Github
-                    </Link>
-                  )}
-                </Menu.Item> */}
-                {/* <Menu.Item>
-                  {({ active }: { active: boolean }) => (
-                    <Link
-                      animation={false}
-                      href='https://www.linkedin.com/in/minhtungo/'
-                      className={`${
-                        active
-                          ? 'bg-blue-500 text-gray-50'
-                          : 'text-gray-600 dark:text-gray-300'
-                      } group flex w-full items-center gap-4 rounded-md px-2 py-2 text-sm`}
-                    >
-                      <FiLinkedin className='h-5 w-5' aria-hidden='true' />
-                      LinkedIn
-                    </Link>
-                  )}
-                </Menu.Item>
-                <Menu.Item>
-                  {({ active }: { active: boolean }) => (
-                    <Link
-                      animation={false}
-                      href='https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
-                      className={`${
-                        active
-                          ? 'bg-blue-500 text-gray-50'
-                          : 'text-gray-600 dark:text-gray-300'
-                      } group flex w-full items-center gap-4 rounded-md px-2 py-2 text-sm`}
-                    >
-                      <IoDocumentTextOutline
-                        className='h-5 w-5'
-                        aria-hidden='true'
-                      />
-                      Resume
-                    </Link>
-                  )}
-                </Menu.Item> */}
               </nav>
             </Menu.Items>
           </Transition>

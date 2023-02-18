@@ -6,6 +6,8 @@ type Base = {
   _updatedAt: string;
 };
 
+type Link = { href: string; label: string };
+
 interface Project extends Base {
   name: string;
   description: string;

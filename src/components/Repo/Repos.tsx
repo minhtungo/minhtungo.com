@@ -1,46 +1,36 @@
-import { AnimatePresence, motion, useAnimation } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import { AnimatedDiv, Button, Title } from '..';
 import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
+import classNames from 'classnames';
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { IoMdArrowForward } from 'react-icons/io';
+
+import { AnimatedDiv, Button, Title } from '..';
 import RepoCard from './RepoCard';
 
 interface ReposProps {
   repos?: Repo[] | undefined;
+  home?: boolean;
 }
 
 const SKIP = 6;
 
-const Repo = ({ repos }: ReposProps) => {
-  const [displayCount, setDisplayCount] = useState(SKIP);
+const Repo = ({ repos, home }: ReposProps) => {
   const [repoList, setRepoList] = useState<Repo[] | undefined>([]);
-  const [isMore, setIsMore] = useState(false);
-
-  const controls = useAnimation();
 
   useEffect(() => {
     setRepoList(repos);
   }, []);
 
-  useEffect(() => {
-    controls.start('visible');
-  }, [displayCount]);
-
-  const onLoadMore = () => {
-    setIsMore(true);
-    setDisplayCount((prevCount) => prevCount + SKIP);
-  };
-
-  const onLoadLess = () => {
-    setIsMore(false);
-    setDisplayCount(SKIP);
-  };
-
   return (
-    <section id='repos' className='pt-16 lg:pt-20'>
+    <section id='repos' className={classNames(home && 'pt-16 lg:pt-20')}>
       <Title
-        title='Repositories'
-        subtitle='Other Noteworthy Projects'
-        className='text-center'
+        title='Library'
+        subtitle={
+          home
+            ? 'Other Noteworthy Projects'
+            : 'Some collection of code snippets that I have created.'
+        }
+        home={home}
       />
 
       <AnimatedDiv
@@ -53,36 +43,11 @@ const Repo = ({ repos }: ReposProps) => {
           </motion.div>
         ))}
       </AnimatedDiv>
-      {isMore && (
-        <AnimatePresence>
-          <motion.div
-            variants={FadeContainer}
-            initial='hidden'
-            animate={controls}
-            exit='hidden'
-            className='mx-auto mt-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3'
-          >
-            {repoList?.slice(SKIP, displayCount).map((repo) => (
-              <motion.div variants={PopUpFromBottom} key={repo.name}>
-                <RepoCard repo={repo} />
-              </motion.div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-      )}
-
-      {repoList && displayCount < repoList?.length && (
-        <div className='mt-4 text-center lg:mt-6'>
-          <Button onClick={onLoadMore} variant='secondary'>
-            Show More
-          </Button>
-        </div>
-      )}
-
-      {repoList && isMore && (
-        <div className='mt-4 text-center lg:mt-6'>
-          <Button onClick={onLoadLess} variant='secondary'>
-            Show Less
+      {home && (
+        <div className='group relative mt-4 text-center transition duration-200 lg:mt-6'>
+          <Button href='/library' variant='secondary'>
+            See More Projects{' '}
+            <IoMdArrowForward className='ml-2 group-hover:ml-3' />
           </Button>
         </div>
       )}

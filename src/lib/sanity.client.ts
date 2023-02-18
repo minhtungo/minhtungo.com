@@ -29,6 +29,12 @@ export const repoQuery = groq`
   } | order(order asc, _createdAt asc)
 `;
 
+export const repoHomeQuery = groq`
+  *[_type == "repo"][0..5] {
+    ...,
+  } | order(order asc, _createdAt asc)
+`;
+
 export const journeyQuery = groq`
   *[_type == "journey"] {
     ...,

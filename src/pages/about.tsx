@@ -1,14 +1,5 @@
-import {
-  About,
-  AnimatedHeading,
-  Container,
-  Journey,
-  Projects,
-  Title,
-} from '@/components';
+import { About, Container, Journey } from '@/components';
 import { Meta } from '@/components/Layout';
-import { FromLeftVariant } from '@/lib/framerVariants';
-
 import { client, journeyQuery } from '@/lib/sanity.client';
 
 export const getStaticProps = async () => {
@@ -24,7 +15,7 @@ const AboutPage = ({ journeys }: { journeys: Journey[] }) => {
     <>
       <Meta title='Projects' />
       <Container className='pt-20'>
-        <About className='lg:pt-1' />
+        <About className='' />
         <Journey journeys={journeys} />
       </Container>
     </>

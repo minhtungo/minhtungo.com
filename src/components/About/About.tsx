@@ -6,12 +6,12 @@ import classNames from 'classnames';
 
 const About = ({ home, className }: { home?: boolean; className?: string }) => {
   return (
-    <section id='about' className={classNames('pt-10 lg:pt-16', className)}>
+    <section id='about' className={classNames('', className)}>
       <Title
         title='About Me'
         subtitle={home ? 'Introduction' : ''}
         home={home}
-        className='mb-4'
+        className='mb-1'
       />
       <div className='lg:gap-18 flex flex-col items-center gap-8 md:flex-row-reverse'>
         <motion.div

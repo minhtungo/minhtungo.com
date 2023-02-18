@@ -15,7 +15,7 @@ const ProjectsPage = ({ projects }: { projects: Project[] }) => {
     <>
       <Meta title='Projects' />
       <Container className='pt-20'>
-        <Projects projects={projects} className='lg:pt-1' />
+        <Projects projects={projects} />
       </Container>
     </>
   );

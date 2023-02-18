@@ -1,7 +1,4 @@
-import Meta from '@/components/Layout/Meta';
-
 import {
-  About,
   Contact,
   Container,
   Hero,
@@ -10,17 +7,18 @@ import {
   Repo,
   TechStack,
 } from '@/components';
+import Meta from '@/components/Layout/Meta';
 import {
   client,
   journeyQuery,
   projectHomeQuery,
-  repoQuery,
+  repoHomeQuery,
 } from '@/lib/sanity.client';
 
 export const getStaticProps = async () => {
   const [projects, repos, journeys] = await Promise.all([
     await client.fetch(projectHomeQuery),
-    await client.fetch(repoQuery),
+    await client.fetch(repoHomeQuery),
     await client.fetch(journeyQuery),
   ]);
   return {
@@ -42,7 +40,7 @@ export default function Home({ projects, repos, journeys }: HomeProps) {
         <Hero />
         <TechStack />
         <Projects projects={projects} home />
-        <Repo repos={repos} />
+        <Repo repos={repos} home />
         <Contact />
       </Container>
     </>

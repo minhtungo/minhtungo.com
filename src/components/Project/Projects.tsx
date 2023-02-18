@@ -15,7 +15,7 @@ const Projects = ({ projects, className, home }: ProjectsProp) => {
   return (
     <section
       id='projects'
-      className={classNames(className, 'mx-auto pt-10 lg:pt-16')}
+      className={classNames(className, 'mx-auto', home && 'pt-16 lg:pt-20')}
     >
       <Title
         title='Projects'
