@@ -61,7 +61,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       ref={form}
     >
-      <div className='grid w-full grid-cols-2 gap-4 lg:gap-6'>
+      <div className='grid w-full sm:grid-cols-2 sm:gap-4 lg:gap-6'>
         <Input
           type='text'
           name='name'
