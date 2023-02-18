@@ -3,7 +3,7 @@ import { Title } from '..';
 import { AiOutlineCaretDown } from 'react-icons/ai';
 import JourneyCard from './JourneyCard';
 import { motion } from 'framer-motion';
-import { PopUpFromBottom } from '@/lib/frammerVariants';
+import { PopUpFromBottom } from '@/lib/framerVariants';
 import Lottie from 'react-lottie-player';
 import animationData from '@/config/animation.json';
 import { Fragment } from 'react';

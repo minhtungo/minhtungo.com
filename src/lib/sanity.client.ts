@@ -17,6 +17,12 @@ export const projectQuery = groq`
     ...,
   } | order(order asc, _createdAt asc)
 `;
+
+export const projectHomeQuery = groq`
+  *[_type == "project"][0...2] {
+    ...,
+  } | order(order asc, _createdAt asc)
+`;
 export const repoQuery = groq`
   *[_type == "repo"] {
     ...,

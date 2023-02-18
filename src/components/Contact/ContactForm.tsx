@@ -3,7 +3,7 @@ import {
   toastifyFailure,
   toastifySuccess,
 } from '@/components/common/ToastMessage';
-import { FadeContainer } from '@/lib/frammerVariants';
+import { FadeContainer } from '@/lib/framerVariants';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';

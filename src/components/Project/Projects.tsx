@@ -1,15 +1,21 @@
-import { Title } from '..';
+import { Button, Title } from '..';
 import ProjectItem from './ProjectItem';
 import { motion } from 'framer-motion';
-import { OpacityVariant } from '@/lib/frammerVariants';
+import { OpacityVariant } from '@/lib/framerVariants';
+import classNames from 'classnames';
 
 interface ProjectsProp {
   projects: Project[];
+  className?: string;
+  home?: boolean;
 }
 
-const Projects = ({ projects }: ProjectsProp) => {
+const Projects = ({ projects, className, home }: ProjectsProp) => {
   return (
-    <section id='projects' className='mx-auto pt-10 lg:pt-16'>
+    <section
+      id='projects'
+      className={classNames(className, 'mx-auto pt-10 lg:pt-16')}
+    >
       <Title title='Projects' subtitle='My Work' />
 
       <div className='mx-auto -mt-2 grid grid-cols-1 gap-6 sm:gap-4 lg:-mt-9'>
@@ -25,6 +31,13 @@ const Projects = ({ projects }: ProjectsProp) => {
           </motion.div>
         ))}
       </div>
+      {home && (
+        <div className='mt-4 text-center lg:mt-6'>
+          <Button href='/projects' variant='secondary'>
+            See More Projects
+          </Button>
+        </div>
+      )}
     </section>
   );
 };

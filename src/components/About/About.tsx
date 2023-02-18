@@ -1,6 +1,6 @@
 import { AnimatedDiv, Title } from '@/components';
 import ProfileCard from '@/components/About/ProfileCard';
-import { OpacityVariant, PopUpFromBottom } from '@/lib/frammerVariants';
+import { OpacityVariant, PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
 
 const About = () => {

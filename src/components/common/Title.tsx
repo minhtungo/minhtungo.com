@@ -1,7 +1,9 @@
 // import LineGradient from './LineGradient';
 import { AnimatedHeading, AnimatedText } from '@/components';
 import classNames from 'classnames';
-import { FromLeftVariant, PopUpFromBottom } from '@/lib/frammerVariants';
+import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
+import { Inter } from '@next/font/google';
+const inter = Inter({ subsets: ['latin'] });
 
 interface TitleProps {
   title: string;
@@ -11,13 +13,10 @@ interface TitleProps {
 
 const Title = ({ title, subtitle, className }: TitleProps) => {
   return (
-    <div className={classNames('mb-8 text-center lg:mb-8', className)}>
-      {/* <div className='flex justify-center mb-4'>
-        <LineGradient width='w-1/6' />
-      </div> */}
+    <div className={classNames('mb-8', className)}>
       <AnimatedHeading
         variants={FromLeftVariant}
-        className='mb-2 bg-gradient-to-r from-cyan-700 to-blue-600 bg-clip-text text-2xl font-semibold text-transparent dark:from-[#a2facf] dark:to-[#64acff] md:text-3xl lg:text-4xl lg:font-bold'
+        className='primary-gradient mb-2 bg-clip-text text-2xl font-semibold text-transparent md:text-3xl lg:text-4xl lg:font-bold'
       >
         {title}
       </AnimatedHeading>
@@ -25,7 +24,7 @@ const Title = ({ title, subtitle, className }: TitleProps) => {
       {subtitle && (
         <AnimatedText
           variants={PopUpFromBottom}
-          className='text-xs tracking-wider text-gray-900 dark:text-gray-200'
+          className='text-sm tracking-wider text-gray-900 dark:text-neutral-300'
         >
           {subtitle}
         </AnimatedText>

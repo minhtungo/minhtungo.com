@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { PopUp } from '@/lib/frammerVariants';
+import { PopUp } from '@/lib/framerVariants';
 
 interface IconProps {
   children: React.ReactNode;

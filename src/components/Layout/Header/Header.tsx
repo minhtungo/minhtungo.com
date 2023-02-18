@@ -2,7 +2,7 @@ import { Icon, Logo } from '@/components';
 import Avatar from '@/components/common/Avatar';
 import Link from '@/components/common/Link';
 import { NAVIGATION_ROUTES } from '@/config/routes';
-import { FadeContainer, FromLeftVariant } from '@/lib/frammerVariants';
+import { FadeContainer, FromLeftVariant } from '@/lib/framerVariants';
 import { Inter } from '@next/font/google';
 import { motion, useAnimation } from 'framer-motion';
 import { useTheme } from 'next-themes';

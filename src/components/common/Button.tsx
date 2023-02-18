@@ -1,5 +1,5 @@
 import Link from '@/components/common/Link';
-import { PopUp } from '@/lib/frammerVariants';
+import { PopUp } from '@/lib/framerVariants';
 import { cva, VariantProps } from 'class-variance-authority';
 import { motion } from 'framer-motion';
 import { AnchorHTMLAttributes } from 'react';
@@ -18,7 +18,7 @@ const buttonClasses = cva('relative inline-flex items-center', {
     variant: {
       primary: [
         'bg-gradient-to-r primary-gradient hover:text-shadow hover:shadow-primary transition-[shadow,text-shadow]',
-        '[&_.highlight]:ml-2 text-white dark:text-black font-semibold',
+        '[&_.highlight]:ml-2 text-gray-100 dark:text-gray-800 font-semibold',
       ],
       secondary: [
         'bg-white dark:border-transparent-black dark:bg-[#24292F] border border-gray-300 backdrop-filter-[12px] hover:bg-gray-300 dark:hover:bg-[#24292F]/70 transition-colors ease-in text-gray-900 dark:text-gray-100 font-semibold',
@@ -55,20 +55,21 @@ const Button = ({
 }: ButtonProps) => {
   if (!href)
     return (
-      <motion.div initial='hidden' animate='visible' variants={PopUp}>
-        <button
-          disabled={disabled}
-          onClick={onClick}
-          className={buttonClasses({
-            variant,
-            size,
-            rounded,
-            className: props.className,
-          })}
-        >
-          {children}
-        </button>
-      </motion.div>
+      <motion.button
+        disabled={disabled}
+        onClick={onClick}
+        className={buttonClasses({
+          variant,
+          size,
+          rounded,
+          className: props.className,
+        })}
+        initial='hidden'
+        animate='visible'
+        variants={PopUp}
+      >
+        {children}
+      </motion.button>
     );
   return (
     <motion.div initial='hidden' animate='visible' variants={PopUp}>

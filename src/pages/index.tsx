@@ -16,21 +16,18 @@ import {
 import {
   client,
   journeyQuery,
-  projectQuery,
+  projectHomeQuery,
   repoQuery,
-  resumeQuery,
 } from '@/lib/sanity.client';
 
 export const getStaticProps = async () => {
-  const [projects, repos, journeys, resume] = await Promise.all([
-    await client.fetch(projectQuery),
+  const [projects, repos, journeys] = await Promise.all([
+    await client.fetch(projectHomeQuery),
     await client.fetch(repoQuery),
     await client.fetch(journeyQuery),
-    await client.fetch(resumeQuery),
   ]);
-  const resumeURL = resume[0].resume;
   return {
-    props: { projects, repos, journeys, resumeURL },
+    props: { projects, repos, journeys },
   };
 };
 
@@ -38,24 +35,18 @@ interface HomeProps {
   projects: Project[];
   repos: Repo[];
   journeys: Journey[];
-  resumeURL: string;
 }
 
-export default function Home({
-  projects,
-  repos,
-  journeys,
-  resumeURL,
-}: HomeProps) {
+export default function Home({ projects, repos, journeys }: HomeProps) {
   return (
     <>
       <Meta />
       <Container className={inter.className}>
-        <Hero resumeURL={resumeURL} />
+        <Hero />
         <About />
         <Journey journeys={journeys} />
         <TechStack />
-        <Projects projects={projects} />
+        <Projects projects={projects} home />
         <Repo repos={repos} />
         <Contact />
       </Container>

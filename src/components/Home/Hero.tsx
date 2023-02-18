@@ -1,4 +1,4 @@
-import { FadeContainer, FromLeftVariant, PopUp } from '@/lib/frammerVariants';
+import { FadeContainer, FromLeftVariant, PopUp } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
 import { TypeAnimation } from 'react-type-animation';
@@ -11,11 +11,7 @@ const LazyDogModel = dynamic(() => import('./Model/DogModel'), {
   loading: () => <ModelLoader />,
 });
 
-interface HeroProps {
-  resumeURL: string;
-}
-
-const Hero = ({ resumeURL }: HeroProps) => {
+const Hero = () => {
   return (
     <section
       id='home'
