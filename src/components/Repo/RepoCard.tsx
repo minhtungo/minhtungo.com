@@ -44,15 +44,15 @@ const RepoCard = ({ repo }: RepoProps) => {
       {/* Tech Stack */}
       <div className='mt-2 flex flex-wrap items-center space-x-2'>
         {repo.tools.map((tool) => (
-          <p
-            className='group relative flex items-center gap-1 transition duration-200 ease-linear'
+          <div
+            className='group relative transition duration-200 ease-linear'
             key={`${repo.name}-${tool}`}
           >
             {renderTech(tool, 'w-5 h-5')}
-            <span className='absolute -top-7 -left-[50%] w-max scale-0 rounded bg-background-light px-2 py-1 text-sm font-medium text-gray-800 shadow transition-all group-hover:scale-100 dark:bg-background-dark dark:text-gray-300'>
+            <span className='-left-[100%%] absolute -top-7 w-max scale-0 rounded bg-background-light px-2 py-1 text-sm font-medium text-gray-800 shadow transition-all group-hover:scale-100 dark:bg-background-dark dark:text-gray-300'>
               {tool}
             </span>
-          </p>
+          </div>
         ))}
       </div>
       <p className='mt-4 text-sm text-gray-600 dark:text-gray-400'>

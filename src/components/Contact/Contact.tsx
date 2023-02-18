@@ -11,10 +11,10 @@ import ContactForm from './ContactForm';
 const Contact = () => {
   return (
     <section id='contact' className='pt-16 lg:pt-20'>
-      <Title title='Contact' subtitle="Let's connect" />
+      <Title title='Contact' subtitle="Let's connect" className='text-center' />
       <div className='relative'>
         <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
-          <div className='md:ml-4'>
+          <div>
             <div>
               <AnimatedText
                 variants={PopUpFromBottom}

@@ -19,53 +19,55 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
       url={project.liveURL}
     />
 
-    <div className='-mt-14 flex w-full flex-col justify-start gap-3 rounded-lg border border-custom-border-black bg-card-background-light p-4 pt-14 shadow-md dark:border-transparent-white dark:bg-card-background-dark md:-ml-1 md:mt-0 md:p-5 '>
-      <div>
-        <h1 className='text-md font-semibold capitalize text-gray-800 dark:text-gray-300 lg:text-lg'>
+    <div className='-mt-14 flex w-full flex-col justify-start rounded-lg border border-custom-border-black bg-card-background-light p-4 pt-14 shadow-md dark:border-transparent-white dark:bg-card-background-dark md:-ml-1 md:mt-0 md:p-4 '>
+      <div className='flex items-center'>
+        <h3 className='text-lg font-semibold capitalize text-gray-800 dark:text-gray-300'>
           {project.name}
-        </h1>
-        <p className='text-sm text-gray-600 dark:text-gray-400 sm:text-base'>
-          {project.description}
-        </p>
-      </div>
-
-      <div className='flex flex-wrap items-center gap-1'>
-        {project.tools?.map((tool, index) => {
-          return (
-            <span
-              key={`${tool}-${index}`}
-              className='rounded bg-gray-200 px-2 py-1 text-xs text-gray-500 dark:bg-transparent-white dark:text-gray-400 sm:text-[0.8rem]'
-            >
-              <div className='flex items-center gap-1'>
-                {renderTech(tool)}
-                {tool}
-              </div>
-            </span>
-          );
-        })}
-      </div>
-      <div className='mx-auto mt-auto flex w-fit items-center gap-4 p-2 md:m-0'>
-        <Icon>
-          <Link
-            href={project.githubURL}
-            className='text-gray-600 dark:text-gray-400'
-            animation={false}
-          >
-            <FiGithub className='h-5 w-5 transition-all hover:scale-110 hover:text-blue-500 active:scale-90' />
-          </Link>
-        </Icon>
-
-        {project.liveURL && (
+        </h3>
+        <div className='ml-auto flex items-center gap-3'>
           <Icon>
             <Link
-              href={project.liveURL}
+              href={project.githubURL}
               className='text-gray-600 dark:text-gray-400'
               animation={false}
             >
-              <FiExternalLink className='h-5 w-5 transition-all hover:scale-110 hover:text-blue-500 active:scale-90' />
+              <FiGithub className='h-5 w-5 transition-all hover:scale-110 hover:text-blue-500 active:scale-90' />
             </Link>
           </Icon>
-        )}
+
+          {project.liveURL && (
+            <Icon>
+              <Link
+                href={project.liveURL}
+                className='text-gray-600 dark:text-gray-400'
+                animation={false}
+              >
+                <FiExternalLink className='h-5 w-5 transition-all hover:scale-110 hover:text-blue-500 active:scale-90' />
+              </Link>
+            </Icon>
+          )}
+        </div>
+      </div>
+
+      <p className='text-sm text-gray-600 dark:text-gray-400 sm:text-base'>
+        {project.description}
+      </p>
+      <div className='mt-3 flex flex-wrap items-center space-x-2'>
+        {project.tools?.map((tool, index) => {
+          return (
+            <div
+              key={`${tool}-${index}`}
+              className='group relative transition duration-200 ease-linear'
+            >
+              <span className='flex items-center'>
+                {renderTech(tool, 'w-5 h-5')}
+                <span className='absolute -top-7 -left-[100%] w-max scale-0 rounded bg-background-light px-2 py-1 text-sm font-medium text-gray-800 shadow transition-all group-hover:scale-100 dark:bg-background-dark dark:text-gray-300'>
+                  {tool}
+                </span>
+              </span>
+            </div>
+          );
+        })}
       </div>
     </div>
   </div>

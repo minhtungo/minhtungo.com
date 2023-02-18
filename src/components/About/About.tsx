@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const About = () => {
   return (
     <section id='about' className='-mt-16 pt-20'>
-      <Title title='About Me' subtitle='Introduction' />
+      <Title title='About Me' subtitle='Introduction' className='text-center' />
       <div className='lg:gap-18 flex flex-col items-center gap-8  lg:flex-row'>
         <motion.div
           initial='hidden'
