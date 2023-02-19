@@ -1,17 +1,17 @@
+import { PopUpFromBottom } from '@/lib/framerVariants';
+import classNames from 'classnames';
+import Image from 'next/image';
 import Link from 'next/link';
-import { ToastContainer } from 'react-toastify';
-
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
-import { Title, AnimatedText, Icon } from '..';
-import { PopUpFromBottom } from '@/lib/framerVariants';
-import Image from 'next/image';
+import { ToastContainer } from 'react-toastify';
 
+import { AnimatedText, Icon, Title } from '..';
 import ContactForm from './ContactForm';
 
-const Contact = () => {
+const Contact = ({ home }: { home?: boolean }) => {
   return (
-    <section id='contact' className='relative pt-16 lg:pt-20'>
+    <section id='contact' className={classNames(home && 'pt-16 lg:pt-20')}>
       <Image
         className='absolute left-0 top-8 mx-auto h-auto w-auto animate-pulse sm:left-[10%] md:left-[15%] lg:left-[27.5%]'
         src='/static/images/sparkles.svg'
@@ -19,7 +19,12 @@ const Contact = () => {
         width={60}
         height={60}
       />
-      <Title title='Contact' subtitle="Let's connect" className='text-center' />
+      <Title
+        title='Contact'
+        subtitle="Let's connect"
+        home={home}
+        className='lg:!mb-3'
+      />
       <div className='relative'>
         <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
           <div>

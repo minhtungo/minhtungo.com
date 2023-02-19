@@ -82,7 +82,7 @@ const Hero = () => {
           </Button>
 
           <Button href='/about' variant='secondary' size='large'>
-            Learn More About Me
+            More About Me
           </Button>
         </div>
       </div>

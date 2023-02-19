@@ -7,7 +7,9 @@ import Avatar from '@/components/common/Avatar';
 
 const Footer = () => {
   return (
-    <footer className='mx-auto max-w-6xl px-6 py-6 pt-28 xl:px-0'>
+    <footer className='mx-auto max-w-6xl px-6 py-6 pt-12 xl:px-0 xl:pt-20'>
+      <hr className='my-6 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
+
       <div className='md:flex md:justify-between'>
         <div className='mb-6 flex flex-col justify-center md:mb-0'>
           <div className='flex items-center'>
@@ -27,9 +29,6 @@ const Footer = () => {
 
         <div className='grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-24'>
           <div>
-            <h2 className='mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-gray-50'>
-              Resources
-            </h2>
             <ul className='text-gray-600 dark:text-gray-400'>
               <li className='mb-2'>
                 <Link href='/about'>About</Link>
@@ -43,9 +42,6 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className='mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-gray-50'>
-              Social
-            </h2>
             <ul className='text-gray-600 dark:text-gray-400'>
               <li className='mb-2'>
                 <Link href='https://github.com/minhtungo' icon>
@@ -60,10 +56,10 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h2 className='mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-gray-50'>
-              Other
-            </h2>
             <ul className='text-gray-600 dark:text-gray-400'>
+              <li className='mb-2'>
+                <Link href='/contact'>Contact</Link>
+              </li>
               <li className='mb-2'>
                 <Link href='/guestbook'>Guestbook</Link>
               </li>
@@ -74,11 +70,14 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr className='my-6 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
-      <div className='text-center sm:flex sm:items-center sm:justify-between'>
-        <span className='text-sm text-gray-500 dark:text-gray-400 sm:text-center'>
-          😺 2023 <Link href='/'>Minh Tu Ngo</Link>.
-        </span>
+      <div className='mt-6 text-center sm:flex sm:items-center sm:justify-between'>
+        <Link href='/'>
+          😸
+          <span className='primary-gradient bg-clip-text font-medium text-transparent'>
+            Minh Tu Ngo
+          </span>
+          🐶
+        </Link>
         <div className='mt-4 flex justify-center space-x-6 sm:mt-0'>
           <Icon>
             <Link

@@ -29,7 +29,7 @@ export default function Home({ projects, repos, journeys }: HomeProps) {
       <Hero />
       <Projects projects={projects} home />
       <Repo repos={repos} home />
-      <Contact />
+      <Contact home />
     </>
   );
 }
