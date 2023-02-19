@@ -1,5 +1,5 @@
-import { About, Container, Journey, TechStack } from '@/components';
-import { Meta } from '@/components/Layout';
+import { About, Journey, TechStack } from '@/components';
+import { Meta, Layout } from '@/components/Layout';
 import { client, journeyQuery } from '@/lib/sanity.client';
 
 export const getStaticProps = async () => {
@@ -12,14 +12,11 @@ export const getStaticProps = async () => {
 
 const AboutPage = ({ journeys }: { journeys: Journey[] }) => {
   return (
-    <>
-      <Meta title='About' />
-      <Container className='pt-20'>
-        <About className='' />
-        <TechStack />
-        <Journey journeys={journeys} />
-      </Container>
-    </>
+    <Layout pageTitle='About'>
+      <About className='' />
+      <TechStack />
+      <Journey journeys={journeys} />
+    </Layout>
   );
 };
 export default AboutPage;

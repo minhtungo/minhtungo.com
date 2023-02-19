@@ -1,5 +1,5 @@
-import { Container, Projects, Repo } from '@/components';
-import { Meta } from '@/components/Layout';
+import { Repo } from '@/components';
+import { Layout, Meta } from '@/components/Layout';
 import { client, repoQuery } from '@/lib/sanity.client';
 
 export const getStaticProps = async () => {
@@ -12,12 +12,9 @@ export const getStaticProps = async () => {
 
 const LibraryPage = ({ repos }: { repos: Repo[] }) => {
   return (
-    <>
-      <Meta title='Library' />
-      <Container className='pt-20'>
-        <Repo repos={repos} />
-      </Container>
-    </>
+    <Layout pageTitle='Library'>
+      <Repo repos={repos} />
+    </Layout>
   );
 };
 export default LibraryPage;

@@ -1,5 +1,5 @@
-import { Container, Projects } from '@/components';
-import { Meta } from '@/components/Layout';
+import { Projects } from '@/components';
+import { Meta, Layout } from '@/components/Layout';
 import { client, projectQuery } from '@/lib/sanity.client';
 
 export const getStaticProps = async () => {
@@ -12,12 +12,9 @@ export const getStaticProps = async () => {
 
 const ProjectsPage = ({ projects }: { projects: Project[] }) => {
   return (
-    <>
-      <Meta title='Projects' />
-      <Container className='pt-20'>
-        <Projects projects={projects} />
-      </Container>
-    </>
+    <Layout pageTitle='Projects'>
+      <Projects projects={projects} />
+    </Layout>
   );
 };
 export default ProjectsPage;

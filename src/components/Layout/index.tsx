@@ -1,4 +1,4 @@
 import Meta from './Meta';
-import Container from './Container';
+import Layout from './Layout';
 
-export { Meta, Container };
+export { Meta, Layout };

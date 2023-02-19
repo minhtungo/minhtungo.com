@@ -5,5 +5,4 @@ export const links = [
   { href: '/library', label: 'Library' },
   { href: '/uses', label: 'Uses', footer: true },
   { href: '/guestbook', label: 'Guestbook' },
-  { href: '/#contact', label: 'Contact' },
 ];

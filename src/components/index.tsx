@@ -1,5 +1,5 @@
 import Hero from './Home/Hero';
-import Container from './Layout/Container';
+import Container from './Layout/Layout';
 import Header from './Layout/Header/Header';
 import Logo from './common/Logo';
 import Button from './common/Button';

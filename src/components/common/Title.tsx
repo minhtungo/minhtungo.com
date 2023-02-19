@@ -1,9 +1,7 @@
 // import LineGradient from './LineGradient';
 import { AnimatedHeading, AnimatedText } from '@/components';
-import classNames from 'classnames';
 import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
-import { Inter } from '@next/font/google';
-const inter = Inter({ subsets: ['latin'] });
+import classNames from 'classnames';
 
 interface TitleProps {
   title: string;

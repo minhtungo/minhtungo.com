@@ -7,7 +7,6 @@ import { Inter } from '@next/font/google';
 import { motion, useAnimation } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 import MobileMenu from './MobileMenu';
@@ -99,7 +98,7 @@ const Header = () => {
       className={`${inter.className} fixed top-0 left-0 right-0 z-50 w-full backdrop-filter`}
       ref={navRef}
     >
-      <div className='flex items-center justify-between py-2 px-4 lg:px-6 xl:px-12'>
+      <div className='mx-auto flex max-w-6xl items-center justify-between py-2 px-6 xl:px-0'>
         <Link
           href='/'
           className='mr-3'
@@ -115,45 +114,24 @@ const Header = () => {
             <Logo />
           </motion.div>
         </Link>
-        {/* Top Nav list on Desktop*/}
-        <nav className='z-10 hidden md:flex'>
-          <motion.ul
-            initial='hidden'
-            animate='visible'
-            variants={FadeContainer}
-            className='flex items-center lg:gap-2'
-          >
-            {links.map((link, index) => {
-              return (
-                <li key={index}>
-                  <NavItem href={link.href} label={link.label} />
-                </li>
-              );
-            })}
-          </motion.ul>
-        </nav>
         <div className='flex items-center space-x-4'>
-          <motion.div className='hidden items-center space-x-4 text-gray-600 dark:text-gray-300 lg:flex'>
-            <Icon>
-              <Link
-                href='https://github.com/minhtungo'
-                className='hover:text-blue-500'
-                animation={false}
-              >
-                <FiGithub className='h-5 w-5' />
-              </Link>
-            </Icon>
-
-            <Icon>
-              <Link
-                href='https://linkedin.com/in/minhtungo/'
-                className='hover:text-blue-500'
-                animation={false}
-              >
-                <FiLinkedin className='h-5 w-5' />
-              </Link>
-            </Icon>
-          </motion.div>
+          {/* Top Nav list on Desktop*/}
+          <nav className='z-10 hidden md:flex'>
+            <motion.ul
+              initial='hidden'
+              animate='visible'
+              variants={FadeContainer}
+              className='flex items-center lg:gap-2'
+            >
+              {links.map((link, index) => {
+                return (
+                  <li key={index}>
+                    <NavItem href={link.href} label={link.label} />
+                  </li>
+                );
+              })}
+            </motion.ul>
+          </nav>
           <div className='flex items-center space-x-3'>
             <Icon>
               {/* DarkMode Container */}
