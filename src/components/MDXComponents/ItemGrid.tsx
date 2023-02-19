@@ -11,7 +11,7 @@ const ItemGrid = ({ items }: ItemGridProps) => {
       {items.map((item, i) => (
         <li
           key={item.name}
-          className='flex items-center gap-3 rounded-lg border border-custom-border-black p-[0.35rem] shadow-lg dark:border-transparent-white dark:bg-card-background-dark sm:flex-col sm:gap-2 sm:p-3'
+          className='flex items-center gap-3 rounded border border-custom-border-black p-[0.35rem] shadow-lg dark:border-transparent-white dark:bg-card-background-dark sm:flex-col sm:gap-2 sm:p-3'
         >
           <Image
             src={item.image}

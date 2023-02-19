@@ -1,5 +1,4 @@
-import { Contact, Hero, Journey, Projects, Repo } from '@/components';
-import { Layout, Meta } from '@/components/Layout';
+import { Contact, Hero, Projects, Repo } from '@/components';
 import {
   client,
   journeyQuery,
@@ -26,11 +25,11 @@ interface HomeProps {
 
 export default function Home({ projects, repos, journeys }: HomeProps) {
   return (
-    <Layout>
+    <>
       <Hero />
       <Projects projects={projects} home />
       <Repo repos={repos} home />
       <Contact />
-    </Layout>
+    </>
   );
 }

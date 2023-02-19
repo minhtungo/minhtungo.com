@@ -12,11 +12,14 @@ export const getStaticProps = async () => {
 
 const AboutPage = ({ journeys }: { journeys: Journey[] }) => {
   return (
-    <Layout pageTitle='About'>
-      <About className='' />
-      <TechStack />
-      <Journey journeys={journeys} />
-    </Layout>
+    <>
+      <Meta title='About' />
+      <Layout>
+        <About className='' />
+        <TechStack />
+        <Journey journeys={journeys} />
+      </Layout>
+    </>
   );
 };
 export default AboutPage;

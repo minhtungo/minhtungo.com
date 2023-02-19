@@ -23,24 +23,27 @@ const GuestBookPage = ({ messages }: { messages: Message[] }) => {
   const { data: session } = useSession();
 
   return (
-    <Layout pageTitle='Guestbook'>
-      <AnimatedHeading
-        variants={FromLeftVariant}
-        className='primary-gradient mb-6 bg-clip-text text-3xl font-semibold text-transparent lg:text-4xl lg:font-bold'
-      >
-        Guestbook
-      </AnimatedHeading>
+    <>
+      <Meta title='Guestbook' />
+      <Layout>
+        <AnimatedHeading
+          variants={FromLeftVariant}
+          className='primary-gradient mb-6 bg-clip-text text-3xl font-semibold text-transparent lg:text-4xl lg:font-bold'
+        >
+          Guestbook
+        </AnimatedHeading>
 
-      <AnimatedText
-        variants={PopUpFromBottom}
-        className='text-gray-900 dark:text-gray-200'
-      >
-        {session
-          ? 'Leave a comment below, it can be totally random 👇.'
-          : 'Sign in to leave a comment.'}
-      </AnimatedText>
-      <Guestbook messages={messages} />
-    </Layout>
+        <AnimatedText
+          variants={PopUpFromBottom}
+          className='text-gray-900 dark:text-gray-200'
+        >
+          {session
+            ? 'Leave a comment below, it can be totally random 👇.'
+            : 'Sign in to leave a comment.'}
+        </AnimatedText>
+        <Guestbook messages={messages} />
+      </Layout>
+    </>
   );
 };
 

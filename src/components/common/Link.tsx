@@ -79,8 +79,8 @@ const Link = ({
       {icon && (
         <span>
           <BsBoxArrowUpRight
-            size={16}
-            className='relative -top-px inline-block'
+            size={14}
+            className='relative -top-[2px] ml-2 inline-block'
           />
         </span>
       )}

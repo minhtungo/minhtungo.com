@@ -35,10 +35,10 @@ const Repo = ({ repos, home }: ReposProps) => {
         ))}
       </AnimatedDiv>
       {home && (
-        <div className='group relative mt-4 text-center transition duration-200 lg:mt-6'>
+        <div className='group relative mt-4 text-center transition duration-200 motion-reduce:transition-none lg:mt-6'>
           <Button href='/library' variant='secondary'>
             See More Repos{' '}
-            <IoMdArrowForward className='ml-2 group-hover:ml-3' />
+            <IoMdArrowForward className='ml-1 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0' />
           </Button>
         </div>
       )}

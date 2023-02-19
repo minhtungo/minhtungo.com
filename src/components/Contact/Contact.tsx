@@ -5,12 +5,20 @@ import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
 import { Title, AnimatedText, Icon } from '..';
 import { PopUpFromBottom } from '@/lib/framerVariants';
+import Image from 'next/image';
 
 import ContactForm from './ContactForm';
 
 const Contact = () => {
   return (
-    <section id='contact' className='pt-16 lg:pt-20'>
+    <section id='contact' className='relative pt-16 lg:pt-20'>
+      <Image
+        className='absolute left-0 top-8 mx-auto h-auto w-auto animate-pulse sm:left-[10%] md:left-[15%] lg:left-[27.5%]'
+        src='/static/images/sparkles.svg'
+        alt='sparkles'
+        width={60}
+        height={60}
+      />
       <Title title='Contact' subtitle="Let's connect" className='text-center' />
       <div className='relative'>
         <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>

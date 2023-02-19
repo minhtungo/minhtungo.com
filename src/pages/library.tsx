@@ -12,9 +12,12 @@ export const getStaticProps = async () => {
 
 const LibraryPage = ({ repos }: { repos: Repo[] }) => {
   return (
-    <Layout pageTitle='Library'>
-      <Repo repos={repos} />
-    </Layout>
+    <>
+      <Meta title='Library' />
+      <Layout>
+        <Repo repos={repos} />
+      </Layout>
+    </>
   );
 };
 export default LibraryPage;

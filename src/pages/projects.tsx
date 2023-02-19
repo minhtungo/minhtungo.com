@@ -12,9 +12,12 @@ export const getStaticProps = async () => {
 
 const ProjectsPage = ({ projects }: { projects: Project[] }) => {
   return (
-    <Layout pageTitle='Projects'>
-      <Projects projects={projects} />
-    </Layout>
+    <>
+      <Meta title='Projects' />
+      <Layout>
+        <Projects projects={projects} />
+      </Layout>
+    </>
   );
 };
 export default ProjectsPage;
