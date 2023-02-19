@@ -14,6 +14,7 @@ import {
   projectHomeQuery,
   repoHomeQuery,
 } from '@/lib/sanity.client';
+import Link from 'next/link';
 
 export const getStaticProps = async () => {
   const [projects, repos, journeys] = await Promise.all([
@@ -38,7 +39,6 @@ export default function Home({ projects, repos, journeys }: HomeProps) {
       <Meta />
       <Container>
         <Hero />
-        <TechStack />
         <Projects projects={projects} home />
         <Repo repos={repos} home />
         <Contact />

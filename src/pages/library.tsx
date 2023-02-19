@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
 const LibraryPage = ({ repos }: { repos: Repo[] }) => {
   return (
     <>
-      <Meta title='Projects' />
+      <Meta title='Library' />
       <Container className='pt-20'>
         <Repo repos={repos} />
       </Container>

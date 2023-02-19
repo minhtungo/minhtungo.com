@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
 const AboutPage = ({ journeys }: { journeys: Journey[] }) => {
   return (
     <>
-      <Meta title='Projects' />
+      <Meta title='About' />
       <Container className='pt-20'>
         <About className='' />
         <TechStack />

@@ -17,11 +17,11 @@ const Hero = () => {
       className='h-screen flex-1 gap-16 pt-8 md:flex md:items-center md:justify-between lg:pt-0'
     >
       {/* Dog Model */}
-      <div className='relative z-10 mx-auto mt-4 flex h-[270px] w-[270px] basis-2/5 justify-center sm:h-[360px] sm:w-[360px] md:order-2 md:mx-0 md:mt-[6.6rem] md:h-[460px] md:w-[460px]'>
+      <div className='relative z-10 mx-auto mt-4 flex h-[270px] w-[270px] basis-2/5 justify-center sm:h-[360px] sm:w-[360px] md:order-2 md:mx-0 md:mt-[6.6rem] md:h-[400px] md:w-[400px] lg:h-[450px] lg:w-[450px]'>
         <LazyDogModel />
       </div>
       {/* Hero Text */}
-      <div className='-mt-14 basis-2/5 text-center md:text-start'>
+      <div className='-mt-14 basis-3/5 text-center md:text-start'>
         <AnimatedText className='mb-[5px] pl-[3px]' variants={FromLeftVariant}>
           Hi, I am
         </AnimatedText>
@@ -61,13 +61,12 @@ const Hero = () => {
 
         {/* buttons */}
         <div className='mt-5 flex flex-col justify-center gap-3 sm:flex-row md:justify-start'>
-          <Button href='#contact'>Let{"'"}s Connect</Button>
+          <Button href='#contact' size='large'>
+            Let{"'"}s Connect
+          </Button>
 
-          <Button
-            href='https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
-            variant='secondary'
-          >
-            Resume
+          <Button href='/about' variant='secondary' size='large'>
+            Learn More About Me
           </Button>
         </div>
       </div>

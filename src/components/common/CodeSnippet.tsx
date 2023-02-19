@@ -16,16 +16,16 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
     <div className={`${roboto_mono.className}`}>
       <div
         className={classNames(
-          'card-background-light rounded-lg text-sm text-off-white shadow-xl dark:bg-transparent-background-black sm:text-base',
+          'rounded-lg bg-card-background-light text-sm text-off-white shadow-xl dark:bg-card-background-dark sm:text-base',
           className
         )}
       >
-        <div className='border-b border-custom-border-black px-6 py-3 dark:border-transparent-white'>
+        <div className='border-b border-custom-border-black px-4 py-2 dark:border-transparent-white'>
           <div className='mr-2 inline-block h-3 w-3 rounded-full bg-red-500'></div>
           <div className='mr-2 inline-block h-3 w-3 rounded-full bg-yellow-300'></div>
           <div className='mr-2 inline-block h-3 w-3 rounded-full bg-green-400'></div>
         </div>
-        <div className='px-6 py-5'>
+        <div className='px-4 py-5'>
           <p>
             <span className='text-blue-600 dark:text-blue-400'>const</span>{' '}
             <span className='text-green-600 dark:text-green-400'>aboutMe</span>{' '}
@@ -65,7 +65,7 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
           </p>
           <p className='text-gray-700 dark:text-gray-50'>
             &nbsp;&nbsp;&nbsp;&nbsp;website:{' '}
-            <span className='text-yellow-600 dark:text-yellow-300'>
+            <span className='text-yellow-600 dark:text-yellow-300 '>
               <Link
                 href='https://minhtungo.com'
                 target='_blank'
@@ -73,7 +73,12 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
               >
                 minhtungo.com
               </Link>
-              {"'"}
+              <span
+                className="relative font-semibold text-slate-700 duration-200 after:absolute after:-top-[2px] after:left-3 after:my-auto after:animate-cursor after:sm:text-base after:content-['|'] motion-reduce:transition-none dark:text-slate-300"
+                aria-hidden='true'
+              >
+                {"'"}
+              </span>
             </span>
             ,
           </p>

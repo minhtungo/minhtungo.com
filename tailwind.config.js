@@ -39,6 +39,10 @@ module.exports = {
         next: "url('/icons/next.png')",
       },
       keyframes: {
+        cursor: {
+          '0%, 45%': { opacity: 1 },
+          '50%, 100%': { opacity: 0 },
+        },
         wave: {
           '0%': { transform: 'rotate(0.0deg)' },
           '15%': { transform: 'rotate(14.0deg)' },
@@ -55,6 +59,7 @@ module.exports = {
         },
       },
       animation: {
+        cursor: 'cursor .75s infinite',
         wave: 'wave 1.5s ease-in-out infinite [origin-70% 70%]',
         border: 'border 4s ease infinite',
       },
