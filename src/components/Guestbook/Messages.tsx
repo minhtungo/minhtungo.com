@@ -8,7 +8,7 @@ const Messages = ({ initialMessage }: { initialMessage: Message[] }) => {
   });
 
   return (
-    <>
+    <div className='mx-auto max-w-3xl'>
       {messages?.map((comment: any) => (
         <article className='my-6 rounded-lg text-base' key={comment.id}>
           <footer className='mb-2 flex items-center'>
@@ -37,7 +37,7 @@ const Messages = ({ initialMessage }: { initialMessage: Message[] }) => {
           <p className='text-gray-800 dark:text-gray-300'>{comment.content}</p>
         </article>
       ))}
-    </>
+    </div>
   );
 };
 

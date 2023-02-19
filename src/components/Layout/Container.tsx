@@ -10,7 +10,7 @@ const Container = ({ children, className }: ContainerProps) => {
   return (
     <main
       className={classNames(
-        'mx-auto max-w-5xl px-6',
+        'mx-auto max-w-6xl px-6 lg:px-0',
         className,
         inter.className
       )}

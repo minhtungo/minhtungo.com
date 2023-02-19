@@ -7,6 +7,7 @@ import { signOut, useSession } from 'next-auth/react';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useSWRConfig } from 'swr';
+import TextareaAutosize from 'react-textarea-autosize';
 
 const Guestbook = ({ messages }: { messages: Message[] }) => {
   const { data: session } = useSession();
@@ -14,8 +15,7 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
   const { mutate } = useSWRConfig();
   const [content, setContent] = useState('');
 
-  const submitMessage = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const submitMessage = async () => {
     const loading = toast.loading('Signing');
 
     const rawContent = JSON.stringify({
@@ -51,10 +51,10 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
   };
 
   return (
-    <div className='mx-auto max-w-3xl'>
+    <div className='min-h-screen'>
       {session ? (
         <>
-          <div className='mt-6 flex w-full flex-col items-center gap-2'>
+          <div className='mx-auto mt-6 flex w-full max-w-3xl flex-col items-center gap-2'>
             <div className='flex w-full items-center gap-0 sm:gap-2'>
               <Image
                 src={session.user?.image!}
@@ -63,13 +63,9 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
                 className='hidden h-10 w-10 rounded-full sm:block'
                 alt={session.user?.name!}
               />
-              <form
-                className='relative w-full'
-                onSubmit={(e) => submitMessage(e)}
-              >
-                <input
-                  type='search'
-                  id='comment'
+              <div className='w-full'>
+                <TextareaAutosize
+                  id='message'
                   className='block w-full rounded-lg border border-custom-border-black bg-card-background-light px-3 py-2 pr-16 text-sm text-gray-900 placeholder-gray-500 focus:outline-none dark:border-transparent-white dark:bg-card-background-dark dark:text-gray-200 dark:placeholder-gray-400'
                   placeholder='Your message...'
                   onChange={(e) => {
@@ -78,22 +74,23 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
                   value={content}
                   required
                 />
-                <button
-                  type='submit'
-                  className='hover:text-shadow primary-gradient absolute bottom-[4.8px] right-1 rounded-md px-4 py-1 text-sm font-medium  text-white transition-[shadow,text-shadow] hover:shadow-primary focus:outline-none dark:text-black'
-                >
-                  Sign
-                </button>
-              </form>
+              </div>
             </div>
-            <div className='mr-auto mt-1'>
+            <div className='mt-1 ml-auto flex gap-2'>
               <Button
                 variant='secondary'
-                size='small'
+                size='medium'
                 rounded='medium'
                 onClick={signOut}
               >
                 Sign Out
+              </Button>
+              <Button
+                size='medium'
+                rounded='medium'
+                onClick={() => submitMessage()}
+              >
+                Sign
               </Button>
             </div>
           </div>
