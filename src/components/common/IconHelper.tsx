@@ -14,25 +14,24 @@ import StyledComponents from 'public/static/images/stack/styled-components.svg';
 import Tailwind from 'public/static/images/stack/tailwind.svg';
 import TRPC from 'public/static/images/stack/trpc.svg';
 import TypeScript from 'public/static/images/stack/typescript.svg';
-import { FaUserGraduate as Graduate } from 'react-icons/fa';
-import { IoLogoNodejs as NodeJS } from 'react-icons/io';
-import { MdOutlineWork as Work } from 'react-icons/md';
-import { CgComment as Guestbook } from 'react-icons/cg';
-
+import { BsJournalCode as Library } from 'react-icons/bs';
+import { CgComment as Guestbook, CgProfile as About } from 'react-icons/cg';
 import {
-  RiUserSearchFill as Job,
-  RiContactsLine as Contact,
-  RiHome3Line as Home,
-} from 'react-icons/ri';
-import { SiExpress as Express } from 'react-icons/si';
-
-import { CgProfile as About } from 'react-icons/cg';
-
-import { FaLaptopCode as Projects } from 'react-icons/fa';
+  FaLaptopCode as Projects,
+  FaUserGraduate as Graduate,
+} from 'react-icons/fa';
+import { IoLogoNodejs as NodeJS } from 'react-icons/io';
 import {
   MdOutlineComputer as Uses,
+  MdOutlineWork as Work,
   MdTimeline as Journey,
 } from 'react-icons/md';
+import {
+  RiContactsLine as Contact,
+  RiHome3Line as Home,
+  RiUserSearchFill as Job,
+} from 'react-icons/ri';
+import { SiExpress as Express } from 'react-icons/si';
 
 const iconMap: Record<string, React.ComponentType> = {
   Bootstrap,
@@ -62,6 +61,7 @@ const iconMap: Record<string, React.ComponentType> = {
   Uses,
   Contact,
   Guestbook,
+  Library,
 };
 
 interface getIconProps {

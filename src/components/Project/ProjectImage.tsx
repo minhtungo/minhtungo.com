@@ -23,7 +23,6 @@ const ProjectImage = ({
   name,
   className = '',
   url,
-  gifSrc,
 }: ProjectImageProps) => {
   const videoLink = `${name.toLowerCase().split(' ').join('-')}`;
 
@@ -45,15 +44,6 @@ const ProjectImage = ({
         height={400}
         className='hidden h-full w-full object-cover backdrop-blur-xl lg:inline-block lg:group-hover:hidden'
       />
-      {/* <Image
-        title={name}
-        alt={name}
-        src={gifSrc}
-        width={800}
-        height={400}
-        className='h-full w-full object-cover backdrop-blur-xl'
-      /> */}
-
       <video
         playsInline
         autoPlay
