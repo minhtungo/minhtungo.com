@@ -1,7 +1,6 @@
 import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 import classNames from 'classnames';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
 import { IoMdArrowForward } from 'react-icons/io';
 
 import { AnimatedDiv, Button, Title } from '..';

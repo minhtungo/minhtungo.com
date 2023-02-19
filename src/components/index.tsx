@@ -14,7 +14,6 @@ import TechStack from './Technology/TechStack';
 import Title from './common/Title';
 import Icon from './common/Icon';
 import CodeSnippet from './common/CodeSnippet';
-import SnowFall from './Home/SnowFall';
 import Projects from './Project/Projects';
 import AnimatedDiv from './FramerMotion/AnimatedDiv';
 import AnimatedHeading from './FramerMotion/AnimatedHeading';
@@ -41,7 +40,6 @@ export {
   TechStack,
   Title,
   CodeSnippet,
-  SnowFall,
   Projects,
   AnimatedDiv,
   AnimatedHeading,

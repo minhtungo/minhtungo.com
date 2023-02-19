@@ -1,8 +1,9 @@
 import { FromLeftVariant } from '@/lib/framerVariants';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
 
-import { AnimatedText, Button, ModelLoader, SnowFall } from '..';
+import { AnimatedText, Button, ModelLoader } from '..';
 import Link from '../common/Link';
 
 const LazyDogModel = dynamic(() => import('./Model/DogModel'), {
@@ -14,14 +15,29 @@ const Hero = () => {
   return (
     <section
       id='home'
-      className='h-screen flex-1 gap-16 pt-8 md:flex md:items-center md:justify-between lg:pt-0'
+      className='h-screen flex-1 gap-12 pt-8 md:flex md:items-center md:justify-between lg:pt-0 '
     >
       {/* Dog Model */}
-      <div className='relative z-10 mx-auto mt-4 flex h-[270px] w-[270px] basis-2/5 justify-center sm:h-[360px] sm:w-[360px] md:order-2 md:mx-0 md:mt-[6.6rem] md:h-[400px] md:w-[400px] lg:h-[450px] lg:w-[450px]'>
+      <div className='relative z-10 mx-auto mt-4 flex h-[270px] w-[270px] basis-2/5 justify-center sm:h-[360px] sm:w-[360px] md:order-2 md:mx-0 md:mt-[6.6rem] md:h-[400px] md:w-[400px] lg:h-[460px] lg:w-[460px]'>
+        <Image
+          className='absolute top-0 h-auto w-auto animate-pulse sm:-top-1 md:left-0 md:-top-16'
+          src='/static/images/sparkles.svg'
+          alt='sparkles'
+          width={60}
+          height={60}
+        />
         <LazyDogModel />
       </div>
       {/* Hero Text */}
-      <div className='-mt-14 basis-3/5 text-center md:text-start'>
+      <div className='relative -mt-14 basis-3/5 text-center md:text-start'>
+        <Image
+          className='absolute -top-4 h-auto w-auto animate-pulse sm:-top-[3rem] sm:left-[10%] md:left-0 md:-top-20 '
+          src='/static/images/sparkles.svg'
+          alt='sparkles'
+          width={60}
+          height={60}
+        />
+
         <AnimatedText className='mb-[5px] pl-[3px]' variants={FromLeftVariant}>
           Hi, I am
         </AnimatedText>
@@ -70,7 +86,6 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-      <SnowFall />
     </section>
   );
 };
