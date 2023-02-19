@@ -16,7 +16,7 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
     <div className={`${roboto_mono.className}`}>
       <div
         className={classNames(
-          'card-background-light rounded-lg text-off-white shadow-xl dark:bg-transparent-background-black',
+          'card-background-light rounded-lg text-sm text-off-white shadow-xl dark:bg-transparent-background-black sm:text-base',
           className
         )}
       >
@@ -50,7 +50,7 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
             </span>
             ,
           </p>
-          {/* <p className='text-gray-700 dark:text-gray-50'>
+          <p className='text-gray-700 dark:text-gray-50'>
             &nbsp;&nbsp;&nbsp;&nbsp;email:{' '}
             <span className='text-yellow-600 dark:text-yellow-300'>
               <Link
@@ -62,7 +62,7 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
               </Link>
             </span>
             ,
-          </p> */}
+          </p>
           <p className='text-gray-700 dark:text-gray-50'>
             &nbsp;&nbsp;&nbsp;&nbsp;website:{' '}
             <span className='text-yellow-600 dark:text-yellow-300'>

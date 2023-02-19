@@ -1,4 +1,4 @@
-import { About, Container, Journey } from '@/components';
+import { About, Container, Journey, TechStack } from '@/components';
 import { Meta } from '@/components/Layout';
 import { client, journeyQuery } from '@/lib/sanity.client';
 
@@ -16,6 +16,7 @@ const AboutPage = ({ journeys }: { journeys: Journey[] }) => {
       <Meta title='Projects' />
       <Container className='pt-20'>
         <About className='' />
+        <TechStack />
         <Journey journeys={journeys} />
       </Container>
     </>

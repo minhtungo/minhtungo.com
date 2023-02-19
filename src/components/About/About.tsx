@@ -8,12 +8,16 @@ const About = ({ home, className }: { home?: boolean; className?: string }) => {
   return (
     <section id='about' className={classNames('', className)}>
       <Title
-        title='About Me'
-        subtitle={home ? 'Introduction' : ''}
+        title='About'
+        subtitle={
+          home
+            ? 'Introduction'
+            : 'Sharing my passions and experiences with the world'
+        }
         home={home}
-        className='mb-1'
+        className='md:!mb-2 xl:!mb-0'
       />
-      <div className='lg:gap-18 flex flex-col items-center gap-8 md:flex-row-reverse'>
+      <div className='lg:gap-18 flex flex-col items-center justify-center gap-8 md:flex-row-reverse'>
         <motion.div
           initial='hidden'
           whileInView='visible'

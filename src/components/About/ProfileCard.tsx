@@ -13,7 +13,7 @@ const ProfileCard = () => {
         {/* "GIF courtesy of Author's Dudun from https://tenor.com/bCgDy.gif" */}
         <Image
           src={astronaut}
-          className='OBJECT- h-32 w-full object-cover'
+          className='h-32 w-full object-cover'
           alt='astronaut playing'
           height={200}
           width={600}

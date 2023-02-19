@@ -29,7 +29,7 @@ const ProjectImage = ({
   return (
     <a
       className={classNames(
-        'group relative -mt-[30%] w-[95%] shrink-0 overflow-hidden rounded-xl shadow-2xl before:absolute before:inset-0 before:z-10 before:bg-black/20 sm:-mt-4 md:mt-0 md:w-[60%]',
+        'group relative -mt-[30%] w-[100%] shrink-0 overflow-hidden rounded-t-lg rounded-b-none shadow-2xl before:absolute before:inset-0 before:z-10 before:bg-black/20 sm:-mt-4 md:mt-0 md:w-[60%] lg:rounded-lg',
         className
       )}
       href={url}
