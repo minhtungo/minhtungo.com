@@ -37,11 +37,11 @@ const GuestBookPage = ({ messages }: { messages: Message[] }) => {
 
         <AnimatedText
           variants={PopUpFromBottom}
-          className='text-gray-900 dark:text-gray-200'
+          className='text-sm text-gray-900 dark:text-gray-200 sm:text-base'
         >
           {session
             ? 'Leave a comment below, it can be totally random 👇.'
-            : 'Sign in to leave a comment.'}
+            : "I'd love to hear from you! To leave a message, simply sign in with your preferred account below. "}
         </AnimatedText>
         <Guestbook messages={messages} />
       </Layout>

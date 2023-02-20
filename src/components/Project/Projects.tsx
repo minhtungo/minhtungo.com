@@ -19,7 +19,7 @@ const Projects = ({ projects, className, home }: ProjectsProp) => {
     >
       <Title
         title='Projects'
-        subtitle={home ? 'My Work' : 'Showcase of my works on web development.'}
+        subtitle={home ? '' : 'Showcase of my works on web development.'}
         home={home}
       />
 

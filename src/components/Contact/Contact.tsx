@@ -21,7 +21,7 @@ const Contact = ({ home }: { home?: boolean }) => {
       />
       <Title
         title={home ? 'Get In Touch' : 'Contact'}
-        subtitle="Let's connect"
+        subtitle={home ? '' : "Let's connect"}
         home={home}
         className={home ? '' : 'lg:!mb-3'}
       />

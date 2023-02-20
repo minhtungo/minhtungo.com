@@ -17,9 +17,7 @@ const Repo = ({ repos, home }: ReposProps) => {
       <Title
         title='Library'
         subtitle={
-          home
-            ? 'Other Noteworthy Projects'
-            : 'Some collection of code snippets that I have created.'
+          home ? '' : 'Some collection of code snippets that I have created.'
         }
         home={home}
       />

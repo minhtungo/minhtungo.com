@@ -1,6 +1,9 @@
 import Image from '@/components/common/Image';
+import AnimatedText from '@/components/FramerMotion/AnimatedText';
 import fetcher from '@/lib/fetcher';
+import { PopUpFromBottom } from '@/lib/framerVariants';
 import useSWR from 'swr';
+import AnimatedDiv from '@/components/FramerMotion/AnimatedDiv';
 
 const Messages = ({ initialMessage }: { initialMessage: Message[] }) => {
   const { data: messages } = useSWR('/api/guestbook', fetcher, {
@@ -8,7 +11,7 @@ const Messages = ({ initialMessage }: { initialMessage: Message[] }) => {
   });
 
   return (
-    <div className='mx-auto max-w-3xl'>
+    <AnimatedDiv variants={PopUpFromBottom} className='mx-auto max-w-3xl'>
       {messages?.map((comment: any) => (
         <article className='my-6 rounded-lg text-base' key={comment.id}>
           <footer className='mb-2 flex items-center'>
@@ -34,10 +37,12 @@ const Messages = ({ initialMessage }: { initialMessage: Message[] }) => {
               </time>
             </div>
           </footer>
-          <p className='text-gray-800 dark:text-gray-300'>{comment.content}</p>
+          <div className='text-sm text-gray-700 dark:text-neutral-400  sm:text-base '>
+            {comment.content}
+          </div>
         </article>
       ))}
-    </div>
+    </AnimatedDiv>
   );
 };
 
