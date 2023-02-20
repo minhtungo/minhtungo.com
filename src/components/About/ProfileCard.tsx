@@ -1,5 +1,7 @@
 import Image from '@/components/common/Image';
 import { TypeAnimation } from 'react-type-animation';
+import { RiFileCodeLine } from 'react-icons/ri';
+import { MdOutlineEmail } from 'react-icons/md';
 
 import astronaut from 'public/static/images/astronaut.gif';
 
@@ -62,14 +64,20 @@ const ProfileCard = () => {
             href='mailto:mn.minhtungo@gmail.com'
             className='w-full flex-1'
           >
-            Message
+            <span className='flex items-center'>
+              <MdOutlineEmail className='mr-1 mt-[1px] h-4 w-4' />
+              Message
+            </span>
           </Button>
           <Button
             href='https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
             variant='secondary'
             className='w-full flex-1'
           >
-            Resume
+            <span className='flex items-center'>
+              <RiFileCodeLine className='mr-1 mt-[1px] h-4 w-4' />
+              Resume
+            </span>
           </Button>
         </div>
       </div>
