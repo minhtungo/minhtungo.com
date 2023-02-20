@@ -23,7 +23,7 @@ const Contact = ({ home }: { home?: boolean }) => {
         title={home ? 'Get In Touch' : 'Contact'}
         subtitle={home ? '' : "Let's connect"}
         home={home}
-        className={home ? '' : 'lg:!mb-3'}
+        className={home ? '!mb-6' : 'lg:!mb-3'}
       />
       <div className='relative'>
         <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
@@ -31,7 +31,7 @@ const Contact = ({ home }: { home?: boolean }) => {
             <div>
               <AnimatedText
                 variants={PopUpFromBottom}
-                className='mt-2 text-sm font-light text-gray-700 dark:text-gray-400 md:text-base'
+                className='text-sm font-light text-gray-700 dark:text-gray-400 md:text-base'
               >
                 I{"'"}m always open to new projects and opportunities. Whether
                 you

@@ -53,7 +53,7 @@ const ContactForm = () => {
 
   return (
     <motion.form
-      className='mt-2 flex flex-col rounded-lg lg:mt-0'
+      className='mt-2 flex flex-col rounded-lg lg:-mt-2'
       initial='hidden'
       whileInView='visible'
       variants={FadeContainer}

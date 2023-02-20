@@ -17,7 +17,7 @@ const inter = Inter({ subsets: ['latin'] });
 const Header = () => {
   const { systemTheme, theme, setTheme } = useTheme();
 
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [mounted, setMounted] = useState(false);
 
   const navRef = useRef<HTMLDivElement>(null);
@@ -34,6 +34,11 @@ const Header = () => {
       setIsDarkMode(false);
     }
   }, [mounted]);
+
+  const toggleDarkMode = (checked: boolean) => {
+    setIsDarkMode(checked);
+    setTheme(checked ? 'dark' : 'light');
+  };
 
   const renderThemeChanger = () => {
     if (!mounted) return null;
@@ -87,11 +92,6 @@ const Header = () => {
       window.removeEventListener('scroll', addShadowToNavbar);
     };
   }, [addShadowToNavbar]);
-
-  const toggleDarkMode = (checked: boolean) => {
-    setIsDarkMode(checked);
-    setTheme(checked ? 'dark' : 'light');
-  };
 
   return (
     <header

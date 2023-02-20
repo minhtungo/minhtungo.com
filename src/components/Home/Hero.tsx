@@ -1,4 +1,4 @@
-import { FromLeftVariant } from '@/lib/framerVariants';
+import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
@@ -64,7 +64,10 @@ const Hero = () => {
             repeat={Infinity}
           />
         </p>
-        <p className='lg:text-md mt-4 text-sm dark:text-neutral-400 md:text-base lg:mt-3'>
+        <AnimatedText
+          variants={PopUpFromBottom}
+          className='lg:text-md mt-4 text-sm dark:text-neutral-400 md:text-base lg:mt-3'
+        >
           {"Don't forget to sign my"}{' '}
           <Link
             href='/guestbook'
@@ -73,7 +76,7 @@ const Hero = () => {
             guestbook
           </Link>
           !
-        </p>
+        </AnimatedText>
 
         {/* buttons */}
         <div className='mt-5 flex flex-col justify-center gap-3 sm:flex-row md:justify-start'>
