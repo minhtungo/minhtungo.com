@@ -1,5 +1,8 @@
 import Image from '../common/Image';
 import Link from '@/components/common/Link';
+import AnimatedDiv from '../FramerMotion/AnimatedDiv';
+import { FadeContainer, PopUpFromBottom, PopUp } from '@/lib/framerVariants';
+import { motion } from 'framer-motion';
 
 type ItemGridProps = {
   items: Item[];
@@ -7,9 +10,14 @@ type ItemGridProps = {
 
 const ItemGrid = ({ items }: ItemGridProps) => {
   return (
-    <ul className='mt-5 mb-9 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-4'>
+    <AnimatedDiv
+      variants={FadeContainer}
+      list
+      className='mt-5 mb-9 grid grid-cols-1 gap-3 sm:grid-cols-3 lg:grid-cols-4'
+    >
       {items.map((item, i) => (
-        <li
+        <motion.li
+          variants={PopUpFromBottom}
           key={item.name}
           className='flex items-center gap-3 rounded border border-custom-border-black p-[0.35rem] shadow-lg dark:border-transparent-white dark:bg-card-background-dark sm:flex-col sm:gap-2 sm:p-3'
         >
@@ -33,9 +41,9 @@ const ItemGrid = ({ items }: ItemGridProps) => {
               {item.description}
             </span>
           </div>
-        </li>
+        </motion.li>
       ))}
-    </ul>
+    </AnimatedDiv>
   );
 };
 

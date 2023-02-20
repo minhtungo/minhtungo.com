@@ -47,6 +47,12 @@ export const OFFICE_ITEMS: Item[] = [
     description: 'Monitor Light Bar',
     url: 'https://www.amazon.ca/Quntis-Computer-Auto-Dimming-Adjustment-Reading/dp/B08DKQ3JG1',
   },
+  {
+    image: '/static/images/uses/chair.png',
+    name: 'Ergohuman Chair',
+    description: 'High Back with Headrest and Mesh',
+    url: 'https://ergohuman.com/ergohuman-chair-me7erg-high-back-with-headrest-and-mesh/',
+  },
 ];
 
 export const CODING = [

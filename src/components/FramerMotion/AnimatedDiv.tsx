@@ -6,6 +6,7 @@ interface AnimatedDivProps {
   className?: string;
   children: React.ReactNode;
   infinity?: boolean;
+  list?: boolean;
 }
 
 export default function AnimatedDiv({
@@ -13,7 +14,23 @@ export default function AnimatedDiv({
   className,
   children,
   infinity,
+  list,
 }: AnimatedDivProps) {
+  if (list) {
+    return (
+      <motion.ul
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: !infinity }}
+        variants={variants}
+        className={className}
+        // style={style}
+        transition={{ staggerChildren: 0.5 }}
+      >
+        {children}
+      </motion.ul>
+    );
+  }
   return (
     <motion.div
       initial='hidden'

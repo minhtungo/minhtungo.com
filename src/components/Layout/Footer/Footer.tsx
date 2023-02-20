@@ -1,15 +1,12 @@
+import { Icon } from '@/components';
 import Link from '@/components/common/Link';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
-
-import { Container, Icon } from '@/components';
-import Image from 'next/image';
-import Avatar from '@/components/common/Avatar';
+import footer from '@/config/footer';
 
 const Footer = () => {
   return (
     <footer className='mx-auto max-w-6xl px-6 py-6 pt-12 xl:px-0 xl:pt-20'>
       <hr className='my-6 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
-
       <div className='md:flex md:justify-between'>
         <div className='mb-6 flex flex-col justify-center md:mb-0'>
           <div className='flex items-center'>
@@ -28,46 +25,17 @@ const Footer = () => {
         </div>
 
         <div className='grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-24'>
-          <div>
-            <ul className='text-gray-600 dark:text-gray-400'>
-              <li className='mb-2'>
-                <Link href='/about'>About</Link>
-              </li>
-              <li className='mb-2'>
-                <Link href='/projects'>Projects</Link>
-              </li>
-              <li className='mb-2'>
-                <Link href='/library'>Library</Link>
-              </li>
+          {footer.categories.map((category, index) => (
+            <ul key={index} className='text-gray-600 dark:text-gray-400'>
+              {category.links.map((link, index) => (
+                <li className='mt-2' key={index}>
+                  <Link href={link.href} icon={category.title === 'Social'}>
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </div>
-          <div>
-            <ul className='text-gray-600 dark:text-gray-400'>
-              <li className='mb-2'>
-                <Link href='https://github.com/minhtungo' icon>
-                  Github
-                </Link>
-              </li>
-              <li>
-                <Link href='https://www.linkedin.com/in/minhtungo/' icon>
-                  LinkedIn
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <ul className='text-gray-600 dark:text-gray-400'>
-              <li className='mb-2'>
-                <Link href='/contact'>Contact</Link>
-              </li>
-              <li className='mb-2'>
-                <Link href='/guestbook'>Guestbook</Link>
-              </li>
-              <li>
-                <Link href='/uses'>Uses</Link>
-              </li>
-            </ul>
-          </div>
+          ))}
         </div>
       </div>
       <div className='mt-6 text-center sm:flex sm:items-center sm:justify-between'>
