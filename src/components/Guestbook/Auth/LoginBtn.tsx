@@ -16,17 +16,17 @@ export default function Component() {
           className='inline-flex items-center rounded-lg px-5 py-4  text-sm font-medium'
           onClick={() => signIn('github')}
         >
-          <BsGithub className='mr-2 -ml-1 h-4 w-4' />
+          <BsGithub className='mr-1 h-4 w-4' />
           <span>Github</span>
         </Button>
         <Button
           variant='secondary'
           size='medium'
           rounded='large'
-          className='inline-flex items-center rounded-lg bg-blue-500 px-5 py-4 text-sm font-medium'
+          className='inline-flex items-center rounded-lg px-5 py-4 text-sm font-medium'
           onClick={() => signIn('google')}
         >
-          <FcGoogle className='mr-2 -ml-1 h-4 w-4' />
+          <FcGoogle className='mr-1 h-4 w-4' />
           <span>Google</span>
         </Button>
       </div>
