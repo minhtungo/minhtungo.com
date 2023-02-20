@@ -65,7 +65,7 @@ const ProfileCard = () => {
             className='w-full flex-1'
           >
             <span className='flex items-center'>
-              <MdOutlineEmail className='mr-1 mt-[1px] h-4 w-4' />
+              <MdOutlineEmail className='mr-[1.5px] h-4 w-4' />
               Message
             </span>
           </Button>
@@ -75,7 +75,7 @@ const ProfileCard = () => {
             className='w-full flex-1'
           >
             <span className='flex items-center'>
-              <RiFileCodeLine className='mr-1 mt-[1px] h-4 w-4' />
+              <RiFileCodeLine className='mr-[1.5px] h-4 w-4' />
               Resume
             </span>
           </Button>

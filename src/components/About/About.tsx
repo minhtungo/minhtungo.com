@@ -28,17 +28,17 @@ const About = ({ home, className }: { home?: boolean; className?: string }) => {
         </motion.div>
         <div className='flex w-full flex-col items-center justify-center text-left lg:w-2/3'>
           <AnimatedDiv variants={OpacityVariant}>
-            <div className='flex flex-col'>
+            <div className='flex flex-col text-gray-800 dark:text-neutral-300 '>
               {/* <h3 className='secondary-gradient mb-2 bg-clip-text text-xl font-bold text-transparent md:text-2xl lg:text-3xl'>
                 Minh Tu Ngo
               </h3> */}
               {/* <hr className='mb-3 border-b border-custom-border-black dark:border-transparent-white' /> */}
-              <p className='mb-3 text-sm leading-relaxed text-gray-700 dark:text-neutral-400 sm:text-base'>
+              <p className='mb-3 text-sm leading-relaxed sm:text-base'>
                 {
                   'My journey in web development began with the classic "Hello World" console output, which ignited a deep passion for creating exceptional web experiences. Since then, I have continually strived to learn and get feedback to make myself better and improve.'
                 }
               </p>
-              <p className='mb-3 text-sm leading-relaxed text-gray-700 dark:text-neutral-400 sm:text-base'>
+              <p className='mb-3 text-sm leading-relaxed  sm:text-base'>
                 As a dedicated and passionate Web Developer, I specialize in
                 using cutting-edge technologies such as React and NextJS to
                 build powerful and scalable web application. I am focused on
@@ -46,7 +46,7 @@ const About = ({ home, className }: { home?: boolean; className?: string }) => {
                 with dedicated teams to create amazing web applications to make
                 the internet a better place.
               </p>
-              <p className='mb-0 text-sm leading-relaxed text-gray-700 dark:text-neutral-400 sm:text-base'>
+              <p className='mb-0 text-sm leading-relaxed  sm:text-base'>
                 {
                   "I am constantly looking for new opportunities to learn and grow as a developer. If you're looking for a driven and enthusiastic team player to help create amazing web applications, let's work together!"
                 }

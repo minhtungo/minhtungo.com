@@ -51,10 +51,10 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
   };
 
   return (
-    <div className='min-h-screen'>
+    <div className=''>
       {session ? (
         <>
-          <div className='mx-auto mt-6 flex w-full max-w-3xl flex-col items-center gap-2'>
+          <div className='mx-auto mt-8 flex w-full max-w-3xl flex-col items-center gap-2'>
             <div className='flex w-full items-center gap-0 sm:gap-2'>
               <Image
                 src={session.user?.image!}
