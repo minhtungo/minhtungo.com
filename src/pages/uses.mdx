@@ -1,9 +1,7 @@
-import { Container } from '@/components';
+import { MetaData, Layout } from '@/components/Layout';
 import Head from 'next/head';
-import Meta from '@/components/Layout/Meta';
 import { OFFICE_ITEMS, CODING, OTHER_TECH } from '@/config/uses';
-
-<Meta title='Uses' />
+import pageMeta from '@/config/meta';
 
 ## Uses
 
@@ -22,5 +20,11 @@ Here's my current technology setup for coding, gaming, and daily life.
 <ItemGrid items={OTHER_TECH} />
 
 export default ({ children }) => (
-  <Container className='max-w-5xl pt-20'>{children}</Container>
+  <>
+    <MetaData
+      title={pageMeta.uses.title}
+      description={pageMeta.uses.description}
+    />
+    <Layout>{children}</Layout>
+  </>
 );

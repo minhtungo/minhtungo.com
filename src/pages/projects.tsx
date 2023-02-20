@@ -1,6 +1,7 @@
 import { Projects } from '@/components';
-import { Meta, Layout } from '@/components/Layout';
+import { MetaData, Layout } from '@/components/Layout';
 import { client, projectQuery } from '@/lib/sanity.client';
+import pageMeta from '@/config/meta';
 
 export const getStaticProps = async () => {
   const projects = await client.fetch(projectQuery);
@@ -11,9 +12,10 @@ export const getStaticProps = async () => {
 };
 
 const ProjectsPage = ({ projects }: { projects: Project[] }) => {
+  const { title, description } = pageMeta.projects;
   return (
     <>
-      <Meta title='Projects' />
+      <MetaData title={title} description={description} />
       <Layout>
         <Projects projects={projects} />
       </Layout>

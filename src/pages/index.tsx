@@ -1,4 +1,6 @@
 import { Contact, Hero, Projects, Repo } from '@/components';
+import { MetaData } from '@/components/Layout';
+import pageMeta from '@/config/meta';
 import {
   client,
   journeyQuery,
@@ -24,8 +26,11 @@ interface HomeProps {
 }
 
 export default function Home({ projects, repos, journeys }: HomeProps) {
+  const { title, description } = pageMeta.home;
+
   return (
     <>
+      <MetaData title={title} description={description} />
       <Hero />
       <Projects projects={projects} home />
       <Repo repos={repos} home />

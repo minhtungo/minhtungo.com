@@ -1,4 +1,4 @@
-import Meta from './Meta';
+import MetaData from './MetaData';
 import Layout from './Layout';
 
-export { Meta, Layout };
+export { MetaData, Layout };

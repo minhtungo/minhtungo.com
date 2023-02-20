@@ -1,6 +1,7 @@
 import { About, Journey, TechStack } from '@/components';
-import { Meta, Layout } from '@/components/Layout';
+import { MetaData, Layout } from '@/components/Layout';
 import { client, journeyQuery } from '@/lib/sanity.client';
+import pageMeta from '@/config/meta';
 
 export const getStaticProps = async () => {
   const journeys = await client.fetch(journeyQuery);
@@ -11,9 +12,10 @@ export const getStaticProps = async () => {
 };
 
 const AboutPage = ({ journeys }: { journeys: Journey[] }) => {
+  const { title, description } = pageMeta.about;
   return (
     <>
-      <Meta title='About' />
+      <MetaData title={title} description={description} />
       <Layout>
         <About className='' />
         <TechStack />

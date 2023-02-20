@@ -20,21 +20,15 @@ const Contact = ({ home }: { home?: boolean }) => {
         height={60}
       />
       <Title
-        title='Contact'
+        title={home ? 'Get In Touch' : 'Contact'}
         subtitle="Let's connect"
         home={home}
-        className='lg:!mb-3'
+        className={home ? '' : 'lg:!mb-3'}
       />
       <div className='relative'>
         <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
           <div>
             <div>
-              <AnimatedText
-                variants={PopUpFromBottom}
-                className='text-md font-semibold text-gray-800 dark:text-gray-300 md:text-lg lg:text-xl'
-              >
-                Get In Touch
-              </AnimatedText>
               <AnimatedText
                 variants={PopUpFromBottom}
                 className='mt-2 text-sm font-light text-gray-700 dark:text-gray-400 md:text-base'

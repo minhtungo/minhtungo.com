@@ -1,10 +1,12 @@
 import { Contact } from '@/components';
-import { Layout, Meta } from '@/components/Layout';
+import { Layout, MetaData } from '@/components/Layout';
+import pageMeta from '@/config/meta';
 
 const LibraryPage = () => {
+  const { title, description } = pageMeta.contact;
   return (
     <>
-      <Meta title='Contact' />
+      <MetaData title={title} description={description} />
       <Layout>
         <Contact />
       </Layout>
