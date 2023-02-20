@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 const About = ({ home, className }: { home?: boolean; className?: string }) => {
   return (
-    <section id='about' className={classNames('', className)}>
+    <section id='about' className={classNames('mx-auto', className)}>
       <Title
         title='About'
         subtitle={
