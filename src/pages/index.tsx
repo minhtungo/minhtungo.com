@@ -1,4 +1,5 @@
 import { Contact, Hero, Projects, Repo } from '@/components';
+import FavoriteTools from '@/components/FavoriteTools';
 import { MetaData } from '@/components/Layout';
 import pageMeta from '@/config/meta';
 import {
@@ -32,6 +33,7 @@ export default function Home({ projects, repos, journeys }: HomeProps) {
     <>
       <MetaData title={title} description={description} />
       <Hero />
+      <FavoriteTools />
       <Projects projects={projects} home />
       <Repo repos={repos} home />
       <Contact home />
