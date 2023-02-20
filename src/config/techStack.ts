@@ -8,7 +8,7 @@ const techStack = [
     src: '/static/images/stack/redux.svg',
   },
   {
-    name: 'Node.js',
+    name: 'NodeJS',
     src: '/static/images/stack/nodejs.png',
   },
   {
@@ -16,7 +16,7 @@ const techStack = [
     src: '/static/images/stack/express.png',
   },
   {
-    name: 'Next.js',
+    name: 'NextJS',
     src: '/static/images/stack/next.png',
   },
   {
@@ -44,7 +44,7 @@ const techStack = [
     src: '/static/images/stack/bootstrap.svg',
   },
   {
-    name: 'Styled Components',
+    name: 'Styled-Components',
     src: '/static/images/stack/styled-components.png',
   },
   {

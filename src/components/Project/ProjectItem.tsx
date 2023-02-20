@@ -5,7 +5,6 @@ import { renderTech } from '@/util/renderTech';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 
 import ProjectImage from './ProjectImage';
-
 interface ProjectItemProps {
   project: Project;
 }

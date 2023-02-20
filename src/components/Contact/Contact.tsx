@@ -11,9 +11,12 @@ import ContactForm from './ContactForm';
 
 const Contact = ({ home }: { home?: boolean }) => {
   return (
-    <section id='contact' className={classNames(home && 'pt-16 lg:pt-20')}>
+    <section
+      id='contact'
+      className={classNames('relative', home && 'pt-16 lg:pt-20')}
+    >
       <Image
-        className='absolute left-0 top-8 mx-auto h-auto w-auto animate-pulse sm:left-[10%] md:left-[15%] lg:left-[27.5%]'
+        className='absolute left-0 top-4 mx-auto h-auto w-auto animate-pulse sm:left-[10%] md:left-[15%] lg:left-[27.5%]'
         src='/static/images/sparkles.svg'
         alt='sparkles'
         width={60}

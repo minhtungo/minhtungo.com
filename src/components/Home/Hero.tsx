@@ -20,7 +20,7 @@ const Hero = () => {
       {/* Dog Model */}
       <div className='relative z-10 mx-auto mt-4 flex h-[270px] w-[270px] basis-2/5 justify-center sm:h-[360px] sm:w-[360px] md:order-2 md:mx-0 md:mt-[6.6rem] md:h-[400px] md:w-[400px] lg:h-[460px] lg:w-[460px]'>
         <Image
-          className='absolute top-0 h-auto w-auto animate-pulse sm:-top-1 md:left-0 md:-top-16'
+          className='absolute top-0 h-auto w-auto animate-pulse sm:-top-1 md:left-0 md:-top-12'
           src='/static/images/sparkles.svg'
           alt='sparkles'
           width={60}
