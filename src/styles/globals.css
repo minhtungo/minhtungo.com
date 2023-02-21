@@ -87,3 +87,8 @@
     transform: rotate(0deg);
   }
 }
+
+.horizontal-scrollbar::-webkit-scrollbar {
+  height: 3px;
+  border-redius: 999px;
+}
