@@ -1,10 +1,15 @@
+import type { NextApiRequest, NextApiResponse } from 'next';
+
 import {
-  getCurrentlyListening,
+  getNowPlaying,
   normalizeCurrentlyListening,
 } from '@/lib/spotify';
 
-export default async function handler(req, res) {
-  const response = await getCurrentlyListening();
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  const response = await getNowPlaying();
 
   if (!response) {
     return res.status(500).json({ error: 'Spotify not available' });

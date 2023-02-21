@@ -1,4 +1,4 @@
-// @ts-nocheck
+import querystring from 'query-string';
 
 const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } =
   process.env;
@@ -34,11 +34,15 @@ export const normalizeCurrentlyListening = ({
   is_playing,
   progress_ms,
   item,
+}: {
+  is_playing: boolean;
+  progress_ms: number;
+  item: any;
 }) => ({
   id: item.id,
   isPlaying: is_playing,
   title: item.name,
-  artist: item.artists?.map(({ name }) => name).join(' '),
+  artist: item.artists?.map(({ name }: { name: string }) => name).join(' '),
   album: item.album?.name,
   thumbnail: item.album?.images[0]?.url,
   url: item.external_urls?.spotify,
@@ -46,7 +50,7 @@ export const normalizeCurrentlyListening = ({
   duration: item.duration_ms,
 });
 
-export const getCurrentlyListening = async () => {
+export const getNowPlaying = async () => {
   const { access_token: accessToken } = await getAccessToken();
   if (!accessToken) {
     return;

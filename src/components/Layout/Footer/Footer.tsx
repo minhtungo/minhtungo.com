@@ -2,11 +2,13 @@ import { Icon } from '@/components';
 import Link from '@/components/common/Link';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import footer from '@/config/footer';
+import Player from '@/components/Spotify/Player';
 
 const Footer = () => {
   return (
     <footer className='mx-auto max-w-6xl px-6 py-6 pt-12 xl:px-0 xl:pt-20'>
-      <hr className='my-6 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
+      <Player />
+      <hr className='my-4 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
       <div className='md:flex md:justify-between'>
         <div className='mb-6 flex flex-col justify-center md:mb-0'>
           <div className='flex items-center'>
@@ -19,8 +21,8 @@ const Footer = () => {
               </p>
             </Link>
           </div>
-          <p className='mt-2 text-gray-700 dark:text-gray-400'>
-            Created with ❤️ using Next.js.
+          <p className='mt-2 text-sm font-semibold text-gray-700 dark:text-gray-400'>
+            Powered by NextJS, Vercel and 💖.
           </p>
         </div>
 
@@ -46,7 +48,7 @@ const Footer = () => {
           </span>
           🐶
         </Link>
-        <div className='mt-4 flex justify-center space-x-6 sm:mt-0'>
+        <div className='mt-4 flex justify-center space-x-4 sm:mt-0'>
           <Icon>
             <Link
               href='https://github.com/minhtungo'
