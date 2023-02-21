@@ -95,12 +95,8 @@ export const getRecentlyPlayed = async () => {
 };
 
 export async function fetchRecentlyPlayedSongs() {
-  const baseURL =
-    process.env.NODE_ENV === 'production'
-      ? 'https://minhtungo.com'
-      : 'http://localhost:3000';
   const recentlyPlayedResponse = await fetch(
-    `${baseURL}/api/spotify/recently-played`
+    `${process.env.BASE_URL}/api/spotify/recently-played`
   );
 
   const recentlyPlayed = await recentlyPlayedResponse.json();

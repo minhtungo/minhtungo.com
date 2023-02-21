@@ -1,9 +1,8 @@
 import Image from '@/components/common/Image';
-import AnimatedText from '@/components/FramerMotion/AnimatedText';
+import AnimatedDiv from '@/components/FramerMotion/AnimatedDiv';
 import fetcher from '@/lib/fetcher';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import useSWR from 'swr';
-import AnimatedDiv from '@/components/FramerMotion/AnimatedDiv';
 
 const Messages = ({ initialMessage }: { initialMessage: Message[] }) => {
   const { data: messages } = useSWR('/api/guestbook', fetcher, {
