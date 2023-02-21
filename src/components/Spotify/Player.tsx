@@ -8,7 +8,9 @@ import { SiSpotify } from 'react-icons/si';
 import useSWR from 'swr';
 
 const Player = () => {
-  const { data: currentSong } = useSWR('/api/spotify/now-playing', fetcher);
+  const { data: currentSong } = useSWR('/api/spotify/now-playing', fetcher, {
+    refreshInterval: 10 * 1000,
+  });
 
   const progress = useMemo(
     () => currentSong && (currentSong.progress / currentSong.duration) * 100,

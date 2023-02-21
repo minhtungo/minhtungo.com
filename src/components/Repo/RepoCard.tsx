@@ -45,11 +45,11 @@ const RepoCard = ({ repo }: RepoProps) => {
       <div className='mt-2 flex flex-wrap items-center space-x-2'>
         {repo.tools.map((tool) => (
           <div
-            className='group relative transition duration-200 ease-linear'
+            className='group relative flex justify-center transition duration-200 ease-linear'
             key={`${repo.name}-${tool}`}
           >
             {renderTech(tool, 'w-5 h-5')}
-            <span className='absolute -left-[75%] -top-7 mx-auto w-max scale-0 rounded bg-background-light px-2 py-1 text-sm font-medium text-gray-800 shadow transition-all group-hover:scale-100 dark:bg-background-dark dark:text-gray-300'>
+            <span className='absolute -top-7 mx-auto w-max scale-0 transform rounded bg-background-light px-2 py-1 text-sm font-medium text-gray-800 shadow transition-all group-hover:scale-100 dark:bg-background-dark dark:text-gray-300'>
               {tool}
             </span>
           </div>

@@ -30,6 +30,8 @@ const getAccessToken = async () => {
   return response.json();
 };
 
+
+
 export const normalizeCurrentlyListening = ({
   is_playing,
   progress_ms,
