@@ -29,7 +29,7 @@ const AboutPage = ({
         <About className='' />
         <TechStack />
         <Journey journeys={journeys} />
-        <RecentlyPlayed songs={recentlyPlayedSongs} />
+        <RecentlyPlayed initialSongs={recentlyPlayedSongs} />
       </Layout>
     </>
   );
