@@ -26,7 +26,7 @@ const AboutPage = ({
     <>
       <MetaData title={title} description={description} />
       <Layout>
-        <About className='' />
+        <About />
         <TechStack />
         <Journey journeys={journeys} />
         <RecentlyPlayed initialSongs={recentlyPlayedSongs} />
