@@ -30,7 +30,15 @@ const getAccessToken = async () => {
   return response.json();
 };
 
-
+export const normalizeRecentlyPlayed = ({ track, played_at }) => ({
+  title: track.name,
+  artist: track.artists?.map(({ name }) => name).join(' - '),
+  album: track.album?.name,
+  thumbnail: track.album?.images[0]?.url,
+  url: track.external_urls?.spotify,
+  playedAt: played_at,
+  duration: track.duration_ms,
+});
 
 export const normalizeCurrentlyListening = ({
   is_playing,
@@ -64,3 +72,38 @@ export const getNowPlaying = async () => {
     },
   });
 };
+
+export const getRecentlyPlayed = async () => {
+  const LIMIT = 4;
+  const before = new Date().getTime();
+
+  const params = querystring.stringify({ limit: LIMIT, before });
+
+  const recentlyPlayedEndpoint = `https://api.spotify.com/v1/me/player/recently-played?${params}`;
+
+  const { access_token: accessToken } = await getAccessToken();
+
+  if (!accessToken) {
+    return;
+  }
+
+  return fetch(recentlyPlayedEndpoint, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+};
+
+export async function fetchRecentlyPlayedSongs() {
+  const baseURL =
+    process.env.NODE_ENV === 'production'
+      ? 'https://minhtungo.com/'
+      : 'http://localhost:3000';
+  const recentlyPlayedResponse = await fetch(
+    `${baseURL}/api/spotify/recently-played`
+  );
+
+  const recentlyPlayed = await recentlyPlayedResponse.json();
+
+  return recentlyPlayed;
+}
