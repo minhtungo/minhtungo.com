@@ -2,13 +2,12 @@ import { About, Journey, TechStack } from '@/components';
 import { MetaData, Layout } from '@/components/Layout';
 import { client, journeyQuery } from '@/lib/sanity.client';
 import pageMeta from '@/config/meta';
-import { fetchRecentlyPlayedSongs, getRecentlyPlayed } from '@/lib/spotify';
+import { fetchRecentlyPlayedSongs } from '@/lib/spotify';
 import RecentlyPlayed from '@/components/Spotify/RecentlyPlayed';
 
 export const getStaticProps = async () => {
   const journeys = await client.fetch(journeyQuery);
-  const response = await getRecentlyPlayed();
-  const recentlyPlayedSongs = await response?.json();
+  const recentlyPlayedSongs = await fetchRecentlyPlayedSongs();
 
   return {
     props: { journeys, recentlyPlayedSongs },
