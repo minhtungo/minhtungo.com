@@ -6,7 +6,8 @@ import useSWR from 'swr';
 
 const Messages = ({ initialMessage }: { initialMessage: Message[] }) => {
   const { data: messages } = useSWR('/api/guestbook', fetcher, {
-    fallback: initialMessage,
+    fallbackData: initialMessage,
+    revalidateOnFocus: false,
   });
 
   return (
