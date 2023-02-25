@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
-import { Variants } from 'framer-motion';
+'use client';
+
+import { motion, Variants } from 'framer-motion';
 
 interface AnimatedDivProps {
   variants: Variants;

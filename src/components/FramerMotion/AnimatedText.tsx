@@ -1,6 +1,6 @@
+'use client';
 
-import { motion } from 'framer-motion';
-import { Variants } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 interface AnimatedTextProps {
   variants: Variants;
@@ -8,7 +8,6 @@ interface AnimatedTextProps {
   children: React.ReactNode;
   infinity?: boolean;
 }
-
 
 export default function AnimatedText({
   variants,
@@ -18,8 +17,8 @@ export default function AnimatedText({
 }: AnimatedTextProps) {
   return (
     <motion.p
-      initial="hidden"
-      whileInView="visible"
+      initial='hidden'
+      whileInView='visible'
       viewport={{ once: !infinity }}
       variants={variants}
       className={className}

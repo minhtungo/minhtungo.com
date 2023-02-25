@@ -1,3 +1,5 @@
+'use client';
+
 import Link from '@/components/common/Link';
 import { PopUp } from '@/lib/framerVariants';
 import { cva, VariantProps } from 'class-variance-authority';

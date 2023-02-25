@@ -1,3 +1,5 @@
+'use client';
+
 import { Icon, Logo } from '@/components';
 import Avatar from '@/components/common/Avatar';
 import Link from '@/components/common/Link';
@@ -14,7 +16,7 @@ import NavItem from './NavItem';
 
 const inter = Inter({ subsets: ['latin'] });
 
-const Header = () => {
+const NavBar = () => {
   const { systemTheme, theme, setTheme } = useTheme();
 
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -144,4 +146,4 @@ const Header = () => {
     </header>
   );
 };
-export default Header;
+export default NavBar;

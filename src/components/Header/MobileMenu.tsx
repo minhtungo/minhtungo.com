@@ -1,3 +1,5 @@
+'use client';
+
 import IconHelper from '@/components/common/IconHelper';
 import Link from '@/components/common/Link';
 import { Menu, Transition } from '@headlessui/react';

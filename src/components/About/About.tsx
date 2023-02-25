@@ -18,14 +18,8 @@ const About = ({ home, className }: { home?: boolean; className?: string }) => {
         className='lg:!mb-3'
       />
       <div className='lg:gap-18 flex flex-col items-center justify-center gap-8 lg:flex-row-reverse'>
-        <motion.div
-          initial='hidden'
-          whileInView='visible'
-          variants={PopUpFromBottom}
-          className='w-full lg:w-1/3'
-        >
-          <ProfileCard />
-        </motion.div>
+        <ProfileCard />
+
         <div className='flex w-full flex-col items-center justify-center text-left lg:w-2/3'>
           <AnimatedDiv variants={OpacityVariant}>
             <div className='flex flex-col text-gray-800 dark:text-neutral-300 '>

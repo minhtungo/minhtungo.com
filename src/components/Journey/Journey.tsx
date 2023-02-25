@@ -1,3 +1,5 @@
+'use client';
+
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import { Disclosure, Transition } from '@headlessui/react';
 import { motion } from 'framer-motion';

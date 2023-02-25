@@ -8,7 +8,7 @@ import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
 import { ToastContainer } from 'react-toastify';
 
-import { AnimatedText, Icon, Title } from '..';
+import { AnimatedText, Icon, Title } from '@/components';
 import ContactForm from './ContactForm';
 
 const Contact = ({ home }: { home?: boolean }) => {

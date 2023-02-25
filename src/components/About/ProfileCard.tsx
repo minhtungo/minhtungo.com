@@ -1,7 +1,11 @@
+'use client';
+
 import Image from '@/components/common/Image';
 import { TypeAnimation } from 'react-type-animation';
 import { RiFileCodeLine } from 'react-icons/ri';
 import { MdOutlineEmail } from 'react-icons/md';
+import { OpacityVariant, PopUpFromBottom } from '@/lib/framerVariants';
+import { motion } from 'framer-motion';
 
 import astronaut from 'public/static/images/astronaut.gif';
 
@@ -10,7 +14,12 @@ import Link from '@/components/common/Link';
 
 const ProfileCard = () => {
   return (
-    <div className='mx-auto w-full max-w-sm overflow-hidden rounded-xl bg-card-background-light pb-4 shadow-md dark:bg-card-background-dark dark:text-gray-100'>
+    <motion.div
+      className='mx-auto w-full max-w-sm overflow-hidden rounded-xl bg-card-background-light pb-4 shadow-md dark:bg-card-background-dark dark:text-gray-100 lg:w-1/3'
+      initial='hidden'
+      whileInView='visible'
+      variants={PopUpFromBottom}
+    >
       <Link href='https://tenor.com/bCgDy.gif' animation={false}>
         {/* "GIF courtesy of Author's Dudun from https://tenor.com/bCgDy.gif" */}
         <Image
@@ -81,7 +90,7 @@ const ProfileCard = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

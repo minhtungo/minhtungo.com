@@ -10,7 +10,7 @@ import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 
-import Input from '../common/Input';
+import Input from '@/components/common/Input';
 
 const ContactForm = () => {
   const [name, setName] = useState('');

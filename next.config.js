@@ -19,9 +19,9 @@ const nextConfig = {
   experimental: {
     swcPlugins: [['next-superjson-plugin', {}]],
   },
-  // experimental: {
-  //   appDir: true,
-  // },
+  experimental: {
+    appDir: true,
+  },
   typescript: {
     ignoreBuildErrors: true,
   },

@@ -1,6 +1,6 @@
 import Hero from './Home/Hero';
 import Container from './Layout/Layout';
-import Header from './Layout/Header/Header';
+import NavBar from './Header/NavBar';
 import Logo from './common/Logo';
 import Button from './common/Button';
 import Repo from './Repo/Repos';
@@ -8,7 +8,7 @@ import Footer from './Layout/Footer/Footer';
 import Contact from './Contact/Contact';
 import DogModel from './Home/Model/DogModel';
 import About from './About/About';
-import ModelLoader, { DivContainer, DivSpinner } from './common/ModelLoader';
+import ModelLoader, { DivContainer, DivSpinner } from './Home/Model/Loader';
 import Marquees from './common/Marquees';
 import TechStack from './Technology/TechStack';
 import Title from './common/Title';
@@ -25,7 +25,7 @@ import Journey from './Journey/Journey';
 export {
   Hero,
   Container,
-  Header,
+  NavBar as Header,
   Logo,
   Button,
   Repo,
