@@ -1,5 +1,4 @@
-import { Icon } from '@/components';
-import Link from '@/components/common/Link';
+import { Icon, Link } from '@/app/components/common';
 import urlFor from '@/lib/urlFor';
 import { renderTech } from '@/util/renderTech';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';

@@ -1,10 +1,9 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
-import Link from '@/components/common/Link';
-
-import { motion } from 'framer-motion';
+import { Link } from '@/app/components/common';
 import { PopUp } from '@/lib/framerVariants';
+import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 interface NavItemProps {
   href: string;

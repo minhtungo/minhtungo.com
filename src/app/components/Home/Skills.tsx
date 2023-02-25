@@ -1,7 +1,9 @@
 'use client';
 
-import { AnimatedDiv, Title } from '@/components';
+import { Title } from '@/app/components/common';
+import { Div } from '@/app/components/FramerMotion';
 import { FadeContainer, PopUp, PopUpFromBottom } from '@/lib/framerVariants';
+
 import techStack from '@/config/techStack';
 import { motion } from 'framer-motion';
 import { renderTech } from '@/util/renderTech';
@@ -13,9 +15,9 @@ const Skills = () => {
 
   return (
     <section id='skills'>
-      <AnimatedDiv variants={PopUpFromBottom}>
+      <Div variants={PopUpFromBottom}>
         <Title title='My Skills' home={true} />
-      </AnimatedDiv>
+      </Div>
       <motion.div
         initial='hidden'
         whileInView='visible'

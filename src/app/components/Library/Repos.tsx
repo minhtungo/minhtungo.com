@@ -1,6 +1,7 @@
 'use client';
 
-import { Button, Title } from '@/components';
+import { Button, Title } from '@/app/components/common';
+
 import classNames from 'classnames';
 import { IoMdArrowForward } from 'react-icons/io';
 

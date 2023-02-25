@@ -1,8 +1,6 @@
 'use client';
 
-import { Icon, Logo } from '@/components';
-import Avatar from '@/components/common/Avatar';
-import Link from '@/components/common/Link';
+import { Avatar, Icon, Link, Logo } from '@/app/components/common';
 import { links } from '@/config/routes';
 import { FadeContainer, FromLeftVariant } from '@/lib/framerVariants';
 import { Inter } from '@next/font/google';

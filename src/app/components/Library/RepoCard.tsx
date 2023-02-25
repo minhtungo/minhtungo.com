@@ -1,7 +1,7 @@
 'use client';
 
-import { AnimatedDiv, Icon } from '@/components';
-import Link from '@/components/common/Link';
+import { Icon, Link } from '@/app/components/common';
+import { Div } from '@/app/components/FramerMotion';
 import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 import { renderTech } from '@/util/renderTech';
 import { motion } from 'framer-motion';
@@ -68,7 +68,7 @@ const Card = ({ repo }: RepoProps) => {
 
 const RepoCard = ({ repos }: { repos: Repo[] | undefined }) => {
   return (
-    <AnimatedDiv
+    <Div
       variants={FadeContainer}
       className='mx-auto grid grid-cols-1 gap-3 md:grid-cols-2 lg:mt-6 lg:grid-cols-3'
     >
@@ -77,7 +77,7 @@ const RepoCard = ({ repos }: { repos: Repo[] | undefined }) => {
           <Card repo={repo} />
         </motion.div>
       ))}
-    </AnimatedDiv>
+    </Div>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from '@/components/common/Image';
+import { Image } from '@/app/components/common';
 import classNames from 'classnames';
 
 const videoSrc = {

@@ -1,11 +1,12 @@
 'use client';
 
-import ProjectItem from './ProjectItem';
-import { motion } from 'framer-motion';
+import { Button, Title } from '@/app/components/common';
 import { OpacityVariant } from '@/lib/framerVariants';
 import classNames from 'classnames';
+import { motion } from 'framer-motion';
 import { IoMdArrowForward } from 'react-icons/io';
-import { Button, Title } from '@/components';
+
+import ProjectItem from './ProjectItem';
 
 interface ProjectsProp {
   projects: Project[];

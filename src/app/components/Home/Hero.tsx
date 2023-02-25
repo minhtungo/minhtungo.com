@@ -3,8 +3,8 @@
 import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
 import Image from 'next/image';
 import { TypeAnimation } from 'react-type-animation';
-import { AnimatedText, Button } from '@/components';
-import Link from '@/components/common/Link';
+import { Text } from '@/app/components/FramerMotion';
+import { Link, Button } from '@/app/components/common';
 import LazyDogModel from '@/components/Home/Model/LazyDogModel';
 
 const Hero = () => {
@@ -34,15 +34,15 @@ const Hero = () => {
           height={60}
         />
 
-        <AnimatedText className='mb-[5px] pl-[3px]' variants={FromLeftVariant}>
+        <Text className='mb-[5px] pl-[3px]' variants={FromLeftVariant}>
           Hi, I am
-        </AnimatedText>
-        <AnimatedText variants={FromLeftVariant}>
+        </Text>
+        <Text variants={FromLeftVariant}>
           <span className='primary-gradient bg-clip-text text-2xl font-bold text-transparent md:text-4xl lg:text-5xl'>
             Minh Tu Ngo.
           </span>
           <span className='wave text-2xl md:text-4xl lg:text-5xl'>👋</span>
-        </AnimatedText>
+        </Text>
         <p className='text-md mt-3 font-medium dark:text-neutral-300 md:text-base lg:mt-4 lg:text-lg'>
           <TypeAnimation
             cursor={true}
@@ -60,7 +60,7 @@ const Hero = () => {
             repeat={Infinity}
           />
         </p>
-        <AnimatedText
+        <Text
           variants={PopUpFromBottom}
           className='lg:text-md mt-4 text-sm dark:text-neutral-400 md:text-base lg:mt-3'
         >
@@ -72,7 +72,7 @@ const Hero = () => {
             guestbook
           </Link>
           !
-        </AnimatedText>
+        </Text>
 
         {/* buttons */}
         <div className='mt-5 flex flex-col justify-center gap-3 sm:flex-row md:justify-start'>

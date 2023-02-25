@@ -1,5 +1,7 @@
 'use client';
 
+import { Icon, Title } from '@/app/components/common';
+import { Text } from '@/app/components/FramerMotion';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import classNames from 'classnames';
 import Image from 'next/image';
@@ -8,7 +10,6 @@ import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
 import { ToastContainer } from 'react-toastify';
 
-import { AnimatedText, Icon, Title } from '@/components';
 import ContactForm from './ContactForm';
 
 const Contact = ({ home }: { home?: boolean }) => {
@@ -34,7 +35,7 @@ const Contact = ({ home }: { home?: boolean }) => {
         <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
           <div>
             <div>
-              <AnimatedText
+              <Text
                 variants={PopUpFromBottom}
                 className='text-sm font-light text-gray-700 dark:text-gray-400 md:text-base'
               >
@@ -42,7 +43,7 @@ const Contact = ({ home }: { home?: boolean }) => {
                 you
                 {"'"}re a company looking to hire or you{"'"}re just looking to
                 chat, I{"'"}d love to hear from you.
-              </AnimatedText>
+              </Text>
             </div>
             {/* Info */}
             <div className='mt-8 mb-6 inline-flex flex-col space-y-4'>
