@@ -1,35 +1,23 @@
-import { Contact } from '@/app/components/Contact';
-import { Hero, Skills } from '@/app/components/Home';
-import { Repos } from '@/app/components/Library';
-import { Projects } from '@/app/components/Projects';
-import { client, projectHomeQuery, repoHomeQuery } from '@/lib/sanity.client';
-
+import { client, journeyQuery } from '@/lib/sanity.client';
+import { fetchRecentlyPlayedSongs } from '@/lib/spotify';
 import type { Metadata } from 'next';
+import { Container } from '@/app/components/Layout';
+import { About } from '../components/About';
+
 export const metadata: Metadata = {
-  title: 'Home | Minh Tu Ngo',
+  title: 'About | Minh Tu Ngo',
   description:
-    'My personal portfolio to showcase my work. Built with NextJS, Tailwind CSS and Sanity.',
+    'I am Minh Tu Ngo - A Front End Developer.  I love to create amazing web applications to make the internet a better place.',
 };
 
-export default async function HomePage() {
-  let projects, repos;
-
-  try {
-    [projects, repos] = await Promise.all([
-      await client.fetch(projectHomeQuery),
-      await client.fetch(repoHomeQuery),
-    ]);
-  } catch (error) {
-    console.error(error);
-  }
+const AboutPage = async () => {
+  const journeys = await client.fetch(journeyQuery);
+  const recentlyPlayedSongs = await fetchRecentlyPlayedSongs();
 
   return (
-    <>
-      <Hero />
-      <Skills />
-      <Projects projects={projects} home />
-      <Repos repos={repos} />
-      <Contact home />
-    </>
+    <Container>
+      <About journeys={journeys} recentlyPlayedSongs={recentlyPlayedSongs} />
+    </Container>
   );
-}
+};
+export default AboutPage;

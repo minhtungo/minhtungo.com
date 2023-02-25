@@ -1,7 +1,7 @@
 import { Footer, Header } from '@/components';
 import { Open_Sans } from '@next/font/google';
 import type { Metadata } from 'next';
-import Container from './components/Container';
+import Container from './components/Layout/Container';
 import { Inter } from '@next/font/google';
 
 import '@/styles/globals.css';
