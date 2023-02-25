@@ -1,4 +1,6 @@
-import { useRouter } from 'next/router';
+'use client';
+
+import { usePathname } from 'next/navigation';
 import Link from '@/components/common/Link';
 
 import { motion } from 'framer-motion';
@@ -10,9 +12,8 @@ interface NavItemProps {
 }
 
 const NavItem = ({ href, label }: NavItemProps) => {
-  const router = useRouter();
-  const path = router.asPath;
-  const isActive = path === href;
+  const pathname = usePathname();
+  const isActive = pathname === href;
 
   return (
     <Link

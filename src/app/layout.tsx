@@ -1,5 +1,6 @@
 import { Container, Footer, Header } from '@/components';
 import { Open_Sans } from '@next/font/google';
+import type { Metadata } from 'next';
 
 import '@/styles/globals.css';
 import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
@@ -12,6 +13,7 @@ const open_sans = Open_Sans({
 export const metadata = {
   title: {
     default: 'Minh Tu Ngo',
+    template: '%s | Minh Tu Ngo',
   },
   robots: {
     index: true,
