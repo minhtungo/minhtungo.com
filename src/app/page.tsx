@@ -28,7 +28,7 @@ export default async function HomePage() {
       <Hero />
       <Skills />
       <Projects projects={projects} home />
-      <Repos repos={repos} />
+      <Repos repos={repos} home />
       <Contact home />
     </main>
   );
