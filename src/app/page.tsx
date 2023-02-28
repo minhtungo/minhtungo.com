@@ -1,10 +1,14 @@
-import { Contact } from '@/app/components/Contact';
-import { Hero, Skills } from '@/app/components/Home';
-import { Repos } from '@/app/components/Library';
-import { Projects } from '@/app/components/Projects';
+import { Contact } from '@/components/Contact';
+import { Hero, Skills } from '@/components/Home';
+import { Repos } from '@/components/Library';
+import { Projects } from '@/components/Projects';
 import { client, projectHomeQuery, repoHomeQuery } from '@/lib/sanity.client';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 import type { Metadata } from 'next';
+
 export const metadata: Metadata = {
   title: 'Home | Minh Tu Ngo',
   description:
@@ -22,14 +26,13 @@ export default async function HomePage() {
   } catch (error) {
     console.error(error);
   }
-
   return (
-    <>
+    <main>
       <Hero />
       <Skills />
       <Projects projects={projects} home />
       <Repos repos={repos} />
       <Contact home />
-    </>
+    </main>
   );
 }

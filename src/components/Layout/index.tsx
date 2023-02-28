@@ -1,4 +1,1 @@
-import MetaData from './MetaData';
-import Layout from './Layout';
-
-export { MetaData, Layout };
+export { default as Container } from './Container';

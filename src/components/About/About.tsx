@@ -1,27 +1,24 @@
-import { AnimatedDiv, Title } from '@/components';
-import ProfileCard from '@/components/About/ProfileCard';
-import { OpacityVariant, PopUpFromBottom } from '@/lib/framerVariants';
-import { motion } from 'framer-motion';
-import classNames from 'classnames';
+'use client';
 
-const About = ({ home, className }: { home?: boolean; className?: string }) => {
+import { Title } from '@/components/common';
+import { Div } from '@/components/FramerMotion';
+import { OpacityVariant } from '@/lib/framerVariants';
+
+import ProfileCard from './ProfileCard';
+
+const About = () => {
   return (
-    <section id='about' className={classNames('mx-auto', className)}>
+    <section id='about' className='mx-auto'>
       <Title
         title='About'
-        subtitle={
-          home
-            ? 'Introduction'
-            : 'Sharing my passions and experiences with the world'
-        }
-        home={home}
+        subtitle={'Sharing my passions and experiences with the world'}
         className='lg:!mb-3'
       />
       <div className='lg:gap-18 flex flex-col items-center justify-center gap-8 lg:flex-row-reverse'>
         <ProfileCard />
 
         <div className='flex w-full flex-col items-center justify-center text-left lg:w-2/3'>
-          <AnimatedDiv variants={OpacityVariant}>
+          <Div variants={OpacityVariant}>
             <div className='flex flex-col text-gray-800 dark:text-neutral-300 '>
               {/* <h3 className='secondary-gradient mb-2 bg-clip-text text-xl font-bold text-transparent md:text-2xl lg:text-3xl'>
                 Minh Tu Ngo
@@ -46,7 +43,7 @@ const About = ({ home, className }: { home?: boolean; className?: string }) => {
                 }
               </p>
             </div>
-          </AnimatedDiv>
+          </Div>
         </div>
       </div>
     </section>

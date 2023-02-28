@@ -1,5 +1,7 @@
+'use client';
+
 import Image from '@/components/common/Image';
-import AnimatedDiv from '@/components/FramerMotion/AnimatedDiv';
+import { Div } from '@/components/FramerMotion';
 import fetcher from '@/lib/fetcher';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import useSWR from 'swr';
@@ -11,7 +13,7 @@ const Messages = ({ initialMessage }: { initialMessage: Message[] }) => {
   });
 
   return (
-    <AnimatedDiv variants={PopUpFromBottom} className='mx-auto max-w-3xl'>
+    <Div variants={PopUpFromBottom} className='mx-auto max-w-3xl'>
       <hr className='my-6 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
 
       {messages?.map((comment: any) => (
@@ -44,7 +46,7 @@ const Messages = ({ initialMessage }: { initialMessage: Message[] }) => {
           </div>
         </article>
       ))}
-    </AnimatedDiv>
+    </Div>
   );
 };
 

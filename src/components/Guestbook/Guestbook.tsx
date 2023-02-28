@@ -1,17 +1,15 @@
-import { Button } from '@/components';
-import Image from '@/components/common/Image';
-import { LoginBtn } from '@/components/Guestbook/Auth';
-import Messages from '@/components/Guestbook/Messages';
+'use client';
+
+import { Button, Image } from '@/components/common';
+import { Actions } from '@/components/Guestbook';
 import DOMPurify from 'dompurify';
-import { signOut, useSession } from 'next-auth/react';
+import { signOut } from 'next-auth/react';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useSWRConfig } from 'swr';
 import TextareaAutosize from 'react-textarea-autosize';
 
-const Guestbook = ({ messages }: { messages: Message[] }) => {
-  const { data: session } = useSession();
-
+const Guestbook = ({ session }: { session: any }) => {
   const { mutate } = useSWRConfig();
   const [content, setContent] = useState('');
 
@@ -51,7 +49,7 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
   };
 
   return (
-    <div className=''>
+    <div>
       {session ? (
         <>
           <div className='mx-auto mt-8 flex w-full max-w-3xl flex-col items-center gap-2'>
@@ -96,9 +94,8 @@ const Guestbook = ({ messages }: { messages: Message[] }) => {
           </div>
         </>
       ) : (
-        <LoginBtn />
+        <Actions />
       )}
-      <Messages initialMessage={messages} />
     </div>
   );
 };

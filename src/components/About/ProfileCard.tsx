@@ -1,16 +1,11 @@
-'use client';
+import { Button, Image, Link } from '@/components/common';
 
-import Image from '@/components/common/Image';
-import { TypeAnimation } from 'react-type-animation';
-import { RiFileCodeLine } from 'react-icons/ri';
-import { MdOutlineEmail } from 'react-icons/md';
-import { OpacityVariant, PopUpFromBottom } from '@/lib/framerVariants';
+import { PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
-
 import astronaut from 'public/static/images/astronaut.gif';
-
-import Button from '@/components/common/Button';
-import Link from '@/components/common/Link';
+import { MdOutlineEmail } from 'react-icons/md';
+import { RiFileCodeLine } from 'react-icons/ri';
+import { TypeAnimation } from 'react-type-animation';
 
 const ProfileCard = () => {
   return (

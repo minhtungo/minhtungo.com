@@ -1,7 +1,4 @@
-'use client';
-
-import IconHelper from '@/components/common/IconHelper';
-import Link from '@/components/common/Link';
+import { IconHelper, Link } from '@/components/common';
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { HiOutlineMenuAlt4 } from 'react-icons/hi';

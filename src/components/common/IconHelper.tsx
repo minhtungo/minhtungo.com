@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import Image from 'next/image';
 import Code from 'public/static/icons/code.svg';
 import Bootstrap from 'public/static/images/stack/bootstrap.svg';
 import ChakraUI from 'public/static/images/stack/chakra-ui.svg';
@@ -71,7 +72,6 @@ interface getIconProps {
 
 const IconHelper = ({ type, className }: getIconProps) => {
   //remove space, hyphen and capitalize the type string
-
   type =
     type.charAt(0).toUpperCase() +
     type.slice(1).replace(/\s/g, '').replace(/-/g, '');
@@ -81,11 +81,56 @@ const IconHelper = ({ type, className }: getIconProps) => {
   const customClasses =
     type === 'Express' || type === 'NodeJS' ? 'text-green-600' : '';
 
-  const Icon = iconMap[type];
-  if (!Icon) return null;
+  let Icon;
 
+  switch (type) {
+    case 'NextJS':
+      return (
+        <Image
+          src={`/static/images/stack/next.svg`}
+          height={20}
+          width={20}
+          className={className}
+          alt={type}
+        />
+      );
+    case 'Sanity':
+      return (
+        <Image
+          src={`/static/images/stack/sanity.webp`}
+          height={20}
+          width={20}
+          className={className}
+          alt={type}
+        />
+      );
+    case 'Styled-Components':
+      return (
+        <Image
+          src={`/static/images/stack/styled-components.png`}
+          height={20}
+          width={20}
+          className={className}
+          alt={type}
+        />
+      );
+    case 'tRPC':
+      return (
+        <Image
+          src={`/static/images/stack/trpc.png`}
+          height={20}
+          width={20}
+          className={className}
+          alt={type}
+        />
+      );
+    default:
+      Icon = iconMap[type];
+  }
+
+  if (!Icon) return null;
   // @ts-ignore
-  return <Icon className={classNames('', customClasses, className)} />;
+  return <Icon className={classNames('h-4 w-4', customClasses, className)} />;
 };
 
 export default IconHelper;

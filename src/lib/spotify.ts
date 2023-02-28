@@ -69,6 +69,7 @@ export const getNowPlaying = async () => {
   return fetch(`${baseEndpoint}/me/player/currently-playing`, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
     },
   });
 };
@@ -90,16 +91,22 @@ export const getRecentlyPlayed = async () => {
   return fetch(recentlyPlayedEndpoint, {
     headers: {
       Authorization: `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
     },
   });
 };
 
-export async function fetchRecentlyPlayedSongs() {
+export const fetchRecentlyPlayedSongs = async () => {
   const recentlyPlayedResponse = await fetch(
-    `${process.env.BASE_URL}/api/spotify/recently-played`
+    `${process.env.BASE_URL}/api/spotify/recently-played`,
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
   );
 
   const recentlyPlayed = await recentlyPlayedResponse.json();
 
   return recentlyPlayed;
-}
+};

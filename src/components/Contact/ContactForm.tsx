@@ -1,16 +1,13 @@
 'use client';
 
-import { Button, LoadingSpinner } from '@/components';
-import {
-  toastifyFailure,
-  toastifySuccess,
-} from '@/components/common/ToastMessage';
+import { Button, LoadingSpinner } from '@/components/common';
+import { toastifyFailure, toastifySuccess } from '@/lib/toastMessage';
 import { FadeContainer } from '@/lib/framerVariants';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 
-import Input from '../common/Input';
+import Input from './Input';
 
 const ContactForm = () => {
   const [name, setName] = useState('');

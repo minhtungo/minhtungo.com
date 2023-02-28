@@ -1,5 +1,6 @@
-import Image from '@/components/common/Image';
-import Link from '@/components/common/Link';
+'use client';
+
+import { Image, Link } from '@/components/common';
 import fetcher from '@/lib/fetcher';
 import useSWR from 'swr';
 
