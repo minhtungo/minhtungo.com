@@ -3,9 +3,6 @@ import { Hero, Skills } from '@/components/Home';
 import { Repos } from '@/components/Library';
 import { Projects } from '@/components/Projects';
 import { client, projectHomeQuery, repoHomeQuery } from '@/lib/sanity.client';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({ subsets: ['latin'] });
 
 import type { Metadata } from 'next';
 

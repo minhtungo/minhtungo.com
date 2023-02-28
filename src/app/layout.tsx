@@ -5,6 +5,9 @@ import { Footer } from '@/components/Footer';
 import { NavBar } from '@/components/Header';
 
 import Providers from './Providers';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Create Next App',
@@ -17,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang='en' className={inter.className}>
       <body className='mx-auto max-w-6xl px-6 xl:px-0'>
         <Providers>
           <NavBar />

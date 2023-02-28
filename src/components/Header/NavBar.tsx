@@ -3,7 +3,6 @@
 import { Avatar, Icon, Link, Logo } from '@/components/common';
 import { links } from '@/config/routes';
 import { FadeContainer, FromLeftVariant } from '@/lib/framerVariants';
-import { Inter } from '@next/font/google';
 import { motion, useAnimation } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
@@ -11,8 +10,6 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 import MobileMenu from './MobileMenu';
 import NavItem from './NavItem';
-
-const inter = Inter({ subsets: ['latin'] });
 
 const NavBar = () => {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -95,7 +92,7 @@ const NavBar = () => {
 
   return (
     <header
-      className={`${inter.className} fixed top-0 left-0 right-0 z-50 w-full backdrop-filter`}
+      className={`fixed top-0 left-0 right-0 z-50 w-full backdrop-filter`}
       ref={navRef}
     >
       <div className='mx-auto flex max-w-6xl items-center justify-between py-2 px-6 xl:px-0'>

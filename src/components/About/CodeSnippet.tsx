@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import classNames from 'classnames';
-import { Roboto_Mono } from '@next/font/google';
+import { Roboto_Mono } from "next/font/google";
 
 interface CodeSnippetProps {
   className?: string;
