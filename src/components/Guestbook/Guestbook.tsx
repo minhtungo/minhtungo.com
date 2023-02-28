@@ -1,15 +1,19 @@
 'use client';
 
 import { Button, Image } from '@/components/common';
-import { Actions } from '@/components/Guestbook';
+import { Text } from '@/components/FramerMotion';
+import { Actions, Messages } from '@/components/Guestbook';
 import DOMPurify from 'dompurify';
-import { signOut } from 'next-auth/react';
+import { useSession, signOut } from 'next-auth/react';
 import { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useSWRConfig } from 'swr';
 import TextareaAutosize from 'react-textarea-autosize';
+import { PopUpFromBottom } from '@/lib/framerVariants';
 
-const Guestbook = ({ session }: { session: any }) => {
+const Guestbook = () => {
+  const { data: session } = useSession();
+
   const { mutate } = useSWRConfig();
   const [content, setContent] = useState('');
 
@@ -50,6 +54,14 @@ const Guestbook = ({ session }: { session: any }) => {
 
   return (
     <div>
+      <Text
+        variants={PopUpFromBottom}
+        className='text-sm text-gray-900 dark:text-gray-200 sm:text-base'
+      >
+        {session
+          ? `Hi ${session.user?.name}! I am glad you're here. Please leave a message below.`
+          : "I'd love to hear from you! To leave a message, simply sign in with your preferred account below. "}
+      </Text>
       {session ? (
         <>
           <div className='mx-auto mt-8 flex w-full max-w-3xl flex-col items-center gap-2'>

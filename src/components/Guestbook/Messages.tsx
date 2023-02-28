@@ -41,9 +41,9 @@ const Messages = ({ initialMessage }: { initialMessage: Message[] }) => {
               </time>
             </div>
           </footer>
-          <div className='text-[13px] text-gray-800 dark:text-neutral-300 sm:text-base'>
+          <p className='text-[13px] text-gray-800 dark:text-neutral-300 sm:text-base'>
             {comment.content}
-          </div>
+          </p>
         </article>
       ))}
     </Div>

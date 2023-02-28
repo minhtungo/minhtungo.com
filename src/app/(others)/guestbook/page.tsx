@@ -1,12 +1,9 @@
-import { Heading, Text } from '@/components/FramerMotion';
-import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
-import { getServerSession } from 'next-auth/next';
+import { Heading } from '@/components/FramerMotion';
+import { Guestbook, Messages } from '@/components/Guestbook';
+import { FromLeftVariant } from '@/lib/framerVariants';
 import prisma from '@/lib/prismadb';
 
 import type { Metadata } from 'next';
-import { Guestbook, Messages } from '@/components/Guestbook';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-
 export const metadata: Metadata = {
   title: 'Guestbook | Minh Tu Ngo',
   description:
@@ -19,7 +16,17 @@ export default async function GuestbookPage() {
       createdAt: 'desc',
     },
   });
-  const session = await getServerSession(authOptions);
+
+  const messagesWithDateString = messages.map((message) => {
+    const { updatedAt, createdAt, ...rest } = message;
+    return {
+      ...rest,
+      updatedAt: JSON.stringify(updatedAt), // convert the date object to an ISO string
+      createdAt: JSON.stringify(createdAt), // convert the date object to an ISO string
+    };
+  });
+
+  // const session = await getServerSession(authOptions);
   return (
     <>
       <Heading
@@ -28,17 +35,8 @@ export default async function GuestbookPage() {
       >
         Guestbook
       </Heading>
-
-      <Text
-        variants={PopUpFromBottom}
-        className='text-sm text-gray-900 dark:text-gray-200 sm:text-base'
-      >
-        {session
-          ? `Hi ${session.user?.name}! I am glad you're here. Please leave a message below.`
-          : "I'd love to hear from you! To leave a message, simply sign in with your preferred account below. "}
-      </Text>
-      <Guestbook session={session} />
-      <Messages initialMessage={messages} />
+      <Guestbook />
+      <Messages initialMessage={messagesWithDateString} />
     </>
   );
 }
