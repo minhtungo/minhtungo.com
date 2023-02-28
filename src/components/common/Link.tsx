@@ -6,6 +6,7 @@ type LinkProps = {
   href: string;
   icon?: boolean;
   animation?: boolean;
+  label?: string;
   nextLinkProps?: Omit<NextLinkProps, 'href'>;
 } & React.ComponentPropsWithRef<'a'>;
 
@@ -16,6 +17,7 @@ const Link = ({
   animation = true,
   className,
   nextLinkProps,
+  label,
   ...rest
 }: LinkProps) => {
   const isInternalLink = href && href.startsWith('/');
@@ -25,6 +27,7 @@ const Link = ({
     return (
       <NextLink
         href={href}
+        arial-label={label || `Link to ${href}`}
         className={classNames(
           'relative',
           {
@@ -45,6 +48,7 @@ const Link = ({
     return (
       <a
         href={href}
+        arial-label={label || `Link to ${href}`}
         className={classNames(
           'relative',
           {
@@ -63,6 +67,7 @@ const Link = ({
   return (
     <a
       target='_blank'
+      arial-label={label || `Link to ${href}`}
       rel='noopener noreferrer'
       href={href}
       className={classNames(
