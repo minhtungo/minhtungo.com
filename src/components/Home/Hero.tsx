@@ -1,6 +1,5 @@
 import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
 import Image from 'next/image';
-import { TypeAnimation } from 'react-type-animation';
 import { Text } from '@/components/FramerMotion';
 import { Link, Button, TypingAnimation } from '@/components/common';
 import { LazyDogModel } from '@/components/Home';

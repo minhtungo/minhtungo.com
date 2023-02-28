@@ -1,7 +1,7 @@
 'use client';
 
 import { Button, LoadingSpinner } from '@/components/common';
-import { toastifyFailure, toastifySuccess } from '@/lib/toastMessage';
+import toast from 'react-hot-toast';
 import { FadeContainer } from '@/lib/framerVariants';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
@@ -27,27 +27,34 @@ const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     if (!form.current) return;
 
-    try {
-      setIsSending(true);
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        form.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
-      setIsSending(false);
-      reset();
-      toastifySuccess(
-        '😊Thank you for getting in touch! I will get back in touch with you soon. Have a great day!'
-      );
-    } catch (error) {
-      toastifyFailure(
-        'Something went wrong! Please try again or reach me at mn.minhtungo@gmail.com.'
-      );
-    }
+    const sendMessage = async () => {
+      try {
+        setIsSending(true);
+        await emailjs.sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+          form.current!,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        );
+        setIsSending(false);
+        reset();
+      } catch (error) {
+        setIsSending(false);
+        console.error(error);
+      }
+    };
+
+    const sendingPromise = sendMessage();
+
+    toast.promise(sendingPromise, {
+      loading: 'Sending...',
+      success:
+        'Thank you for getting in touch! I will get back in touch with you soon. Have a great day!',
+      error:
+        'Something went wrong! Please try again or reach me at mn.minhtungo@gmail.com.',
+    });
   };
 
   return (
