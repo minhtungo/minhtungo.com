@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Image } from '@/components/common';
+import { Button, Image, LoadingSpinner } from '@/components/common';
 import DOMPurify from 'dompurify';
 import { signOut, useSession } from 'next-auth/react';
 import { useState } from 'react';
@@ -12,10 +12,9 @@ const Form = () => {
   const { data: session } = useSession();
   const { mutate } = useSWRConfig();
   const [content, setContent] = useState('');
+  const [isSending, setIsSending] = useState(false);
 
   const submitMessage = async () => {
-    const loading = toast.loading('Signing');
-
     const rawContent = JSON.stringify({
       content: DOMPurify.sanitize(content),
     });
@@ -27,25 +26,29 @@ const Form = () => {
       },
       body: rawContent,
     };
-
-    try {
-      const res = await fetch('/api/guestbook', requestOptions);
-      setContent('');
-      if (!res.ok) {
-        toast.dismiss(loading);
-        toast.error('Something went wrong. Please try again later.');
-        return;
+    const sendMessage = async () => {
+      try {
+        setIsSending(true);
+        await fetch('/api/guestbook', requestOptions);
+        setContent('');
+        setIsSending(false);
+        mutate('/api/guestbook');
+      } catch (error) {
+        setContent('');
+        console.error(error);
+        console.error(error);
       }
+    };
 
-      toast.dismiss(loading);
-      toast.success('Added successfully');
+    const sendingPromise = sendMessage();
 
-      mutate('/api/guestbook');
-    } catch (error) {
-      setContent('');
-      toast.dismiss(loading);
-      toast.error('Something went wrong. Please try again later.');
-    }
+    toast.promise(sendingPromise, {
+      loading: 'Signing...',
+      success:
+        'Thank you for taking the time to leave a message on my site. Have a great day!',
+      error:
+        'Something went wrong! Please try again or reach me at mn.minhtungo@gmail.com.',
+    });
   };
 
   return (
@@ -80,8 +83,21 @@ const Form = () => {
         >
           Sign Out
         </Button>
-        <Button size='medium' rounded='medium' onClick={() => submitMessage()}>
-          Sign
+        <Button
+          disabled={isSending || !content}
+          size='medium'
+          rounded='medium'
+          onClick={() => submitMessage()}
+          className='disabled:cursor-not-allowed'
+        >
+          {isSending ? (
+            <>
+              <LoadingSpinner className='mr-3 inline h-4 w-4 animate-spin text-blue-500' />
+              Signing...
+            </>
+          ) : (
+            'Sign'
+          )}
         </Button>
       </div>
     </div>

@@ -1,3 +1,5 @@
+'use client';
+
 import { Text } from '@/components/FramerMotion';
 import { Actions } from '@/components/Guestbook';
 import { PopUpFromBottom } from '@/lib/framerVariants';

@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
-import ToastWrapper from './ToastWrapper';
 
 import ContactForm from './ContactForm';
 
@@ -96,7 +95,6 @@ const Contact = ({ home }: { home?: boolean }) => {
           <ContactForm />
         </div>
       </div>
-      <ToastWrapper />
     </section>
   );
 };

@@ -1,12 +1,9 @@
 import { Heading, Text } from '@/components/FramerMotion';
-import { Messages, Form } from '@/components/Guestbook';
+import { Messages, Guestbook } from '@/components/Guestbook';
 import { FromLeftVariant } from '@/lib/framerVariants';
 import prisma from '@/lib/prismadb';
-import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import { Actions } from '@/components/Guestbook';
-
-import { getServerSession } from 'next-auth/next';
 
 import type { Metadata } from 'next';
 
@@ -17,8 +14,6 @@ export const metadata: Metadata = {
 };
 
 export default async function GuestbookPage() {
-  const session = await getServerSession(authOptions);
-
   const messages: any = await prisma.guestBook.findMany({
     orderBy: {
       createdAt: 'desc',
@@ -43,15 +38,7 @@ export default async function GuestbookPage() {
       >
         Guestbook
       </Heading>
-      <Text
-        variants={PopUpFromBottom}
-        className='text-sm text-gray-900 dark:text-gray-200 sm:text-base'
-      >
-        {session
-          ? `Hi ${session.user?.name}! I am glad you're here. Please leave a message below.`
-          : "I'd love to hear from you! To leave a message, simply sign in with your preferred account below. "}
-      </Text>
-      {session ? <Form /> : <Actions />}
+      <Guestbook />
       <Messages initialMessage={messagesWithDateString} />
     </>
   );
