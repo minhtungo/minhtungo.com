@@ -83,6 +83,8 @@ const IconHelper = ({ type, className }: getIconProps) => {
 
   let Icon;
 
+  console.log(type);
+
   switch (type) {
     case 'NextJS':
       return (
@@ -104,7 +106,7 @@ const IconHelper = ({ type, className }: getIconProps) => {
           alt={type}
         />
       );
-    case 'Styled-Components':
+    case 'StyledComponents':
       return (
         <Image
           src={`/static/images/stack/styled-components.png`}
@@ -114,7 +116,7 @@ const IconHelper = ({ type, className }: getIconProps) => {
           alt={type}
         />
       );
-    case 'tRPC':
+    case 'TRPC':
       return (
         <Image
           src={`/static/images/stack/trpc.png`}
