@@ -46,7 +46,7 @@ const NowPlaying = () => {
         <div className='ml-4 flex w-full flex-col'>
           <div className='flex flex-row items-center justify-between'>
             <div className='flex w-full flex-col'>
-              <p className='font-semibold text-gray-700 dark:text-gray-100'>
+              <p className='text-xs font-semibold text-gray-700 dark:text-gray-100 sm:text-sm'>
                 {currentSong?.isPlaying ? currentSong.title : 'Not Listening'}
               </p>
               <p className='text-xs text-gray-600 dark:text-gray-300 sm:text-sm'>

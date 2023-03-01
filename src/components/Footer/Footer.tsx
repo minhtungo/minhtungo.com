@@ -5,7 +5,7 @@ import { NowPlaying } from '@/components/Spotify';
 
 const Footer = () => {
   return (
-    <footer className='mx-auto max-w-6xl px-6 py-6 pt-12 xl:px-0 xl:pt-20'>
+    <footer className='mx-auto max-w-6xl py-6 pt-12 xl:pt-20'>
       <NowPlaying />
       <hr className='my-4 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
       <div className='md:flex md:justify-between'>
