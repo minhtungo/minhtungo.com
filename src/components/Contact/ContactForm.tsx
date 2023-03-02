@@ -2,7 +2,7 @@
 
 import { Button, LoadingSpinner } from '@/components/common';
 import toast from 'react-hot-toast';
-import { FadeContainer } from '@/lib/framerVariants';
+import { FadeContainer, ItemSideways } from '@/lib/framerVariants';
 import emailjs from '@emailjs/browser';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
@@ -67,7 +67,10 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       ref={form}
     >
-      <div className='grid w-full sm:grid-cols-2 sm:gap-4 lg:gap-6'>
+      <motion.div
+        className='grid w-full sm:grid-cols-2 sm:gap-4 lg:gap-6'
+        variants={ItemSideways}
+      >
         <Input
           type='text'
           name='name'
@@ -82,23 +85,31 @@ const ContactForm = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-      </div>
-      <Input
-        type='subject'
-        name='subject'
-        label='Subject'
-        value={subject}
-        onChange={(e) => setSubject(e.target.value)}
-      />
-      <Input
-        textarea
-        type='message'
-        name='message'
-        label='Message'
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-      />
-      <div className='flex w-full items-center justify-center'>
+      </motion.div>
+      <motion.div variants={ItemSideways}>
+        <Input
+          type='subject'
+          name='subject'
+          label='Subject'
+          value={subject}
+          onChange={(e) => setSubject(e.target.value)}
+        />
+      </motion.div>
+      <motion.div variants={ItemSideways}>
+        <Input
+          textarea
+          type='message'
+          name='message'
+          label='Message'
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+        />
+      </motion.div>
+
+      <motion.div
+        className='flex w-full items-center justify-center'
+        variants={ItemSideways}
+      >
         <Button
           disabled={isSending || !name || !email || !subject || !message}
           className={`mt-6 flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50`}
@@ -113,7 +124,7 @@ const ContactForm = () => {
             'Send Message'
           )}
         </Button>
-      </div>
+      </motion.div>
     </motion.form>
   );
 };

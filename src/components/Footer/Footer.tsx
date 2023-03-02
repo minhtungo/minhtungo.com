@@ -1,7 +1,10 @@
 import { Icon, Link } from '@/components/common';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
-import footer from '@/config/footer';
 import { NowPlaying } from '@/components/Spotify';
+import { FadeContainer } from '@/lib/framerVariants';
+import { motion } from 'framer-motion';
+import { FiGithub, FiLinkedin } from 'react-icons/fi';
+
+import FooterLink from './FooterLink';
 
 const Footer = () => {
   return (
@@ -25,19 +28,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className='grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-24'>
-          {footer.categories.map((category, index) => (
-            <ul key={index} className='text-gray-600 dark:text-gray-400'>
-              {category.links.map((link, index) => (
-                <li className='mt-2' key={index}>
-                  <Link href={link.href} icon={category.title === 'Social'}>
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          ))}
-        </div>
+        <FooterLink />
       </div>
       <div className='mt-6 text-center sm:flex sm:items-center sm:justify-between'>
         <Link href='/'>

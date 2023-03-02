@@ -86,3 +86,11 @@ export const PopUpFromBottom: Variants = {
     },
   },
 };
+
+export const ItemSideways: Variants = {
+  hidden: { x: -40, opacity: 0 },
+  visible: {
+    x: 0,
+    opacity: 1,
+  },
+};
