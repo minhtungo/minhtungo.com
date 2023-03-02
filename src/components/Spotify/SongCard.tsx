@@ -4,11 +4,11 @@ import { motion } from 'framer-motion';
 
 const SongCard = (song) => {
   return (
-    <Link
-      href={song?.url}
-      className='group relative mx-auto w-full cursor-pointer text-white/80 shadow-md transition duration-200 ease-out hover:scale-[1.025] hover:text-gray-50'
-    >
-      <motion.div variants={FromLeftChildren}>
+    <Link href={song?.url}>
+      <motion.div
+        variants={FromLeftChildren}
+        className='group relative mx-auto w-full cursor-pointer text-white/80 shadow-md transition-[opacity,transform] duration-200 ease-out hover:scale-[1.025] hover:text-gray-50'
+      >
         <div className='relative h-[360px] w-[260px] overflow-hidden rounded-lg shadow-lg'>
           <Image
             src={song?.thumbnail}
