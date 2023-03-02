@@ -1,5 +1,4 @@
 import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
-import { motion } from 'framer-motion';
 
 import { Heading as AnimatedHeading, Text } from '@/components/FramerMotion';
 import { Image } from '@/components/common';

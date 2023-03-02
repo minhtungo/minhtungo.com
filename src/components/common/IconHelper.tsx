@@ -83,8 +83,6 @@ const IconHelper = ({ type, className }: getIconProps) => {
 
   let Icon;
 
-  console.log(type);
-
   switch (type) {
     case 'NextJS':
       return (
