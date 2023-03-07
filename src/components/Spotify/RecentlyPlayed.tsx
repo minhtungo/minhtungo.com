@@ -26,13 +26,14 @@ const RecentlyPlayed = ({ initialSongs }: { initialSongs: any }) => {
       </Text>
       <Div
         variants={FadeContainer}
-        className='horizontal-scrollbar flex items-center gap-2 overflow-x-scroll md:gap-2 xl:gap-0'
+        className='horizontal-scrollbar flex items-center gap-2 overflow-x-scroll md:gap-2 lg:overflow-hidden xl:gap-0'
       >
         {songs?.map((song, index) => (
           <Link
             className='group relative mx-auto w-full cursor-pointer text-white/80 shadow-md transition duration-200 ease-out hover:scale-[1.025] hover:text-gray-50 '
             href={song?.url}
             key={index}
+            animation={false}
           >
             <motion.div variants={FromLeftChildren}>
               <div className='relative h-[360px] w-[260px] overflow-hidden rounded-lg shadow-lg'>

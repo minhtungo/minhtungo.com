@@ -13,7 +13,7 @@ interface DivContainerProps {
 }
 
 export const DivSpinner = () => (
-  <div role='status' className='mt-[98px] lg:mt-[115px]'>
+  <div role='status' className='mt-[98px] lg:ml-[80px] lg:mt-[140px]'>
     <LoadingSpinner className='mr-2 h-8 w-8 animate-spin fill-blue-500 text-gray-200 dark:text-gray-600' />
     <span className='sr-only'>Loading...</span>
   </div>

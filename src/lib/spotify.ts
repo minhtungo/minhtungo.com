@@ -98,7 +98,7 @@ export const getRecentlyPlayed = async () => {
 
 export const fetchRecentlyPlayedSongs = async () => {
   const recentlyPlayedResponse = await fetch(
-    `${process.env.BASE_URL}/api/spotify/recently-played`,
+    `https://minhtungo.com/api/spotify/recently-played`,
     {
       headers: {
         'Content-Type': 'application/json',

@@ -19,7 +19,7 @@ const About = () => {
 
         <div className='flex w-full flex-col items-center justify-center text-left lg:w-2/3'>
           <Div variants={OpacityVariant}>
-            <div className='flex flex-col text-gray-800 dark:text-neutral-300 '>
+            <div className='flex flex-col text-gray-800 dark:text-neutral-400 '>
               {/* <h3 className='secondary-gradient mb-2 bg-clip-text text-xl font-bold text-transparent md:text-2xl lg:text-3xl'>
                 Minh Tu Ngo
               </h3> */}

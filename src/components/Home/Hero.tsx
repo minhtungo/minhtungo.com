@@ -29,6 +29,7 @@ const Hero = () => {
           width={60}
           height={60}
         />
+
         <LazyDogModel />
       </div>
       {/* Hero Text */}
