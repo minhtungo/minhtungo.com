@@ -33,7 +33,12 @@ const DogModel = ({ className }: DogModelTypes) => {
       <Suspense fallback={null}>
         <Dog />
       </Suspense>
-      <OrbitControls autoRotate autoRotateSpeed={autoRotateSpeed} />
+      <OrbitControls
+        autoRotate
+        autoRotateSpeed={autoRotateSpeed}
+        enablePan={false}
+        enableZoom={false}
+      />
     </Canvas>
   );
 };

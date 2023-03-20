@@ -7,6 +7,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import throttle from 'lodash.throttle';
 
 import MobileMenu from './MobileMenu';
 import NavItem from './NavItem';
