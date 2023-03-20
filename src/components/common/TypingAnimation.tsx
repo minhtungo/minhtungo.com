@@ -22,15 +22,13 @@ const TypingAnimation = (content: any) => {
   ];
 
   return (
-    <div>
-      <TypeAnimation
-        cursor={true}
-        speed={53}
-        sequence={CONTENT}
-        wrapper='p'
-        repeat={Infinity}
-      />
-    </div>
+    <TypeAnimation
+      cursor={true}
+      speed={53}
+      sequence={CONTENT}
+      wrapper='p'
+      repeat={Infinity}
+    />
   );
 };
 export default TypingAnimation;

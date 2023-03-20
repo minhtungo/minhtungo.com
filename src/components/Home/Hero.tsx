@@ -51,9 +51,9 @@ const Hero = () => {
           </span>
           <span className='wave text-2xl md:text-4xl lg:text-5xl'>👋</span>
         </Text>
-        <p className='text-md mt-3 font-medium dark:text-neutral-300 md:text-base lg:mt-4 lg:text-lg'>
+        <div className='text-md mt-3 font-medium dark:text-neutral-300 md:text-base lg:mt-4 lg:text-lg'>
           <TypingAnimation content={CONTENT} />
-        </p>
+        </div>
         <Text
           variants={PopUpFromBottom}
           className='lg:text-md mt-4 text-sm dark:text-neutral-400 md:text-base lg:mt-3'
