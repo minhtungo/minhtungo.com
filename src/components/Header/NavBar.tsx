@@ -54,7 +54,8 @@ const NavBar = () => {
   const control = useAnimation();
 
   // Adding Shadow, backdrop to the navbar as user scroll the screen
-  const addShadowToNavbar = useCallback(() => {
+  const throttledAddShadowToNavbar = throttle(() => {
+    console.log('scrolling');
     if (window.pageYOffset > 10) {
       navRef.current!.classList.add(
         ...[
@@ -82,14 +83,14 @@ const NavBar = () => {
       );
       control.start('hidden');
     }
-  }, [control]);
+  }, 220);
 
   useEffect(() => {
-    window.addEventListener('scroll', addShadowToNavbar);
+    window.addEventListener('scroll', throttledAddShadowToNavbar);
     return () => {
-      window.removeEventListener('scroll', addShadowToNavbar);
+      window.removeEventListener('scroll', throttledAddShadowToNavbar);
     };
-  }, [addShadowToNavbar]);
+  }, []);
 
   return (
     <header
