@@ -1,6 +1,8 @@
+'use client';
+
 import classNames from 'classnames';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 type ImageProps = {
   rounded?: string;
@@ -8,7 +10,7 @@ type ImageProps = {
 
 const Image = (props: ImageProps) => {
   const { alt, src, className, rounded, ...rest } = props;
-  // const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true);
 
   return (
     <div
@@ -21,9 +23,9 @@ const Image = (props: ImageProps) => {
       <NextImage
         className={classNames(
           'duration-700 ease-in-out',
-          // isLoading
-          //   ? 'scale-[1.02] blur-xl grayscale'
-          //   : 'scale-100 blur-0 grayscale-0',
+          isLoading
+            ? 'scale-[1.02] blur-xl grayscale'
+            : 'scale-100 blur-0 grayscale-0',
           rounded,
           className
         )}
@@ -31,7 +33,7 @@ const Image = (props: ImageProps) => {
         alt={alt}
         loading='lazy'
         quality={100}
-        // onLoadingComplete={() => setLoading(false)}
+        onLoadingComplete={() => setLoading(false)}
         {...rest}
       />
     </div>

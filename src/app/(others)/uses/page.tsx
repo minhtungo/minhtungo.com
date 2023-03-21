@@ -1,11 +1,10 @@
 // @ts-nocheck
 
-import { Title } from '@/components/common';
+import { Image, Title } from '@/components/common';
 import { ItemGrid } from '@/components/Uses';
 import { USES_ITEMS } from '@/config/uses';
 
 import type { Metadata } from 'next';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Uses | Minh Tu Ngo',
