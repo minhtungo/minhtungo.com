@@ -1,10 +1,11 @@
 // @ts-nocheck
 
-import { Image, Title } from '@/components/common';
+import { Title } from '@/components/common';
 import { ItemGrid } from '@/components/Uses';
 import { USES_ITEMS } from '@/config/uses';
 
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Uses | Minh Tu Ngo',
@@ -21,8 +22,8 @@ export default function UsesPage() {
       />
       <Image
         src='/static/images/uses/room.jpg'
-        width={1920}
-        height={1080}
+        width={1000}
+        height={580}
         alt='Room'
         className='mb-4 h-full w-full rounded-lg object-cover object-top shadow-lg lg:w-[70%]'
       />
