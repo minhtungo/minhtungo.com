@@ -6,6 +6,7 @@ import { PopUpFromBottom } from '@/lib/framerVariants';
 import { Actions } from '@/components/Guestbook';
 
 import type { Metadata } from 'next';
+import { Title } from '@/components/common';
 
 export const metadata: Metadata = {
   title: 'Guestbook | Minh Tu Ngo',
@@ -32,12 +33,6 @@ export default async function GuestbookPage() {
   // const session = await getServerSession(authOptions);
   return (
     <>
-      <Heading
-        variants={FromLeftVariant}
-        className='primary-gradient mb-2 bg-clip-text text-3xl font-semibold text-transparent lg:text-4xl lg:font-bold'
-      >
-        Guestbook
-      </Heading>
       <Guestbook />
       <Messages initialMessage={messagesWithDateString} />
     </>

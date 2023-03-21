@@ -1,4 +1,4 @@
-export const OFFICE_ITEMS: Item[] = [
+const OFFICE_ITEMS: Item[] = [
   {
     image: '/static/images/uses/laptop.png',
     name: 'Asus TUF F15 FX506',
@@ -55,7 +55,7 @@ export const OFFICE_ITEMS: Item[] = [
   },
 ];
 
-export const CODING = [
+const CODING = [
   {
     image: '/static/images/uses/vscode.png',
     name: 'Visual Studio Code',
@@ -76,7 +76,7 @@ export const CODING = [
   },
 ];
 
-export const OTHER_TECH = [
+const OTHER_TECH = [
   {
     image: '/static/images/uses/phone.png',
     name: 'Samsung Galaxy S23 Green',
@@ -95,4 +95,10 @@ export const OTHER_TECH = [
     description: 'Black',
     url: 'https://amazon.ca/RENPHO-Purifier-Allergies-Eliminator-Bacteria/dp/B0823L8NVN',
   },
+];
+
+export const USES_ITEMS = [
+  { title: 'Office', items: OFFICE_ITEMS },
+  { title: 'Coding', items: CODING },
+  { title: 'Other Tech', items: OTHER_TECH },
 ];

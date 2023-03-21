@@ -8,7 +8,7 @@ const Heading = {
   H2: ({ children }) => (
     <AnimatedHeading
       variants={FromLeftVariant}
-      className='primary-gradient mb-3 bg-clip-text text-3xl font-semibold text-transparent lg:text-4xl lg:font-bold'
+      className='primary-gradient mb-2 bg-clip-text text-3xl font-semibold text-transparent lg:text-4xl lg:font-bold'
     >
       {children}
     </AnimatedHeading>

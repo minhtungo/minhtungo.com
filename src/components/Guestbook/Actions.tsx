@@ -8,7 +8,7 @@ import Button from '@/components/common/Button';
 export default function Component() {
   return (
     <>
-      <div className='mt-3 flex flex-wrap items-center gap-2'>
+      <div className='mt-3 flex flex-wrap items-center gap-2 lg:mt-0'>
         <Button
           variant='secondary'
           size='medium'
