@@ -9,7 +9,7 @@ import { useRef, useState } from 'react';
 
 import Input from './Input';
 
-const ContactForm = () => {
+const ContactForm = ({ className }: { className: string }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
@@ -59,7 +59,7 @@ const ContactForm = () => {
 
   return (
     <motion.form
-      className='mt-2 flex flex-col rounded-lg lg:-mt-2'
+      className={'mt-2 flex flex-col rounded-lg lg:-mt-2' + className}
       initial='hidden'
       whileInView='visible'
       variants={FadeContainer}

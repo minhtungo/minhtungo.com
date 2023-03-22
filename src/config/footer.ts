@@ -37,6 +37,10 @@ const footer = {
           title: 'Contact',
           href: '/contact',
         },
+        {
+          title: 'Source',
+          href: 'https://github.com/minhtungo/minhtungo.com',
+        },
       ],
     },
     {

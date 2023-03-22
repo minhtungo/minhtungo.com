@@ -22,7 +22,7 @@ const Repos = ({ repos, home }: ReposProps) => {
 
       <RepoCard repos={repos} />
       {home && (
-        <div className='group relative mt-4 text-center transition duration-200 motion-reduce:transition-none lg:mt-6'>
+        <div className='group relative mt-4 text-center transition duration-200 motion-reduce:transition-none lg:mt-8'>
           <Button href='/library' variant='secondary'>
             See More Repos{' '}
             <IoMdArrowForward className='ml-1 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0' />
