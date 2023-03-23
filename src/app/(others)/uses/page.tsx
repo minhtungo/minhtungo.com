@@ -22,8 +22,8 @@ export default function UsesPage() {
       />
       <Image
         src='/static/images/uses/room.jpg'
-        width={1000}
-        height={580}
+        width={850}
+        height={500}
         alt='Room'
         className='mb-4 h-full w-full rounded-lg object-cover object-top shadow-lg lg:w-[70%]'
       />

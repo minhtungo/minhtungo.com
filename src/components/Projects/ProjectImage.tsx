@@ -1,15 +1,8 @@
 import React from 'react';
 import { Image } from '@/components/common';
 import classNames from 'classnames';
+import { videoSrc } from '@/config/videoSrc';
 
-const videoSrc = {
-  cinecity:
-    'https://res.cloudinary.com/dks1prxi5/video/upload/v1676348436/cinecity_cpog2b.webm',
-  'job-tracker':
-    'https://res.cloudinary.com/dks1prxi5/video/upload/v1676348435/job-tracker_pjmfs7.webm',
-  kanban:
-    'https://res.cloudinary.com/dks1prxi5/video/upload/v1676348435/kanban_zjghha.webm',
-};
 interface ProjectImageProps {
   src: string;
   name: string;
