@@ -20,27 +20,28 @@ const NowPlaying = () => {
   );
 
   return (
-    <Div className='max-w-[600px]' variants={PopUpFromBottom}>
-      <div className='relative flex h-full flex-row items-center whitespace-pre-wrap break-words rounded border  border-custom-border-black bg-card-background-light p-3 text-sm hover:bg-card-background-light dark:border-transparent-white dark:bg-card-background-dark/10 dark:hover:bg-card-background-dark md:text-base'>
+    <Div className='w-full max-w-[450px]' variants={PopUpFromBottom}>
+      <div className='relative flex h-full flex-row items-center whitespace-pre-wrap break-words rounded text-sm  md:text-base'>
         <Link
           href={
             currentSong?.isPlaying
               ? `${currentSong.url}`
               : 'https://open.spotify.com/user/htnv9ntrl6mx2g0hbwmllbvqx?si=XAKVV0NWSOOnyOvZKGfYSg&nd=1'
           }
+          animation={false}
         >
           {currentSong?.isPlaying ? (
-            <div className='h-auto w-auto'>
+            <div className='h-auto w-auto animate-[spin_5s_linear_infinite] '>
               <Image
                 alt={currentSong.title}
                 src={currentSong.thumbnail}
                 width={60}
                 height={60}
-                className='h-full w-full'
+                className='h-full w-full rounded-full '
               />
             </div>
           ) : (
-            <SiSpotify className='h-10 w-10 fill-[#1DB954]' />
+            <SiSpotify className='h-9 w-9 fill-[#1DB954]' />
           )}
         </Link>
         <div className='ml-4 flex w-full flex-col'>
@@ -65,17 +66,6 @@ const NowPlaying = () => {
                 </div>
               )}
             </div>
-            {currentSong?.isPlaying && (
-              <div className='ml-4 flex animate-[spin_2s_linear_infinite] flex-row'>
-                <Image
-                  src='/static/images/player.svg'
-                  alt='player'
-                  width={60}
-                  height={60}
-                  className='h-10 w-10 sm:h-12 sm:w-12'
-                />
-              </div>
-            )}
           </div>
         </div>
       </div>

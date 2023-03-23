@@ -5,14 +5,13 @@ import { NowPlaying } from '@/components/Spotify';
 
 const Footer = () => {
   return (
-    <footer className='mx-auto max-w-6xl py-6 pt-12 xl:pt-20'>
-      <NowPlaying />
-      <hr className='my-6 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
+    <footer className='py-6 pt-12'>
+      <hr className='my-6 border-transparent-black-tight dark:border-transparent-white' />
       <div className='md:flex md:justify-between'>
-        <div className='mb-6 flex flex-col justify-center md:mb-0'>
+        <div className='mb-6 flex w-fit flex-col justify-center md:mb-0'>
           <div className='flex items-center'>
             <Link href='/' animation={false}>
-              <p className='flex cursor-pointer items-center whitespace-nowrap text-2xl font-semibold dark:text-gray-50'>
+              <p className='flex cursor-pointer items-center whitespace-nowrap text-xl font-semibold dark:text-gray-50'>
                 Minh Tu Ngo.
                 <span className='mx-1 mr-2 rounded-lg bg-black/[7%] px-2 py-1 text-xs dark:bg-white/10'>
                   v2.0.0
@@ -20,12 +19,13 @@ const Footer = () => {
               </p>
             </Link>
           </div>
-          <p className='mt-2 text-sm font-semibold text-gray-700 dark:text-gray-400'>
+          <p className='mt-2 mb-3 text-sm font-semibold text-gray-700 dark:text-gray-400'>
             Powered by NextJS, Vercel and 💖.
           </p>
+          <NowPlaying />
         </div>
 
-        <div className='grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-24'>
+        <div className='grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-24'>
           {footer.categories.map((category, index) => (
             <ul key={index} className='text-gray-600 dark:text-gray-400'>
               {category.links.map((link, index) => (
@@ -47,11 +47,11 @@ const Footer = () => {
           </span>
           🐶
         </Link>
-        <div className='mt-4 flex justify-center space-x-4 sm:mt-0'>
+        <div className='mt-4 flex justify-center space-x-4 text-gray-600 dark:text-gray-400 sm:mt-0'>
           <Icon>
             <Link
               href='https://github.com/minhtungo'
-              className='flex items-center text-gray-500 hover:text-gray-900 dark:hover:text-white'
+              className='ite flex items-center '
               animation={false}
             >
               <FiGithub className='h-5 w-5 hover:text-blue-500' />
@@ -61,7 +61,7 @@ const Footer = () => {
           <Icon>
             <Link
               href='https://linkedin.com/in/minhtungo/'
-              className='flex items-center text-gray-500 hover:text-gray-900 dark:hover:text-white'
+              className='flex items-center '
               animation={false}
             >
               <FiLinkedin className='h-5 w-5 hover:text-blue-500' />

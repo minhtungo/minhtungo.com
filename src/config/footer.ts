@@ -43,23 +43,23 @@ const footer = {
         },
       ],
     },
-    {
-      title: 'Social',
-      links: [
-        {
-          title: 'GitHub',
-          href: 'https://github.com/minhtungo',
-        },
-        {
-          title: 'LinkedIn',
-          href: 'https://www.linkedin.com/in/minhtungo/',
-        },
-        {
-          title: 'Youtube',
-          href: 'https://www.youtube.com/@mn.minhtungo',
-        },
-      ],
-    },
+    // {
+    //   title: 'Social',
+    //   links: [
+    //     {
+    //       title: 'GitHub',
+    //       href: 'https://github.com/minhtungo',
+    //     },
+    //     {
+    //       title: 'LinkedIn',
+    //       href: 'https://www.linkedin.com/in/minhtungo/',
+    //     },
+    //     {
+    //       title: 'Youtube',
+    //       href: 'https://www.youtube.com/@mn.minhtungo',
+    //     },
+    //   ],
+    // },
   ],
 };
 
