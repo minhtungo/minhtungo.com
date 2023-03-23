@@ -27,14 +27,13 @@ const Projects = ({ projects, className, home }: ProjectsProp) => {
           <ProjectItem project={project} key={project._id} />
         ))}
       </div>
-      {home && (
-        <div className='group relative mt-4 text-center transition duration-200 motion-reduce:transition-none lg:mt-8'>
-          <Button href='/projects' variant='secondary'>
-            See More Projects{' '}
-            <IoMdArrowForward className='ml-1 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0' />
-          </Button>
-        </div>
-      )}
+
+      <div className='group relative mt-4 text-center transition duration-200 motion-reduce:transition-none lg:mt-8'>
+        <Button href={home ? '/projects' : '/library'} variant='secondary'>
+          See More Projects{' '}
+          <IoMdArrowForward className='ml-1 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0' />
+        </Button>
+      </div>
     </section>
   );
 };
