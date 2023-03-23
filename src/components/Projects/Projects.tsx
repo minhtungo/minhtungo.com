@@ -6,16 +6,12 @@ import ProjectItem from './ProjectItem';
 
 interface ProjectsProp {
   projects: Project[];
-  className?: string;
   home?: boolean;
 }
 
-const Projects = ({ projects, className, home }: ProjectsProp) => {
+const Projects = ({ projects, home }: ProjectsProp) => {
   return (
-    <section
-      id='projects'
-      className={classNames(className, 'mx-auto', home && 'pt-16 lg:pt-20')}
-    >
+    <section id='projects' className={classNames(home && 'pt-16 lg:pt-20')}>
       <Title
         title='Projects'
         subtitle={home ? '' : 'Showcase of my works on web development.'}
