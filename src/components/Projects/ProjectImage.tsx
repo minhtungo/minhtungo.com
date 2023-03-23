@@ -8,7 +8,6 @@ interface ProjectImageProps {
   name: string;
   url: string;
   className?: string;
-  gifSrc: string;
 }
 
 const ProjectImage = ({

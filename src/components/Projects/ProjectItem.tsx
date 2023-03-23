@@ -22,7 +22,6 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
   >
     <ProjectImage
       src={urlFor(project.image).url()}
-      gifSrc={urlFor(project.gifImage).url()}
       name={project.name}
       url={project.liveURL}
     />
@@ -57,10 +56,10 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
         </div>
       </div>
 
-      <p className='text-sm text-gray-600 dark:text-gray-400 sm:text-base'>
+      <p className='mt-3 text-sm text-gray-600 dark:text-gray-400 sm:text-base'>
         {project.description}
       </p>
-      <div className='mt-3 flex flex-wrap items-center space-x-2'>
+      <div className='mt-3 flex flex-wrap items-center space-x-2 lg:mt-4'>
         {project.tools?.map((tool, index) => {
           return (
             <div

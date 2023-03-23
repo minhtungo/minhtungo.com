@@ -92,7 +92,7 @@ const Contact = ({ home }: { home?: boolean }) => {
             </div>
             {/* Social */}
           </div>
-          <ContactForm className={home ? '!-mt-4' : ''} />
+          <ContactForm className={'mt-2 md:-mt-3'} />
         </div>
       </div>
     </section>

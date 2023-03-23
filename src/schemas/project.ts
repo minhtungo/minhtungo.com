@@ -52,5 +52,10 @@ export default defineType({
       type: 'array',
       of: [{ type: 'string' }],
     }),
+    defineField({
+      name: 'videoSrc',
+      title: 'Video Source',
+      type: 'string',
+    }),
   ],
 });

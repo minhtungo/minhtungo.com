@@ -8,6 +8,7 @@ import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 
 import Input from './Input';
+import classNames from 'classnames';
 
 const ContactForm = ({ className }: { className: string }) => {
   const [name, setName] = useState('');
@@ -59,7 +60,7 @@ const ContactForm = ({ className }: { className: string }) => {
 
   return (
     <motion.form
-      className={'mt-2 flex flex-col rounded-lg lg:-mt-2' + className}
+      className={classNames('flex flex-col rounded-lg', className)}
       initial='hidden'
       whileInView='visible'
       variants={FadeContainer}

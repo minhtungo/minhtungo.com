@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className='mx-auto max-w-6xl py-6 pt-12 xl:pt-20'>
       <NowPlaying />
-      <hr className='my-4 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
+      <hr className='my-6 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
       <div className='md:flex md:justify-between'>
         <div className='mb-6 flex flex-col justify-center md:mb-0'>
           <div className='flex items-center'>
@@ -39,8 +39,8 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className='mt-6 text-center sm:flex sm:items-center sm:justify-between'>
-        <Link href='/'>
+      <div className='mt-8 text-center sm:flex sm:items-center sm:justify-between lg:mt-10'>
+        <Link href='/' animation={false}>
           😸
           <span className='primary-gradient bg-clip-text font-medium text-transparent'>
             Minh Tu Ngo
@@ -52,6 +52,7 @@ const Footer = () => {
             <Link
               href='https://github.com/minhtungo'
               className='flex items-center text-gray-500 hover:text-gray-900 dark:hover:text-white'
+              animation={false}
             >
               <FiGithub className='h-5 w-5 hover:text-blue-500' />
               <span className='sr-only'>Github account</span>
@@ -61,6 +62,7 @@ const Footer = () => {
             <Link
               href='https://linkedin.com/in/minhtungo/'
               className='flex items-center text-gray-500 hover:text-gray-900 dark:hover:text-white'
+              animation={false}
             >
               <FiLinkedin className='h-5 w-5 hover:text-blue-500' />
               <span className='sr-only'>LinkedIn account</span>
