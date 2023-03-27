@@ -27,7 +27,10 @@ const Footer = () => {
 
         <div className='grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-24'>
           {footer.categories.map((category, index) => (
-            <ul key={index} className='text-gray-600 dark:text-gray-400'>
+            <ul
+              key={index}
+              className='text-sm text-gray-600 dark:text-gray-400'
+            >
               {category.links.map((link, index) => (
                 <li className='mt-2' key={index}>
                   <Link href={link.href} icon={category.title === 'Social'}>
