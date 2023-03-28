@@ -26,6 +26,7 @@ export default function UsesPage() {
         height={500}
         alt='Room'
         className='mb-4 h-full w-full rounded-lg object-cover object-top shadow-lg lg:w-[70%]'
+        priority
       />
 
       {USES_ITEMS.map((item) => {
