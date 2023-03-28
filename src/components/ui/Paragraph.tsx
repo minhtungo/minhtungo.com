@@ -8,10 +8,12 @@ const paragraphVariants = cva('mb-3', {
   variants: {
     variant: {
       default: 'text-gray-800 dark:text-gray-300',
+      description: 'text-gray-600 dark:text-gray-400',
     },
     size: {
       default: 'text-sm sm:text-base',
       base: 'text-base',
+      sm: 'text-sm sm:text-[15px]',
     },
   },
   defaultVariants: {

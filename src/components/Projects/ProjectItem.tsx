@@ -5,6 +5,7 @@ import { OpacityVariant } from '@/lib/framerVariants';
 import urlFor from '@/lib/urlFor';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
+import { Paragraph } from '@/components/ui';
 
 import ProjectImage from './ProjectImage';
 
@@ -56,10 +57,10 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
         </div>
       </div>
 
-      <p className='mt-2 text-sm text-gray-600 dark:text-gray-400 sm:text-base'>
+      <Paragraph size='sm' variant='description' className='mt-2'>
         {project.description}
-      </p>
-      <div className='mt-3 flex flex-wrap items-center space-x-2 md:space-x-3 lg:mt-4'>
+      </Paragraph>
+      <div className='mt-3 flex flex-wrap items-center space-x-2 md:space-x-3 lg:mt-3'>
         {project.tools?.map((tool, index) => {
           return (
             <div
