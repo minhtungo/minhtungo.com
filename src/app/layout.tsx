@@ -28,7 +28,7 @@ export default function RootLayout({
           {children}
         </Providers>
         <ToastWrapper />
-        <OnRouteChange />
+        {/* <OnRouteChange /> */}
         <Footer />
       </body>
     </html>
