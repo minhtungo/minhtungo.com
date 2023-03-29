@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import classNames from 'classnames';
+import mergeClassNames from '@/lib/mergeClassNames';
 
 const Avatar = ({
   className,
@@ -39,7 +39,7 @@ const Avatar = ({
   return (
     <span>
       <div
-        className={classNames(
+        className={mergeClassNames(
           'primary-gradient w-full animate-border rounded-full bg-[length:400%_400%] p-[1.5px]',
           !isMobile && 'hidden md:inline-flex',
           isMobile && 'flex md:hidden',
@@ -51,7 +51,7 @@ const Avatar = ({
           alt='Avatar'
           height={50}
           width={50}
-          className={classNames(
+          className={mergeClassNames(
             'rounded-full bg-blue-200 dark:bg-gray-700',
             widthClass,
             heightClass

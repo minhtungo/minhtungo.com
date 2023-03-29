@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import classNames from 'classnames';
-import { Roboto_Mono } from "next/font/google";
+import { Roboto_Mono } from 'next/font/google';
+import mergeClassNames from '@/lib/mergeClassNames';
 
 interface CodeSnippetProps {
   className?: string;
@@ -15,7 +15,7 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
   return (
     <div className={`${roboto_mono.className}`}>
       <div
-        className={classNames(
+        className={mergeClassNames(
           'rounded-lg bg-card-background-light text-sm text-off-white shadow-xl dark:bg-card-background-dark sm:text-base',
           className
         )}
@@ -74,7 +74,7 @@ const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
                 minhtungo.com
               </Link>
               <span
-                className="relative font-semibold text-slate-700 duration-200 after:absolute after:-top-[2px] after:left-3 after:my-auto after:animate-cursor after:sm:text-base after:content-['|'] motion-reduce:transition-none dark:text-slate-300"
+                className="relative font-semibold text-slate-700 duration-200 after:absolute after:-top-[2px] after:left-3 after:my-auto after:animate-cursor after:content-['|'] motion-reduce:transition-none dark:text-slate-300 after:sm:text-base"
                 aria-hidden='true'
               >
                 {"'"}

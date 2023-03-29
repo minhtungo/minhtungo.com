@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image } from '@/components/common';
-import classNames from 'classnames';
 import { videoSrc } from '@/config/videoSrc';
+import mergeClassNames from '@/lib/mergeClassNames';
 
 interface ProjectImageProps {
   src: string;
@@ -20,7 +20,7 @@ const ProjectImage = ({
 
   return (
     <a
-      className={classNames(
+      className={mergeClassNames(
         'group relative -mt-[30%] w-[100%] shrink-0 overflow-hidden rounded-t-lg rounded-b-none shadow-2xl before:absolute before:inset-0 before:z-10 before:bg-black/20 sm:-mt-4 md:mt-0 md:w-[60%] lg:rounded-lg',
         className
       )}

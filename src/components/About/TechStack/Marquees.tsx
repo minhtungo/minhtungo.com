@@ -1,6 +1,5 @@
 import { CSSProperties, FC } from 'react';
 import Marquee from 'react-fast-marquee';
-import classNames from 'classnames';
 
 interface MarqueesProps {
   className?: string;
@@ -25,7 +24,7 @@ const Marquees: FC<MarqueesProps> = ({
       gradient={gradient}
       pauseOnHover={pauseOnHover}
       speed={speed}
-      className={classNames('', className)}
+      className={className}
       style={style}
       {...props}
     >

@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import mergeClassNames from '@/lib/mergeClassNames';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -6,7 +6,9 @@ interface LayoutProps {
 }
 const Container = ({ children, className }: LayoutProps) => {
   return (
-    <main className={classNames('pt-20 md:pt-24', className)}>{children}</main>
+    <main className={mergeClassNames('pt-20 md:pt-24', className)}>
+      {children}
+    </main>
   );
 };
 

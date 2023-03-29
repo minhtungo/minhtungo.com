@@ -1,5 +1,4 @@
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
-import classNames from 'classnames';
 import { Button } from '@/components/ui';
 
 type LinkProps = {

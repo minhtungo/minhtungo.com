@@ -1,5 +1,5 @@
 import { Button, Title } from '@/components/common';
-import classNames from 'classnames';
+import { clsx } from 'clsx';
 import { IoMdArrowForward } from 'react-icons/io';
 
 import RepoCard from './RepoCard';
@@ -11,7 +11,7 @@ interface ReposProps {
 
 const Repos = ({ repos, home }: ReposProps) => {
   return (
-    <section id='repos' className={classNames(home && 'pt-16 lg:pt-20')}>
+    <section id='repos' className={clsx(home && 'pt-16 lg:pt-20')}>
       <Title
         title='Library'
         subtitle={
@@ -19,7 +19,6 @@ const Repos = ({ repos, home }: ReposProps) => {
         }
         home={home}
       />
-
       <RepoCard repos={repos} />
       {home && (
         <div className='group relative mt-4 text-center transition duration-200 motion-reduce:transition-none lg:mt-8'>

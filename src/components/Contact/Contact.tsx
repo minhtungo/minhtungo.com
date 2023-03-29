@@ -1,7 +1,7 @@
 import { Icon, Title } from '@/components/common';
 import { Text } from '@/components/ui/FramerMotion';
 import { PopUpFromBottom } from '@/lib/framerVariants';
-import classNames from 'classnames';
+import mergeClassNames from '@/lib/mergeClassNames';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
@@ -13,7 +13,7 @@ const Contact = ({ home }: { home?: boolean }) => {
   return (
     <section
       id='contact'
-      className={classNames('relative', home && 'pt-16 lg:pt-20')}
+      className={mergeClassNames('relative', home && 'pt-16 lg:pt-20')}
     >
       <Image
         className='absolute left-0 top-4 mx-auto h-auto w-auto animate-pulse sm:left-[10%] md:left-[15%] lg:left-[27.5%]'

@@ -1,6 +1,6 @@
 'use client';
 
-import classNames from 'classnames';
+import mergeClassNames from '@/lib/mergeClassNames';
 import NextImage, { ImageProps as NextImageProps } from 'next/image';
 import { useState } from 'react';
 
@@ -14,14 +14,14 @@ const Image = (props: ImageProps) => {
 
   return (
     <div
-      className={classNames(
+      className={mergeClassNames(
         'overflow-hidden',
         // isLoading ? 'animate-pulse' : '',
         rounded
       )}
     >
       <NextImage
-        className={classNames(
+        className={mergeClassNames(
           'duration-700 ease-in-out',
           isLoading
             ? 'scale-[1.02] blur-xl grayscale'

@@ -1,6 +1,6 @@
 import { Heading, Text } from '@/components/ui/FramerMotion';
 import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
-import classNames from 'classnames';
+import mergeClassNames from '@/lib/mergeClassNames';
 
 interface TitleProps {
   title: string;
@@ -11,13 +11,11 @@ interface TitleProps {
 
 const Title = ({ title, subtitle, className, home }: TitleProps) => {
   return (
-    <div className={classNames('mb-8', className, home && 'text-left')}>
+    <div className={mergeClassNames('mb-8', className, home && 'text-left')}>
       <div className='mb-2 flex items-center'>
         <Heading
           variants={FromLeftVariant}
-          className={classNames(
-            'primary-gradient bg-clip-text text-xl font-semibold text-transparent md:text-2xl lg:text-3xl lg:font-bold'
-          )}
+          className='primary-gradient bg-clip-text text-xl font-semibold text-transparent md:text-2xl lg:text-3xl lg:font-bold'
         >
           {title}
         </Heading>

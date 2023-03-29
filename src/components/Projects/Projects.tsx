@@ -1,5 +1,5 @@
 import { Button, Title } from '@/components/common';
-import classNames from 'classnames';
+import mergeClassNames from '@/lib/mergeClassNames';
 import { IoMdArrowForward } from 'react-icons/io';
 
 import ProjectItem from './ProjectItem';
@@ -11,7 +11,10 @@ interface ProjectsProp {
 
 const Projects = ({ projects, home }: ProjectsProp) => {
   return (
-    <section id='projects' className={classNames(home && 'pt-16 lg:pt-20')}>
+    <section
+      id='projects'
+      className={mergeClassNames(home && 'pt-16 lg:pt-20')}
+    >
       <Title
         title='Projects'
         subtitle={home ? '' : 'Showcase of my works on web development.'}

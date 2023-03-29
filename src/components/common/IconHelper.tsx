@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import mergeClassNames from '@/lib/mergeClassNames';
 import Image from 'next/image';
 import Code from 'public/static/icons/code.svg';
 import Bootstrap from 'public/static/images/stack/bootstrap.svg';
@@ -130,7 +130,9 @@ const IconHelper = ({ type, className }: getIconProps) => {
 
   if (!Icon) return null;
   // @ts-ignore
-  return <Icon className={classNames('h-4 w-4', customClasses, className)} />;
+  return (
+    <Icon className={mergeClassNames('h-4 w-4', customClasses, className)} />
+  );
 };
 
 export default IconHelper;
