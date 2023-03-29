@@ -16,7 +16,7 @@ export default function AnimatedText({
   infinity,
 }: AnimatedTextProps) {
   return (
-    <motion.p
+    <motion.div
       initial='hidden'
       whileInView='visible'
       viewport={{ once: !infinity }}
@@ -24,6 +24,6 @@ export default function AnimatedText({
       className={className}
     >
       {children}
-    </motion.p>
+    </motion.div>
   );
 }

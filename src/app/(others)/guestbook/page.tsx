@@ -1,4 +1,4 @@
-import { Heading, Text } from '@/components/FramerMotion';
+import { Heading, Text } from '@/components/ui/FramerMotion';
 import { Messages, Guestbook } from '@/components/Guestbook';
 import { FromLeftVariant } from '@/lib/framerVariants';
 import prisma from '@/lib/prismadb';

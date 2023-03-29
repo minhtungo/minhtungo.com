@@ -1,7 +1,7 @@
 'use client';
 
 import { Title, IconHelper } from '@/components/common';
-import { Div } from '@/components/FramerMotion';
+import { Div } from '@/components/ui/FramerMotion';
 import { FadeContainer, PopUp, PopUpFromBottom } from '@/lib/framerVariants';
 
 import techStack from '@/config/techStack';
@@ -15,7 +15,7 @@ const Skills = () => {
   return (
     <section id='skills'>
       <Div variants={PopUpFromBottom}>
-        <Title title='My Skills' home={true} />
+        <Title title='Favorite Techs' home={true} />
       </Div>
       <motion.div
         initial='hidden'
@@ -39,9 +39,9 @@ const Skills = () => {
             <div className='pointer-events-none relative select-none transition group-hover:scale-110 sm:group-hover:scale-100'>
               <IconHelper type={tech.name} className='h-8 w-8' />
             </div>
-            <p className='pointer-events-none hidden select-none text-sm font-semibold sm:inline-flex md:text-base'>
+            <span className='pointer-events-none hidden select-none text-sm font-semibold sm:inline-flex md:text-base'>
               {tech.name}
-            </p>
+            </span>
           </motion.div>
         ))}
       </motion.div>

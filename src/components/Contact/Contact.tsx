@@ -1,5 +1,5 @@
 import { Icon, Title } from '@/components/common';
-import { Text } from '@/components/FramerMotion';
+import { Text } from '@/components/ui/FramerMotion';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import classNames from 'classnames';
 import Image from 'next/image';

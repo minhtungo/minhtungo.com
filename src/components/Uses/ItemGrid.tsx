@@ -1,7 +1,7 @@
 'use client';
 
 import { Image, Link } from '@/components/common';
-import { Div } from '@/components/FramerMotion';
+import { Div } from '@/components/ui/FramerMotion';
 import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
 
@@ -30,17 +30,16 @@ const ItemGrid = ({ items }: ItemGridProps) => {
             className='m-0 h-24 w-24 object-contain sm:h-28 sm:w-40'
           />
           <div className='mt-2 flex flex-col gap-2 sm:text-center'>
-            <span>
-              <Link
-                href={item.url}
-                className='font-semibold text-gray-700 dark:text-gray-200'
-              >
-                {item.name}
-              </Link>
-            </span>
-            <span className='text-sm font-medium text-gray-600/90 dark:text-gray-300/90'>
+            <Link
+              href={item.url}
+              className='mx-auto w-fit font-semibold text-gray-700 dark:text-gray-200'
+            >
+              {item.name}
+            </Link>
+
+            <p className='text-sm font-medium text-gray-600/90 dark:text-gray-300/90'>
               {item.description}
-            </span>
+            </p>
           </div>
         </motion.li>
       ))}

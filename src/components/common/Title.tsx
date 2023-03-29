@@ -1,4 +1,4 @@
-import { Heading, Text } from '@/components/FramerMotion';
+import { Heading, Text } from '@/components/ui/FramerMotion';
 import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
 import classNames from 'classnames';
 

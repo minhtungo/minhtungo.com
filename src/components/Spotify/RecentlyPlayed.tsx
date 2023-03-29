@@ -3,7 +3,7 @@
 import { Image, Link } from '@/components/common';
 import fetcher from '@/lib/fetcher';
 import useSWR from 'swr';
-import { Div, Text } from '@/components/FramerMotion';
+import { Div, Text } from '@/components/ui/FramerMotion';
 import {
   FadeContainer,
   FromLeftChildren,

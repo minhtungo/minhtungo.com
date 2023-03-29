@@ -1,13 +1,13 @@
 'use client';
 
 import { Icon, Link, IconHelper } from '@/components/common';
-import { Div } from '@/components/FramerMotion';
+import { Div } from '@/components/ui/FramerMotion';
 import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { TbSourceCode } from 'react-icons/tb';
-import { Paragraph } from '../ui';
+import { Heading, Paragraph } from '@/components/ui';
 
 interface RepoProps {
   repo: Repo;
@@ -19,9 +19,9 @@ const Card = ({ repo }: RepoProps) => {
       <div className='flex items-center'>
         <div className='flex items-center space-x-1'>
           <TbSourceCode className='text-2xl text-blue-500 dark:text-blue-400' />
-          <h2 className='lg:text-md text-base font-semibold text-gray-800 dark:text-gray-100'>
+          <Heading size='sm' as='h3'>
             {repo.name}
-          </h2>
+          </Heading>
         </div>
         <div className='ml-auto flex items-center gap-3 text-[22px]'>
           <Icon>

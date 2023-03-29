@@ -5,7 +5,7 @@ import { OpacityVariant } from '@/lib/framerVariants';
 import urlFor from '@/lib/urlFor';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import { Paragraph } from '@/components/ui';
+import { Heading, Paragraph } from '@/components/ui';
 
 import ProjectImage from './ProjectImage';
 
@@ -29,9 +29,9 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
 
     <div className='-mt-14 flex w-full flex-col justify-start rounded-lg border border-custom-border-black bg-card-background-light p-4 pt-14 shadow-md dark:border-transparent-white dark:bg-card-background-dark md:-ml-1 md:mt-0 md:p-5 '>
       <div className='flex items-center'>
-        <h3 className='text-lg font-semibold capitalize text-gray-800 dark:text-gray-300'>
+        <Heading size='md' as='h3'>
           {project.name}
-        </h3>
+        </Heading>
         <div className='ml-auto flex items-center gap-3'>
           <Icon>
             <Link

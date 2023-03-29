@@ -1,8 +1,9 @@
 import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
 import Image from 'next/image';
-import { Text } from '@/components/FramerMotion';
+import { Text } from '@/components/ui/FramerMotion';
 import { Link, Button, TypingAnimation } from '@/components/common';
 import { LazyDogModel } from '@/components/Home';
+import { Heading } from '@/components/ui';
 
 const CONTENT = [
   'I Love Bubble Tea.',
@@ -46,17 +47,22 @@ const Hero = () => {
           Hi, I am
         </Text>
         <Text variants={FromLeftVariant}>
-          <span className='primary-gradient bg-clip-text text-2xl font-bold text-transparent md:text-4xl lg:text-5xl'>
+          <Heading
+            variant='gradient'
+            size='lg'
+            weight='bold'
+            className='primary-gradient inline pb-2'
+          >
             Minh Tu Ngo.
-          </span>
+          </Heading>
           <span className='wave text-2xl md:text-4xl lg:text-5xl'>👋</span>
         </Text>
-        <div className='text-md mt-3 font-medium dark:text-neutral-300 md:text-base lg:mt-4 lg:text-lg'>
+        <div className='text-md mt-3 font-medium dark:text-neutral-300 md:mt-4 md:text-base lg:ml-[2px] lg:text-lg'>
           <TypingAnimation content={CONTENT} />
         </div>
         <Text
           variants={PopUpFromBottom}
-          className='lg:text-md mt-4 text-sm dark:text-neutral-400 md:text-base lg:mt-3'
+          className='lg:text-md mt-4 text-sm dark:text-neutral-400 md:text-base lg:ml-[1px] lg:mt-3'
         >
           {"Don't forget to sign my"}{' '}
           <Link
@@ -69,7 +75,7 @@ const Hero = () => {
         </Text>
 
         {/* buttons */}
-        <div className='mt-5 flex flex-col justify-center gap-3 sm:flex-row md:justify-start'>
+        <div className='mt-5 flex flex-col justify-center gap-3 sm:flex-row md:justify-start lg:ml-[1px]'>
           <Button href='#contact' size='large'>
             Let{"'"}s Connect
           </Button>

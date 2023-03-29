@@ -1,6 +1,6 @@
 'use client';
 
-import { Div } from '@/components/FramerMotion';
+import { Div } from '@/components/ui/FramerMotion';
 import Image from '@/components/common/Image';
 import Link from '@/components/common/Link';
 import fetcher from '@/lib/fetcher';

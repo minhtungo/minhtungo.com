@@ -1,7 +1,7 @@
 'use client';
 
 import { Title } from '@/components/common';
-import { Div } from '@/components/FramerMotion';
+import { Div } from '@/components/ui/FramerMotion';
 import { OpacityVariant } from '@/lib/framerVariants';
 import { Paragraph } from '@/components/ui';
 

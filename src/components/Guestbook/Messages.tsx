@@ -1,7 +1,7 @@
 'use client';
 
 import Image from '@/components/common/Image';
-import { Div } from '@/components/FramerMotion';
+import { Div } from '@/components/ui/FramerMotion';
 import fetcher from '@/lib/fetcher';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import useSWR from 'swr';
