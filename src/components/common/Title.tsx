@@ -15,7 +15,7 @@ const Title = ({ title, subtitle, className, home }: TitleProps) => {
       <div className='mb-2 flex items-center'>
         <Heading
           variants={PopUpFromBottom}
-          className='primary-gradient bg-clip-text text-xl font-semibold text-transparent md:text-2xl lg:text-3xl lg:font-bold'
+          className='primary-gradient bg-clip-text text-2xl font-semibold text-transparent lg:text-3xl lg:font-bold'
         >
           {title}
         </Heading>
