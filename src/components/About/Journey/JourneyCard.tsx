@@ -1,4 +1,5 @@
 import IconHelper from '@/components/common/IconHelper';
+import { Paragraph } from '@/components/ui';
 
 interface JourneyCardProps {
   journey: Journey;
@@ -43,9 +44,9 @@ const JourneyCard = ({ journey }: JourneyCardProps) => {
           journey.date
         )}
       </time>
-      <p className='my-1 max-w-none text-sm text-gray-600 dark:text-gray-400 sm:text-base '>
+      <Paragraph size='sm' variant='description' className='mt-1'>
         {journey.description}
-      </p>
+      </Paragraph>
     </div>
   );
 };

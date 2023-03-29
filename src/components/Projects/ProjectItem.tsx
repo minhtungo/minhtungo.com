@@ -57,7 +57,7 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
         </div>
       </div>
 
-      <Paragraph size='sm' variant='description' className='mt-2'>
+      <Paragraph size='sm' variant='description' className='my-2'>
         {project.description}
       </Paragraph>
       <div className='mt-3 flex flex-wrap items-center space-x-2 md:space-x-3 lg:mt-3'>

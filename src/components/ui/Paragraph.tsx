@@ -4,7 +4,7 @@ import { HTMLAttributes } from 'react';
 
 import { FC } from 'react';
 
-const paragraphVariants = cva('mb-3', {
+const paragraphVariants = cva('', {
   variants: {
     variant: {
       default: 'text-gray-800 dark:text-gray-300',

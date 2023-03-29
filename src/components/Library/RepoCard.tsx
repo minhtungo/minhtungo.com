@@ -5,8 +5,9 @@ import { Div } from '@/components/FramerMotion';
 import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 
 import { motion } from 'framer-motion';
-import { AiOutlineFolder } from 'react-icons/ai';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
+import { TbSourceCode } from 'react-icons/tb';
+import { Paragraph } from '../ui';
 
 interface RepoProps {
   repo: Repo;
@@ -16,8 +17,8 @@ const Card = ({ repo }: RepoProps) => {
   return (
     <div className='hover:text-shadow h-full rounded bg-card-background-light p-4 hover:shadow-primary dark:bg-card-background-dark'>
       <div className='flex items-center'>
-        <div className='flex items-center space-x-2'>
-          <AiOutlineFolder className='text-2xl text-blue-500 dark:text-blue-400' />
+        <div className='flex items-center space-x-1'>
+          <TbSourceCode className='text-2xl text-blue-500 dark:text-blue-400' />
           <h2 className='lg:text-md text-base font-semibold text-gray-800 dark:text-gray-300'>
             {repo.name}
           </h2>
@@ -45,8 +46,11 @@ const Card = ({ repo }: RepoProps) => {
           )}
         </div>
       </div>
+      <Paragraph variant='description' className='mt-2 ml-[2.5px] !text-sm'>
+        {repo.description}
+      </Paragraph>
       {/* Tech Stack */}
-      <div className='mt-2 flex flex-wrap items-center space-x-2'>
+      <div className='mt-2 flex flex-wrap items-center space-x-2 sm:mt-3'>
         {repo.tools.map((tool) => (
           <div
             className='group relative flex justify-center transition duration-200 ease-linear'
@@ -59,9 +63,6 @@ const Card = ({ repo }: RepoProps) => {
           </div>
         ))}
       </div>
-      <p className='mt-4 text-sm text-gray-600 dark:text-gray-400'>
-        {repo.description}
-      </p>
     </div>
   );
 };
