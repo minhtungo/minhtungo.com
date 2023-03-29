@@ -2,7 +2,7 @@
 
 import { Avatar, Icon, Link, Logo } from '@/components/common';
 import { links } from '@/config/routes';
-import { FadeContainer, FromLeftVariant } from '@/lib/framerVariants';
+import { FadeContainer, FromLeftVariant, PopUp } from '@/lib/framerVariants';
 import { motion, useAnimation } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
@@ -83,7 +83,7 @@ const NavBar = () => {
       );
       control.start('hidden');
     }
-  }, 220);
+  }, 60);
 
   useEffect(() => {
     window.addEventListener('scroll', throttledAddShadowToNavbar);
@@ -120,13 +120,13 @@ const NavBar = () => {
               initial='hidden'
               animate='visible'
               variants={FadeContainer}
-              className='flex items-center lg:gap-2'
+              className='flex items-center lg:gap-1'
             >
               {links.map((link, index) => {
                 return (
-                  <li key={index}>
+                  <motion.li key={index} variants={PopUp}>
                     <NavItem href={link.href} label={link.label} />
-                  </li>
+                  </motion.li>
                 );
               })}
             </motion.ul>
