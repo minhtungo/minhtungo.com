@@ -19,7 +19,7 @@ const Card = ({ repo }: RepoProps) => {
       <div className='flex items-center'>
         <div className='flex items-center space-x-1'>
           <TbSourceCode className='text-2xl text-blue-500 dark:text-blue-400' />
-          <h2 className='lg:text-md text-base font-semibold text-gray-800 dark:text-gray-300'>
+          <h2 className='lg:text-md text-base font-semibold text-gray-800 dark:text-gray-100'>
             {repo.name}
           </h2>
         </div>
