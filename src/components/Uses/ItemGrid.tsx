@@ -30,12 +30,14 @@ const ItemGrid = ({ items }: ItemGridProps) => {
             className='m-0 h-24 w-24 object-contain sm:h-28 sm:w-40'
           />
           <div className='mt-2 flex flex-col gap-2 sm:text-center'>
-            <Link
-              href={item.url}
-              className='w-fit font-semibold text-gray-700 dark:text-gray-200 sm:mx-auto'
-            >
-              {item.name}
-            </Link>
+            <span>
+              <Link
+                href={item.url}
+                className='font-semibold text-gray-700 dark:text-gray-200'
+              >
+                {item.name}
+              </Link>
+            </span>
 
             <p className='text-sm font-medium text-gray-600/90 dark:text-gray-300/90'>
               {item.description}
