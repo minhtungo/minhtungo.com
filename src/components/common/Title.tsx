@@ -14,7 +14,7 @@ const Title = ({ title, subtitle, className, home }: TitleProps) => {
     <div className={mergeClassNames('mb-8', className, home && 'text-left')}>
       <div className='mb-2 flex items-center'>
         <Heading
-          variants={FromLeftVariant}
+          variants={PopUpFromBottom}
           className='primary-gradient bg-clip-text text-xl font-semibold text-transparent md:text-2xl lg:text-3xl lg:font-bold'
         >
           {title}
@@ -27,7 +27,7 @@ const Title = ({ title, subtitle, className, home }: TitleProps) => {
       {subtitle && (
         <Text
           variants={PopUpFromBottom}
-          className='mt-2 text-[17px] tracking-wide text-gray-900 dark:text-neutral-400'
+          className='mt-2 text-[15px] tracking-wide text-gray-900 dark:text-neutral-400 md:text-[17px]'
         >
           {subtitle}
         </Text>
