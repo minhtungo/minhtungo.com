@@ -12,7 +12,7 @@ const TypingAnimation = (content: any) => {
   if (!mounted) return null;
 
   const CONTENT = [
-    'I Love Bubble Tea.',
+    'I Love Building LEGO.',
     1000,
     'I Love Building Things For The Web.',
     1000,

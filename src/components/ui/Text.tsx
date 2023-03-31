@@ -4,16 +4,19 @@ import { HTMLAttributes } from 'react';
 
 import { FC } from 'react';
 
-const paragraphVariants = cva('', {
+const textVariants = cva('', {
   variants: {
     variant: {
       default: 'text-gray-800 dark:text-gray-300',
       description: 'text-gray-600 dark:text-gray-400',
+      title: 'text-gray-800 dark:text-gray-300 font-semibold',
     },
     size: {
       default: 'text-sm sm:text-base',
-      base: 'text-base',
       sm: 'text-sm sm:text-[15px]',
+      md: 'text-[15px] md:text-base',
+      base: 'text-base',
+      lg: 'text-[17px] md:text-lg',
     },
   },
   defaultVariants: {
@@ -22,27 +25,38 @@ const paragraphVariants = cva('', {
   },
 });
 
-interface ParagraphProps
+interface TextProps
   extends HTMLAttributes<HTMLParagraphElement>,
-    VariantProps<typeof paragraphVariants> {}
+    VariantProps<typeof textVariants> {
+  as?: string;
+}
 
-const Paragraph: FC<ParagraphProps> = ({
+const Text: FC<TextProps> = ({
   className,
   size,
   variant,
+  as,
   children,
   ...props
 }) => {
+  if (as === 'span') {
+    return (
+      <span
+        {...props}
+        className={mergeClassNames(textVariants({ size, className, variant }))}
+      >
+        {children}
+      </span>
+    );
+  }
   return (
     <p
       {...props}
-      className={mergeClassNames(
-        paragraphVariants({ size, className, variant })
-      )}
+      className={mergeClassNames(textVariants({ size, className, variant }))}
     >
       {children}
     </p>
   );
 };
 
-export default Paragraph;
+export default Text;

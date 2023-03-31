@@ -3,7 +3,7 @@
 import { Title } from '@/components/common';
 import { Div } from '@/components/ui/FramerMotion';
 import { OpacityVariant } from '@/lib/framerVariants';
-import { Paragraph } from '@/components/ui';
+import { Text } from '@/components/ui';
 
 import ProfileCard from './ProfileCard';
 
@@ -20,24 +20,24 @@ const About = () => {
         <div className='flex w-full flex-col items-center justify-center text-left lg:w-2/3'>
           <Div variants={OpacityVariant}>
             <div className='flex flex-col'>
-              <Paragraph className='mb-3'>
+              <Text className='mb-3'>
                 {
                   'My journey in web development began with the classic "Hello World" console output, which ignited a deep passion for creating exceptional web experiences. Since then, I have continually strived to learn and get feedback to make myself better and improve.'
                 }
-              </Paragraph>
-              <Paragraph className='mb-3'>
+              </Text>
+              <Text className='mb-3'>
                 As a dedicated and passionate Web Developer, I specialize in
                 using cutting-edge technologies such as React and NextJS to
                 build powerful and scalable web application. I am focused on
                 being a valuable part of any team I am on and I love working
                 with dedicated teams to create amazing web applications to make
                 the internet a better place.
-              </Paragraph>
-              <Paragraph className='mb-3'>
+              </Text>
+              <Text className='mb-3'>
                 {
                   "I am constantly looking for new opportunities to learn and grow as a developer. If you're looking for a driven and enthusiastic team player to help create amazing web applications, let's work together!"
                 }
-              </Paragraph>
+              </Text>
             </div>
           </Div>
         </div>

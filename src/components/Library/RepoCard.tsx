@@ -7,7 +7,7 @@ import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { TbSourceCode } from 'react-icons/tb';
-import { Heading, Paragraph } from '@/components/ui';
+import { Heading, Text } from '@/components/ui';
 
 interface RepoProps {
   repo: Repo;
@@ -19,9 +19,9 @@ const Card = ({ repo }: RepoProps) => {
       <div className='flex items-center'>
         <div className='flex items-center space-x-1'>
           <TbSourceCode className='text-2xl text-blue-500 dark:text-blue-400' />
-          <Heading size='sm' as='h3'>
+          <Text size='md' as='span' variant='title'>
             {repo.name}
-          </Heading>
+          </Text>
         </div>
         <div className='ml-auto flex items-center gap-3 text-[22px]'>
           <Icon>
@@ -46,9 +46,9 @@ const Card = ({ repo }: RepoProps) => {
           )}
         </div>
       </div>
-      <Paragraph variant='description' className='mt-2 ml-[2.5px] !text-sm'>
+      <Text variant='description' className='mt-2 ml-[2.5px] !text-sm'>
         {repo.description}
-      </Paragraph>
+      </Text>
       {/* Tech Stack */}
       <div className='mt-2 flex flex-wrap items-center space-x-2 sm:mt-3'>
         {repo.tools.map((tool) => (

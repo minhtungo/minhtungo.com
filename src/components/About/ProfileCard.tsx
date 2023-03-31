@@ -65,23 +65,19 @@ const ProfileCard = () => {
       <div className='w-full space-y-4 divide-y divide-custom-border-black dark:divide-transparent-white'>
         <div className='flex items-center justify-center space-x-3'>
           <Button
-            href='mailto:mn.minhtungo@gmail.com'
-            className='w-full flex-1'
+            href='https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
+            className='flex w-full flex-1 items-center'
           >
-            <span className='flex items-center'>
-              <MdOutlineEmail className='mr-[1.5px] h-4 w-4' />
-              Message
-            </span>
+            <RiFileCodeLine className='mr-[1.5px] h-4 w-4' />
+            Resume
           </Button>
           <Button
-            href='https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
+            href='mailto:mn.minhtungo@gmail.com'
             variant='secondary'
-            className='w-full flex-1'
+            className='flex w-full flex-1 items-center'
           >
-            <span className='flex items-center'>
-              <RiFileCodeLine className='mr-[1.5px] h-4 w-4' />
-              Resume
-            </span>
+            <MdOutlineEmail className='mr-[1.5px] h-4 w-4' />
+            Message
           </Button>
         </div>
       </div>

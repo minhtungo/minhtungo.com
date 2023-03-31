@@ -1,5 +1,6 @@
 import IconHelper from '@/components/common/IconHelper';
-import { Paragraph } from '@/components/ui';
+
+import { Text } from '@/components/ui';
 
 interface JourneyCardProps {
   journey: Journey;
@@ -25,9 +26,9 @@ const JourneyCard = ({ journey }: JourneyCardProps) => {
         />
       </span>
       <div className='flex w-full items-center'>
-        <h3 className='md:text-md text-base font-semibold text-gray-800 dark:text-gray-300'>
+        <Text variant='title' size='md'>
           {journey.title}
-        </h3>
+        </Text>
         {journey.status ? (
           <span className='flex- ml-3 hidden rounded bg-blue-200 px-2 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-400 dark:text-blue-900 md:inline md:text-sm'>
             {journey.status}
@@ -44,9 +45,9 @@ const JourneyCard = ({ journey }: JourneyCardProps) => {
           journey.date
         )}
       </time>
-      <Paragraph size='sm' variant='description' className='mt-1'>
+      <Text size='sm' variant='description' className='mt-1'>
         {journey.description}
-      </Paragraph>
+      </Text>
     </div>
   );
 };

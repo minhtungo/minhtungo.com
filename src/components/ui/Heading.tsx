@@ -4,15 +4,15 @@ import mergeClassNames from '@/lib/mergeClassNames';
 
 const headingVariants = cva('capitalize', {
   variants: {
+    variant: {
+      gradient: 'bg-clip-text text-transparent',
+      default: 'text-gray-800 dark:text-gray-200',
+    },
     size: {
-      default: 'text-xl md:text-2xl lg:text-3xl',
+      default: 'text-lg md:text-xl lg:text-2xl',
       sm: 'text-[15px] md:text-base',
       md: 'text-lg',
       lg: 'text-2xl md:text-4xl lg:text-5xl',
-    },
-    variant: {
-      gradient: 'bg-clip-text text-transparent',
-      default: 'text-gray-800 dark:text-gray-100',
     },
     weight: {
       semibold: 'font-semibold',

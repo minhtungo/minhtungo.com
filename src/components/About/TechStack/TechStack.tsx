@@ -3,13 +3,14 @@
 import Marquees from './Marquees';
 import techStack from '@/config/techStack';
 import { Image } from '@/components/common';
+import { Heading } from '@/components/ui';
 
 const TechStack = () => {
   return (
     <section id='technologies' className='mx-auto pt-6'>
-      <h3 className='mb-1 bg-clip-text text-lg font-semibold text-gray-800 dark:text-gray-300 md:text-xl lg:text-2xl'>
+      <Heading as='h3' className='mb-1 md:mb-3'>
         Some Technologies I Have Used Recently
-      </h3>
+      </Heading>
       <Marquees className='py-4 pb-6'>
         {techStack.map((tech) => (
           <div

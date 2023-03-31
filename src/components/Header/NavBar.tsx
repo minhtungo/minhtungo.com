@@ -12,6 +12,14 @@ import throttle from 'lodash.throttle';
 import MobileMenu from './MobileMenu';
 import NavItem from './NavItem';
 
+import { Manrope } from 'next/font/google';
+import clsx from 'clsx';
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  display: 'swap',
+});
+
 const NavBar = () => {
   const { systemTheme, theme, setTheme } = useTheme();
 
@@ -94,7 +102,10 @@ const NavBar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 w-full backdrop-filter`}
+      className={clsx(
+        'fixed top-0 left-0 right-0 z-50 w-full backdrop-filter',
+        manrope.className
+      )}
       ref={navRef}
     >
       <div className='mx-auto flex max-w-6xl items-center justify-between py-2 px-6 xl:px-0'>

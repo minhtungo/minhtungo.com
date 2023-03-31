@@ -9,11 +9,12 @@ interface CodeSnippetProps {
 const roboto_mono = Roboto_Mono({
   subsets: ['latin'],
   variable: '--font-roboto_mono',
+  display: 'swap',
 });
 
 const CodeSnippet = ({ className = '' }: CodeSnippetProps) => {
   return (
-    <div className={`${roboto_mono.className}`}>
+    <div className={roboto_mono.className}>
       <div
         className={mergeClassNames(
           'rounded-lg bg-card-background-light text-sm text-off-white shadow-xl dark:bg-card-background-dark sm:text-base',

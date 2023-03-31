@@ -7,7 +7,7 @@ import { client, projectHomeQuery, repoHomeQuery } from '@/lib/sanity.client';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Home | Minh Tu Ngo',
+  title: 'Minh Tu Ngo',
   description:
     'My personal portfolio to showcase my work. Built with NextJS, Tailwind CSS and Sanity.',
 };
@@ -23,6 +23,7 @@ export default async function HomePage() {
   } catch (error) {
     console.error(error);
   }
+
   return (
     <main>
       <Hero />

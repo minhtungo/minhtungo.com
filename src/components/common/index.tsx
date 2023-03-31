@@ -8,4 +8,4 @@ export { default as Logo } from './Logo';
 export { default as Avatar } from './Avatar';
 export { default as Image } from './Image';
 export { default as CodeSnippet } from '../About/CodeSnippet';
-export { default as TypingAnimation } from './TypingAnimation';
+export { default as TypingAnimation } from '../ui/TypingAnimation';

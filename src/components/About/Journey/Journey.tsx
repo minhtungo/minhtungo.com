@@ -8,6 +8,7 @@ import { AiOutlineCaretDown } from 'react-icons/ai';
 import { CodeSnippet } from '@/components/common';
 
 import JourneyCard from './JourneyCard';
+import { Heading } from '@/components/ui';
 
 interface JourneyProps {
   journeys: Journey[];
@@ -16,9 +17,7 @@ interface JourneyProps {
 const Journey = ({ journeys }: JourneyProps) => {
   return (
     <section id='journey' className='mx-auto pt-1 lg:pt-3'>
-      <h3 className='mb-1 bg-clip-text text-lg font-semibold text-gray-800 dark:text-gray-300 md:text-xl lg:text-2xl lg:font-bold'>
-        My Journey
-      </h3>
+      <Heading>My Journey</Heading>
       <div className='mt-3 flex flex-col gap-8 lg:flex-row'>
         <div className='mx-auto mt-4 lg:w-[36%]'>
           <CodeSnippet />

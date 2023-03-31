@@ -8,7 +8,10 @@ import { Inter } from 'next/font/google';
 import ToastWrapper from './ToastWrapper';
 import OnRouteChange from './OnRouteChange';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'Create Next App',

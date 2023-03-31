@@ -10,6 +10,7 @@ import {
   OpacityVariant,
 } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
+import { Heading } from '@/components/ui';
 
 const RecentlyPlayed = ({ initialSongs }: { initialSongs: any }) => {
   const { data: songs } = useSWR('/api/spotify/recently-played', fetcher, {
@@ -18,12 +19,7 @@ const RecentlyPlayed = ({ initialSongs }: { initialSongs: any }) => {
 
   return (
     <section id='recently-played-songs' className='mx-auto pt-8'>
-      <Text
-        className='mb-6 bg-clip-text text-lg font-semibold text-gray-800 dark:text-gray-300 md:text-xl lg:text-2xl'
-        variants={OpacityVariant}
-      >
-        Recently Played Songs
-      </Text>
+      <Heading className='mb-1 md:mb-3'>Recently Played Songs</Heading>
       <Div
         variants={FadeContainer}
         className='horizontal-scrollbar flex items-center gap-2 overflow-x-scroll md:gap-2 lg:overflow-hidden xl:gap-0'
