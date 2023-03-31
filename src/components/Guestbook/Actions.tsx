@@ -8,7 +8,7 @@ import Button from '@/components/common/Button';
 export default function Component() {
   return (
     <>
-      <div className='mt-3 flex flex-wrap items-center gap-2 lg:mt-0'>
+      <div className='mt-3 flex flex-wrap items-center justify-center gap-2 lg:mt-4'>
         <Button
           variant='secondary'
           size='medium'
@@ -30,7 +30,7 @@ export default function Component() {
           <span>Google</span>
         </Button>
       </div>
-      <p className='mt-2 flex items-center text-xs italic text-gray-700 dark:text-neutral-500 sm:text-sm'>
+      <p className='mt-2 flex items-center justify-center text-xs italic text-gray-700 dark:text-neutral-500 sm:text-sm'>
         <GoInfo className='mr-1 h-3 w-3 sm:h-4 sm:w-4' />
         Your information is only used to display your username and avatar.
       </p>

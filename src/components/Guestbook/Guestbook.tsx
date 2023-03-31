@@ -12,7 +12,7 @@ const Guestbook = () => {
   const { data: session } = useSession();
 
   return (
-    <div>
+    <>
       <Title
         title='Guestbook'
         subtitle={
@@ -20,10 +20,10 @@ const Guestbook = () => {
             ? `Hi ${session.user?.name}! I am glad you're here. Please leave a message below.`
             : "I'd love to hear from you! To leave a message, simply sign in with your preferred account below. "
         }
-        className='!mb-3'
+        className='!mb-2'
       />
       {session ? <Form /> : <Actions />}
-    </div>
+    </>
   );
 };
 export default Guestbook;

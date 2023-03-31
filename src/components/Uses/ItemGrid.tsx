@@ -4,6 +4,7 @@ import { Image, Link } from '@/components/common';
 import { Div } from '@/components/ui/FramerMotion';
 import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
+import { Text } from '../ui';
 
 type ItemGridProps = {
   items: Item[];
@@ -30,18 +31,19 @@ const ItemGrid = ({ items }: ItemGridProps) => {
             className='m-0 h-24 w-24 object-contain sm:h-28 sm:w-40'
           />
           <div className='mt-2 flex flex-col gap-2 sm:text-center'>
-            <span>
+            <Text as='span' variant='title' size='md'>
               <Link
                 href={item.url}
-                className='font-semibold text-gray-700 dark:text-gray-200'
+                className='font-semibold text-gray-700 transition-all duration-200 ease-out hover:underline dark:text-gray-200'
+                animation={false}
               >
                 {item.name}
               </Link>
-            </span>
+            </Text>
 
-            <p className='text-sm font-medium text-gray-600/90 dark:text-gray-300/90'>
+            <span className='text-sm font-medium text-gray-600/90 dark:text-gray-300/90'>
               {item.description}
-            </p>
+            </span>
           </div>
         </motion.li>
       ))}

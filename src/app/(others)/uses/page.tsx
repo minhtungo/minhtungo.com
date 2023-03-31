@@ -1,6 +1,7 @@
 // @ts-nocheck
 
 import { Title } from '@/components/common';
+import { Heading } from '@/components/ui';
 import { ItemGrid } from '@/components/Uses';
 import { USES_ITEMS } from '@/config/uses';
 
@@ -14,27 +15,24 @@ export const metadata: Metadata = {
 
 export default function UsesPage() {
   return (
-    <div>
+    <div className='mx-auto max-w-4xl'>
       <Title
-        title='Uses'
+        title='What I Use'
         subtitle={`Here's my current technology setup for coding, gaming, and daily life.`}
-        className='lg:!mb-3'
       />
       <Image
         src='/static/images/uses/room.jpg'
-        width={850}
-        height={500}
+        width={900}
+        height={505}
         alt='Room'
-        className='mb-4 h-full w-full rounded-lg object-cover object-top shadow-lg lg:w-[70%]'
+        className='mb-6 h-full w-full rounded-lg object-cover object-top shadow-lg md:mb-8 lg:!-mt-2'
         priority
       />
 
       {USES_ITEMS.map((item) => {
         return (
           <div key={item.title}>
-            <h3 className='text-lg text-black dark:text-gray-50 md:text-xl lg:text-2xl'>
-              {item.title}
-            </h3>
+            <Heading as='h3'>{item.title}</Heading>
             <ItemGrid items={item.items} />
           </div>
         );

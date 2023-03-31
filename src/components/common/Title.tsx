@@ -10,24 +10,37 @@ interface TitleProps {
 }
 
 const Title = ({ title, subtitle, className, home }: TitleProps) => {
-  return (
-    <div className={mergeClassNames('mb-8', className, home && 'text-left')}>
-      <div className='mb-2 flex items-center'>
+  if (home) {
+    return (
+      <div
+        className={mergeClassNames(
+          'mb-8 flex items-center text-left',
+          className
+        )}
+      >
         <Heading
           variants={PopUpFromBottom}
           className='primary-gradient bg-clip-text text-2xl font-semibold text-transparent lg:text-3xl lg:font-bold'
         >
           {title}
         </Heading>
-        {home && (
-          <div className='relative flex-1 before:absolute before:left-3 before:top-[50%] before:h-[2px] before:w-[calc(100%-12px)] before:transform before:bg-transparent-black-tight before:content-[""] dark:before:bg-transparent-white md:before:w-[200px] lg:before:w-[350px]' />
-        )}
+        <div className='relative flex-1 before:absolute before:left-3 before:top-[50%] before:h-[2px] before:w-[calc(100%-12px)] before:transform before:bg-transparent-black-tight before:content-[""] dark:before:bg-transparent-white md:before:w-[200px] lg:before:w-[350px]' />
       </div>
+    );
+  }
+  return (
+    <div className={mergeClassNames('mb-12 pt-2 text-center', className)}>
+      <Heading
+        variants={PopUpFromBottom}
+        className='primary-gradient bg-clip-text text-2xl font-semibold text-transparent md:text-3xl lg:text-4xl lg:font-bold'
+      >
+        {title}
+      </Heading>
 
       {subtitle && (
         <Text
           variants={PopUpFromBottom}
-          className='mt-2 text-[15px] tracking-wide text-gray-900 dark:text-neutral-400 md:text-[17px]'
+          className='mt-2 text-sm tracking-wide text-gray-900 dark:text-neutral-400 md:text-base'
         >
           {subtitle}
         </Text>
