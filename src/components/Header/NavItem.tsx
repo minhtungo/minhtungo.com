@@ -1,6 +1,4 @@
 import { Link } from '@/components/ui';
-import { PopUp } from '@/lib/framerVariants';
-import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 
 interface NavItemProps {
@@ -17,9 +15,9 @@ const NavItem = ({ href, label }: NavItemProps) => {
       href={href}
       className={`${
         isActive
-          ? 'font-bold text-gray-800 dark:text-gray-200'
-          : ' text-gray-700 hover:text-gray-900 dark:text-gray-300 hover:dark:text-gray-100'
-      } hidden rounded-md text-[15px] font-medium capitalize transition-all md:inline-block`}
+          ? 'font-bold text-gray-900 dark:text-gray-100'
+          : ' font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 hover:dark:text-gray-100 '
+      } hidden rounded-md text-[15px] capitalize transition-all md:inline-block`}
     >
       {label}
     </Link>
