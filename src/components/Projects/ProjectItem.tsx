@@ -5,7 +5,7 @@ import { OpacityVariant } from '@/lib/framerVariants';
 import urlFor from '@/lib/urlFor';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import { Heading, Text } from '@/components/ui';
+import { Heading, ProjectsIcon, Text } from '@/components/ui';
 
 import ProjectImage from './ProjectImage';
 
@@ -32,29 +32,11 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
         <Text variant='title' size='lg' as='span'>
           {project.name}
         </Text>
-        <div className='ml-auto flex items-center gap-3'>
-          <Icon>
-            <Link
-              href={project.githubURL}
-              className='text-gray-600 dark:text-gray-400'
-              animation={false}
-            >
-              <FiGithub className='h-5 w-5 transition-all hover:scale-110 hover:text-blue-500 active:scale-90' />
-            </Link>
-          </Icon>
-
-          {project.liveURL && (
-            <Icon>
-              <Link
-                href={project.liveURL}
-                className='text-gray-600 dark:text-gray-400'
-                animation={false}
-              >
-                <FiExternalLink className='h-5 w-5 transition-all hover:scale-110 hover:text-blue-500 active:scale-90' />
-              </Link>
-            </Icon>
-          )}
-        </div>
+        <ProjectsIcon
+          githubURL={project.githubURL}
+          liveURL={project.liveURL || ''}
+          className='ml-auto'
+        />
       </div>
 
       <Text size='sm' variant='description' className='my-2'>

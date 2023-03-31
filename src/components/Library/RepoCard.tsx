@@ -7,7 +7,7 @@ import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { TbSourceCode } from 'react-icons/tb';
-import { Heading, Text } from '@/components/ui';
+import { ProjectsIcon, Text } from '@/components/ui';
 
 interface RepoProps {
   repo: Repo;
@@ -23,28 +23,11 @@ const Card = ({ repo }: RepoProps) => {
             {repo.name}
           </Text>
         </div>
-        <div className='ml-auto flex items-center gap-3 text-[22px]'>
-          <Icon>
-            <Link
-              href={repo.githubURL}
-              className='text-gray-500 hover:text-blue-500 dark:text-gray-400'
-              animation={false}
-            >
-              <FiGithub className='h-5 w-5 hover:text-blue-500' />
-            </Link>
-          </Icon>
-          {repo.liveURL && (
-            <Icon>
-              <Link
-                href={repo.liveURL}
-                className=' text-gray-500 dark:text-gray-400'
-                animation={false}
-              >
-                <FiExternalLink className='h-5 w-5 hover:text-blue-500' />
-              </Link>
-            </Icon>
-          )}
-        </div>
+        <ProjectsIcon
+          className='ml-auto'
+          githubURL={repo.githubURL}
+          liveURL={repo.liveURL || ''}
+        />
       </div>
       <Text variant='description' className='mt-2 ml-[2.5px] !text-sm'>
         {repo.description}

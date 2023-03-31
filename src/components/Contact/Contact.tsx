@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
+import { SocialIcons } from '../ui';
 
 import ContactForm from './ContactForm';
 
@@ -69,28 +70,7 @@ const Contact = ({ home }: { home?: boolean }) => {
             </div>
             {/* Info */}
 
-            {/* Social */}
-            <div className='ml-2 flex flex-row items-center space-x-4'>
-              <Icon>
-                <Link
-                  href='https://github.com/minhtungo'
-                  className='text-gray-600 dark:text-gray-400 '
-                  target='_blank'
-                >
-                  <FiGithub className='h-5 w-5 hover:text-blue-500' />
-                </Link>
-              </Icon>
-              <Icon>
-                <Link
-                  href='https://www.linkedin.com/in/minhtungo/'
-                  className='text-gray-600 dark:text-gray-400 '
-                  target='_blank'
-                >
-                  <FiLinkedin className='h-5 w-5 hover:text-blue-500' />
-                </Link>
-              </Icon>
-            </div>
-            {/* Social */}
+            <SocialIcons className='ml-2' />
           </div>
           <ContactForm className={'mt-2 md:-mt-3'} />
         </div>

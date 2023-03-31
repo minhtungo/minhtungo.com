@@ -1,5 +1,5 @@
 import { Heading, Text } from '@/components/ui/FramerMotion';
-import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
+import { PopUpFromBottom } from '@/lib/framerVariants';
 import mergeClassNames from '@/lib/mergeClassNames';
 
 interface TitleProps {

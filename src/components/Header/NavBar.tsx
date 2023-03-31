@@ -1,19 +1,18 @@
 'use client';
 
-import { Avatar, Icon, Link, Logo } from '@/components/common';
+import { Avatar, Link, Logo } from '@/components/common';
 import { links } from '@/config/routes';
 import { FadeContainer, FromLeftVariant, PopUp } from '@/lib/framerVariants';
+import mergeClassNames from '@/lib/mergeClassNames';
 import { motion, useAnimation } from 'framer-motion';
-import { useTheme } from 'next-themes';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import throttle from 'lodash.throttle';
+import { useTheme } from 'next-themes';
+import { Manrope } from 'next/font/google';
+import React, { useEffect, useRef, useState } from 'react';
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 import MobileMenu from './MobileMenu';
 import NavItem from './NavItem';
-
-import { Manrope } from 'next/font/google';
-import clsx from 'clsx';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -102,7 +101,7 @@ const NavBar = () => {
 
   return (
     <header
-      className={clsx(
+      className={mergeClassNames(
         'fixed top-0 left-0 right-0 z-50 w-full backdrop-filter',
         manrope.className
       )}
@@ -143,10 +142,17 @@ const NavBar = () => {
             </motion.ul>
           </nav>
           <div className='flex items-center space-x-3'>
-            <Icon>
-              {/* DarkMode Container */}
+            <motion.span
+              initial='hidden'
+              animate='visible'
+              variants={PopUp}
+              className='cursor-pointer'
+              title='Toggle Theme'
+            >
               {renderThemeChanger()}
-            </Icon>
+            </motion.span>
+            {/* DarkMode Container */}
+
             <MobileMenu links={links} />
           </div>
         </div>

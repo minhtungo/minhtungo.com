@@ -2,6 +2,7 @@ import { Icon, Link } from '@/components/common';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import footer from '@/config/footer';
 import { NowPlaying } from '@/components/Spotify';
+import { SocialIcons } from '../ui';
 
 const Footer = () => {
   return (
@@ -29,7 +30,7 @@ const Footer = () => {
           {footer.categories.map((category, index) => (
             <ul
               key={index}
-              className='text-sm text-gray-600 dark:text-gray-400'
+              className='text-[15px] text-gray-600 dark:text-gray-400 md:text-base'
             >
               {category.links.map((link, index) => (
                 <li className='mt-2' key={index}>
@@ -42,36 +43,19 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className='mt-8 text-center sm:flex sm:items-center sm:justify-between lg:mt-10'>
-        <Link href='/' animation={false}>
-          😸
+      <div className='mt-8 flex flex-col justify-center text-center lg:mt-10'>
+        <Link
+          href='/'
+          animation={false}
+          className='text-sm text-gray-600 dark:text-gray-400'
+        >
+          Made by{' '}
           <span className='primary-gradient bg-clip-text font-medium text-transparent'>
             Minh Tu Ngo
           </span>
-          🐶
+          .
         </Link>
-        <div className='mt-4 flex justify-center space-x-4 text-gray-600 dark:text-gray-400 sm:mt-0'>
-          <Icon>
-            <Link
-              href='https://github.com/minhtungo'
-              className='ite flex items-center '
-              animation={false}
-            >
-              <FiGithub className='h-5 w-5 hover:text-blue-500' />
-              <span className='sr-only'>Github account</span>
-            </Link>
-          </Icon>
-          <Icon>
-            <Link
-              href='https://linkedin.com/in/minhtungo/'
-              className='flex items-center '
-              animation={false}
-            >
-              <FiLinkedin className='h-5 w-5 hover:text-blue-500' />
-              <span className='sr-only'>LinkedIn account</span>
-            </Link>
-          </Icon>
-        </div>
+        <SocialIcons className='mx-auto mt-4' />
       </div>
     </footer>
   );
