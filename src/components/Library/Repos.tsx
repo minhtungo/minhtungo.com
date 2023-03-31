@@ -1,7 +1,9 @@
-import { Button, Title } from '@/components/common';
-import { clsx } from 'clsx';
+import { Title } from '@/components/common';
+import mergeClassNames from '@/lib/mergeClassNames';
+import Link from 'next/link';
 import { IoMdArrowForward } from 'react-icons/io';
 
+import { Button } from '@/components/ui';
 import RepoCard from './RepoCard';
 
 interface ReposProps {
@@ -11,7 +13,7 @@ interface ReposProps {
 
 const Repos = ({ repos, home }: ReposProps) => {
   return (
-    <section id='repos' className={clsx(home && 'pt-16 lg:pt-20')}>
+    <section id='repos' className={mergeClassNames(home && 'pt-16 lg:pt-20')}>
       <Title
         title='Library'
         subtitle={
@@ -21,12 +23,15 @@ const Repos = ({ repos, home }: ReposProps) => {
       />
       <RepoCard repos={repos} />
       {home && (
-        <div className='group relative mt-4 text-center transition duration-200 motion-reduce:transition-none lg:mt-8'>
-          <Button href='/library' variant='secondary'>
-            See More Repos{' '}
+        <Link
+          className='group relative mt-6 block text-center transition duration-200 motion-reduce:transition-none lg:mt-12'
+          href='/library'
+        >
+          <Button size='md' variant='secondary'>
+            View More{' '}
             <IoMdArrowForward className='ml-1 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0' />
           </Button>
-        </div>
+        </Link>
       )}
     </section>
   );

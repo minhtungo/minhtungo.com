@@ -8,7 +8,7 @@ import { Heading } from '@/components/ui';
 const TechStack = () => {
   return (
     <section id='technologies' className='mx-auto pt-6'>
-      <Heading as='h3' className='mb-1 md:mb-3'>
+      <Heading as='h3' className='mb-2 md:mb-6'>
         Some Technologies I Have Used Recently
       </Heading>
       <Marquees className='py-4 pb-6'>

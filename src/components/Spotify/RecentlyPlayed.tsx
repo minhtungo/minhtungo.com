@@ -19,7 +19,7 @@ const RecentlyPlayed = ({ initialSongs }: { initialSongs: any }) => {
 
   return (
     <section id='recently-played-songs' className='mx-auto pt-8'>
-      <Heading className='mb-1 md:mb-3'>Recently Played Songs</Heading>
+      <Heading className='mb-2 md:mb-6'>Recently Played Songs</Heading>
       <Div
         variants={FadeContainer}
         className='horizontal-scrollbar flex items-center gap-2 overflow-x-scroll md:gap-2 lg:overflow-hidden xl:gap-0'

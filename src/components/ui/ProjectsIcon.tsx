@@ -17,7 +17,7 @@ const ProjectsIcon: FC<ProjectsIconProps> = ({
   return (
     <div
       className={mergeClassNames(
-        'flex items-center gap-[10px] text-gray-800 dark:text-gray-300',
+        'flex items-center gap-[10px] text-blue-500 dark:text-blue-400',
         className
       )}
     >

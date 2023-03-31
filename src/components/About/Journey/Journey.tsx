@@ -17,9 +17,9 @@ interface JourneyProps {
 const Journey = ({ journeys }: JourneyProps) => {
   return (
     <section id='journey' className='mx-auto pt-1 lg:pt-3'>
-      <Heading>My Journey</Heading>
-      <div className='mt-3 flex flex-col gap-8 lg:flex-row'>
-        <div className='mx-auto mt-4 lg:w-[36%]'>
+      <Heading className='mb-2 md:mb-6'>My Journey</Heading>
+      <div className='flex flex-col gap-8 lg:flex-row'>
+        <div className='mx-auto lg:w-[36%]'>
           <CodeSnippet />
         </div>
         <div className='relative mt-4 w-full lg:w-[60%]'>
