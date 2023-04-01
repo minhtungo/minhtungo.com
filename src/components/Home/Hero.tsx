@@ -17,10 +17,7 @@ const CONTENT = [
 
 const Hero = () => {
   return (
-    <section
-      id='home'
-      className='h-screen flex-1 gap-12 pt-8 md:flex md:items-center md:justify-between lg:pt-0'
-    >
+    <div className='h-screen flex-1 gap-12 pt-8 md:flex md:items-center md:justify-between lg:pt-0'>
       {/* Dog Model */}
       <div className='relative z-10 mx-auto mt-4 flex h-[270px] w-[270px] basis-2/5 justify-center sm:h-[360px] sm:w-[360px] md:order-2 md:mx-0 md:mt-[6.6rem] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[550px]'>
         <Image
@@ -85,7 +82,7 @@ const Hero = () => {
           </Button>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

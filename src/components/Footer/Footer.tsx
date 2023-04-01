@@ -44,6 +44,7 @@ const Footer = () => {
         </div>
       </div>
       <div className='mt-8 flex flex-col justify-center text-center lg:mt-10'>
+        <SocialIcons className='mx-auto mt-4' />
         <Link
           href='/'
           animation={false}
@@ -55,7 +56,6 @@ const Footer = () => {
           </span>
           .
         </Link>
-        <SocialIcons className='mx-auto mt-4' />
       </div>
     </footer>
   );

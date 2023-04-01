@@ -7,7 +7,7 @@ import { Heading } from '@/components/ui';
 
 const TechStack = () => {
   return (
-    <section id='technologies' className='mx-auto pt-6'>
+    <div className='mx-auto pt-6'>
       <Heading as='h3' className='mb-2 md:mb-6'>
         Some Technologies I Have Used Recently
       </Heading>
@@ -30,7 +30,7 @@ const TechStack = () => {
           </div>
         ))}
       </Marquees>
-    </section>
+    </div>
   );
 };
 export default TechStack;

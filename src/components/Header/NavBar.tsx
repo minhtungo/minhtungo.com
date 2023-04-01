@@ -8,7 +8,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useKBar } from 'kbar';
 import throttle from 'lodash.throttle';
 import { Manrope } from 'next/font/google';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FiCommand } from 'react-icons/fi';
 
 import MobileMenu from './MobileMenu';

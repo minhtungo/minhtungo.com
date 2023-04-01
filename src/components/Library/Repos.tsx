@@ -13,7 +13,7 @@ interface ReposProps {
 
 const Repos = ({ repos, home }: ReposProps) => {
   return (
-    <section id='repos' className={mergeClassNames(home && 'pt-16 lg:pt-20')}>
+    <div className={mergeClassNames(home && 'pt-16 lg:pt-20')}>
       <Title
         title='Library'
         subtitle={
@@ -33,7 +33,7 @@ const Repos = ({ repos, home }: ReposProps) => {
           </Button>
         </Link>
       )}
-    </section>
+    </div>
   );
 };
 

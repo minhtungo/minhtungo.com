@@ -9,7 +9,7 @@ import ProfileCard from './ProfileCard';
 
 const About = () => {
   return (
-    <section id='about' className='mx-auto'>
+    <div className='mx-auto'>
       <Title
         title='About'
         subtitle={'Sharing my passions and experiences with the world.'}
@@ -42,7 +42,7 @@ const About = () => {
           </Div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 export default About;

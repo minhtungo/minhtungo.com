@@ -18,7 +18,7 @@ const RecentlyPlayed = ({ initialSongs }: { initialSongs: any }) => {
   });
 
   return (
-    <section id='recently-played-songs' className='mx-auto pt-8'>
+    <div className='mx-auto pt-8'>
       <Heading className='mb-2 md:mb-6' as='h3'>
         Recently Played Songs
       </Heading>
@@ -54,7 +54,7 @@ const RecentlyPlayed = ({ initialSongs }: { initialSongs: any }) => {
           </Link>
         ))}
       </Div>
-    </section>
+    </div>
   );
 };
 export default RecentlyPlayed;

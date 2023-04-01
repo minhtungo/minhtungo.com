@@ -13,7 +13,7 @@ const Skills = () => {
   const { theme } = useTheme();
 
   return (
-    <section id='skills'>
+    <>
       <Div variants={PopUpFromBottom}>
         <Title title='Favorite Techs' home={true} />
       </Div>
@@ -45,7 +45,7 @@ const Skills = () => {
           </motion.div>
         ))}
       </motion.div>
-    </section>
+    </>
   );
 };
 export default Skills;

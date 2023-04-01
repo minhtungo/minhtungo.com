@@ -13,10 +13,7 @@ interface ProjectsProp {
 
 const Projects = ({ projects, home }: ProjectsProp) => {
   return (
-    <section
-      id='projects'
-      className={mergeClassNames(home && 'pt-16 lg:pt-20')}
-    >
+    <div className={mergeClassNames(home && 'pt-16 lg:pt-20')}>
       <Title
         title='Projects'
         subtitle={home ? '' : 'Showcase of my works on web development.'}
@@ -38,7 +35,7 @@ const Projects = ({ projects, home }: ProjectsProp) => {
           <IoMdArrowForward className='ml-1 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0' />
         </Button>
       </Link>
-    </section>
+    </div>
   );
 };
 

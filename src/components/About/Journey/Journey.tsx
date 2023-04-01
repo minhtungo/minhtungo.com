@@ -16,7 +16,7 @@ interface JourneyProps {
 
 const Journey = ({ journeys }: JourneyProps) => {
   return (
-    <section id='journey' className='mx-auto pt-1 lg:pt-3'>
+    <div className='mx-auto pt-1 lg:pt-3'>
       <Heading className='mb-2 md:mb-6' as='h3'>
         My Journey
       </Heading>
@@ -69,7 +69,7 @@ const Journey = ({ journeys }: JourneyProps) => {
           </ul>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 export default Journey;

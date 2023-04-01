@@ -21,11 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={inter.className}>
-      <body className='mx-auto max-w-6xl px-6 xl:px-0'>
+      <body className=''>
         <Providers>
           <KBar>
             <NavBar />
-            {children}
+            <main className='relative mx-auto max-w-6xl px-6 xl:px-0'>
+              {children}
+            </main>
             <Footer />
           </KBar>
         </Providers>

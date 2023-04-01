@@ -12,10 +12,7 @@ import ContactForm from './ContactForm';
 
 const Contact = ({ home }: { home?: boolean }) => {
   return (
-    <section
-      id='contact'
-      className={mergeClassNames('relative', home && 'pt-16 lg:pt-20')}
-    >
+    <div className={mergeClassNames('relative', home && 'pt-16 lg:pt-20')}>
       <Image
         className='absolute left-0 top-4 mx-auto h-auto w-auto animate-pulse sm:left-[10%] md:left-[15%] lg:left-[27.5%]'
         src='/static/images/sparkles.svg'
@@ -75,7 +72,7 @@ const Contact = ({ home }: { home?: boolean }) => {
           <ContactForm className={'mt-2 md:-mt-3'} />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 export default Contact;
