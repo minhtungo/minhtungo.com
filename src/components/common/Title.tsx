@@ -24,7 +24,7 @@ const Title = ({ title, subtitle, className, home }: TitleProps) => {
         >
           {title}
         </Heading>
-        <div className='relative flex-1 before:absolute before:left-3 before:top-[50%] before:h-[2px] before:w-[calc(100%-12px)] before:transform before:bg-transparent-black-tight before:content-[""] dark:before:bg-transparent-white md:before:w-[200px] lg:before:w-[350px]' />
+        <div className='relative flex-1 before:absolute before:left-3 before:top-[50%] before:h-[1.8px] before:w-[calc(100%-12px)] before:transform before:bg-transparent-black-tight before:content-[""] dark:before:bg-transparent-white md:before:w-[200px] lg:before:w-[350px]' />
       </div>
     );
   }

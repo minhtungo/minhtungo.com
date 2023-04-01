@@ -26,7 +26,7 @@ const Input = ({
           name={name}
           id={name}
           value={value}
-          className='peer mt-2 block min-h-[100px] w-full resize-y appearance-none border-b border-gray-300 bg-transparent py-2 px-0 text-sm text-gray-800 focus:border-black focus:outline-none  focus:ring-0 dark:border-gray-600 dark:text-gray-300 dark:focus:border-white'
+          className='peer mt-2 block min-h-[100px] w-full resize-y appearance-none border-b-[1.55px] border-transparent-black-tight bg-transparent py-2 px-0 text-sm text-gray-800 focus:border-neutral-500/80 focus:outline-none focus:ring-0 dark:border-transparent-white dark:text-gray-300 dark:focus:border-neutral-400'
           placeholder=' '
           onChange={onChange}
           required
@@ -37,7 +37,7 @@ const Input = ({
           type={type}
           name={name}
           id={name}
-          className='peer mt-2 block w-full appearance-none border-b border-gray-300 bg-transparent py-2 px-0 text-sm text-gray-800  focus:border-black focus:outline-none focus:ring-0 dark:border-gray-600 dark:text-gray-300 dark:focus:border-white'
+          className='peer mt-2 block w-full appearance-none border-b-[1.55px] border-transparent-black-tight bg-transparent py-2 px-0 text-sm  text-gray-800 focus:border-neutral-500/80 focus:outline-none focus:ring-0 dark:border-transparent-white dark:text-gray-300 dark:focus:border-neutral-400'
           placeholder=' '
           value={value}
           onChange={onChange}
