@@ -5,9 +5,10 @@ import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 interface SocialIconProps {
   className?: string;
+  footer?: boolean;
 }
 
-const SocialIcons: FC<SocialIconProps> = ({ className }) => {
+const SocialIcons: FC<SocialIconProps> = ({ className, footer = false }) => {
   return (
     <div
       className={mergeClassNames(
@@ -16,12 +17,22 @@ const SocialIcons: FC<SocialIconProps> = ({ className }) => {
       )}
     >
       <Link href='https://github.com/minhtungo' animation={false}>
-        <FiGithub className='h-5 w-5 hover:text-blue-500' />
+        <FiGithub
+          className={mergeClassNames(
+            'hover:text-blue-500',
+            footer ? 'h-4 w-4' : 'h-5 w-5'
+          )}
+        />
         <span className='sr-only'>My Github account</span>
       </Link>
 
       <Link href='https://linkedin.com/in/minhtungo/' animation={false}>
-        <FiLinkedin className='h-5 w-5 hover:text-blue-500' />
+        <FiLinkedin
+          className={mergeClassNames(
+            'hover:text-blue-500',
+            footer ? 'h-4 w-4' : 'h-5 w-5'
+          )}
+        />
         <span className='sr-only'>My LinkedIn account</span>
       </Link>
     </div>
