@@ -3,7 +3,7 @@
 import { Title } from '@/components/common';
 import { Heading } from '@/components/ui';
 import { ItemGrid } from '@/components/Uses';
-import { USES_ITEMS } from '@/config/uses';
+import { USES_ITEMS } from '@/constant/uses';
 
 import type { Metadata } from 'next';
 import Image from 'next/image';

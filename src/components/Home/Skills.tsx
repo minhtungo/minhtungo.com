@@ -4,7 +4,7 @@ import { Title, IconHelper } from '@/components/common';
 import { Div } from '@/components/ui/FramerMotion';
 import { FadeContainer, PopUp, PopUpFromBottom } from '@/lib/framerVariants';
 
-import techStack from '@/config/techStack';
+import techStack from '@/constant/techStack';
 import { motion } from 'framer-motion';
 import { showHoverAnimation, removeHoverAnimation } from '@/lib/hoverAnimation';
 import { useTheme } from 'next-themes';

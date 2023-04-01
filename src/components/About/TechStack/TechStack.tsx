@@ -1,7 +1,7 @@
 'use client';
 
 import Marquees from './Marquees';
-import techStack from '@/config/techStack';
+import techStack from '@/constant/techStack';
 import { Image } from '@/components/common';
 import { Heading } from '@/components/ui';
 

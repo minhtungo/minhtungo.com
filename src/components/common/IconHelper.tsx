@@ -15,6 +15,7 @@ import StyledComponents from 'public/static/images/stack/styled-components.svg';
 import Tailwind from 'public/static/images/stack/tailwind.svg';
 import TRPC from 'public/static/images/stack/trpc.svg';
 import TypeScript from 'public/static/images/stack/typescript.svg';
+import GraphQL from 'public/static/images/stack/graphql.svg';
 import { BsJournalCode as Library } from 'react-icons/bs';
 import { CgComment as Guestbook, CgProfile as About } from 'react-icons/cg';
 import {
@@ -62,6 +63,7 @@ const iconMap: Record<string, React.ComponentType> = {
   Uses,
   Contact,
   Guestbook,
+  GraphQL,
   Library,
 };
 

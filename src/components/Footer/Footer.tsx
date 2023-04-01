@@ -1,6 +1,6 @@
 import { Icon, Link } from '@/components/common';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
-import footer from '@/config/footer';
+import footer from '@/constant/footer';
 import { NowPlaying } from '@/components/Spotify';
 import { SocialIcons } from '../ui';
 

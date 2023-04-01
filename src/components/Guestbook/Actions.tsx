@@ -2,6 +2,7 @@ import { signIn } from 'next-auth/react';
 import { BsGithub } from 'react-icons/bs';
 import { FcGoogle } from 'react-icons/fc';
 import { GoInfo } from 'react-icons/go';
+import { useTheme } from 'next-themes';
 
 import Button from '@/components/common/Button';
 

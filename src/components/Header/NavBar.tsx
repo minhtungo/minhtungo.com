@@ -1,15 +1,15 @@
 'use client';
 
 import { Avatar, Link, Logo } from '@/components/common';
-import { links } from '@/config/routes';
+import { links } from '@/constant/routes';
 import { FadeContainer, FromLeftVariant, PopUp } from '@/lib/framerVariants';
 import mergeClassNames from '@/lib/mergeClassNames';
 import { motion, useAnimation } from 'framer-motion';
+import { useKBar } from 'kbar';
 import throttle from 'lodash.throttle';
-import { useTheme } from 'next-themes';
 import { Manrope } from 'next/font/google';
 import React, { useEffect, useRef, useState } from 'react';
-import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import { FiCommand } from 'react-icons/fi';
 
 import MobileMenu from './MobileMenu';
 import NavItem from './NavItem';
@@ -20,43 +20,9 @@ const manrope = Manrope({
 });
 
 const NavBar = () => {
-  const { systemTheme, theme, setTheme } = useTheme();
-
-  const [isDarkMode, setIsDarkMode] = useState(true);
-  const [mounted, setMounted] = useState(false);
+  const { query } = useKBar();
 
   const navRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    const currentTheme = theme === 'system' ? systemTheme : theme;
-    if (currentTheme === 'dark') {
-      setIsDarkMode(true);
-    } else {
-      setIsDarkMode(false);
-    }
-  }, [mounted]);
-
-  const toggleDarkMode = (checked: boolean) => {
-    setIsDarkMode(checked);
-    setTheme(checked ? 'dark' : 'light');
-  };
-
-  const renderThemeChanger = () => {
-    if (!mounted) return null;
-    return (
-      <DarkModeSwitch
-        checked={isDarkMode}
-        onChange={toggleDarkMode}
-        size={22}
-        moonColor='#FFD700'
-        sunColor='#e6c300'
-      />
-    );
-  };
 
   const control = useAnimation();
 
@@ -123,7 +89,7 @@ const NavBar = () => {
             <Logo />
           </motion.div>
         </Link>
-        <div className='flex items-center space-x-4'>
+        <div className='flex items-center space-x-1'>
           {/* Top Nav list on Desktop*/}
           <nav className='z-10 hidden md:flex'>
             <motion.ul
@@ -142,16 +108,16 @@ const NavBar = () => {
             </motion.ul>
           </nav>
           <div className='flex items-center space-x-3'>
-            <motion.span
+            <motion.button
               initial='hidden'
               animate='visible'
               variants={PopUp}
-              className='cursor-pointer'
-              title='Toggle Theme'
+              className='flex h-8 w-8 items-center justify-center rounded-md duration-300 hover:bg-gray-300 dark:hover:bg-neutral-800/70 sm:h-9 sm:w-9'
+              onClick={() => query.toggle()}
+              aria-label='Command Bar'
             >
-              {renderThemeChanger()}
-            </motion.span>
-            {/* DarkMode Container */}
+              <FiCommand size={20} />
+            </motion.button>
 
             <MobileMenu links={links} />
           </div>

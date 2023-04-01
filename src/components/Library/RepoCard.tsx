@@ -1,13 +1,11 @@
 'use client';
 
-import { Icon, Link, IconHelper } from '@/components/common';
+import { IconHelper } from '@/components/common';
+import { ProjectsIcon, Text } from '@/components/ui';
 import { Div } from '@/components/ui/FramerMotion';
 import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
-
 import { motion } from 'framer-motion';
-import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { TbSourceCode } from 'react-icons/tb';
-import { ProjectsIcon, Text } from '@/components/ui';
 
 interface RepoProps {
   repo: Repo;

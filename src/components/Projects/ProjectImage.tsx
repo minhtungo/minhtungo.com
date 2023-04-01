@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image } from '@/components/common';
-import { videoSrc } from '@/config/videoSrc';
+import { videoSrc } from '@/constant/videoSrc';
 import mergeClassNames from '@/lib/mergeClassNames';
 
 interface ProjectImageProps {

@@ -28,7 +28,7 @@ export default function MobileMenu({ links }: { links: Link[] }) {
           >
             <Menu.Items
               static
-              className='absolute top-[35px] right-6 mt-2 w-40 origin-top-right divide-y divide-custom-border-black rounded-md bg-gray-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:divide-transparent-white dark:bg-[#262626] sm:w-56'
+              className='absolute top-[35px] right-6 mt-2 w-40 origin-top-right divide-y divide-custom-border-black rounded-md bg-slate-50 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:divide-transparent-white dark:bg-neutral-900 sm:w-56'
             >
               <nav className='px-1 py-1 '>
                 {links.map((link) => (
@@ -39,7 +39,7 @@ export default function MobileMenu({ links }: { links: Link[] }) {
                         href={link.href}
                         className={`${
                           active
-                            ? 'primary-gradient text-gray-50 dark:text-black'
+                            ? 'bg-slate-200 dark:bg-neutral-800/90'
                             : 'text-gray-900 dark:text-gray-100'
                         } group flex w-full items-center gap-4 rounded-md px-2 py-2 text-sm`}
                       >
