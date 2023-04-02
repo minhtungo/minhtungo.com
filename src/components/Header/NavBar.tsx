@@ -112,7 +112,7 @@ const NavBar = () => {
               initial='hidden'
               animate='visible'
               variants={PopUp}
-              className='flex h-8 w-8 items-center justify-center rounded-md duration-300 hover:bg-gray-300 dark:hover:bg-neutral-800/70 sm:h-9 sm:w-9'
+              className='flex h-8 w-8 items-center justify-center rounded-md bg-zinc-800 duration-300 hover:bg-gray-300 dark:hover:bg-zinc-800/70 sm:h-9 sm:w-9'
               onClick={() => query.toggle()}
               aria-label='Command Bar'
             >

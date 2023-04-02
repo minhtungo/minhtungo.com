@@ -1,13 +1,7 @@
-import { Heading, Text } from '@/components/ui/FramerMotion';
-import { Messages, Guestbook } from '@/components/Guestbook';
-import { FromLeftVariant } from '@/lib/framerVariants';
+import { Guestbook, Messages } from '@/components/Guestbook';
 import prisma from '@/lib/prismadb';
-import { PopUpFromBottom } from '@/lib/framerVariants';
-import { Actions } from '@/components/Guestbook';
 
 import type { Metadata } from 'next';
-import { Title } from '@/components/common';
-
 export const metadata: Metadata = {
   title: 'Guestbook | Minh Tu Ngo',
   description:
