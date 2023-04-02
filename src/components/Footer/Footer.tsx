@@ -6,11 +6,11 @@ import { SocialIcons } from '../ui';
 const Footer = () => {
   return (
     <footer className='mx-auto max-w-4xl py-6 px-6 pt-24 xl:px-0'>
-      <div className='md:flex md:justify-between'>
+      <div className='md:flex md:items-center md:justify-between'>
         <div className='mb-6 flex w-fit flex-col justify-center md:mb-0'>
           <div className='flex items-center'>
             <Link href='/' animation={false}>
-              <p className='flex cursor-pointer items-center whitespace-nowrap text-xl font-semibold dark:text-gray-50'>
+              <p className='flex cursor-pointer items-center whitespace-nowrap text-lg font-semibold dark:text-gray-50'>
                 Minh Tu Ngo.
                 <span className='mx-1 mr-2 rounded-lg bg-black/[7%] px-2 py-1 text-xs dark:bg-white/10'>
                   v2.0.0

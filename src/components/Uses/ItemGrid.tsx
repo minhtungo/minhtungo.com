@@ -15,22 +15,22 @@ const ItemGrid = ({ items }: ItemGridProps) => {
     <Div
       variants={FadeContainer}
       list
-      className='mt-5 mb-9 grid grid-cols-1 gap-3 sm:grid-cols-2 md:sm:grid-cols-3 lg:grid-cols-4'
+      className='mt-5 mb-8 grid grid-cols-1 gap-3 sm:mb-10 sm:grid-cols-2 md:sm:grid-cols-3 lg:grid-cols-4'
     >
       {items.map((item, i) => (
         <motion.li
           variants={PopUpFromBottom}
           key={item.name}
-          className='flex items-center gap-3 rounded border border-custom-border-black p-[6px] shadow-lg dark:border-transparent-white dark:bg-card-background-dark sm:flex-col sm:gap-2 sm:p-3'
+          className='flex items-center gap-3 rounded border border-custom-border-black p-2 shadow-lg dark:border-transparent-white dark:bg-card-background-dark sm:flex-col sm:gap-2 sm:p-3'
         >
           <Image
             src={item.image}
             width={256}
             height={256}
             alt={item.name}
-            className='m-0 h-24 w-24 object-contain sm:h-28 sm:w-40'
+            className='m-0 max-h-[72px] max-w-[72px] object-contain sm:h-28 sm:w-40 sm:max-w-none'
           />
-          <div className='mt-2 flex flex-col gap-2 sm:text-center'>
+          <div className='mt-2 flex flex-1 flex-col gap-1 sm:gap-2 sm:text-center'>
             <Text as='span' variant='title' size='md'>
               <Link
                 href={item.url}
