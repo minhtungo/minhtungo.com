@@ -6,8 +6,8 @@ import { NavBar } from '@/components/Header';
 import Providers from './Providers';
 import { Inter } from 'next/font/google';
 import ToastWrapper from './ToastWrapper';
-import OnRouteChange from './OnRouteChange';
 import { KBar } from '@/components/KBar';
+import mergeClassNames from '@/lib/mergeClassNames';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={inter.className}>
+    <html lang='en' className={mergeClassNames(inter.className)}>
       <body className=''>
         <Providers>
           <KBar>
@@ -32,7 +32,6 @@ export default function RootLayout({
           </KBar>
         </Providers>
         <ToastWrapper />
-        {/* <OnRouteChange /> */}
       </body>
     </html>
   );

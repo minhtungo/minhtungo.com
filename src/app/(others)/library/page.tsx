@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Library | Minh Tu Ngo',
   description:
-    'My library.  I love to create amazing web applications to make the internet a better place.',
+    'I love to create amazing web applications to make the internet a better place.',
 };
 
 export default async function LibraryPage() {

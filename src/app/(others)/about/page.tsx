@@ -13,8 +13,12 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const journeys = await client.fetch(journeyQuery);
-  const recentlyPlayedSongs = await fetchRecentlyPlayedSongs();
+  let journeys, recentlyPlayedSongs;
+
+  [journeys, recentlyPlayedSongs] = await Promise.all([
+    await client.fetch(journeyQuery),
+    await fetchRecentlyPlayedSongs(),
+  ]);
 
   return (
     <>

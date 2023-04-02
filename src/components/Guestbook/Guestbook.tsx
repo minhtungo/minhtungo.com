@@ -1,10 +1,8 @@
 'use client';
 
-import { Text } from '@/components/ui/FramerMotion';
-import { Actions } from '@/components/Guestbook';
-import { PopUpFromBottom } from '@/lib/framerVariants';
-import { useSession } from 'next-auth/react';
 import { Title } from '@/components/common';
+import { Actions } from '@/components/Guestbook';
+import { useSession } from 'next-auth/react';
 
 import Form from './Form';
 

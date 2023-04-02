@@ -15,14 +15,10 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   let projects, repos;
 
-  try {
-    [projects, repos] = await Promise.all([
-      await client.fetch(projectHomeQuery),
-      await client.fetch(repoHomeQuery),
-    ]);
-  } catch (error) {
-    console.error(error);
-  }
+  [projects, repos] = await Promise.all([
+    await client.fetch(projectHomeQuery),
+    await client.fetch(repoHomeQuery),
+  ]);
 
   return (
     <main>
