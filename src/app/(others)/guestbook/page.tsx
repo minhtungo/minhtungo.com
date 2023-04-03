@@ -1,11 +1,9 @@
 import { Guestbook, Messages } from '@/components/Guestbook';
 import { getServerSession } from 'next-auth';
 import { Title } from '@/components/ui';
-import { Suspense } from 'react';
 
 import type { Metadata } from 'next';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
-import Loader from '@/components/Guestbook/Loader';
 
 export const metadata: Metadata = {
   title: 'Guestbook | Minh Tu Ngo',
@@ -29,9 +27,7 @@ export default async function GuestbookPage() {
         className='!mb-2'
       />
       <Guestbook user={session?.user} />
-      <Suspense fallback={<p className='text-3xl text-white'>Loadfing</p>}>
-        <Messages />
-      </Suspense>
+      <Messages />
     </>
   );
 }

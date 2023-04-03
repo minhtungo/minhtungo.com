@@ -4,16 +4,23 @@ import Image from '@/components/common/Image';
 import fetcher from '@/lib/fetcher';
 import dayjs from 'dayjs';
 import useSWR from 'swr';
+import Loader from './Loader';
 
 const Messages = ({}) => {
-  const { data: messages } = useSWR('/api/guestbook', fetcher, {
+  const { data: messages, isLoading } = useSWR('/api/guestbook', fetcher, {
     revalidateOnFocus: false,
   });
 
   return (
     <div className='mx-auto max-w-3xl'>
       <hr className='my-6 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
-
+      {isLoading && (
+        <>
+          {Array.from(Array(6).keys()).map((i) => (
+            <Loader key={i} />
+          ))}
+        </>
+      )}
       {messages?.map(({ id, image, createdBy, createdAt, content }) => (
         <article className='mb-6' key={id}>
           <footer className='mb-3 flex gap-3'>
