@@ -73,6 +73,7 @@ const Form: FC<FormProps> = ({ user }) => {
               setContent(e.target.value);
             }}
             value={content}
+            cacheMeasurements
             required
           />
         </div>

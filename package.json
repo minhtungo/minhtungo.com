@@ -43,7 +43,7 @@
     "react-hot-toast": "^2.4.0",
     "react-icons": "^4.8.0",
     "react-scroll-to-top": "^3.0.0",
-    "react-textarea-autosize": "^8.4.0",
+    "react-textarea-autosize": "^8.4.1",
     "react-type-animation": "^2.1.2",
     "sanity": "^3.5.1",
     "sharp": "^0.32.0",
