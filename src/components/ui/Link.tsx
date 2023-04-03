@@ -1,20 +1,15 @@
-import NextLink, { LinkProps as NextLinkProps } from 'next/link';
-import { Button } from '@/components/ui';
+'use client';
 
-type LinkProps = {
+import NextLink from 'next/link';
+import { FC } from 'react';
+
+interface LinkProps {
   href: string;
-  nextLinkProps?: Omit<NextLinkProps, 'href'>;
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'link';
-} & React.ComponentPropsWithRef<'a'>;
+  children: React.ReactNode;
+  className?: string;
+}
 
-const Link = ({
-  href,
-  children,
-  className,
-  nextLinkProps,
-  variant,
-  ...props
-}: LinkProps) => {
+const Link: FC<LinkProps> = ({ href, children, className }) => {
   const isInternalLink = href && href.startsWith('/');
   const isAnchorLink = href && href.startsWith('#');
 
@@ -23,20 +18,17 @@ const Link = ({
       <NextLink
         href={href}
         arial-label={`Link to ${href}`}
-        {...nextLinkProps}
-        {...props}
+        className={className}
       >
-        <Button variant={variant || 'ghost'} className={className}>
-          {children}
-        </Button>
+        {children}
       </NextLink>
     );
   }
 
   if (isAnchorLink) {
     return (
-      <a href={href} arial-label={`Link to ${href}`} {...props}>
-        <Button className={className}>{children}</Button>
+      <a href={href} arial-label={`Link to ${href}`} className={className}>
+        {children}
       </a>
     );
   }
@@ -47,9 +39,9 @@ const Link = ({
       arial-label={`Link to ${href}`}
       rel='noopener noreferrer'
       href={href}
-      {...props}
+      className={className}
     >
-      <Button className={className}>{children}</Button>
+      {children}
     </a>
   );
 };

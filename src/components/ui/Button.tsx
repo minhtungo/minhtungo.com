@@ -1,6 +1,9 @@
+'use client';
+
 import mergeClassNames from '@/lib/mergeClassNames';
 import { cva, VariantProps } from 'class-variance-authority';
-import * as React from 'react';
+import { forwardRef, ButtonHTMLAttributes } from 'react';
+import Link from './Link';
 
 export const buttonVariants = cva(
   'inline-flex items-center disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none relative',
@@ -40,11 +43,25 @@ export const buttonVariants = cva(
 );
 
 interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  href?: string;
+}
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, children, variant, size, rounded, ...props }, ref) => {
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, children, variant, size, rounded, href, ...props }, ref) => {
+    if (href) {
+      return (
+        <Link
+          href={href}
+          className={mergeClassNames(
+            buttonVariants({ variant, size, rounded, className })
+          )}
+        >
+          {children}
+        </Link>
+      );
+    }
     return (
       <button
         className={mergeClassNames(

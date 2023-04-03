@@ -4,6 +4,8 @@ import { Title } from '@/components/ui';
 
 import type { Metadata } from 'next';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import { Suspense } from 'react';
+import getCurrentUser from '@/actions/getCurrentUser';
 
 export const metadata: Metadata = {
   title: 'Guestbook | Minh Tu Ngo',
@@ -13,20 +15,23 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default async function GuestbookPage() {
-  const session = await getServerSession(authOptions);
+  const user = getCurrentUser();
 
   return (
     <>
       <Title
         title='Guestbook'
         subtitle={
-          session
-            ? `Hi ${session.user?.name}! I am glad you're here. Please leave a message below.`
-            : "I'd love to hear from you! To leave a message, simply sign in with your preferred account below. "
+          "I'd love to hear from you! Please leave a message below. "
         }
         className='!mb-2'
       />
-      <Guestbook user={session?.user} />
+
+      <Suspense
+        fallback={<div className=''>Loading...</div>}
+      >
+        <Guestbook promise={user} />
+      </Suspense>
       <Messages />
     </>
   );

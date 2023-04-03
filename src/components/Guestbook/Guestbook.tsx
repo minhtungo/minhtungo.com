@@ -6,10 +6,11 @@ import Form from './Form';
 import { FC } from 'react';
 
 interface GuestbookProps {
-  user: DefaultSession['user'];
+  promise: Promise<DefaultSession | null>;
 }
 
-const Guestbook: FC<GuestbookProps> = ({ user }) => {
+const Guestbook = async ({ promise }) => {
+  const user = await promise;
   return <>{user ? <Form user={user} /> : <Actions />}</>;
 };
 
