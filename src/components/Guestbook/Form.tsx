@@ -1,6 +1,7 @@
 'use client';
 
-import { Button, Image, LoadingSpinner } from '@/components/common';
+import { Image, LoadingSpinner } from '@/components/common';
+import { Button } from '@/components/ui';
 import DOMPurify from 'dompurify';
 import { DefaultSession } from 'next-auth';
 import { signOut } from 'next-auth/react';
@@ -81,16 +82,16 @@ const Form: FC<FormProps> = ({ user }) => {
       <div className='mt-1 ml-auto flex gap-2'>
         <Button
           variant='secondary'
-          size='medium'
-          rounded='medium'
-          onClick={signOut}
+          size='md'
+          rounded='md'
+          onClick={() => signOut()}
         >
           Sign Out
         </Button>
         <Button
           disabled={isSending || !content}
-          size='medium'
-          rounded='medium'
+          size='md'
+          rounded='md'
           onClick={() => submitMessage()}
           className='disabled:cursor-not-allowed'
         >

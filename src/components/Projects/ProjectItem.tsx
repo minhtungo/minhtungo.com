@@ -1,11 +1,10 @@
 'use client';
 
-import { Icon, IconHelper, Link } from '@/components/common';
+import { IconHelper } from '@/components/common';
+import { ProjectsIcon, Text } from '@/components/ui';
 import { OpacityVariant } from '@/lib/framerVariants';
 import urlFor from '@/lib/urlFor';
 import { motion } from 'framer-motion';
-import { FiExternalLink, FiGithub } from 'react-icons/fi';
-import { Heading, ProjectsIcon, Text } from '@/components/ui';
 
 import ProjectImage from './ProjectImage';
 

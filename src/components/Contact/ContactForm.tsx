@@ -1,6 +1,7 @@
 'use client';
 
-import { Button, LoadingSpinner } from '@/components/common';
+import { LoadingSpinner } from '@/components/common';
+import { Button } from '@/components/ui';
 import toast from 'react-hot-toast';
 import { FadeContainer } from '@/lib/framerVariants';
 import emailjs from '@emailjs/browser';
@@ -102,8 +103,7 @@ const ContactForm = ({ className }: { className: string }) => {
       <div className='flex w-full items-center justify-center'>
         <Button
           disabled={isSending || !name || !email || !subject || !message}
-          className={`mt-6 flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50`}
-          variant={isSending ? 'secondary' : 'primary'}
+          className='mt-6 flex items-center justify-center'
         >
           {isSending ? (
             <>

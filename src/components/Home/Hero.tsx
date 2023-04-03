@@ -1,9 +1,9 @@
-import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
+import { PopUpFromBottom } from '@/lib/framerVariants';
 import Image from 'next/image';
 import { Text } from '@/components/ui/FramerMotion';
-import { Link, Button, TypingAnimation } from '@/components/common';
+import { Link, TypingAnimation } from '@/components/common';
 import { LazyDogModel } from '@/components/Home';
-import { Heading } from '@/components/ui';
+import { Button, Heading } from '@/components/ui';
 
 const CONTENT = [
   'I Love Bubble Tea.',
@@ -40,10 +40,10 @@ const Hero = () => {
           height={60}
         />
 
-        <Text className='mb-[5px] pl-[3px]' variants={FromLeftVariant}>
+        <Text className='mb-[5px] pl-[3px]' variants={PopUpFromBottom}>
           Hi, I am
         </Text>
-        <Text variants={FromLeftVariant}>
+        <Text variants={PopUpFromBottom}>
           <Heading
             variant='gradient'
             size='lg'
@@ -72,13 +72,12 @@ const Hero = () => {
         </Text>
 
         {/* buttons */}
-        <div className='mt-5 flex flex-col justify-center gap-3 sm:flex-row md:justify-start lg:ml-[1px]'>
-          <Button href='#contact' size='large'>
-            Let{"'"}s Connect
-          </Button>
-
-          <Button href='/about' variant='secondary' size='large'>
+        <div className='mt-5 flex flex-col justify-center gap-3 sm:flex-row md:justify-start lg:ml-[2px]'>
+          <Button href='/about' size='lg'>
             More About Me
+          </Button>
+          <Button href='/contact' variant='secondary' size='lg'>
+            Let{"'"}s Connect
           </Button>
         </div>
       </div>

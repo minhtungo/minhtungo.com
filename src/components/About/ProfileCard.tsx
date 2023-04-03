@@ -1,5 +1,7 @@
-import { Button, Image, Link } from '@/components/common';
+'use client'
 
+import { Image, Link } from '@/components/common';
+import { Button } from '@/components/ui';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
 import astronaut from 'public/static/images/astronaut.gif';

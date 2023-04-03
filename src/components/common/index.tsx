@@ -4,7 +4,7 @@ export { default as Link } from './Link';
 export { default as LoadingSpinner } from './Spinner';
 export { default as IconHelper } from './IconHelper';
 export { default as Logo } from './Logo';
-export { default as Avatar } from './Avatar';
+export { default as Avatar } from '../ui/Avatar';
 export { default as Image } from './Image';
 export { default as CodeSnippet } from '../About/CodeSnippet';
 export { default as TypingAnimation } from '../ui/TypingAnimation';

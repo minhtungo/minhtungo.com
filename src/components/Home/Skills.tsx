@@ -22,7 +22,7 @@ const Skills = () => {
         whileInView='visible'
         variants={FadeContainer}
         viewport={{ once: true }}
-        className='lg: grid grid-cols-3 gap-2 sm:gap-3 xl:grid-cols-4'
+        className='grid grid-cols-3 gap-2 sm:gap-3 xl:grid-cols-4'
       >
         {techStack.map((tech, index) => (
           <motion.div
