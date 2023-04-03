@@ -9,7 +9,7 @@ const Skeleton: FC<SkeletonProps> = ({ className }) => {
   return (
     <div
       className={mergeClassNames(
-        'h-4 w-full animate-pulse rounded-md bg-zinc-200 dark:bg-zinc-800',
+        'h-4 w-full animate-pulse rounded-md bg-card-background-light dark:bg-card-background-dark',
         className
       )}
     />

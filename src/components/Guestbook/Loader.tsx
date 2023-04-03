@@ -2,7 +2,7 @@ import { Skeleton } from '@/components/ui';
 
 const Loader = () => {
   return (
-    <div className=''>
+    <div className='mb-6'>
       <div className='mb-3 flex gap-3'>
         <Skeleton className='h-10 w-10 rounded-full' />
         <div className='flex flex-col justify-center gap-1'>
