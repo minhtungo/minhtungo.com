@@ -2,14 +2,19 @@
 
 import { Button, Image, LoadingSpinner } from '@/components/common';
 import DOMPurify from 'dompurify';
-import { signOut, useSession } from 'next-auth/react';
+import { DefaultSession } from 'next-auth';
+import { signOut } from 'next-auth/react';
 import { useState } from 'react';
+import { FC } from 'react';
 import toast from 'react-hot-toast';
 import TextareaAutosize from 'react-textarea-autosize';
 import { useSWRConfig } from 'swr';
 
-const Form = () => {
-  const { data: session } = useSession();
+interface FormProps {
+  user: DefaultSession['user'];
+}
+
+const Form: FC<FormProps> = ({ user }) => {
   const { mutate } = useSWRConfig();
   const [content, setContent] = useState('');
   const [isSending, setIsSending] = useState(false);
@@ -30,13 +35,12 @@ const Form = () => {
       try {
         setIsSending(true);
         await fetch('/api/guestbook', requestOptions);
-        setContent('');
-        setIsSending(false);
         mutate('/api/guestbook');
       } catch (error) {
+        toast.error('Something went wrong! Please try again.');
+      } finally {
         setContent('');
-        console.error(error);
-        console.error(error);
+        setIsSending(false);
       }
     };
 
@@ -50,16 +54,15 @@ const Form = () => {
         'Something went wrong! Please try again or reach me at mn.minhtungo@gmail.com.',
     });
   };
-
   return (
     <div className='mx-auto mt-8 flex w-full max-w-3xl flex-col items-center gap-2'>
       <div className='flex w-full items-center gap-0 sm:gap-2'>
         <Image
-          src={session?.user?.image!}
+          src={user?.image!}
           width={60}
           height={60}
           className='hidden h-10 w-10 rounded-full sm:block'
-          alt={session?.user?.name!}
+          alt={user?.name!}
         />
         <div className='w-full'>
           <TextareaAutosize
@@ -103,4 +106,5 @@ const Form = () => {
     </div>
   );
 };
+
 export default Form;

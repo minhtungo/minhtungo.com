@@ -6,9 +6,8 @@ import fetcher from '@/lib/fetcher';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import useSWR from 'swr';
 
-const Messages = ({ initialMessage }: { initialMessage: Message[] }) => {
+const Messages = ({}) => {
   const { data: messages } = useSWR('/api/guestbook', fetcher, {
-    fallbackData: initialMessage,
     revalidateOnFocus: false,
   });
 

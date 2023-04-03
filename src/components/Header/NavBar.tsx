@@ -28,7 +28,6 @@ const NavBar = () => {
 
   // Adding Shadow, backdrop to the navbar as user scroll the screen
   const throttledAddShadowToNavbar = throttle(() => {
-    console.log('scrolling');
     if (window.pageYOffset > 10) {
       navRef.current!.classList.add(
         ...[
