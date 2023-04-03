@@ -1,4 +1,4 @@
-import { Actions, Messages } from '@/components/Guestbook';
+import { Actions } from '@/components/Guestbook';
 import { DefaultSession } from 'next-auth';
 
 import Form from './Form';
@@ -10,12 +10,7 @@ interface GuestbookProps {
 }
 
 const Guestbook: FC<GuestbookProps> = ({ user }) => {
-  return (
-    <>
-      {user ? <Form user={user} /> : <Actions />}
-      <Messages />
-    </>
-  );
+  return <>{user ? <Form user={user} /> : <Actions />}</>;
 };
 
 export default Guestbook;

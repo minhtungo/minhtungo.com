@@ -1,11 +1,11 @@
 import { Guestbook, Messages } from '@/components/Guestbook';
 import { getServerSession } from 'next-auth';
 import { Title } from '@/components/ui';
-
-import prisma from '@/lib/prismadb';
+import { Suspense } from 'react';
 
 import type { Metadata } from 'next';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import Loader from '@/components/Guestbook/Loader';
 
 export const metadata: Metadata = {
   title: 'Guestbook | Minh Tu Ngo',
@@ -17,22 +17,6 @@ export const dynamic = 'force-dynamic';
 export default async function GuestbookPage() {
   const session = await getServerSession(authOptions);
 
-  // const messages: any = await prisma.guestBook.findMany({
-  //   orderBy: {
-  //     createdAt: 'desc',
-  //   },
-  // });
-
-  // const messagesWithDateString = messages.map((message: any) => {
-  //   const { updatedAt, createdAt, ...rest } = message;
-  //   return {
-  //     ...rest,
-  //     updatedAt: JSON.stringify(updatedAt), // convert the date object to an ISO string
-  //     createdAt: JSON.stringify(createdAt), // convert the date object to an ISO string
-  //   };
-  // });
-
-  // const session = await getServerSession(authOptions);
   return (
     <>
       <Title
@@ -45,6 +29,9 @@ export default async function GuestbookPage() {
         className='!mb-2'
       />
       <Guestbook user={session?.user} />
+      <Suspense fallback={<p className='text-3xl text-white'>Loadfing</p>}>
+        <Messages />
+      </Suspense>
     </>
   );
 }
