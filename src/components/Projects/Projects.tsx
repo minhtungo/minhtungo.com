@@ -1,7 +1,6 @@
-import { Title } from '@/components/common';
 import mergeClassNames from '@/lib/mergeClassNames';
 import { IoMdArrowForward } from 'react-icons/io';
-import { Button } from '@/components//ui';
+import { Button, Title } from '@/components//ui';
 import Link from 'next/link';
 
 import ProjectItem from './ProjectItem';

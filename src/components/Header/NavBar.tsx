@@ -1,6 +1,6 @@
 'use client';
 
-import { Avatar, Link, Logo } from '@/components/common';
+import { Avatar, Link, Logo } from '@/components/ui';
 import { links } from '@/constant/routes';
 import { FadeContainer, FromLeftVariant, PopUp } from '@/lib/framerVariants';
 import mergeClassNames from '@/lib/mergeClassNames';
@@ -77,7 +77,6 @@ const NavBar = () => {
           href='/'
           className='mr-3'
           aria-label='Link to Home Page'
-          animation={false}
         >
           <motion.div
             initial='hidden'

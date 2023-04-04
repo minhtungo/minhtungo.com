@@ -5,10 +5,10 @@ import { Disclosure, Transition } from '@headlessui/react';
 import { motion } from 'framer-motion';
 import { Fragment } from 'react';
 import { AiOutlineCaretDown } from 'react-icons/ai';
-import { CodeSnippet } from '@/components/common';
 
 import JourneyCard from './JourneyCard';
 import { Heading } from '@/components/ui';
+import CodeSnippet from '../CodeSnippet';
 
 interface JourneyProps {
   journeys: Journey[];

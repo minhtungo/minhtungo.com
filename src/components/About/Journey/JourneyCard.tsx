@@ -1,6 +1,4 @@
-import IconHelper from '@/components/common/IconHelper';
-
-import { Text } from '@/components/ui';
+import { IconHelper, Text } from '@/components/ui';
 
 interface JourneyCardProps {
   journey: Journey;

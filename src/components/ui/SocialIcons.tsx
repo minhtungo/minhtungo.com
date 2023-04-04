@@ -1,4 +1,4 @@
-import { Link } from '@/components/common';
+import { Link } from '@/components/ui';
 import mergeClassNames from '@/lib/mergeClassNames';
 import { FC } from 'react';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
@@ -16,7 +16,7 @@ const SocialIcons: FC<SocialIconProps> = ({ className, footer = false }) => {
         className
       )}
     >
-      <Link href='https://github.com/minhtungo' animation={false}>
+      <Link href='https://github.com/minhtungo'>
         <FiGithub
           className={mergeClassNames(
             'hover:text-blue-500',
@@ -26,7 +26,7 @@ const SocialIcons: FC<SocialIconProps> = ({ className, footer = false }) => {
         <span className='sr-only'>My Github account</span>
       </Link>
 
-      <Link href='https://linkedin.com/in/minhtungo/' animation={false}>
+      <Link href='https://linkedin.com/in/minhtungo/'>
         <FiLinkedin
           className={mergeClassNames(
             'hover:text-blue-500',

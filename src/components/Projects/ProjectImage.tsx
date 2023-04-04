@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from '@/components/common';
+import { Image } from '@/components/ui';
 import { videoSrc } from '@/constant/videoSrc';
 import mergeClassNames from '@/lib/mergeClassNames';
 

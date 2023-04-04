@@ -1,7 +1,6 @@
 'use client';
 
-import { Image, LoadingSpinner } from '@/components/common';
-import { Button } from '@/components/ui';
+import { LoadingSpinner, Image, Button } from '@/components/ui';
 import DOMPurify from 'dompurify';
 import { DefaultSession } from 'next-auth';
 import { signOut } from 'next-auth/react';

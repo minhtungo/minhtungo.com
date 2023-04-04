@@ -1,6 +1,6 @@
 'use client';
 
-import Image from '@/components/common/Image';
+import { Image } from '@/components/ui';
 import fetcher from '@/lib/fetcher';
 import dayjs from 'dayjs';
 import useSWR from 'swr';

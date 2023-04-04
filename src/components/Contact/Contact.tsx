@@ -1,13 +1,12 @@
-import { Icon, Title } from '@/components/common';
+import { Title } from '@/components/ui';
 import { Text } from '@/components/ui/FramerMotion';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import mergeClassNames from '@/lib/mergeClassNames';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { MdOutlineEmail, MdOutlinePhone } from 'react-icons/md';
-import { SocialIcons } from '../ui';
 
+import { SocialIcons } from '../ui';
 import ContactForm from './ContactForm';
 
 const Contact = ({ home }: { home?: boolean }) => {

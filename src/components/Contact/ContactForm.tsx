@@ -1,7 +1,6 @@
 'use client';
 
-import { LoadingSpinner } from '@/components/common';
-import { Button } from '@/components/ui';
+import { Button, LoadingSpinner } from '@/components/ui';
 import toast from 'react-hot-toast';
 import { FadeContainer } from '@/lib/framerVariants';
 import emailjs from '@emailjs/browser';

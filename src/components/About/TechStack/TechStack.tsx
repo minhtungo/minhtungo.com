@@ -2,8 +2,7 @@
 
 import Marquees from './Marquees';
 import techStack from '@/constant/techStack';
-import { Image } from '@/components/common';
-import { Heading } from '@/components/ui';
+import { Heading, Image } from '@/components/ui';
 
 const TechStack = () => {
   return (

@@ -1,16 +1,11 @@
 'use client';
 
-import { Image, Link } from '@/components/common';
+import { Image, Heading, Link } from '@/components/ui';
+import { Div } from '@/components/ui/FramerMotion';
 import fetcher from '@/lib/fetcher';
-import useSWR from 'swr';
-import { Div, Text } from '@/components/ui/FramerMotion';
-import {
-  FadeContainer,
-  FromLeftChildren,
-  OpacityVariant,
-} from '@/lib/framerVariants';
+import { FadeContainer, FromLeftChildren } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
-import { Heading } from '@/components/ui';
+import useSWR from 'swr';
 
 const RecentlyPlayed = ({ initialSongs }: { initialSongs: any }) => {
   const { data: songs } = useSWR('/api/spotify/recently-played', fetcher, {
@@ -31,7 +26,6 @@ const RecentlyPlayed = ({ initialSongs }: { initialSongs: any }) => {
             className='group relative mx-auto w-full cursor-pointer text-white/80 shadow-md transition duration-200 ease-out hover:scale-[1.025] hover:text-gray-50 '
             href={song?.url}
             key={index}
-            animation={false}
           >
             <motion.div variants={FromLeftChildren}>
               <div className='relative h-[360px] w-[260px] overflow-hidden rounded-lg shadow-lg'>

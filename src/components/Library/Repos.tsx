@@ -1,9 +1,8 @@
-import { Title } from '@/components/common';
+import { Button, Title } from '@/components/ui';
 import mergeClassNames from '@/lib/mergeClassNames';
 import Link from 'next/link';
 import { IoMdArrowForward } from 'react-icons/io';
 
-import { Button } from '@/components/ui';
 import RepoCard from './RepoCard';
 
 interface ReposProps {

@@ -1,8 +1,7 @@
 'use client';
 
 import { Div } from '@/components/ui/FramerMotion';
-import Image from '@/components/common/Image';
-import Link from '@/components/common/Link';
+import { Image, Link } from '@/components/ui';
 import fetcher from '@/lib/fetcher';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import { useMemo } from 'react';
@@ -28,7 +27,6 @@ const NowPlaying = () => {
               ? `${currentSong.url}`
               : 'https://open.spotify.com/user/htnv9ntrl6mx2g0hbwmllbvqx?si=XAKVV0NWSOOnyOvZKGfYSg&nd=1'
           }
-          animation={false}
         >
           {currentSong?.isPlaying ? (
             <div className='h-auto w-auto animate-[spin_5s_linear_infinite] '>

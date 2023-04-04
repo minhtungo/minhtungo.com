@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import React from 'react';
+import { Image } from '@/components/ui';
 import mergeClassNames from '@/lib/mergeClassNames';
+import React from 'react';
 
 const Avatar = ({
   className,

@@ -1,4 +1,5 @@
-import { IconHelper, Link } from '@/components/common';
+import { IconHelper, Link } from '@/components/ui';
+
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { HiOutlineMenuAlt4 } from 'react-icons/hi';
@@ -35,7 +36,6 @@ export default function MobileMenu({ links }: { links: Link[] }) {
                   <Menu.Item key={link.label}>
                     {({ active }: { active: boolean }) => (
                       <Link
-                        animation={false}
                         href={link.href}
                         className={`${
                           active

@@ -1,9 +1,10 @@
+import { Image } from '@/components/ui';
 import mergeClassNames from '@/lib/mergeClassNames';
-import Image from 'next/image';
 import Code from 'public/static/icons/code.svg';
 import Bootstrap from 'public/static/images/stack/bootstrap.svg';
 import ChakraUI from 'public/static/images/stack/chakra-ui.svg';
 import Firebase from 'public/static/images/stack/firebase.svg';
+import GraphQL from 'public/static/images/stack/graphql.svg';
 import JavaScript from 'public/static/images/stack/javascript.svg';
 import MaterialUI from 'public/static/images/stack/material-ui.svg';
 import MongoDB from 'public/static/images/stack/mongodb.svg';
@@ -15,7 +16,6 @@ import StyledComponents from 'public/static/images/stack/styled-components.svg';
 import Tailwind from 'public/static/images/stack/tailwind.svg';
 import TRPC from 'public/static/images/stack/trpc.svg';
 import TypeScript from 'public/static/images/stack/typescript.svg';
-import GraphQL from 'public/static/images/stack/graphql.svg';
 import { BsJournalCode as Library } from 'react-icons/bs';
 import { CgComment as Guestbook, CgProfile as About } from 'react-icons/cg';
 import {

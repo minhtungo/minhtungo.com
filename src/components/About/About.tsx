@@ -1,9 +1,8 @@
 'use client';
 
-import { Title } from '@/components/common';
 import { Div } from '@/components/ui/FramerMotion';
 import { OpacityVariant } from '@/lib/framerVariants';
-import { Text } from '@/components/ui';
+import { Text, Title } from '@/components/ui';
 
 import ProfileCard from './ProfileCard';
 

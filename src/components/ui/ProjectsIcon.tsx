@@ -1,4 +1,4 @@
-import { Link } from '@/components/common';
+import { Link } from '@/components/ui';
 import mergeClassNames from '@/lib/mergeClassNames';
 import { FC } from 'react';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
@@ -21,12 +21,12 @@ const ProjectsIcon: FC<ProjectsIconProps> = ({
         className
       )}
     >
-      <Link href={githubURL} animation={false}>
+      <Link href={githubURL}>
         <FiGithub className='h-4 w-4 hover:text-blue-500 md:h-[18px] md:w-[18px]' />
         <span className='sr-only'>Link to Github</span>
       </Link>
       {liveURL && (
-        <Link href={liveURL} animation={false}>
+        <Link href={liveURL}>
           <FiExternalLink className='h-4 w-4 hover:text-blue-500 md:h-[18px] md:w-[18px]' />
           <span className='sr-only'>Link to live website</span>
         </Link>

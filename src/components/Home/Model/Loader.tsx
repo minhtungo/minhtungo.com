@@ -1,7 +1,7 @@
 // @ts-nocheck
 
 import { forwardRef } from 'react';
-import { LoadingSpinner } from '@/components/common';
+import { LoadingSpinner } from '@/components/ui';
 
 interface DivContainerProps {
   children: React.ReactNode;

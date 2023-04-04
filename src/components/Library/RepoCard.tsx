@@ -1,7 +1,6 @@
 'use client';
 
-import { IconHelper } from '@/components/common';
-import { ProjectsIcon, Text } from '@/components/ui';
+import { IconHelper, ProjectsIcon, Text } from '@/components/ui';
 import { Div } from '@/components/ui/FramerMotion';
 import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';

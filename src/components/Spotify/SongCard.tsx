@@ -1,4 +1,7 @@
-import { Image, Link } from '@/components/common';
+'use client';
+
+import { Image, Link } from '@/components/ui';
+
 import { FromLeftChildren } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
 

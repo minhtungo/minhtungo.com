@@ -1,7 +1,6 @@
-'use client'
+'use client';
 
-import { Image, Link } from '@/components/common';
-import { Button } from '@/components/ui';
+import { Button, Image, Link } from '@/components/ui';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
 import astronaut from 'public/static/images/astronaut.gif';
@@ -17,7 +16,7 @@ const ProfileCard = () => {
       whileInView='visible'
       variants={PopUpFromBottom}
     >
-      <Link href='https://tenor.com/bCgDy.gif' animation={false}>
+      <Link href='https://tenor.com/bCgDy.gif'>
         {/* "GIF courtesy of Author's Dudun from https://tenor.com/bCgDy.gif" */}
         <Image
           src={astronaut}
@@ -30,7 +29,7 @@ const ProfileCard = () => {
       </Link>
 
       <div className='-mt-8 flex justify-center'>
-        <Link href='https://linkedin.com/in/minhtungo/' animation={false}>
+        <Link href='https://linkedin.com/in/minhtungo/'>
           <div className='primary-gradient z-50 -mt-3 w-full animate-border rounded-full bg-gradient-to-r bg-[length:400%_400%] p-[2px]'>
             <Image
               src='/static/images/avatar.png'

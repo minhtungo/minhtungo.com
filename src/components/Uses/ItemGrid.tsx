@@ -1,10 +1,9 @@
 'use client';
 
-import { Image, Link } from '@/components/common';
+import { Image, Text, Link } from '@/components/ui';
 import { Div } from '@/components/ui/FramerMotion';
 import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
-import { Text } from '../ui';
 
 type ItemGridProps = {
   items: Item[];
@@ -17,7 +16,7 @@ const ItemGrid = ({ items }: ItemGridProps) => {
       list
       className='mt-5 mb-8 grid grid-cols-1 gap-3 sm:mb-10 sm:grid-cols-2 md:sm:grid-cols-3 lg:grid-cols-4'
     >
-      {items.map((item, i) => (
+      {items.map((item) => (
         <motion.li
           variants={PopUpFromBottom}
           key={item.name}
@@ -35,7 +34,6 @@ const ItemGrid = ({ items }: ItemGridProps) => {
               <Link
                 href={item.url}
                 className='font-semibold text-gray-700 transition-all duration-200 ease-out hover:underline dark:text-gray-200'
-                animation={false}
               >
                 {item.name}
               </Link>

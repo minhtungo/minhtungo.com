@@ -1,9 +1,8 @@
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import Image from 'next/image';
 import { Text } from '@/components/ui/FramerMotion';
-import { Link, TypingAnimation } from '@/components/common';
 import { LazyDogModel } from '@/components/Home';
-import { Button, Heading } from '@/components/ui';
+import { Button, Heading, TypingAnimation, Link } from '@/components/ui';
 
 const CONTENT = [
   'I Love Bubble Tea.',

@@ -1,7 +1,7 @@
 import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
 
 import { Heading as AnimatedHeading, Text } from '@/components/ui/FramerMotion';
-import { Image } from '@/components/common';
+import { Image } from '@/components/ui';
 import { ItemGrid } from '@/components/Uses';
 
 const Heading = {

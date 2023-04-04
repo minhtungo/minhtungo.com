@@ -1,7 +1,6 @@
 'use client';
 
-import { IconHelper } from '@/components/common';
-import { ProjectsIcon, Text } from '@/components/ui';
+import { ProjectsIcon, IconHelper, Text } from '@/components/ui';
 import { OpacityVariant } from '@/lib/framerVariants';
 import urlFor from '@/lib/urlFor';
 import { motion } from 'framer-motion';

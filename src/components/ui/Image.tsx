@@ -16,7 +16,7 @@ const Image = (props: ImageProps) => {
     <div
       className={mergeClassNames(
         'overflow-hidden',
-        // isLoading ? 'animate-pulse' : '',
+        isLoading ? 'animate-pulse' : '',
         rounded
       )}
     >

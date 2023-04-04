@@ -1,7 +1,6 @@
-import { IconHelper, Link } from '@/components/common';
-import footer from '@/constant/footer';
 import { NowPlaying } from '@/components/Spotify';
-import { SocialIcons } from '../ui';
+import { IconHelper, Link, SocialIcons } from '@/components/ui';
+import footer from '@/constant/footer';
 
 const Footer = () => {
   return (
@@ -9,7 +8,7 @@ const Footer = () => {
       <div className='md:flex md:items-center md:justify-between'>
         <div className='mb-6 flex w-fit flex-col justify-center md:mb-0'>
           <div className='flex items-center'>
-            <Link href='/' animation={false}>
+            <Link href='/'>
               <p className='flex cursor-pointer items-center whitespace-nowrap text-lg font-semibold dark:text-gray-50'>
                 Minh Tu Ngo.
                 <span className='mx-1 mr-2 rounded-lg bg-black/[7%] px-2 py-1 text-xs dark:bg-white/10'>
@@ -32,7 +31,7 @@ const Footer = () => {
             >
               {category.links.map((link, index) => (
                 <li className='mt-2' key={index}>
-                  <Link href={link.href} icon={category.title === 'Social'}>
+                  <Link href={link.href} animation>
                     {link.title}
                   </Link>
                 </li>
@@ -53,7 +52,6 @@ const Footer = () => {
         </div>
         <Link
           href='/'
-          animation={false}
           className='mt-4 text-sm text-gray-600 dark:text-gray-400'
         >
           Made by{' '}
