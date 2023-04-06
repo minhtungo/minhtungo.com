@@ -34,17 +34,22 @@ const ProjectImage = ({
         src={src}
         width={800}
         height={400}
-        className='hidden h-full w-full object-cover backdrop-blur-xl lg:inline-block lg:group-hover:hidden'
+        className={mergeClassNames(
+          'h-full w-full object-cover backdrop-blur-xl lg:inline-block',
+          videoSrc[videoLink] && 'hidden lg:group-hover:hidden'
+        )}
       />
-      <video
-        playsInline
-        autoPlay
-        loop
-        muted
-        className='block h-full w-full lg:hidden lg:group-hover:block'
-      >
-        <source src={videoSrc[videoLink]} type='video/webm' />
-      </video>
+      {videoSrc[videoLink] && (
+        <video
+          playsInline
+          autoPlay
+          loop
+          muted
+          className='block h-full w-full lg:hidden lg:group-hover:block'
+        >
+          <source src={videoSrc[videoLink]} type='video/webm' />
+        </video>
+      )}
     </a>
   );
 };
