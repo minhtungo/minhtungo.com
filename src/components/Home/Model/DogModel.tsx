@@ -1,25 +1,14 @@
 'use client';
 
-import { Suspense } from 'react';
-import { OrbitControls } from '@react-three/drei';
+import { Suspense, memo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Dog } from './Dog';
-import { useState, useEffect } from 'react';
+import Control from './Control';
 interface DogModelTypes {
   className?: string;
 }
 
-const DogModel = ({ className }: DogModelTypes) => {
-  const [autoRotate, setAutoRotate] = useState(false);
-  const [autoRotateSpeed, setAutoRotateSpeed] = useState(0.01);
-
-  useEffect(() => {
-    setAutoRotateSpeed(800);
-
-    setTimeout(() => {
-      setAutoRotateSpeed(2);
-    }, 800);
-  }, []);
+const DogModel = memo(({ className }: DogModelTypes) => {
   return (
     <Canvas
       camera={{ position: [15, 8, 28], fov: 22 }}
@@ -33,13 +22,11 @@ const DogModel = ({ className }: DogModelTypes) => {
       <Suspense fallback={null}>
         <Dog />
       </Suspense>
-      <OrbitControls
-        autoRotate
-        autoRotateSpeed={autoRotateSpeed}
-        enablePan={false}
-        enableZoom={false}
-      />
+      <Control />
     </Canvas>
   );
-};
+});
+
+DogModel.displayName = 'DogModel';
+
 export default DogModel;
