@@ -50,4 +50,5 @@ const nextConfig = {
 // const withMDX = require('@next/mdx')();
 
 // Merge MDX config with Next.js config
+
 module.exports = nextConfig;

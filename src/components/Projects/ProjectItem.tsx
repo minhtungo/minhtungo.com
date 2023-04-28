@@ -47,12 +47,12 @@ const ProjectItem = ({ project }: ProjectItemProps) => (
               key={`${tool}-${index}`}
               className='group relative transition duration-200 ease-linear'
             >
-              <span className='flex items-center justify-center'>
+              <div className='flex items-center justify-center'>
                 <IconHelper type={tool} className='h-5 w-5 md:h-6 md:w-6' />
                 <span className='absolute -top-7 w-max scale-0 rounded bg-background-light px-2 py-1 text-sm font-medium text-gray-800 shadow transition-all group-hover:scale-100 dark:bg-background-dark dark:text-gray-300'>
                   {tool}
                 </span>
-              </span>
+              </div>
             </div>
           );
         })}
