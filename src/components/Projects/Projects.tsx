@@ -1,8 +1,7 @@
+import { Title } from '@/components//ui';
 import mergeClassNames from '@/lib/mergeClassNames';
-import { IoMdArrowForward } from 'react-icons/io';
-import { Button, Title } from '@/components//ui';
-import Link from 'next/link';
 
+import ViewMoreButton from '../common/ViewMoreButton';
 import ProjectItem from './ProjectItem';
 
 interface ProjectsProp {
@@ -24,16 +23,9 @@ const Projects = ({ projects, home }: ProjectsProp) => {
           <ProjectItem project={project} key={project._id} />
         ))}
       </div>
-
-      <Link
-        className='group relative mt-6 block text-center transition duration-200 motion-reduce:transition-none lg:mt-12'
-        href={home ? '/projects' : '/library'}
-      >
-        <Button size='md' variant='secondary'>
-          View More{' '}
-          <IoMdArrowForward className='ml-1 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0' />
-        </Button>
-      </Link>
+      <div className='mt-6 text-center lg:mt-12'>
+        <ViewMoreButton href={home ? '/projects' : '/library'} />
+      </div>
     </div>
   );
 };

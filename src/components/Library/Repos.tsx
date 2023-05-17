@@ -1,8 +1,7 @@
-import { Button, Title } from '@/components/ui';
+import { Title } from '@/components/ui';
 import mergeClassNames from '@/lib/mergeClassNames';
-import Link from 'next/link';
-import { IoMdArrowForward } from 'react-icons/io';
 
+import ViewMoreButton from '../common/ViewMoreButton';
 import RepoCard from './RepoCard';
 
 interface ReposProps {
@@ -21,16 +20,11 @@ const Repos = ({ repos, home }: ReposProps) => {
         home={home}
       />
       <RepoCard repos={repos} />
+
       {home && (
-        <Link
-          className='group relative mt-6 block text-center transition duration-200 motion-reduce:transition-none lg:mt-12'
-          href='/library'
-        >
-          <Button size='md' variant='secondary'>
-            View More{' '}
-            <IoMdArrowForward className='ml-1 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0' />
-          </Button>
-        </Link>
+        <div className='mt-6 text-center lg:mt-12'>
+          <ViewMoreButton href='/library' />
+        </div>
       )}
     </div>
   );
