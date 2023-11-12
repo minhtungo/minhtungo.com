@@ -16,6 +16,10 @@ const techStack = [
     src: '/static/images/stack/express.svg',
   },
   {
+    name: 'Medusa.js',
+    src: '/static/images/stack/medusa.jpg',
+  },
+  {
     name: 'NextJS',
     src: '/static/images/stack/next.png',
   },
