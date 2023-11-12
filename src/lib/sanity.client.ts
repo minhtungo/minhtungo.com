@@ -19,14 +19,14 @@ export const projectQuery = groq`
 `;
 
 export const projectHomeQuery = groq`
-  *[_type == "project"][0...2] {
+  *[_type == "project" && order <= 2] {
     ...,
-  } | order(order asc, _createdAt asc)
+  } | order(order asc, _createdAt desc)
 `;
 export const repoQuery = groq`
   *[_type == "repo"] {
     ...,
-  } | order(order asc, _createdAt asc)
+  } | order(order desc)
 `;
 
 export const repoHomeQuery = groq`
