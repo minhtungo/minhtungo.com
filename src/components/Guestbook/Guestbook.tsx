@@ -1,16 +1,10 @@
 import { Actions } from '@/components/Guestbook';
-import { DefaultSession } from 'next-auth';
 
+import getCurrentUser from '@/actions/getCurrentUser';
 import Form from './Form';
 
-import { FC } from 'react';
-
-interface GuestbookProps {
-  promise: Promise<DefaultSession | null>;
-}
-
-const Guestbook = async ({ promise }) => {
-  const user = await promise;
+const Guestbook = async () => {
+  const user = await getCurrentUser();
   return <>{user ? <Form user={user} /> : <Actions />}</>;
 };
 
