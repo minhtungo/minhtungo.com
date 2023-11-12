@@ -1,15 +1,21 @@
 const OFFICE_ITEMS: Item[] = [
   {
     image: '/static/images/uses/laptop.png',
-    name: 'Asus TUF F15 FX506',
+    name: 'Dell G15 5525',
     description: '15.6" Laptop',
-    url: 'https://asus.com/ca-en/laptops/for-gaming/tuf-gaming/asus-tuf-gaming-f15/',
+    url: 'https://www.dell.com/support/manuals/en-us/g-series-15-5525-laptop/dell-g15-5525-setup-and-specifications/display?guid=guid-57f3fe94-a77a-4c15-a28d-891f6e2f333a&lang=en-us',
   },
   {
     image: '/static/images/uses/monitor.png',
     name: 'Dell S3221QS Monitor',
     description: '32" Curved 4K UHD',
     url: 'https://dell.com/en-ca/shop/dell-32-curved-4k-uhd-monitor-s3221qs/apd/210-axkm/monitors-monitor-accessories',
+  },
+  {
+    image: '/static/images/uses/samsung-monitor.png',
+    name: 'Samsung 24" Monitor',
+    description: '24" Full HD',
+    url: 'https://www.samsung.com/ca/monitors/flat/flat-fhd-monitor-with-borderless-design-24-inch-lf24t350fhnxza/',
   },
   {
     image: '/static/images/uses/keyboard.png',
