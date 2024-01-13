@@ -4,9 +4,8 @@ import { client, repoQuery } from '@/lib/sanity.client';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Library | Minh Tu Ngo',
-  description:
-    'I love to create amazing web applications to make the internet a better place.',
+  title: 'Library',
+  description: 'I love to create amazing web applications to make the internet a better place.',
 };
 
 export default async function LibraryPage() {

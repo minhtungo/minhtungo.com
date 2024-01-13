@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Guestbook | Minh Tu Ngo',
+  title: 'Guestbook',
   description: 'Sign my guestbook and share your thoughts.',
 };
 

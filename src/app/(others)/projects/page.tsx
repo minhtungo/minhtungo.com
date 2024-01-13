@@ -4,9 +4,8 @@ import { client, projectQuery } from '@/lib/sanity.client';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Projects | Minh Tu Ngo',
-  description:
-    'My projects.  I love to create amazing web applications to make the internet a better place.',
+  title: 'Projects',
+  description: 'My projects.  I love to create amazing web applications to make the internet a better place.',
 };
 
 export default async function ProjectsPage() {

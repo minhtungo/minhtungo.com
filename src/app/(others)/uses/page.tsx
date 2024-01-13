@@ -5,7 +5,7 @@ import { USES_ITEMS } from '@/constant/uses';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Uses | Minh Tu Ngo',
+  title: 'Uses',
   description: 'List of tools and technologies that I use everyday.',
 };
 
