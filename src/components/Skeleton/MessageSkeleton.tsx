@@ -1,6 +1,9 @@
+import { FC } from 'react';
 import { Skeleton } from '@/components/ui';
 
-const Loader = () => {
+interface MessageSkeletonProps {}
+
+const MessageSkeleton: FC<MessageSkeletonProps> = () => {
   return (
     <div className='mb-6'>
       <div className='mb-3 flex gap-3'>
@@ -17,4 +20,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default MessageSkeleton;

@@ -1,5 +1,5 @@
 import { Guestbook, Messages } from '@/components/Guestbook';
-import Loader from '@/components/Guestbook/Loader';
+import MessageSkeleton from '@/components/Skeleton/MessageSkeleton';
 import { Skeleton, Title } from '@/components/ui';
 
 import type { Metadata } from 'next';
@@ -10,13 +10,10 @@ export const metadata: Metadata = {
   description: 'Sign my guestbook and share your thoughts.',
 };
 
-export const dynamic = 'force-dynamic';
-
 export default async function GuestbookPage() {
   return (
     <>
       <Title title='Guestbook' subtitle={"I'd love to hear from you! Please leave a message below. "} className='!mb-2' />
-
       <Suspense
         fallback={
           <div className='mt-3 flex flex-wrap items-center justify-center gap-2 lg:mt-4'>
@@ -31,9 +28,9 @@ export default async function GuestbookPage() {
         fallback={
           <div className='mx-auto max-w-3xl'>
             <hr className='my-6 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
-            <Loader />
-            <Loader />
-            <Loader />
+            {[1, 2, 3].map((_, i) => (
+              <MessageSkeleton key={i} />
+            ))}
           </div>
         }
       >
