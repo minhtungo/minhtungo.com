@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default async function HomePage() {
   return (
-    <main>
+    <>
       <Hero />
       <Skills />
       <Suspense>
@@ -23,6 +23,6 @@ export default async function HomePage() {
         <Repos home />
       </Suspense>
       <Contact home />
-    </main>
+    </>
   );
 }
