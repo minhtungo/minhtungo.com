@@ -3,8 +3,7 @@ import Image from 'next/image';
 import { Text } from '@/components/ui/FramerMotion';
 import { LazyDogModel } from '@/components/Home';
 import { Button, Heading, TypingAnimation, Link } from '@/components/ui';
-
-const CONTENT = ['I Love Bubble Tea.', 1000, 'I Love Building Things For The Web.', 1000, 'I Love React.', 1000, ''];
+import { TYPING_CONTENT } from '@/constant/home';
 
 const Hero = () => {
   return (
@@ -28,7 +27,7 @@ const Hero = () => {
           <span className='wave text-2xl md:text-4xl lg:text-5xl'>👋</span>
         </Text>
         <div className='text-md mt-3 font-medium dark:text-neutral-300 md:mt-4 md:text-base lg:ml-[2px] lg:text-lg'>
-          <TypingAnimation content={CONTENT} />
+          <TypingAnimation content={TYPING_CONTENT} />
         </div>
         <Text variants={PopUpFromBottom} className='lg:text-md mt-4 text-sm dark:text-neutral-400 md:text-base lg:ml-[1px] lg:mt-3'>
           {"Don't forget to sign my"}{' '}

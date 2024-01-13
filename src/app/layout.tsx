@@ -2,13 +2,15 @@ import './globals.css';
 
 import { Footer } from '@/components/Footer';
 import { NavBar } from '@/components/Header';
-
-import Providers from './Providers';
-import { Inter } from 'next/font/google';
-import ToastWrapper from './ToastWrapper';
 import { KBar } from '@/components/KBar';
 import mergeClassNames from '@/lib/mergeClassNames';
 import { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
+import ScrollToTop from 'react-scroll-to-top';
+import Providers from './Providers';
+import ToastWrapper from './ToastWrapper';
+import ScrollToTopButton from '@/components/ui/ScrollToTopButton';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -34,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </KBar>
         </Providers>
+        <ScrollToTopButton />
         <ToastWrapper />
       </body>
     </html>

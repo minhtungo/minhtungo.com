@@ -1,10 +1,8 @@
 import { About, Journey, TechStack } from '@/components/About';
 import RecentlyPlayed from '@/components/Spotify/RecentlyPlayed';
-
 import { client, journeyQuery } from '@/lib/sanity.client';
-import { fetchRecentlyPlayedSongs } from '@/lib/spotify';
-
 import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -12,16 +10,16 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  let journeys, recentlyPlayedSongs;
-
-  [journeys, recentlyPlayedSongs] = await Promise.all([await client.fetch(journeyQuery), await fetchRecentlyPlayedSongs()]);
+  const journeys = await client.fetch(journeyQuery);
 
   return (
     <>
       <About />
       <TechStack />
       <Journey journeys={journeys} />
-      <RecentlyPlayed initialSongs={recentlyPlayedSongs} />
+      <Suspense>
+        <RecentlyPlayed />
+      </Suspense>
     </>
   );
 }
