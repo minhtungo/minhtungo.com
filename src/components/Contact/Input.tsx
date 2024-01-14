@@ -1,24 +1,13 @@
-interface InputProps {
+interface InputProps extends React.ComponentPropsWithoutRef<'input'> {
   type?: string;
   name: string;
   label: string;
   value: string;
   textarea?: boolean;
-  onChange: (
-    e:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLTextAreaElement>
-  ) => void;
+  onChange: (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const Input = ({
-  type,
-  name,
-  onChange,
-  label,
-  value,
-  textarea,
-}: InputProps) => {
+const Input = ({ type, name, onChange, label, value, textarea, ...props }: InputProps) => {
   return (
     <div className='group relative z-0 mb-6 w-full'>
       {textarea ? (
@@ -31,6 +20,7 @@ const Input = ({
           onChange={onChange}
           required
           aria-label={label}
+          {...props}
         />
       ) : (
         <input
@@ -43,6 +33,7 @@ const Input = ({
           onChange={onChange}
           required
           aria-label={label}
+          {...props}
         />
       )}
 

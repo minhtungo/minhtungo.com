@@ -27,7 +27,6 @@ export default async function GuestbookPage() {
       <Suspense
         fallback={
           <div className='mx-auto max-w-3xl'>
-            <hr className='my-6 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
             {[1, 2, 3].map((_, i) => (
               <MessageSkeleton key={i} />
             ))}

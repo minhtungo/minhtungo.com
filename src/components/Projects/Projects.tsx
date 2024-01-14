@@ -1,16 +1,15 @@
 import { Title } from '@/components//ui';
 import mergeClassNames from '@/lib/mergeClassNames';
 
-import { client, projectHomeQuery } from '@/lib/sanity.client';
 import ViewMoreButton from '../common/ViewMoreButton';
 import ProjectItem from './ProjectItem';
 
 interface ProjectsProp {
   home?: boolean;
+  projects: any;
 }
 
-const Projects = async ({ home }: ProjectsProp) => {
-  const projects = await client.fetch(projectHomeQuery);
+const Projects = async ({ home, projects }: ProjectsProp) => {
   return (
     <div className={mergeClassNames(home && 'pt-16 lg:pt-20')}>
       <Title title='Projects' subtitle={home ? '' : 'Showcase of my works on web development.'} home={home} />

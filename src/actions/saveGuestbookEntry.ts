@@ -3,12 +3,13 @@
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import prisma from '@/lib/prismadb';
 import { getServerSession } from 'next-auth';
+import { revalidatePath } from 'next/cache';
 
 export async function saveGuestbookEntry(formData: FormData) {
   const session = await getServerSession(authOptions);
 
-  if (!session) {
-    return { error: 'You must be logged in.' };
+  if (!session?.user) {
+    throw new Error('Unauthorized');
   }
 
   const { email, image, name } = session?.user as {
@@ -17,7 +18,7 @@ export async function saveGuestbookEntry(formData: FormData) {
     image: string;
   };
 
-  const content = formData.get('content') as string;
+  const content = formData.get('content')?.toString();
 
   if (!content) {
     return { error: "The comment can't be empty." };
@@ -33,9 +34,7 @@ export async function saveGuestbookEntry(formData: FormData) {
       },
     });
 
-    return {
-      message: 'Comment created successfully.',
-    };
+    revalidatePath('/guestbook');
   } catch (error) {
     let message = 'Unexpected error';
     if (error instanceof Error) {

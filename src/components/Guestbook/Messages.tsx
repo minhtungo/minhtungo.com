@@ -10,12 +10,10 @@ const Messages = async ({}) => {
   });
 
   return (
-    <div className='mx-auto max-w-3xl'>
-      <hr className='my-6 border-transparent-black-tight dark:border-transparent-white sm:mx-auto' />
-
+    <div className='mx-auto max-w-3xl mt-10'>
       {messages &&
         messages.map(({ id, image, createdBy, createdAt, content }) => (
-          <article className='mb-6' key={id}>
+          <article className='mb-4 pb-4 border-b border-transparent-black-tight dark:border-transparent-white last:border-none' key={id}>
             <footer className='mb-3 flex gap-3'>
               <Image className='h-10 w-10 rounded-full' width={45} height={45} src={image} alt={createdBy} />
               <div className='flex flex-col justify-center gap-px text-sm'>
