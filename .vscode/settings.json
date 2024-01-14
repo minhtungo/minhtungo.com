@@ -1,4 +1,54 @@
 {
-  "typescript.tsdk": "node_modules\\typescript\\lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "editor.inlineSuggest.enabled": true,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "git.enableSmartCommit": true,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
+  "editor.wordWrap": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "explorer.compactFolders": false,
+  "audioCues.volume": 0,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "explorer.confirmDragAndDrop": false,
+  "editor.multiCursorModifier": "ctrlCmd",
+  "git.confirmSync": false,
+  "cSpell.userWords": ["speedcommerce"],
+  "files.autoSave": "onWindowChange",
+  "prettier.printWidth": 300,
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/dist/**": true,
+    "**/build/**": true,
+    "**/tmp/**": true,
+    "**/logs/**": true,
+    "**/.cache/**": true,
+    "**/coverage/**": true,
+    "**/.husky/**": true
+  },
+  "editor.linkedEditing": true,
+  "workbench.editor.enablePreview": false,
+  "discord.removeRemoteRepository": true,
+  "discord.removeLowerDetails": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "workbench.colorTheme": "Night Owl (No Italics)"
 }

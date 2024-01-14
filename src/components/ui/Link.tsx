@@ -4,19 +4,14 @@ import NextLink from 'next/link';
 import { FC } from 'react';
 import mergeClassNames from '@/lib/mergeClassNames';
 
-interface LinkProps {
+interface LinkProps extends React.ComponentPropsWithoutRef<'a'> {
   href: string;
   children: React.ReactNode;
   className?: string;
   animation?: boolean;
 }
 
-const Link: FC<LinkProps> = ({
-  href,
-  children,
-  className,
-  animation = false,
-}) => {
+const Link: FC<LinkProps> = ({ href, children, className, animation = false }) => {
   const isInternalLink = href && href.startsWith('/');
   const isAnchorLink = href && href.startsWith('#');
 
