@@ -3,20 +3,22 @@ import mergeClassNames from '@/lib/mergeClassNames';
 
 import ViewMoreButton from '../common/ViewMoreButton';
 import ProjectItem from './ProjectItem';
+import { client, projectHomeQuery } from '@/lib/sanity.client';
 
 interface ProjectsProp {
-  home?: boolean;
-  projects: any;
+  isHome?: boolean;
 }
 
-const Projects = async ({ home, projects }: ProjectsProp) => {
+const Projects = async ({ isHome }: ProjectsProp) => {
+  const projects = await client.fetch(projectHomeQuery);
+
   return (
-    <div className={mergeClassNames(home && 'pt-16 lg:pt-20')}>
-      <Title title='Projects' subtitle={home ? '' : 'Showcase of my works on web development.'} home={home} />
+    <div className={mergeClassNames(isHome && 'pt-16 lg:pt-20')}>
+      <Title title='Projects' subtitle={isHome ? '' : 'Showcase of my works on web development.'} home={isHome} />
 
       <div className='mx-auto -mt-2 grid grid-cols-1 gap-6 sm:gap-4 lg:-mt-9'>{projects?.map((project) => <ProjectItem project={project} key={project._id} />)}</div>
       <div className='mt-6 text-center lg:mt-12'>
-        <ViewMoreButton href={home ? '/projects' : '/library'} />
+        <ViewMoreButton href={isHome ? '/projects' : '/library'} />
       </div>
     </div>
   );

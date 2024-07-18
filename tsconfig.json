@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -21,9 +25,18 @@
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
-      "@/ui/*": ["./src/components/ui/*"],
-      "~/*": ["./*"]
+      "@/*": [
+        "./src/*"
+      ],
+      "@/ui/*": [
+        "./src/components/ui/*"
+      ],
+      "~/*": [
+        "./*"
+      ],
+      "@payload-config": [
+        "./src/payload.config.ts"
+      ]
     },
     "strictNullChecks": true
   },
@@ -34,5 +47,7 @@
     ".next/types/**/*.ts",
     "mdx-components.jsx"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
