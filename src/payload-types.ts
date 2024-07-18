@@ -14,6 +14,7 @@ export interface Config {
     users: User;
     media: Media;
     projects: Project;
+    experiences: Experience;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
   };
@@ -89,6 +90,21 @@ export interface Project {
     name: string;
     id?: string | null;
   }[];
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "experiences".
+ */
+export interface Experience {
+  id: number;
+  title: string;
+  description: string;
+  company: string;
+  location: string;
+  time: string;
+  isPresent?: boolean | null;
   updatedAt: string;
   createdAt: string;
 }

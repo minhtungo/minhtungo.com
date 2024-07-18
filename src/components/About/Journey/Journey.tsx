@@ -10,11 +10,7 @@ import JourneyCard from './JourneyCard';
 import { Heading } from '@/components/ui';
 import CodeSnippet from '../CodeSnippet';
 
-interface JourneyProps {
-  journeys: Journey[];
-}
-
-const Journey = ({ journeys }: JourneyProps) => {
+const Journey = () => {
   return (
     <div className='mx-auto pt-1 lg:pt-3'>
       <Heading className='mb-2 md:mb-6' as='h3'>
@@ -27,12 +23,7 @@ const Journey = ({ journeys }: JourneyProps) => {
         <div className='relative mt-4 w-full lg:w-[60%]'>
           <ul className='w-full border-l border-gray-400 dark:border-gray-800'>
             {journeys.slice(0, 2).map((item) => (
-              <motion.li
-                key={item.title}
-                initial='hidden'
-                whileInView='visible'
-                variants={PopUpFromBottom}
-              >
+              <motion.li key={item.title} initial='hidden' whileInView='visible' variants={PopUpFromBottom}>
                 <JourneyCard journey={item} />
               </motion.li>
             ))}
@@ -41,22 +32,10 @@ const Journey = ({ journeys }: JourneyProps) => {
                 <>
                   <Disclosure.Button as={Fragment}>
                     <button aria-label='Load More Journey'>
-                      <AiOutlineCaretDown
-                        className={`ml-1.5 h-4 w-4 text-gray-400 md:w-5 lg:h-5 ${
-                          open ? 'rotate-180 transform ' : ''
-                        }`}
-                      />
+                      <AiOutlineCaretDown className={`ml-1.5 h-4 w-4 text-gray-400 md:w-5 lg:h-5 ${open ? 'rotate-180 transform ' : ''}`} />
                     </button>
                   </Disclosure.Button>
-                  <Transition
-                    show={open}
-                    enter='transition duration-400 ease-in-out'
-                    enterFrom='transform scale-95 opacity-0'
-                    enterTo='transform scale-400 opacity-100'
-                    leave='transition duration-75 ease-out'
-                    leaveFrom='transform scale-100 opacity-100'
-                    leaveTo='transform scale-95 opacity-0'
-                  >
+                  <Transition show={open} enter='transition duration-400 ease-in-out' enterFrom='transform scale-95 opacity-0' enterTo='transform scale-400 opacity-100' leave='transition duration-75 ease-out' leaveFrom='transform scale-100 opacity-100' leaveTo='transform scale-95 opacity-0'>
                     <Disclosure.Panel>
                       {journeys.slice(2).map((journey) => (
                         <JourneyCard key={journey.title} journey={journey} />

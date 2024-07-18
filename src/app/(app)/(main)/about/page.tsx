@@ -1,6 +1,5 @@
 import { About, Journey, TechStack } from '@/components/About';
 import RecentlyPlayed from '@/components/Spotify/RecentlyPlayed';
-import { client, journeyQuery } from '@/lib/sanity.client';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
@@ -10,13 +9,11 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const journeys = await client.fetch(journeyQuery);
-
   return (
     <>
       <About />
       <TechStack />
-      <Journey journeys={journeys} />
+      <Journey />
       <Suspense>
         <RecentlyPlayed />
       </Suspense>
