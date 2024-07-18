@@ -1,6 +1,6 @@
 import { Projects } from '@/components/Projects';
-import { client, projectQuery } from '@/lib/sanity.client';
 
+import { getPayload } from '@/lib/payload';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,7 +9,13 @@ export const metadata: Metadata = {
 };
 
 export default async function ProjectsPage() {
-  const projects = await client.fetch(projectQuery);
+  const payload = await getPayload();
 
-  return <Projects projects={projects} />;
+  const projects = await payload.find({
+    collection: 'projects',
+  });
+
+  console.log(projects.docs);
+
+  return <Projects />;
 }
