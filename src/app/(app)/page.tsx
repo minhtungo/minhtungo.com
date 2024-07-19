@@ -5,18 +5,18 @@ import { Projects } from '@/components/Projects';
 
 import { Suspense } from 'react';
 
-export default async function HomePage() {
+export default function HomePage() {
   return (
     <>
       <Hero />
       <Skills />
       <Suspense>
-        <Projects isHome />
+        <Projects />
       </Suspense>
       <Suspense>
-        <Repos home />
+        <Repos />
       </Suspense>
-      <Contact home />
+      <Contact />
     </>
   );
 }

@@ -7,7 +7,7 @@ import { TYPING_CONTENT } from '@/constant/home';
 
 const Hero = () => {
   return (
-    <div className='h-screen flex-1 gap-12 pt-8 md:flex md:items-center md:justify-between lg:pt-0'>
+    <div className='min-h-screen flex-1 gap-12 pt-8 md:flex md:items-center md:justify-between lg:pt-0'>
       {/* Dog Model */}
       <div className='relative z-10 mx-auto mt-4 flex h-[270px] w-[270px] basis-2/5 justify-center sm:h-[360px] sm:w-[360px] md:order-2 md:mx-0 md:mt-[6.6rem] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[550px]'>
         <Image className='absolute top-0 h-auto w-auto animate-pulse sm:-top-1 md:left-0 md:-top-12' src='/static/images/sparkles.svg' alt='sparkles' width={60} height={60} />

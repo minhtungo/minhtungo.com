@@ -1,18 +1,10 @@
-import './globals.css';
-
 import { Footer } from '@/components/Footer';
 import { NavBar } from '@/components/Header';
 import ScrollToTopButton from '@/components/ui/ScrollToTopButton';
-import mergeClassNames from '@/lib/mergeClassNames';
 import { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import Providers from './Providers';
-import ToastWrapper from './ToastWrapper';
-
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-});
+import './globals.css';
+import Container from '@/components/common/Container';
 
 export const metadata: Metadata = {
   title: {
@@ -24,15 +16,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en' className={mergeClassNames(inter.className)}>
-      <body className=''>
+    <html lang='en'>
+      <body>
         <Providers>
-          <NavBar />
-          <main className='relative mx-auto max-w-6xl px-4 sm:px-6'>{children}</main>
-          <Footer />
+          <div className='grid min-h-[100dvh] grid-rows-[auto_1fr_auto]'>
+            <NavBar />
+            <Container tag='main'>{children}</Container>
+            <Footer />
+          </div>
         </Providers>
         <ScrollToTopButton />
-        <ToastWrapper />
       </body>
     </html>
   );
