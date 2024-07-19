@@ -1,12 +1,7 @@
-import { IconHelper, Link } from '@/components/ui';
-import { Menu, Transition } from '@headlessui/react';
+import { IconHelper } from '@/components/ui';
 import { Fragment } from 'react';
-import { HiOutlineMenuAlt4 } from 'react-icons/hi';
-import { IoMdClose } from 'react-icons/io';
-import { useRouter } from 'next/navigation';
 
 export default function MobileMenu({ links }: { links: Link[] }) {
-  const router = useRouter();
   return (
     <Menu as='span' className='flex items-center md:hidden'>
       {({ open, close }) => (
@@ -18,9 +13,12 @@ export default function MobileMenu({ links }: { links: Link[] }) {
                 {links.map((link) => (
                   <Menu.Item key={link.label}>
                     {({ active }: { active: boolean }) => (
-                      <button className={`${active ? 'bg-slate-200 dark:bg-neutral-800/90' : 'text-gray-900 dark:text-gray-100'} group flex w-full items-center gap-4 rounded-md px-2 py-2 text-sm`} onClick={()=> {
-                        router.push(link.href)
-                      }}>
+                      <button
+                        className={`${active ? 'bg-slate-200 dark:bg-neutral-800/90' : 'text-gray-900 dark:text-gray-100'} group flex w-full items-center gap-4 rounded-md px-2 py-2 text-sm`}
+                        onClick={() => {
+                          router.push(link.href);
+                        }}
+                      >
                         <IconHelper type={link.label} className='h-5 w-5' />
                         <span className='capitalize'>{link.label}</span>
                       </button>

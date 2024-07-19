@@ -1,4 +1,4 @@
-export const links = [
+export const HEADER_LINKS = [
   // { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/projects', label: 'Projects' },

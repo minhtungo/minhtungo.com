@@ -1,10 +1,10 @@
 import { Footer } from '@/components/Footer';
-import { NavBar } from '@/components/Header';
-import ScrollToTopButton from '@/components/ui/ScrollToTopButton';
+import ScrollToTopButton from '@/components/common/ScrollToTopButton';
 import { Metadata } from 'next';
 import Providers from './Providers';
 import './globals.css';
 import Container from '@/components/common/Container';
+import NavBar from '@/components/header/NavBar';
 
 export const metadata: Metadata = {
   title: {
