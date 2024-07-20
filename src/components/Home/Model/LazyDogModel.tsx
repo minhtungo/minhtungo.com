@@ -1,11 +1,15 @@
 'use client';
 
-import Loader from './Loader';
+import Spinner from '@/components/common/Spinner';
 import dynamic from 'next/dynamic';
 
 const DogModel = dynamic(() => import('./DogModel'), {
   ssr: false,
-  loading: () => <Loader />,
+  loading: () => (
+    <div role='status' className='mt-[98px] lg:ml-[80px] lg:mt-[140px]'>
+      <Spinner />
+    </div>
+  ),
 });
 
 const LazyDogModel = () => {

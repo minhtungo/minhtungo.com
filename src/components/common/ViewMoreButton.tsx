@@ -1,9 +1,7 @@
-'use client';
-
-import mergeClassNames from '@/lib/mergeClassNames';
 import Link from 'next/link';
-import { IoMdArrowForward } from 'react-icons/io';
-import { buttonVariants } from '../ui/Button';
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/Button';
+import { ChevronRight } from 'lucide-react';
 
 interface ViewMoreButtonProps {
   href: string;
@@ -12,17 +10,16 @@ interface ViewMoreButtonProps {
 const ViewMoreButton: React.FC<ViewMoreButtonProps> = ({ href }) => {
   return (
     <Link
-      className={mergeClassNames(
+      className={cn(
         buttonVariants({
-          variant: 'secondary',
-          size: 'md',
-          className: 'group transition',
-        })
+          variant: 'outline',
+        }),
+        'group transition'
       )}
       href={href}
     >
       View More
-      <IoMdArrowForward className='ml-1 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0' />
+      <ChevronRight className='ml-1 duration-200 group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0' />
     </Link>
   );
 };

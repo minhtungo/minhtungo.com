@@ -1,5 +1,7 @@
-import { Heading, Image, Link } from '@/components/ui';
 import { getRecentlyPlayed, normalizeRecentlyPlayed } from '@/lib/spotify';
+import { Heading } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const fetchRecentlyPlayedSongs = async () => {
   const res = await getRecentlyPlayed();
@@ -24,9 +26,19 @@ const RecentlyPlayed = async () => {
         </Heading>
         <div className='horizontal-scrollbar flex items-center gap-2 overflow-x-scroll xl:gap-3 lg:overflow-x-visible pb-[2px]'>
           {songs?.map((song, index) => (
-            <Link className='group relative mx-auto w-full cursor-pointer text-white/80 shadow-md hover:text-gray-50 rounded-md' href={song?.url} key={index}>
+            <Link
+              className='group relative mx-auto w-full cursor-pointer text-white/80 shadow-md hover:text-gray-50 rounded-md'
+              href={song?.url}
+              key={song?.url}
+            >
               <div className='relative h-[360px] min-w-[240px] w-full'>
-                <Image src={song?.thumbnail} alt={song?.title} width={400} height={400} className='absolute inset-0 h-full w-full object-cover min-w-[240px] brightness-[.45] group-hover:brightness-[.75] transition duration-300 ease-in-out rounded-md' />
+                <Image
+                  src={song?.thumbnail}
+                  alt={song?.title}
+                  width={400}
+                  height={400}
+                  className='absolute inset-0 h-full w-full object-cover min-w-[240px] brightness-[.45] group-hover:brightness-[.75] transition duration-300 ease-in-out rounded-md'
+                />
               </div>
 
               <div className='absolute inset-x-0 bottom-5 ml-3 flex items-center space-x-3'>

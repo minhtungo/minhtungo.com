@@ -123,10 +123,6 @@ export const favoriteTechs = [
     name: 'Bootstrap',
     src: '/static/images/stack/bootstrap.svg',
   },
-  // {
-  //   name: 'Styled Components',
-  //   src: '/static/images/stack/styled-components.png',
-  // },
   {
     name: 'Styled Components',
     src: '/static/images/stack/styled-components.png',

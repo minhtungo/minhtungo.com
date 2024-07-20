@@ -1,40 +1,23 @@
-import { Link } from '@/components/ui';
-import mergeClassNames from '@/lib/mergeClassNames';
+import { SOCIAL_INFO } from '@/lib/constants';
+import { cn } from '@/lib/utils';
+import Link from 'next/link';
 import { FC } from 'react';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
 
 interface SocialIconProps {
   className?: string;
-  footer?: boolean;
 }
 
-const SocialIcons: FC<SocialIconProps> = ({ className, footer = false }) => {
+const SocialIcons: FC<SocialIconProps> = ({ className }) => {
   return (
-    <div
-      className={mergeClassNames(
-        'flex items-center gap-3 text-gray-600 dark:text-gray-400',
-        className
-      )}
-    >
-      <Link href='https://github.com/minhtungo'>
-        <FiGithub
-          className={mergeClassNames(
-            'hover:text-blue-500',
-            footer ? 'h-4 w-4' : 'h-5 w-5'
-          )}
-        />
-        <span className='sr-only'>My Github account</span>
-      </Link>
-
-      <Link href='https://linkedin.com/in/minhtungo/'>
-        <FiLinkedin
-          className={mergeClassNames(
-            'hover:text-blue-500',
-            footer ? 'h-4 w-4' : 'h-5 w-5'
-          )}
-        />
-        <span className='sr-only'>My LinkedIn account</span>
-      </Link>
+    <div className={cn('flex items-center gap-3 text-muted-foreground', className)}>
+      {SOCIAL_INFO.map(({ icon, href, text }) => {
+        return (
+          <Link href={href} className='flex flex-row items-center space-x-4 hover:text-primary'>
+            <div className='flex h-9 w-9 items-center justify-center rounded-full bg-muted'>{icon}</div>
+            <p className='text-sm text-muted-foreground'>{text}</p>
+          </Link>
+        );
+      })}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 'use client';
 
 import { IconHelper, ProjectsIcon, Text } from '@/components/ui';
-import { Div } from '@/components/ui/FramerMotion';
+import { Div } from '@/components/FramerMotion';
 import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
 import { TbSourceCode } from 'react-icons/tb';
@@ -20,11 +20,7 @@ const Card = ({ repo }: RepoProps) => {
             {repo.name}
           </Text>
         </div>
-        <ProjectsIcon
-          className='ml-auto'
-          githubURL={repo.githubURL}
-          liveURL={repo.liveURL || ''}
-        />
+        <ProjectsIcon className='ml-auto' githubURL={repo.githubURL} liveURL={repo.liveURL || ''} />
       </div>
       <Text variant='description' className='mt-2 ml-[2.5px] !text-sm'>
         {repo.description}
@@ -32,14 +28,9 @@ const Card = ({ repo }: RepoProps) => {
       {/* Tech Stack */}
       <div className='mt-2 flex flex-wrap items-center space-x-2 sm:mt-3'>
         {repo.tools.map((tool) => (
-          <div
-            className='group relative flex justify-center transition duration-200 ease-linear'
-            key={`${repo.name}-${tool}`}
-          >
+          <div className='group relative flex justify-center transition duration-200 ease-linear' key={`${repo.name}-${tool}`}>
             <IconHelper type={tool} className='h-5 w-5' />
-            <span className='absolute -top-7 mx-auto w-max scale-0 transform rounded bg-background-light px-2 py-1 text-sm font-medium text-gray-800 shadow transition-all group-hover:scale-100 dark:bg-background-dark dark:text-gray-300'>
-              {tool}
-            </span>
+            <span className='absolute -top-7 mx-auto w-max scale-0 transform rounded bg-background-light px-2 py-1 text-sm font-medium text-gray-800 shadow transition-all group-hover:scale-100 dark:bg-background-dark dark:text-gray-300'>{tool}</span>
           </div>
         ))}
       </div>
@@ -49,10 +40,7 @@ const Card = ({ repo }: RepoProps) => {
 
 const RepoCard = ({ repos }: { repos: Repo[] | undefined }) => {
   return (
-    <Div
-      variants={FadeContainer}
-      className='mx-auto grid grid-cols-1 gap-3 md:grid-cols-2 lg:mt-6 lg:grid-cols-3'
-    >
+    <Div variants={FadeContainer} className='mx-auto grid grid-cols-1 gap-3 md:grid-cols-2 lg:mt-6 lg:grid-cols-3'>
       {repos?.map((repo) => (
         <motion.div variants={PopUpFromBottom} key={repo.name}>
           <Card repo={repo} />

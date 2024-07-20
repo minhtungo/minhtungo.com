@@ -1,4 +1,5 @@
-import { Heading, Title } from '@/components/ui';
+import Title from '@/components/common/Title';
+import Typography from '@/components/ui/typography';
 import { ItemGrid } from '@/components/Uses';
 import { USES_ITEMS } from '@/constant/uses';
 
@@ -25,7 +26,7 @@ export default function UsesPage() {
       {USES_ITEMS.map((item) => {
         return (
           <div key={item.title}>
-            <Heading as='h3'>{item.title}</Heading>
+            <Typography variant='h3'>{item.title}</Typography>
             <ItemGrid items={item.items} />
           </div>
         );

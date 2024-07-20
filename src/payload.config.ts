@@ -2,7 +2,7 @@
 import { postgresAdapter } from '@payloadcms/db-postgres';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
 import path from 'path';
-import { buildConfig } from 'payload';
+import { buildConfig } from 'payload/config';
 import { fileURLToPath } from 'url';
 import sharp from 'sharp';
 
@@ -20,7 +20,7 @@ export default buildConfig({
   },
   collections: [Users, Media, Projects, Experiences],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || '',
+  // secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
@@ -29,7 +29,7 @@ export default buildConfig({
       connectionString: process.env.DATABASE_URI || '',
     },
   }),
-  sharp,
+  // sharp,
   plugins: [
     // storage-adapter-placeholder
   ],

@@ -1,6 +1,5 @@
-import Avatar from './Avatar';
+import { cn } from '@/lib/utils';
 import { Manrope } from 'next/font/google';
-import mergeClassNames from '@/lib/mergeClassNames';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -8,11 +7,6 @@ const manrope = Manrope({
 });
 
 const Logo = ({ className }: { className?: string }) => {
-  return (
-    <div className={mergeClassNames('flex items-center justify-center gap-0 md:gap-3', manrope.className, className)}>
-      <Avatar width={8} height={8} className='mt-1' />
-      <span className='text-md hidden font-medium lg:inline'>Minh Tu Ngo</span>
-    </div>
-  );
+  return <div className={cn('font-medium text-primary', manrope.className, className)}>Minh Tu Ngo</div>;
 };
 export default Logo;

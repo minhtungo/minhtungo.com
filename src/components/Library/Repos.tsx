@@ -1,20 +1,20 @@
-import { Title } from '@/components/ui';
-
 import { cn } from '@/lib/utils';
 import ViewMoreButton from '../common/ViewMoreButton';
+import Title from '@/components/common/Title';
 
 interface ReposProps {
   repos?: Repo[] | undefined;
-  home?: boolean;
+  showButton?: boolean;
+  className?: string;
 }
 
-const Repos = async ({ home }: ReposProps) => {
+const Repos = async ({ showButton, className }: ReposProps) => {
   return (
-    <div className={cn(home && 'pt-16 lg:pt-20')}>
-      <Title title='Library' subtitle={home ? '' : 'Some collection of code snippets that I have created.'} home={home} />
+    <div className={cn('pt-16 lg:pt-20', className)}>
+      <Title title='Some repos from Github profile' />
       {/* <RepoCard repos={repos} /> */}
 
-      {home && (
+      {showButton && (
         <div className='mt-6 text-center lg:mt-12'>
           <ViewMoreButton href='/library' />
         </div>

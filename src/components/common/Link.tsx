@@ -1,8 +1,8 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import NextLink from 'next/link';
 import { FC } from 'react';
-import mergeClassNames from '@/lib/mergeClassNames';
 
 interface LinkProps extends React.ComponentPropsWithoutRef<'a'> {
   href: string;
@@ -20,7 +20,7 @@ const Link: FC<LinkProps> = ({ href, children, className, animation = false }) =
       <NextLink
         href={href}
         arial-label={`Link to ${href}`}
-        className={mergeClassNames(
+        className={cn(
           className,
           animation &&
             'before:primary-gradient relative before:absolute before:-bottom-0.5 before:left-0 before:h-0.5 before:w-full before:origin-right before:scale-x-0 before:rounded before:transition-transform before:duration-300 before:ease-in-out before:content-[""] hover:before:origin-left hover:before:scale-x-100'
@@ -36,7 +36,7 @@ const Link: FC<LinkProps> = ({ href, children, className, animation = false }) =
       <a
         href={href}
         arial-label={`Link to ${href}`}
-        className={mergeClassNames(
+        className={cn(
           className,
           animation &&
             'before:primary-gradient relative before:absolute before:-bottom-0.5 before:left-0 before:h-0.5 before:w-full before:origin-right before:scale-x-0 before:rounded before:transition-transform before:duration-300 before:ease-in-out before:content-[""] hover:before:origin-left hover:before:scale-x-100'
@@ -53,7 +53,7 @@ const Link: FC<LinkProps> = ({ href, children, className, animation = false }) =
       arial-label={`Link to ${href}`}
       rel='noopener noreferrer'
       href={href}
-      className={mergeClassNames(
+      className={cn(
         className,
         animation &&
           'before:primary-gradient relative before:absolute before:-bottom-0.5 before:left-0 before:h-0.5 before:w-full before:origin-right before:scale-x-0 before:rounded before:transition-transform before:duration-300 before:ease-in-out before:content-[""] hover:before:origin-left hover:before:scale-x-100'

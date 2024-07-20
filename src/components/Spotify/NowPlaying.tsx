@@ -1,27 +1,24 @@
 'use client';
 
-import { Div } from '@/components/ui/FramerMotion';
-import { Image, Link } from '@/components/ui';
+import { Div } from '@/components/FramerMotion';
 import fetcher from '@/lib/fetcher';
 import { PopUpFromBottom } from '@/lib/framerVariants';
+import Image from 'next/image';
 import { useMemo } from 'react';
-import { SiSpotify } from 'react-icons/si';
 import useSWR from 'swr';
+import Spotify from '../icons/Spotify';
 
 const NowPlaying = () => {
   const { data: currentSong } = useSWR('/api/spotify/now-playing', fetcher, {
     refreshInterval: 10 * 1000,
   });
 
-  const progress = useMemo(
-    () => currentSong && (currentSong.progress / currentSong.duration) * 100,
-    [currentSong]
-  );
+  const progress = useMemo(() => currentSong && (currentSong.progress / currentSong.duration) * 100, [currentSong]);
 
   return (
     <Div className='w-full max-w-[450px]' variants={PopUpFromBottom}>
       <div className='relative flex h-full flex-row items-center whitespace-pre-wrap break-words rounded text-sm  md:text-base'>
-        <Link
+        <a
           href={
             currentSong?.isPlaying
               ? `${currentSong.url}`
@@ -39,9 +36,9 @@ const NowPlaying = () => {
               />
             </div>
           ) : (
-            <SiSpotify className='h-9 w-9 fill-[#1DB954]' />
+            <Spotify className='size-8 fill-[#1DB954]' />
           )}
-        </Link>
+        </a>
         <div className='ml-4 flex w-full flex-col'>
           <div className='flex flex-row items-center justify-between'>
             <div className='flex w-full flex-col'>
