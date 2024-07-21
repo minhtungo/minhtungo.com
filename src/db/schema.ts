@@ -63,4 +63,6 @@ export const guestbooks = pgTable('guestbooks', {
   email: text('emmail').notNull(),
   image: text('image'),
   content: text('content').notNull(),
+  createdBy: text('createdBy').notNull(),
+  createdAt: timestamp('createdAt').notNull(),
 });

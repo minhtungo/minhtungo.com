@@ -1,27 +1,26 @@
 'use client';
 
-import { FadeContainer } from '@/lib/framerVariants';
 import emailjs from '@emailjs/browser';
-import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { cn } from '@/lib/utils';
-import SubmitButton from '../common/SubmitButton';
-import Input from './Input';
+import SubmitButton from '@/components/common/SubmitButton';
+import Input from '@/components/contact/Input';
+
+const initialFormState = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+};
 
 const ContactForm = ({ className }: { className: string }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
+  const [formState, setFormState] = useState(initialFormState);
   const [isSending, setIsSending] = useState(false);
 
   const reset = () => {
-    setName('');
-    setEmail('');
-    setSubject('');
-    setMessage('');
+    setFormState(initialFormState);
   };
 
   const form = useRef<HTMLFormElement>(null);
@@ -33,12 +32,16 @@ const ContactForm = ({ className }: { className: string }) => {
     const sendMessage = async () => {
       try {
         setIsSending(true);
-        await emailjs.sendForm(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, form.current!, process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
+        await emailjs.sendForm(
+          process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+          process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+          form.current!,
+          process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        );
         setIsSending(false);
         reset();
       } catch (error) {
         setIsSending(false);
-        console.error(error);
       }
     };
 
@@ -52,17 +55,47 @@ const ContactForm = ({ className }: { className: string }) => {
   };
 
   return (
-    <motion.form className={cn('flex flex-col rounded-lg', className)} initial='hidden' whileInView='visible' variants={FadeContainer} viewport={{ once: true }} onSubmit={handleSubmit} ref={form}>
+    <form className={cn(className)} onSubmit={handleSubmit} ref={form}>
       <div className='grid w-full sm:grid-cols-2 sm:gap-4 lg:gap-6'>
-        <Input type='text' name='name' label='Name' value={name} onChange={(e) => setName(e.target.value)} />
-        <Input type='email' name='email' label='Email Address' value={email} onChange={(e) => setEmail(e.target.value)} />
+        <Input
+          type='text'
+          name='name'
+          label='Name'
+          value={formState.name}
+          onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+        />
+        <Input
+          type='email'
+          name='email'
+          label='Email Address'
+          value={formState.email}
+          onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+        />
       </div>
-      <Input type='subject' name='subject' label='Subject' value={subject} onChange={(e) => setSubject(e.target.value)} />
-      <Input textarea type='message' name='message' label='Message' value={message} onChange={(e) => setMessage(e.target.value)} />
+      <Input
+        type='subject'
+        name='subject'
+        label='Subject'
+        value={formState.subject}
+        onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
+      />
+      <Input
+        textarea
+        type='message'
+        name='message'
+        label='Message'
+        value={formState.message}
+        onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+      />
       <div className='flex w-full items-center justify-center'>
-        <SubmitButton label='Send Message' isPending={isSending} disabled={!name || !email || !subject || !message} className='mt-6 flex items-center justify-center' />
+        <SubmitButton
+          label='Send Message'
+          isPending={isSending}
+          disabled={!formState.name || !formState.email || !formState.subject || !formState.message}
+          className='mt-6 flex items-center justify-center'
+        />
       </div>
-    </motion.form>
+    </form>
   );
 };
 export default ContactForm;

@@ -1,12 +1,12 @@
 {
-  "id": "6aee4daf-d6eb-4b22-96ba-3582fc2971ab",
+  "id": "7dad8b68-0fa7-49b3-9150-ab30656708ef",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
   "tables": {
     "users": {
       "name": "users",
-      "schema": "",
+      "schema": "minhtungo",
       "columns": {
         "id": {
           "name": "id",
@@ -93,7 +93,7 @@
     },
     "media": {
       "name": "media",
-      "schema": "",
+      "schema": "minhtungo",
       "columns": {
         "id": {
           "name": "id",
@@ -192,7 +192,7 @@
     },
     "projects_links": {
       "name": "projects_links",
-      "schema": "",
+      "schema": "minhtungo",
       "columns": {
         "_order": {
           "name": "_order",
@@ -240,6 +240,7 @@
           "name": "projects_links_parent_id_fk",
           "tableFrom": "projects_links",
           "tableTo": "projects",
+          "schemaTo": "minhtungo",
           "columnsFrom": [
             "_parent_id"
           ],
@@ -255,7 +256,7 @@
     },
     "projects_tools": {
       "name": "projects_tools",
-      "schema": "",
+      "schema": "minhtungo",
       "columns": {
         "_order": {
           "name": "_order",
@@ -303,6 +304,7 @@
           "name": "projects_tools_parent_id_fk",
           "tableFrom": "projects_tools",
           "tableTo": "projects",
+          "schemaTo": "minhtungo",
           "columnsFrom": [
             "_parent_id"
           ],
@@ -318,7 +320,7 @@
     },
     "projects": {
       "name": "projects",
-      "schema": "",
+      "schema": "minhtungo",
       "columns": {
         "id": {
           "name": "id",
@@ -368,7 +370,7 @@
     },
     "projects_rels": {
       "name": "projects_rels",
-      "schema": "",
+      "schema": "minhtungo",
       "columns": {
         "id": {
           "name": "id",
@@ -429,6 +431,7 @@
           "name": "projects_rels_parent_fk",
           "tableFrom": "projects_rels",
           "tableTo": "projects",
+          "schemaTo": "minhtungo",
           "columnsFrom": [
             "parent_id"
           ],
@@ -442,6 +445,7 @@
           "name": "projects_rels_media_fk",
           "tableFrom": "projects_rels",
           "tableTo": "media",
+          "schemaTo": "minhtungo",
           "columnsFrom": [
             "media_id"
           ],
@@ -457,7 +461,7 @@
     },
     "experiences": {
       "name": "experiences",
-      "schema": "",
+      "schema": "minhtungo",
       "columns": {
         "id": {
           "name": "id",
@@ -531,7 +535,7 @@
     },
     "payload_preferences": {
       "name": "payload_preferences",
-      "schema": "",
+      "schema": "minhtungo",
       "columns": {
         "id": {
           "name": "id",
@@ -588,7 +592,7 @@
     },
     "payload_preferences_rels": {
       "name": "payload_preferences_rels",
-      "schema": "",
+      "schema": "minhtungo",
       "columns": {
         "id": {
           "name": "id",
@@ -649,6 +653,7 @@
           "name": "payload_preferences_rels_parent_fk",
           "tableFrom": "payload_preferences_rels",
           "tableTo": "payload_preferences",
+          "schemaTo": "minhtungo",
           "columnsFrom": [
             "parent_id"
           ],
@@ -662,6 +667,7 @@
           "name": "payload_preferences_rels_users_fk",
           "tableFrom": "payload_preferences_rels",
           "tableTo": "users",
+          "schemaTo": "minhtungo",
           "columnsFrom": [
             "users_id"
           ],
@@ -677,7 +683,7 @@
     },
     "payload_migrations": {
       "name": "payload_migrations",
-      "schema": "",
+      "schema": "minhtungo",
       "columns": {
         "id": {
           "name": "id",

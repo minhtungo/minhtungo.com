@@ -1,4 +1,4 @@
-import { Contact } from '@/components/Contact';
+import { Contact } from '@/components/contact';
 import { Hero, Skills } from '@/components/Home';
 import { Repos } from '@/components/Library';
 import { Projects } from '@/components/Projects';

@@ -13,7 +13,7 @@ const Title = ({ title, subtitle, className }: TitleProps) => {
       <Typography variant='h3' tag='h2'>
         {title}
       </Typography>
-      {subtitle && <Typography variant='p'>{title}</Typography>}
+      {subtitle && <Typography variant='p'>{subtitle}</Typography>}
     </div>
   );
 };

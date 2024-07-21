@@ -6,6 +6,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import TypingAnimation from '../common/TypingAnimation';
+import sparkles from '/public/static/images/sparkles.svg';
 
 const Hero = () => {
   return (
@@ -14,10 +15,8 @@ const Hero = () => {
       <div className='relative z-10 mx-auto mt-4 flex h-[270px] w-[270px] basis-2/5 justify-center sm:h-[360px] sm:w-[360px] md:order-2 md:mx-0 md:mt-[6.6rem] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[550px]'>
         <Image
           className='absolute top-0 h-auto w-auto animate-pulse sm:-top-1 md:left-0 md:-top-12 select-none'
-          src='/static/images/sparkles.svg'
+          src={sparkles}
           alt='sparkles'
-          width={60}
-          height={60}
         />
         {/* <LazyDogModel /> */}
       </div>
@@ -25,10 +24,8 @@ const Hero = () => {
       <div className='relative -mt-14 basis-3/5 text-center md:text-start'>
         <Image
           className='absolute -top-4 h-auto w-auto animate-pulse sm:-top-[3rem] sm:left-[10%] md:left-0 md:-top-20 select-none'
-          src='/static/images/sparkles.svg'
+          src={sparkles}
           alt='sparkles'
-          width={60}
-          height={60}
         />
 
         <div className='text-sm font-medium'>Hi, I am</div>
