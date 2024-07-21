@@ -13,6 +13,7 @@ import Logo from './Logo';
 import MobileMenu from './MobileMenu';
 import { buttonVariants } from '@/components/ui/Button';
 import Container from '@/components/common/Container';
+import ThemeToggle from '@/components/common/ThemeToggle';
 
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -62,7 +63,7 @@ const Header = () => {
                           variant: 'ghost',
                           size: 'sm',
                         }),
-                        'capitalize hover:bg-accent/50',
+                        'capitalize text-muted-foreground hover:bg-accent/50',
                         pathname === href && 'bg-accent'
                       )}
                     >
@@ -73,6 +74,7 @@ const Header = () => {
               })}
             </motion.ul>
           </nav>
+          <ThemeToggle />
           <MobileMenu />
         </div>
       </Container>
