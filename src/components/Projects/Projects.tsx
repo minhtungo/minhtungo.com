@@ -1,19 +1,21 @@
-import { cn } from '@/lib/utils';
+import ViewMoreButton from '@/components/common/ViewMoreButton';
+import ProjectsClient from '@/components/Projects/Projects.client';
+import { PROJECTS } from '@/lib/constants';
 
-interface ProjectsProp {
-  isHome?: boolean;
+interface ProjectsProps {
+  showButton?: boolean;
 }
 
-const Projects = async ({ isHome }: ProjectsProp) => {
+const Projects = async ({ showButton }: ProjectsProps) => {
   return (
-    <div className={cn(isHome && 'pt-16 lg:pt-20')}>
-      {/* <Title title='Projects' subtitle={isHome ? '' : 'Showcase of my works on web development.'} home={isHome} />
-
-      <div className='mx-auto -mt-2 grid grid-cols-1 gap-6 sm:gap-4 lg:-mt-9'>{projects?.map((project) => <ProjectItem project={project} key={project._id} />)}</div>
-      <div className='mt-6 text-center lg:mt-12'>
-        <ViewMoreButton href={isHome ? '/projects' : '/library'} />
-      </div> */}
-    </div>
+    <>
+      <ProjectsClient projects={PROJECTS} />
+      {showButton && (
+        <div className='mt-6 text-center lg:mt-12'>
+          <ViewMoreButton href='/library' />
+        </div>
+      )}
+    </>
   );
 };
 

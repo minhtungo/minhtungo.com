@@ -2,9 +2,9 @@ import LetConnect from '@/components/common/LetConnect';
 import Section from '@/components/common/Section';
 import Title from '@/components/common/Title';
 import Repos from '@/components/repo/Repos';
-import { Projects } from '@/components/Projects';
 import FavoriteTechs from '@/components/Home/FavoriteTechs';
 import Hero from '@/components/Home/Hero';
+import Projects from '@/components/Projects/Projects';
 
 export default function HomePage() {
   return (

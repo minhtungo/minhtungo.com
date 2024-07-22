@@ -165,6 +165,25 @@ export const EXPERIENCES = [
   },
 ];
 
+export const PROJECTS = [
+  {
+    title: 'Vietify',
+    description: `Vietify eCommerce site's storefront built with Medusa-React`,
+    href: 'https://minhtungo.com',
+    techs: ['Medusa.js', 'NextJS', 'React', 'Tailwind CSS', 'Vercel'],
+    imageHref: '/static/images/projects/cine-city.png',
+  },
+  {
+    title: 'Vietify 2',
+    description: `Vietify eCommerce site's storefront built with Medusa-React`,
+    href: 'https://minhtungo.com',
+    techs: ['Medusa.js', 'NextJS', 'React', 'Tailwind CSS', 'Vercel'],
+    imageHref: '/static/images/projects/cine-city.png',
+  },
+];
+
+export type Project = (typeof PROJECTS)[number];
+
 export const REPOS = [
   {
     title: 'Vietify',

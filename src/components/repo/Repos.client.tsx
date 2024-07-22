@@ -21,7 +21,7 @@ const RepoItem = ({ repo: { title, description, href, techs } }: { repo: Repo })
       />
       <Card className='p-3 sm:p-4 grid duration-200 ease-in group-hover:bg-accent/10 group-hover:shadow-lg gap-y-1'>
         <Typography variant='h5' tag='h3'>
-          <div className='inline-flex gap-x-2 items-center font-medium leading-tight text-foreground text-base ease-in duration-150 group-hover:text-primary'>
+          <div className='inline-flex gap-x-2 items-center font-medium leading-tight text-base ease-in duration-150 group-hover:text-primary'>
             <Folder className='size-5' />
             <div>{title}</div>
           </div>
@@ -29,7 +29,7 @@ const RepoItem = ({ repo: { title, description, href, techs } }: { repo: Repo })
         <Typography className='text-sm text-muted-foreground mb-1'>{description}</Typography>
         <ul className='flex flex-wrap gap-1.5' aria-label='Technologies used'>
           {techs.map((tech) => (
-            <li key={`${tech}-experience-tech`}>
+            <li key={`${title}-${tech}-repo-tech`}>
               <Badge variant='secondary'>{tech}</Badge>
             </li>
           ))}

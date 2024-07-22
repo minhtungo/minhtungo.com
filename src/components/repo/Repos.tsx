@@ -3,9 +3,7 @@ import { REPOS } from '@/lib/constants';
 import ViewMoreButton from '../common/ViewMoreButton';
 
 interface ReposProps {
-  repos?: Repo[];
   showButton?: boolean;
-  className?: string;
 }
 
 const Repos = async ({ showButton }: ReposProps) => {
