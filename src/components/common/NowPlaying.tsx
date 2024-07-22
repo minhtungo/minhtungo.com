@@ -35,12 +35,12 @@ const NowPlaying = () => {
             />
           </div>
         ) : (
-          <Spotify className='size-7 fill-[#1DB954]' />
+          <Spotify className='size-8 fill-[#1DB954]' />
         )}
       </a>
       <div className='flex w-full flex-row items-center justify-between'>
         <div className='flex w-full flex-col'>
-          <div className='text-xs font-semibold text-muted-foreground '>
+          <div className='text-sm font-semibold text-muted-foreground '>
             {currentSong?.isPlaying ? currentSong.title : 'Not Listening'}
           </div>
           {currentSong && currentSong.isPlaying && (

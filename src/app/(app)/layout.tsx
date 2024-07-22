@@ -1,9 +1,9 @@
-import { Footer } from '@/components/Footer';
 import Container from '@/components/common/Container';
 import Header from '@/components/common/Header';
 import { Metadata } from 'next';
 import Providers from './Providers';
 import './globals.css';
+import Footer from '@/components/common/Footer';
 
 export const metadata: Metadata = {
   title: {

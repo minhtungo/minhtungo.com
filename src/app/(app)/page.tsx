@@ -1,3 +1,5 @@
+import LetConnect from '@/components/common/LetConnect';
+import Section from '@/components/common/Section';
 import { Contact } from '@/components/contact';
 import { Hero, Skills } from '@/components/Home';
 import { Repos } from '@/components/Library';
@@ -16,7 +18,9 @@ export default function HomePage() {
       <Suspense>
         <Repos />
       </Suspense>
-      <Contact />
+      <Section>
+        <LetConnect />
+      </Section>
     </>
   );
 }

@@ -55,24 +55,17 @@ const CodeSnippet = ({ className }: CodeSnippetProps) => {
           ,
         </p>
         <p className='text-gray-700 dark:text-gray-50'>
-          &nbsp;&nbsp;&nbsp;&nbsp;website:{' '}
-          <span className='text-yellow-600 dark:text-yellow-300 '>
-            <Link
-              href='https://minhtungo.com'
-              target='_blank'
-              className='text-yellow-600 hover:underline focus:border-none dark:text-yellow-300'
-            >
-              minhtungo.com
-            </Link>
-            <span
-              className="relative font-semibold text-slate-700 duration-200 after:absolute after:-top-[2px] after:left-3 after:my-auto after:animate-cursor after:content-['|'] motion-reduce:transition-none dark:text-slate-300 after:sm:text-base"
-              aria-hidden='true'
-            >
-              {"'"}
-            </span>
+          &nbsp;&nbsp;&nbsp;&nbsp;hobbies:{' '}
+          <span className='text-yellow-600 dark:text-yellow-300'>
+            {"['Reading', 'Coding', 'Lego', 'Music', 'Bubble Tea']"}
           </span>
           ,
+          <span
+            className="relative font-semibold text-slate-700 duration-200 after:absolute after:-top-[2px] after:left- after:my-auto after:animate-cursor after:content-['|'] motion-reduce:transition-none dark:text-slate-300 after:sm:text-base"
+            aria-hidden='true'
+          ></span>
         </p>
+
         <p className='text-gray-700 dark:text-gray-50'>&nbsp;&nbsp;{'}'}</p>
         <p className='text-gray-700 dark:text-gray-50'>{'}'}</p>
       </div>
