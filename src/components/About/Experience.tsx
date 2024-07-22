@@ -27,8 +27,8 @@ const Experience: FC<ExperienceProps> = ({ className }) => {
               className='text-xs text-muted-foreground font-medium tracking-tight sm:col-span-2 mt-1.5 space-y-1.5'
               aria-label={time}
             >
-              <p className='uppercase'>{time}</p>
-              <p>{location}</p>
+              <div className='uppercase'>{time}</div>
+              <div>{location}</div>
             </header>
             <div className='sm:col-span-7 space-y-2.5'>
               <Typography variant='h5' tag='h3'>
