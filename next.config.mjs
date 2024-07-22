@@ -1,7 +1,6 @@
-const { withPayload } = require('@payloadcms/next/withPayload')
 /** @type {import('next').NextConfig} */
 
-module.exports = withPayload({
+const nextConfig = {
   reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true,
@@ -34,4 +33,6 @@ module.exports = withPayload({
       },
     ],
   },
-});
+};
+
+export default nextConfig;

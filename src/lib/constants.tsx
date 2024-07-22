@@ -47,174 +47,72 @@ export const SOCIAL_INFO = [
 export const FAVORITE_TECHS = [
   {
     name: 'NextJS',
-    icon: (
-      <Image
-        src={Next}
-        alt='nextjs'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image width={32} height={32} src={Next} alt='nextjs' className='size-8 object-contain' />,
   },
   {
     name: 'SvelteKit',
-    icon: (
-      <Image
-        src={Svelte}
-        alt='Svelte'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={Svelte} alt='Svelte' className='size-8 object-contain' />,
   },
   {
     name: 'React',
-    icon: (
-      <Image
-        src={React}
-        alt='react'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={React} alt='react' className='size-8 object-contain' />,
   },
   {
     name: 'Medusa.js',
-    icon: (
-      <Image
-        src={Medusa}
-        alt='medusa'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={Medusa} alt='medusa' className='size-8 object-contain' />,
   },
   {
     name: 'Auth.js',
-    icon: (
-      <Image
-        src={AuthJS}
-        alt='AuthJS'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={AuthJS} alt='AuthJS' className='size-8 object-contain' />,
   },
   {
     name: 'React Query',
-    icon: (
-      <Image
-        src={ReactQuery}
-        alt='React Query'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={ReactQuery} alt='React Query' className='size-8 object-contain' />,
   },
   {
     name: 'Jotai',
-    icon: (
-      <Image
-        src={Jotai}
-        alt='Jotai'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={Jotai} alt='Jotai' className='size-8 object-contain' />,
   },
   {
     name: 'Tailwind',
-    icon: (
-      <Image
-        src={Tailwind}
-        alt='tailwind'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={Tailwind} alt='tailwind' className='size-8 object-contain' />,
   },
   {
     name: 'Radix UI',
     src: '/static/images/tech/radix.png',
-    icon: (
-      <Image
-        src={Radix}
-        alt='radix'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={Radix} alt='radix' className='size-8 object-contain' />,
   },
   {
     name: 'Redux',
-    icon: (
-      <Image
-        src={Redux}
-        alt='redux'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={Redux} alt='redux' className='size-8 object-contain' />,
   },
   {
     name: 'Drizzle',
-    icon: (
-      <Image
-        src={Drizzle}
-        alt='Drizzle'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={Drizzle} alt='Drizzle' className='size-8 object-contain' />,
   },
   {
     name: 'Prisma',
-    icon: (
-      <Image
-        src={Prisma}
-        alt='Prisma'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={Prisma} alt='Prisma' className='size-8 object-contain' />,
   },
   {
     name: 'PayloadCMS',
-    icon: (
-      <Image
-        src={PayloadCMS}
-        alt='PayloadCMS'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={PayloadCMS} alt='PayloadCMS' className='size-8 object-contain' />,
   },
   {
     name: 'Express',
-    icon: (
-      <Image
-        src={Express}
-        alt='express'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={Express} alt='express' className='size-8 object-contain' />,
   },
   {
     name: 'NodeJS',
-    icon: (
-      <Image
-        src={NodeJS}
-        alt='nodejs'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={NodeJS} alt='nodejs' className='size-8 object-contain' />,
   },
   {
     name: 'TypeScript',
-    icon: (
-      <Image
-        src={TypeScript}
-        alt='typescript'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={TypeScript} alt='typescript' className='size-8 object-contain' />,
   },
   {
     name: 'tRPC',
-    icon: (
-      <Image
-        src={TRPC}
-        alt='trpc'
-        className='size-8 object-contain group-hover:scale-110 sm:group-hover:scale-100 duration-200 ease-in-out'
-      />
-    ),
+    icon: <Image src={TRPC} alt='trpc' className='size-8 object-contain' />,
   },
 ];
 
