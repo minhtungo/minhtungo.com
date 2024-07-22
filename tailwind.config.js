@@ -61,7 +61,7 @@ module.exports = {
         'hero-pattern': "url('/static/images/sparkles.svg')",
       },
       boxShadow: {
-        primary: 'rgb(80 63 205 / 50%) 0px 1px 40px',
+        customShadow: 'rgb(80 63 205 / 50%) 0px 1px 40px',
       },
       content: {
         react: "url('/icons/react.svg')",
