@@ -1,23 +1,26 @@
 import LetConnect from '@/components/common/LetConnect';
 import Section from '@/components/common/Section';
-import { Contact } from '@/components/contact';
-import { Hero, Skills } from '@/components/Home';
-import { Repos } from '@/components/Library';
+import Title from '@/components/common/Title';
+import Repos from '@/components/repo/Repos';
 import { Projects } from '@/components/Projects';
-
-import { Suspense } from 'react';
+import FavoriteTechs from '@/components/Home/FavoriteTechs';
+import Hero from '@/components/Home/Hero';
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <Skills />
-      <Suspense>
+      <Section className='pt-0 sm:pt-0'>
+        <Title title='Some technologies I have used recently' />
+        <FavoriteTechs />
+      </Section>
+      <Section>
         <Projects />
-      </Suspense>
-      <Suspense>
+      </Section>
+      <Section>
+        <Title title='Some repos from Github profile' subtitle='Archive' />
         <Repos />
-      </Suspense>
+      </Section>
       <Section>
         <LetConnect />
       </Section>

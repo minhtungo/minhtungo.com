@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
 import Title from '@/components/common/Title';
-import sparkles from '/public/static/images/sparkles.svg';
-import { Button, buttonVariants } from '@/components/ui/Button';
-import Link from 'next/link';
+import { buttonVariants } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
+import sparkles from '/public/static/images/sparkles.svg';
 
 const LetConnect = () => {
   return (

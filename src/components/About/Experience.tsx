@@ -15,14 +15,14 @@ const Experience: FC<ExperienceProps> = ({ className }) => {
   return (
     <ul className={cn('space-y-2 group/list', className)}>
       {EXPERIENCES.map(({ title, description, company, location, time, techs, href }) => (
-        <li key={`${title}-experience`} className='relative transition-all'>
+        <li key={`${title}-experience`} className='relative transition-all group'>
           <Link
             href={href}
             target='_blank'
             rel='noopener noreferrer'
-            className='absolute peer/link hover:!bg-transparent duration-200 ease-in w-full h-full inset-0 z-10 group-hover/list:bg-card/50 p-4 pb-6'
-          ></Link>
-          <Card className='p-4 pb-6 grid sm:grid-cols-9 shadow-none duration-200 ease-in peer-hover/link:bg-accent/10 peer-hover/link:shadow-lg gap-y-2'>
+            className='absolute hover:!bg-transparent duration-200 ease-in w-full h-full inset-0 z-10 group-hover/list:bg-card/40 p-4 pb-6'
+          />
+          <Card className='p-4 pb-6 grid sm:grid-cols-9 shadow-none duration-200 ease-in group-hover:bg-accent/10 group-hover:shadow-lg gap-y-2'>
             <header
               className='text-xs text-muted-foreground font-medium tracking-tight sm:col-span-2 mt-1.5 space-y-1.5'
               aria-label={time}
@@ -35,12 +35,12 @@ const Experience: FC<ExperienceProps> = ({ className }) => {
                 <div>
                   <Link
                     href={href}
-                    className='inline-flex gap-x-1 items-center font-medium leading-tight text-card-foreground text-base peer-hover/link:text-primary'
+                    className='inline-flex gap-x-1 items-center font-medium leading-tight text-foreground text-base group-hover:text-primary'
                   >
                     <div>
                       {title} · {company}
                     </div>
-                    <ArrowUpRight className='size-3 duration-200 text-card-foreground peer-hover/link:-translate-y-[2px] peer-hover/link:translate-x-[2px] motion-reduce:transition-none motion-reduce:peer-hover/link:translate-x-0 shrink-1 translate-y-px' />
+                    <ArrowUpRight className='size-3 duration-200 text-foreground group-hover:-translate-y-[2px] group-hover:translate-x-[2px] motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 shrink-1 translate-y-px' />
                   </Link>
                 </div>
               </Typography>

@@ -165,6 +165,29 @@ export const EXPERIENCES = [
   },
 ];
 
+export const REPOS = [
+  {
+    title: 'Vietify',
+    description: `Vietify eCommerce site's storefront built with Medusa-React`,
+    href: 'https://minhtungo.com',
+    techs: ['Medusa.js', 'NextJS', 'React', 'Tailwind CSS', 'Vercel'],
+  },
+  {
+    title: 'Vietify 2',
+    description: `Vietify eCommerce site's storefront built with Medusa-React`,
+    href: 'https://minhtungo.com',
+    techs: ['Medusa.js', 'NextJS', 'React', 'Tailwind CSS', 'Vercel'],
+  },
+  {
+    title: 'Vietify 3',
+    description: `Vietify eCommerce site's storefront built with Medusa-React`,
+    href: 'https://minhtungo.com',
+    techs: ['Medusa.js', 'NextJS', 'React', 'Tailwind CSS', 'Vercel'],
+  },
+];
+
+export type Repo = (typeof REPOS)[number];
+
 export const USED_TECHS = [
   {
     name: 'NextJS',
