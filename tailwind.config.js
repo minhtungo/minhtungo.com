@@ -56,7 +56,8 @@ module.exports = {
         'navigation-height': 'var(--navigation-height)',
       },
       backgroundImage: {
-        'primary-gradient': 'linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%)',
+        'primary-gradient':
+          'linear-gradient(92.88deg, rgb(69, 94, 181) 9.16%, rgb(86, 67, 204) 43.89%, rgb(103, 63, 215) 64.72%)',
         'hero-pattern': "url('/static/images/sparkles.svg')",
       },
       boxShadow: {
@@ -73,21 +74,21 @@ module.exports = {
         },
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
-          cursor: {
-            '0%, 45%': { opacity: 1 },
-            '50%, 100%': { opacity: 0 },
-          },
-          wave: {
-            '0%': { transform: 'rotate(0.0deg)' },
-            '15%': { transform: 'rotate(14.0deg)' },
-            '30%': { transform: 'rotate(-8.0deg)' },
-            '40%': { transform: 'rotate(14.0deg)' },
-            '50%': { transform: 'rotate(-4.0deg)' },
-            '60%': { transform: 'rotate(10.0deg)' },
-            '70%': { transform: 'rotate(0.0deg)' },
-            '100%': { transform: 'rotate(0.0deg)' },
-          },
           to: { height: '0' },
+        },
+        cursor: {
+          '0%, 45%': { opacity: 1 },
+          '50%, 100%': { opacity: 0 },
+        },
+        wave: {
+          '0%': { transform: 'rotate(0.0deg)' },
+          '15%': { transform: 'rotate(14.0deg)' },
+          '30%': { transform: 'rotate(-8.0deg)' },
+          '40%': { transform: 'rotate(14.0deg)' },
+          '50%': { transform: 'rotate(-4.0deg)' },
+          '60%': { transform: 'rotate(10.0deg)' },
+          '70%': { transform: 'rotate(0.0deg)' },
+          '100%': { transform: 'rotate(0.0deg)' },
         },
       },
       animation: {

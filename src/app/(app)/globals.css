@@ -93,17 +93,6 @@
 }
 
 /* Scroll bar */
-::-webkit-scrollbar {
-  width: 3px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  @apply bg-blue-500 dark:bg-gray-600;
-}
 
 .wave {
   animation-name: wave-animation; /* Refers to the name of your @keyframes element below */

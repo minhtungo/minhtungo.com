@@ -1,11 +1,10 @@
 import Container from '@/components/common/Container';
+import NowPlaying from '@/components/common/NowPlaying';
 import SocialIcons from '@/components/common/SocialIcons';
-import { NowPlaying } from '@/components/Spotify';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import footer from '@/constant/footer';
 import { USED_TECHS } from '@/lib/constants';
-import Image from 'next/image';
 import Link from 'next/link';
 
 const Footer = () => {
@@ -40,9 +39,9 @@ const Footer = () => {
           © {new Date().getFullYear()} Minh Tu Ngo. All rights reserved.
         </div>
         <div className='flex items-center gap-2'>
-          {USED_TECHS.map(({ name, src }) => {
-            return <Image className='size-5' src={src} alt={`${name}-tech-logo`} height={20} width={20} />;
-          })}
+          {USED_TECHS.map(({ name, icon }) => (
+            <>{icon}</>
+          ))}
         </div>
       </div>
     </Container>

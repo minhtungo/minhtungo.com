@@ -19,27 +19,27 @@ const Header = () => {
   const [scrolling, setScrolling] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const handleScroll = debounce(() => {
     if (window.scrollY > 20) {
       setScrolling(true);
     } else {
       setScrolling(false);
     }
-  }, 80);
+  }, 10);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className='fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300'>
-      <Container
-        className={cn(
-          'flex items-center justify-between h-14 border-b border-transparent',
-          scrolling && 'shadow-sm backdrop-blur border-border'
-        )}
-      >
+    <header
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 w-full border-b border-transparent',
+        scrolling && 'shadow-sm bg-background/60 backdrop-blur border-border'
+      )}
+    >
+      <Container className={cn('flex items-center justify-between h-14')}>
         <motion.div className='flex items-center' initial='hidden' animate='visible' variants={FromLeftVariant}>
           <Link href='/' aria-label='Link to Home Page' className='select-none'>
             <Logo />
@@ -63,8 +63,8 @@ const Header = () => {
                           variant: 'ghost',
                           size: 'sm',
                         }),
-                        'capitalize text-muted-foreground hover:bg-accent/50',
-                        pathname === href && 'bg-accent'
+                        'capitalize text-primary/80 hover:bg-accent/50',
+                        pathname === href && 'bg-accent text-primary'
                       )}
                     >
                       {label}

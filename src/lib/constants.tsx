@@ -116,21 +116,82 @@ export const FAVORITE_TECHS = [
   },
 ];
 
+export const EXPERIENCES = [
+  {
+    title: 'Full Stack Developer',
+    description:
+      'I have worked with a variety of technologies, including React, NextJS, TypeScript, and Tailwind CSS. I have also worked on projects that involved building APIs, managing databases, and implementing user authentication.',
+    href: 'https://taubyte.com',
+    company: 'Taubyte',
+    location: 'Remote',
+    time: '2021 - Present',
+    isPresent: true,
+    techs: [
+      'React',
+      'NextJS',
+      'TypeScript',
+      'Tailwind CSS',
+      'PostgreSQL',
+      'NodeJS',
+      'Express',
+      'MongoDB',
+      'Prisma',
+      'tRPC',
+      'Vercel',
+    ],
+  },
+  {
+    title: 'Full Stack Developer 2',
+    href: 'https://taubyte.com',
+    description:
+      'I have worked with a variety of technologies, including React, NextJS, TypeScript, and Tailwind CSS. I have also worked on projects that involved building APIs, managing databases, and implementing user authentication.',
+    company: 'Taubyte',
+    location: 'Remote',
+    time: '2021 - Present',
+    isPresent: true,
+    techs: [
+      'React',
+      'NextJS',
+      'TypeScript',
+      'Tailwind CSS',
+      'PostgreSQL',
+      'NodeJS',
+      'Express',
+      'MongoDB',
+      'Prisma',
+      'tRPC',
+      'Vercel',
+    ],
+  },
+];
+
 export const USED_TECHS = [
   {
     name: 'NextJS',
-    src: '/static/images/tech/next.svg',
+    icon: <Image src={Next} alt='nextjs' className='size-4 object-contain' />,
   },
   {
     name: 'Tailwind',
-    src: '/static/images/tech/tailwind.svg',
+    icon: <Image src={Tailwind} alt='tailwind' className='size-4 object-contain' />,
   },
   {
     name: 'TypeScript',
-    src: '/static/images/tech/typescript.svg',
+    icon: <Image src={TypeScript} alt='typescript' className='size-4 object-contain' />,
   },
   {
     name: 'Radix UI',
-    src: '/static/images/tech/radix.png',
+    icon: <Image src={Radix} alt='radix' className='size-4 object-contain' />,
+  },
+];
+
+export const ABOUT_ME = [
+  {
+    description: `My journey in web development began with the classic "Hello World" console output, which ignited a deep passion for creating exceptional web experiences. Since then, I have continually strived to learn and get feedback to make myself better and improve.`,
+  },
+  {
+    description: `As a dedicated and passionate Web Developer, I specialize in using cutting-edge technologies such as React and NextJS to build powerful and scalable web application. I am focused on being a valuable part of any team I am on and I love working with dedicated teams to create amazing web applications to make the internet a better place.`,
+  },
+  {
+    description: `I am constantly looking for new opportunities to learn and grow as a developer. If you're looking for a driven and enthusiastic team player to help create amazing web applications, let's work together!`,
   },
 ];
