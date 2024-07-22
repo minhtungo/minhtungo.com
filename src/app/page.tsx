@@ -15,6 +15,7 @@ export default function HomePage() {
         <FavoriteTechs />
       </Section>
       <Section>
+        <Title title='Some projects I have worked on' subtitle='Projects' />
         <Projects />
       </Section>
       <Section>

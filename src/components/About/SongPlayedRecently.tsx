@@ -8,7 +8,8 @@ const SongPlayedRecently = async () => {
   const songs = (await getRecentlyPlayedSongs()) as Song[];
 
   return (
-    songs && (
+    songs &&
+    songs.length > 0 && (
       <div className='flex items-center gap-1.5 w-full overflow-x-auto'>
         {songs?.map((song) => (
           <Link
