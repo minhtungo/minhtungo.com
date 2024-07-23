@@ -8,7 +8,7 @@ import useSWR from 'swr';
 
 const NowPlaying = () => {
   const { data: currentSong } = useSWR('/api/spotify/now-playing', fetcher, {
-    refreshInterval: 10 * 1000,
+    refreshInterval: 60 * 1000 * 2.5,
   });
 
   const progress = useMemo(() => currentSong && (currentSong.progress / currentSong.duration) * 100, [currentSong]);
