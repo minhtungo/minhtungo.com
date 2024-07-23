@@ -12,7 +12,7 @@ const Title = ({ title, subtitle, description, className }: TitleProps) => {
   return (
     <div className={cn('text-center mb-10', className)}>
       {subtitle && (
-        <Typography variant='p' tag='h2' className='text-primary mb-1.5'>
+        <Typography variant='p' tag='h2' className='text-primary mb-1.5 font-medium'>
           {subtitle}
         </Typography>
       )}

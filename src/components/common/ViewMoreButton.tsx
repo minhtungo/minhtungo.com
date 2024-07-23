@@ -16,7 +16,7 @@ const ViewMoreButton: React.FC<ViewMoreButtonProps> = ({ className, href, title 
         buttonVariants({
           variant: 'outline',
         }),
-        'group transition inline-flex items-center gap-x-1 hover:shadow-customShadow',
+        'group transition inline-flex items-center gap-x-1',
         className
       )}
       href={href}

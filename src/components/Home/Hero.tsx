@@ -48,16 +48,6 @@ const Hero = () => {
         {/* buttons */}
         <div className='mt-5 flex flex-col justify-center gap-3 sm:flex-row md:justify-start lg:ml-[2px]'>
           <Link
-            href='/contact'
-            className={cn(
-              buttonVariants({
-                variant: 'outline',
-              })
-            )}
-          >
-            Say Hello
-          </Link>
-          <Link
             href='/about'
             className={cn(
               buttonVariants({
@@ -66,6 +56,16 @@ const Hero = () => {
             )}
           >
             About Me
+          </Link>
+          <Link
+            href='/contact'
+            className={cn(
+              buttonVariants({
+                variant: 'outline',
+              })
+            )}
+          >
+            Say Hello
           </Link>
         </div>
       </div>

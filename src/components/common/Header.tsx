@@ -63,8 +63,8 @@ const Header = () => {
                           variant: 'ghost',
                           size: 'sm',
                         }),
-                        'capitalize text-primary/80 hover:bg-accent/50',
-                        pathname === href && 'bg-accent text-primary'
+                        'capitalize text-foreground/80 hover:bg-accent/50',
+                        pathname === href && 'bg-accent text-foreground'
                       )}
                     >
                       {label}
