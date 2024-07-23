@@ -1,4 +1,3 @@
-import Typography from '@/components/ui/typography';
 import { getRecentlyPlayedSongs } from '@/lib/song';
 import { Song } from '@/types';
 import Image from 'next/image';

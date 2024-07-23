@@ -31,13 +31,13 @@ export default function AboutPage() {
       <Section>
         <TechStack />
       </Section>
-      <Section className='grid lg:grid-cols-5 gap-y-4 lg:gap-x-12'>
+      <Section className='grid lg:grid-cols-5 gap-y-8 lg:gap-x-12'>
         <CodeSnippet className='lg:col-span-2 h-fit' />
         <Experience className='lg:col-span-3' />
       </Section>
       <Suspense>
         <Section>
-          <Typography className='mb-2 md:mb-6' variant='h3'>
+          <Typography className='mb-6' variant='h3'>
             Recently Played Songs
           </Typography>
           <SongPlayedRecently />

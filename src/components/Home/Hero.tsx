@@ -28,7 +28,7 @@ const Hero = () => {
 
         <h2 className='text-sm font-semibold mb-2'>Hi, I am</h2>
         <div className='flex items-center justify-center md:justify-start overflow-visible'>
-          <Typography variant='h1' className='primary-gradient bg-clip-text text-transparent pb-2'>
+          <Typography variant='h1' className='text-primary pb-2'>
             Minh Tu Ngo.
           </Typography>
           <span className='wave text-2xl md:text-4xl lg:text-5xl'>👋</span>

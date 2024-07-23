@@ -45,7 +45,7 @@ const Header = () => {
             <Logo />
           </Link>
         </motion.div>
-        <div className='flex items-center space-x-2'>
+        <div className='flex items-center gap-x-3'>
           <nav className='z-10 hidden md:flex'>
             <motion.ul
               initial='hidden'
@@ -63,8 +63,8 @@ const Header = () => {
                           variant: 'ghost',
                           size: 'sm',
                         }),
-                        'capitalize text-foreground/80 hover:bg-accent/50',
-                        pathname === href && 'bg-accent text-foreground'
+                        'capitalize text-foreground/80 hover:bg-accent/50 hover:text-primary/80',
+                        pathname === href && 'bg-accent text-primary'
                       )}
                     >
                       {label}
