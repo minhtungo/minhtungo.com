@@ -1,6 +1,6 @@
 'use client';
 
-import { Div } from '@/components/FramerMotion';
+import { Div } from '@/components/motion';
 import fetcher from '@/lib/fetcher';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import Image from 'next/image';

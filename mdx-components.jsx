@@ -1,12 +1,15 @@
 import { FromLeftVariant, PopUpFromBottom } from '@/lib/framerVariants';
 
-import { Heading as AnimatedHeading, Text } from '@/components/FramerMotion';
+import { Heading as AnimatedHeading, Text } from '@/components/motion';
 import { Image } from '@/components/ui';
 import { ItemGrid } from '@/components/Uses';
 
 const Heading = {
   H2: ({ children }) => (
-    <AnimatedHeading variants={FromLeftVariant} className='primary-gradient mb-2 bg-clip-text text-3xl font-semibold text-transparent lg:text-4xl lg:font-bold'>
+    <AnimatedHeading
+      variants={FromLeftVariant}
+      className='primary-gradient mb-2 bg-clip-text text-3xl font-semibold text-transparent lg:text-4xl lg:font-bold'
+    >
       {children}
     </AnimatedHeading>
   ),

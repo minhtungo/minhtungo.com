@@ -1,6 +1,5 @@
 'use client';
 
-import { HEADER_LINKS } from '@/constant/routes';
 import { FadeContainer, PopUp } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
 import debounce from 'lodash.debounce';
@@ -14,6 +13,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from './Logo';
 import MobileMenu from './MobileMenu';
+import { HEADER_LINKS } from '@/lib/routes';
 
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);

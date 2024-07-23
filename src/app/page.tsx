@@ -26,7 +26,7 @@ export default function HomePage() {
         <Title title='Some repos from my Github' subtitle='Archive' />
         <Repos />
         <div className='text-center mt-6'>
-          <ViewMoreButton href='/repos' />
+          <ViewMoreButton href='/archive' />
         </div>
       </Section>
       <Section>

@@ -1,6 +1,6 @@
 'use client';
 
-import { Div } from '@/components/FramerMotion';
+import { Div } from '@/components/motion';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import Typography from '@/components/ui/typography';

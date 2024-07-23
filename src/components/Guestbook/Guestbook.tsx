@@ -1,4 +1,4 @@
-import { Actions } from '@/components/Guestbook';
+import { Actions } from '@/components/guestbook';
 
 import getCurrentUser from '@/actions/getCurrentUser';
 import GuestbookForm from '@/app/guestbook/form';
