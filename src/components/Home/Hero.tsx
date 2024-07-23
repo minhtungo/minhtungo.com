@@ -1,7 +1,5 @@
-import { LazyDogModel } from '@/components/Home';
 import { buttonVariants } from '@/components/ui/Button';
 import Typography from '@/components/ui/typography';
-import { TYPING_CONTENT } from '@/constant/home';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -28,18 +26,18 @@ const Hero = () => {
           alt='sparkles'
         />
 
-        <div className='text-sm font-medium'>Hi, I am</div>
-        <div className='flex items-base'>
-          <Typography variant='h1' className='primary-gradient bg-clip-text text-transparent mt-2'>
+        <h2 className='text-sm font-semibold'>Hi, I am</h2>
+        <div className='flex items-center justify-center md:justify-start'>
+          <Typography variant='h1' className='primary-gradient text-center bg-clip-text text-transparent mt-2'>
             Minh Tu Ngo.
           </Typography>
           <span className='wave text-2xl md:text-4xl lg:text-5xl'>👋</span>
         </div>
 
         <div className='mt-3 font-medium md:mt-4 text-base lg:ml-[2px] lg:text-lg'>
-          <TypingAnimation content={TYPING_CONTENT} />
+          <TypingAnimation />
         </div>
-        <div className='mt-4 text-sm text-muted-foreground'>
+        <div className='mt-4 text-base text-muted-foreground'>
           Don't forget to sign my{' '}
           <Link href='/guestbook' className='underline hover:text-primary'>
             guestbook

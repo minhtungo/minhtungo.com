@@ -1,4 +1,4 @@
-import ProjectsClient from '@/components/Projects/Projects.client';
+import ProjectsClient from '@/components/projects/Projects.client';
 import { PROJECTS } from '@/lib/constants';
 
 const Projects = async () => {

@@ -237,3 +237,13 @@ export const ABOUT_ME = [
     description: `I am constantly looking for new opportunities to learn and grow as a developer. If you're looking for a driven and enthusiastic team player to help create amazing web applications, let's work together!`,
   },
 ];
+
+export const TYPING_CONTENT = [
+  'I Love Bubble Tea.',
+  1000,
+  'I Love Building Things For The Web.',
+  1000,
+  'I Love React.',
+  1000,
+  '',
+];
