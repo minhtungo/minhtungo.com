@@ -10,10 +10,7 @@ export const metadata: Metadata = {
 export default async function LibraryPage() {
   return (
     <>
-      <PageTitle
-        title='Archive'
-        subtitle='My archive. I love to create amazing web applications to make the internet a better place.'
-      />
+      <PageTitle title='Archive' subtitle='Some of my other contributions and projects.' />
       <Repos repos={REPOS} />
     </>
   );

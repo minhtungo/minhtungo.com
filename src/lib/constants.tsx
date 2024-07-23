@@ -287,10 +287,10 @@ const OFFICE_ITEMS = [
     href: 'https://www.amazon.ca/Sennheiser-CX-300S-Black/dp/B07Q6NW778',
   },
   {
-    imageHref: '/static/images/uses/microphone.png',
-    name: 'Razer Seiren X',
+    imageHref: '/static/images/uses/blueyeti-mic.png',
+    name: 'Blue Yeti ',
     description: 'USB Streaming Microphone',
-    href: 'https://www.razer.com/ca-en/streaming-microphones/razer-seiren-x',
+    href: 'https://www.logitechg.com/en-ca/products/streaming-gear/yeti-premium-usb-microphone.988-000100.html',
   },
   {
     imageHref: '/static/images/uses/webcam.png',
@@ -335,10 +335,10 @@ const CODING = [
 
 const OTHER_TECH = [
   {
-    imageHref: '/static/images/uses/phone.png',
-    name: 'Samsung Galaxy S23 Green',
+    imageHref: '/static/images/uses/s24-phone.png',
+    name: 'Samsung Galaxy S24',
     description: '256GB - 8GB RAM',
-    href: 'https://www.samsung.com/ca/smartphones/galaxy-s/galaxy-s23-green-256gb-sm-s911wzgexac/buy/',
+    href: 'https://www.samsung.com/ca/smartphones/galaxy-s24/',
   },
   {
     imageHref: '/static/images/uses/buds.png',

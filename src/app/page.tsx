@@ -12,18 +12,18 @@ export default function HomePage() {
     <>
       <Hero />
       <Section className='pt-0 sm:pt-0'>
-        <Title title='Some technologies I have used recently' subtitle='Technologies' />
+        <Title title='Technologies I’ve Been Working with Recently' subtitle='Adventures' />
         <FavoriteTechs />
       </Section>
       <Section>
-        <Title title='Some projects I have worked on' subtitle='Projects' />
+        <Title title={`Discover What I've Built`} subtitle='Projects' />
         <Projects />
         <div className='text-center mt-6'>
           <ViewMoreButton href='/projects' />
         </div>
       </Section>
       <Section>
-        <Title title='Some repos from my Github' subtitle='Archive' />
+        <Title title='Some of My Other Contributions and Projects' subtitle='Repositories' />
         <Repos />
         <div className='text-center mt-6'>
           <ViewMoreButton href='/archive' />

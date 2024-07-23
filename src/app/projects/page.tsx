@@ -10,10 +10,7 @@ export const metadata: Metadata = {
 export default async function ProjectsPage() {
   return (
     <>
-      <PageTitle
-        title='Projects'
-        subtitle='My projects. I love to create amazing web applications to make the internet a better place.'
-      />
+      <PageTitle title='Projects' subtitle={`Discover What I've Built.`} />
       <Projects />
       <div className='text-center mt-6'>
         <ViewMoreButton href='/archive' title='View Full Project Archive' />

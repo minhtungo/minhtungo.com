@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default async function GuestbookPage() {
   return (
     <>
-      <PageTitle title='Guestbook' subtitle={"I'd love to hear from you! Feel free to leave a message below. "} />
+      <PageTitle title='Guestbook' subtitle={"I'd love to hear from you! Feel free to leave a message below."} />
       <Suspense
         fallback={
           <div className='flex justify-center gap-2'>
