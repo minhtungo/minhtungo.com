@@ -15,18 +15,18 @@ const roboto_mono = Roboto_Mono({
 
 const CodeSnippet = ({ className }: CodeSnippetProps) => {
   return (
-    <Card className={cn('bg-accent/50', roboto_mono.className, className)}>
-      <div className='border-b border-custom-border-black px-4 py-2 dark:border-transparent-white'>
+    <Card className={cn('bg-accent/10', roboto_mono.className, className)}>
+      <div className='border-b px-4 py-2'>
         <div className='mr-2 inline-block h-3 w-3 rounded-full bg-red-500'></div>
         <div className='mr-2 inline-block h-3 w-3 rounded-full bg-yellow-300'></div>
         <div className='mr-2 inline-block h-3 w-3 rounded-full bg-green-400'></div>
       </div>
-      <div className='px-4 py-5'>
+      <div className='px-4 py-5 tracking-wide'>
         <p>
           <span className='text-blue-600 dark:text-blue-400'>const</span>{' '}
           <span className='text-green-600 dark:text-green-400'>aboutMe</span>{' '}
-          <span className='tracking-wide text-pink-700 dark:text-pink-500'>=</span>
-          <span className='tracking-wide text-gray-700 dark:text-gray-50'>
+          <span className='text-pink-700 dark:text-pink-500'>=</span>
+          <span className='text-gray-700 dark:text-gray-50'>
             {' () '} {'=>'} {'{'}
           </span>
         </p>

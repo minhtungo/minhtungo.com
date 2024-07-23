@@ -15,7 +15,7 @@ import { TypeAnimation } from 'react-type-animation';
 const ProfileCard = ({ className }: { className?: string }) => {
   return (
     <motion.div
-      className={cn('rounded-lg border bg-card text-card-foreground shadow-sm', className)}
+      className={cn('rounded-lg border bg-muted/[0.075] border-border/50 text-card-foreground shadow-sm', className)}
       initial='hidden'
       whileInView='visible'
       variants={PopUpFromBottom}
@@ -29,7 +29,7 @@ const ProfileCard = ({ className }: { className?: string }) => {
           data-credit="GIF courtesy of Author's Dudun from https://tenor.com/bCgDy.gif"
         />
       </Link>
-      <CardContent>
+      <Card className='p-6 pt-0'>
         <div className='-mt-8 flex justify-center'>
           <Link href='https://linkedin.com/in/minhtungo/' target='_blank' rel='noopener noreferrer'>
             <div className='primary-gradient z-50 -mt-3 w-full animate-border rounded-full bg-gradient-to-r bg-[length:400%_400%] p-[2px]'>
@@ -75,7 +75,7 @@ const ProfileCard = ({ className }: { className?: string }) => {
             </Link>
           </div>
         </div>
-      </CardContent>
+      </Card>
     </motion.div>
   );
 };

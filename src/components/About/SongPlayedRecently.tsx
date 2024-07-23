@@ -10,7 +10,7 @@ const SongPlayedRecently = async () => {
   return (
     songs &&
     songs.length > 0 && (
-      <div className='flex items-center gap-1.5 w-full overflow-x-auto'>
+      <div className='flex items-center gap-3 w-full overflow-x-auto'>
         {songs?.map((song) => (
           <Link
             className='group relative shrink-0 text-card-foreground/80 shadow-sm hover:text-card-foreground transition-all rounded-lg overflow-hidden'
@@ -22,8 +22,8 @@ const SongPlayedRecently = async () => {
             <Image
               src={song?.thumbnail}
               alt={song?.title}
-              width={271}
-              height={271}
+              width={267}
+              height={268}
               className='object-cover brightness-[.45] group-hover:brightness-[.7] duration-300 ease-in-out rounded-lg group-hover:scale-105'
             />
             <div className='absolute inset-x-0 bottom-4 ml-4 flex items-center space-x-3'>

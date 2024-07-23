@@ -1,10 +1,10 @@
 'use client';
 
+import Spotify from '@/components/icons/Spotify';
 import fetcher from '@/lib/fetcher';
 import Image from 'next/image';
 import { useMemo } from 'react';
 import useSWR from 'swr';
-import Spotify from '../icons/Spotify';
 
 const NowPlaying = () => {
   const { data: currentSong } = useSWR('/api/spotify/now-playing', fetcher, {
@@ -14,7 +14,7 @@ const NowPlaying = () => {
   const progress = useMemo(() => currentSong && (currentSong.progress / currentSong.duration) * 100, [currentSong]);
 
   return (
-    <div className='relative flex h-full flex-row items-center whitespace-pre-wrap break-words rounded text-sm gap-x-2 md:text-base'>
+    <div className='relative flex items-center whitespace-pre-wrap break-words text-sm gap-x-3'>
       <a
         href={
           currentSong?.isPlaying
@@ -23,40 +23,36 @@ const NowPlaying = () => {
         }
       >
         {currentSong?.isPlaying ? (
-          <div className='h-auto w-auto animate-[spin_5s_linear_infinite] '>
+          <div className='animate-[spin_5s_linear_infinite]'>
             <Image
               alt={currentSong.title}
               src={currentSong.thumbnail}
               width={60}
               height={60}
-              className='h-full w-full rounded-full'
+              className='rounded-full size-14 object-contain'
             />
           </div>
         ) : (
           <Spotify className='size-8 fill-[#1DB954]' />
         )}
       </a>
-      <div className='flex w-full flex-row items-center justify-between'>
-        <div className='flex w-full flex-col'>
-          <div className='text-sm font-semibold text-muted-foreground '>
-            {currentSong?.isPlaying ? currentSong.title : 'Not Listening'}
-          </div>
-          {currentSong && currentSong.isPlaying && (
-            <div className='text-xs text-muted-foreground'>currentSong.artist</div>
-          )}
-          {currentSong?.isPlaying && (
-            <div className='mt-2 flex w-full items-center justify-center'>
-              <div className='flex w-full flex-row items-center justify-between rounded-full bg-gray-200'>
-                <div
-                  className={`primary-gradient h-1 rounded`}
-                  style={{
-                    width: `${progress}%`,
-                  }}
-                />
-              </div>
-            </div>
-          )}
+      <div className='max-w-[250px]'>
+        <div className='font-semibold text-foreground text-ellipsis overflow-hidden'>
+          {currentSong?.isPlaying ? currentSong.title : 'Not Listening'}
         </div>
+        {currentSong && currentSong.isPlaying && (
+          <div className='text-xs font-medium text-muted-foreground'>{currentSong.artist}</div>
+        )}
+        {currentSong?.isPlaying && (
+          <div className='mt-3 max-w-[200px] rounded-full bg-muted'>
+            <div
+              className={`primary-gradient h-1 rounded`}
+              style={{
+                width: `${progress}%`,
+              }}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

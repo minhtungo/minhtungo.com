@@ -1,12 +1,11 @@
-import { getNowPlaying, normalizeCurrentlyListening } from '@/lib/spotify';
+import { getNowPlaying, normalizeCurrentlyListening } from '@/lib/song';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
   const response = await getNowPlaying();
 
-  if (!response) {
-    // return res.status(500).json({ error: 'Spotify not available' });
+  if (!response || !response.ok) {
     return Response.json(
       { error: 'Spotify not available' },
       {
@@ -25,6 +24,8 @@ export async function GET() {
   }
 
   const data = await response.json();
+
+  console.log(data);
 
   return Response.json(normalizeCurrentlyListening(data), {
     status: 200,

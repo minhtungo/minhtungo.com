@@ -63,3 +63,49 @@ export const getRecentlyPlayedSongs = async () => {
 
   return data.items.map(normalizeRecentlyPlayed).sort((a: any, b: any) => b.played_at - a.played_at);
 };
+
+export const normalizeCurrentlyListening = ({
+  is_playing,
+  progress_ms,
+  item,
+}: {
+  is_playing: boolean;
+  progress_ms: number;
+  item: any;
+}) => ({
+  id: item.id,
+  isPlaying: is_playing,
+  title: item.name,
+  artist: item.artists?.map(({ name }: { name: string }) => name).join(' '),
+  album: item.album?.name,
+  thumbnail: item.album?.images[0]?.url,
+  url: item.external_urls?.spotify,
+  progress: progress_ms,
+  duration: item.duration_ms,
+});
+
+export const getNowPlaying = async () => {
+  const { access_token: accessToken } = await getAccessToken();
+
+  if (!accessToken) {
+    return;
+  }
+
+  return fetch(`${process.env.SPOTIFY_API_BASE_URL}/v1/me/player/currently-playing`, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      'Content-Type': 'application/json',
+    },
+  });
+
+  // if (!response.ok) {
+  //   return {
+  //     error: 'Something went wrong',
+  //     status: response.status,
+  //   };
+  // }
+
+  // const data = await response.json();
+
+  // return normalizeCurrentlyListening(data);
+};
