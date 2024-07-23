@@ -13,7 +13,7 @@ const SongPlayedRecently = async () => {
       <div className='flex items-center gap-1.5 w-full overflow-x-auto'>
         {songs?.map((song) => (
           <Link
-            className='group relative shrink-0 text-primary-foreground/80 shadow-sm hover:text-primary-foreground transition-all rounded-lg overflow-hidden'
+            className='group relative shrink-0 text-card-foreground/80 shadow-sm hover:text-card-foreground transition-all rounded-lg overflow-hidden'
             href={song?.url}
             key={song?.url}
             target='_blank'

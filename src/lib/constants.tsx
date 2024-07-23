@@ -247,3 +247,118 @@ export const TYPING_CONTENT = [
   1000,
   '',
 ];
+
+//uses
+const OFFICE_ITEMS = [
+  {
+    imageHref: '/static/images/uses/laptop.png',
+    name: 'Dell G15 5525',
+    description: '15.6" Laptop',
+    href: 'https://www.dell.com/support/manuals/en-us/g-series-15-5525-laptop/dell-g15-5525-setup-and-specifications/display?guid=guid-57f3fe94-a77a-4c15-a28d-891f6e2f333a&lang=en-us',
+  },
+  {
+    imageHref: '/static/images/uses/monitor.png',
+    name: 'Dell S3221QS Monitor',
+    description: '32" Curved 4K UHD',
+    href: 'https://dell.com/en-ca/shop/dell-32-curved-4k-uhd-monitor-s3221qs/apd/210-axkm/monitors-monitor-accessories',
+  },
+  {
+    imageHref: '/static/images/uses/samsung-monitor.png',
+    name: 'Samsung 24" Monitor',
+    description: '24" Full HD',
+    href: 'https://www.samsung.com/ca/monitors/flat/flat-fhd-monitor-with-borderless-design-24-inch-lf24t350fhnxza/',
+  },
+  {
+    imageHref: '/static/images/uses/keyboard.png',
+    name: 'ASUS ROG Falchion',
+    description: 'Wireless 65% Mechanical Keyboard',
+    href: 'https://rog.asus.com/keyboards/keyboards/compact/rog-falchion-model/',
+  },
+  {
+    imageHref: '/static/images/uses/mouse.png',
+    name: 'HyperX Pulsefire Haste',
+    description: 'Ultra-Lightweight Mouse',
+    href: 'https://row.hyperx.com/products/hyperx-pulsefire-haste-gaming-mouse?variant=40909066731725',
+  },
+  {
+    imageHref: '/static/images/uses/headphone.png',
+    name: 'Sennheiser CX 300S',
+    description: 'In Ear Headphone',
+    href: 'https://www.amazon.ca/Sennheiser-CX-300S-Black/dp/B07Q6NW778',
+  },
+  {
+    imageHref: '/static/images/uses/microphone.png',
+    name: 'Razer Seiren X',
+    description: 'USB Streaming Microphone',
+    href: 'https://www.razer.com/ca-en/streaming-microphones/razer-seiren-x',
+  },
+  {
+    imageHref: '/static/images/uses/webcam.png',
+    name: 'Logitech Webcam C925e',
+    description: '24" 144hz Monitor',
+    href: 'https://logitech.com/en-ca/products/webcams/c925e-business-webcam.960-001075.html',
+  },
+  {
+    imageHref: '/static/images/uses/lamp.png',
+    name: 'Quntis Computer Monitor Lamp',
+    description: 'Monitor Light Bar',
+    href: 'https://www.amazon.ca/Quntis-Computer-Auto-Dimming-Adjustment-Reading/dp/B08DKQ3JG1',
+  },
+  {
+    imageHref: '/static/images/uses/chair.png',
+    name: 'Ergohuman Chair',
+    description: 'High Back with Headrest and Mesh',
+    href: 'https://ergohuman.com/ergohuman-chair-me7erg-high-back-with-headrest-and-mesh/',
+  },
+];
+
+const CODING = [
+  {
+    imageHref: '/static/images/uses/vscode.png',
+    name: 'Visual Studio Code',
+    description: 'Editor',
+    href: 'https://code.visualstudio.com/',
+  },
+  {
+    imageHref: '/static/images/uses/theme.png',
+    name: 'Night Owl',
+    description: 'VSCode Theme',
+    href: 'https://marketplace.visualstudio.com/items?itemName=sdras.night-owl',
+  },
+  {
+    imageHref: '/static/images/uses/hyper.png',
+    name: 'Hyper',
+    description: 'Terminal',
+    href: 'https://hyper.is/',
+  },
+];
+
+const OTHER_TECH = [
+  {
+    imageHref: '/static/images/uses/phone.png',
+    name: 'Samsung Galaxy S23 Green',
+    description: '256GB - 8GB RAM',
+    href: 'https://www.samsung.com/ca/smartphones/galaxy-s/galaxy-s23-green-256gb-sm-s911wzgexac/buy/',
+  },
+  {
+    imageHref: '/static/images/uses/buds.png',
+    name: 'Samsung Galaxy Buds2 Pro',
+    description: 'Graphite',
+    href: 'https://samsung.com/ca/audio-sound/galaxy-buds/galaxy-buds2-pro-graphite-sm-r510nzaaxac/',
+  },
+  {
+    imageHref: '/static/images/uses/purifier.png',
+    name: 'RENPHO Air Purifier',
+    description: 'Black',
+    href: 'https://amazon.ca/RENPHO-Purifier-Allergies-Eliminator-Bacteria/dp/B0823L8NVN',
+  },
+];
+
+export const TECH_ITEM_LIST = [
+  { title: 'Office', items: OFFICE_ITEMS },
+  { title: 'Coding', items: CODING },
+  { title: 'Other Tech', items: OTHER_TECH },
+];
+
+export type TechItemList = (typeof TECH_ITEM_LIST)[number];
+export type TechItem = (typeof OFFICE_ITEMS)[number];

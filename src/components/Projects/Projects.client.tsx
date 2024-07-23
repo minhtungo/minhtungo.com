@@ -20,11 +20,11 @@ const ProjectItem = ({ project: { title, description, href, techs, imageHref } }
         rel='noopener noreferrer'
         className='absolute hover:!bg-transparent duration-200 ease-in w-full h-full inset-0 z-10 group-hover/list:bg-card/40 p-4 pb-6'
       />
-      <Card className='p-4 grid sm:grid-cols-3 duration-200 ease-in group-hover:bg-accent/10 group-hover:shadow-lg gap-y-2 gap-x-4'>
-        <div className='sm:col-span-1 mt-2'>
-          <Image src={imageHref} alt={title} width={400} height={400} className='object-cover rounded-lg' />
+      <Card className='p-4 grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 duration-200 ease-in group-hover:bg-accent/25 group-hover:shadow-lg gap-y-3 gap-x-4'>
+        <div className='md:col-span-2 lg:col-span-1 mt-2'>
+          <Image src={imageHref} alt={title} width={800} height={800} className='object-cover rounded-lg max-w-full' />
         </div>
-        <div className='sm:col-span-2 space-y-2.5'>
+        <div className='md:col-span-3 lg:col-span-2 space-y-2.5'>
           <Typography variant='h5' tag='h3'>
             <div className='inline-flex gap-x-1 items-center font-medium leading-tight text-base group-hover:text-primary'>
               <div>{title}</div>
@@ -47,7 +47,7 @@ const ProjectItem = ({ project: { title, description, href, techs, imageHref } }
 
 const Projects = ({ projects }: { projects: Project[] }) => {
   return (
-    <Div variants={FadeContainer} className='grid sm:grid-cols-2 gap-3 group/list' list>
+    <Div variants={FadeContainer} className='grid lg:grid-cols-2 gap-3 group/list' list>
       {projects?.map((project) => (
         <motion.li variants={PopUpFromBottom} key={`${project.title}-project-card`}>
           <ProjectItem project={project} />
