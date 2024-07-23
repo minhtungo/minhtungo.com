@@ -1,5 +1,5 @@
 import PageTitle from '@/components/common/PageTitle';
-import TechItemList from '@/components/uses/TechItemList';
+import TechItemList from '@/components/tech-list/TechItemList';
 import { TECH_ITEM_LIST } from '@/lib/constants';
 
 import type { Metadata } from 'next';

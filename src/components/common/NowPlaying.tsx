@@ -1,8 +1,6 @@
 'use client';
 
-import { Div } from '@/components/motion';
 import fetcher from '@/lib/fetcher';
-import { PopUpFromBottom } from '@/lib/framerVariants';
 import Image from 'next/image';
 import { useMemo } from 'react';
 import useSWR from 'swr';

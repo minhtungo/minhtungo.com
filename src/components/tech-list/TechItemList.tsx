@@ -1,7 +1,6 @@
 'use client';
 
 import { Div } from '@/components/motion';
-import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import Typography from '@/components/ui/typography';
 import type { TechItem, TechItemList } from '@/lib/constants';

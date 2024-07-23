@@ -2,8 +2,8 @@ import LetConnect from '@/components/common/LetConnect';
 import Section from '@/components/common/Section';
 import Title from '@/components/common/Title';
 import Repos from '@/components/repo/Repos';
-import FavoriteTechs from '@/components/Home/FavoriteTechs';
-import Hero from '@/components/Home/Hero';
+import FavoriteTechs from '@/components/home/FavoriteTechs';
+import Hero from '@/components/home/Hero';
 import Projects from '@/components/projects/Projects';
 import ViewMoreButton from '@/components/common/ViewMoreButton';
 

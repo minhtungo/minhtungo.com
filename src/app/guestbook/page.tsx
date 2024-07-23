@@ -1,6 +1,6 @@
 import PageTitle from '@/components/common/PageTitle';
 import { Guestbook, Messages } from '@/components/guestbook';
-import MessageSkeleton from '@/components/Skeleton/MessageSkeleton';
+import MessageSkeleton from '@/components/guestbook/MessageSkeleton';
 import { Skeleton } from '@/components/ui/skeleton';
 
 import type { Metadata } from 'next';
