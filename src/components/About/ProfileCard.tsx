@@ -2,6 +2,7 @@
 
 import { buttonVariants } from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/card';
+import { RESUME_HREF } from '@/lib/constants';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -57,15 +58,15 @@ const ProfileCard = ({ className }: { className?: string }) => {
         </div>
         <div className='w-full space-y-4 divide-y divide-custom-border-black dark:divide-transparent-white'>
           <div className='flex items-center justify-center space-x-3'>
-            <Link
-              href='https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing'
+            <a
+              href={RESUME_HREF}
               className={cn(buttonVariants({ variant: 'outline', size: 'sm' }), 'flex gap-x-1 items-center')}
               target='_blank'
               rel='noopener noreferrer'
             >
               <FileText className='size-4' />
               Resume
-            </Link>
+            </a>
             <Link
               href='mailto:mn.minhtungo@gmail.com'
               className={cn(buttonVariants({ variant: 'outline', size: 'sm' }), 'flex gap-x-1 items-center')}

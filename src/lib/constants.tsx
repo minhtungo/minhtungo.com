@@ -239,11 +239,11 @@ export const ABOUT_ME = [
 ];
 
 export const TYPING_CONTENT = [
-  'I Love Bubble Tea.',
+  'Welcome to my site.',
   1000,
   'I Love Building Things For The Web.',
   1000,
-  'I Love React.',
+  `Let's connect and have a chat!`,
   1000,
   '',
 ];
@@ -362,3 +362,5 @@ export const TECH_ITEM_LIST = [
 
 export type TechItemList = (typeof TECH_ITEM_LIST)[number];
 export type TechItem = (typeof OFFICE_ITEMS)[number];
+
+export const RESUME_HREF = 'https://drive.google.com/file/d/1QrTshKgEXGyM31S67JwCV1M-EpSgm3Za/view?usp=sharing';
