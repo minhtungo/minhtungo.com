@@ -15,6 +15,7 @@ const ViewMoreButton: React.FC<ViewMoreButtonProps> = ({ className, href, title 
       className={cn(
         buttonVariants({
           variant: 'outline',
+          size: 'sm',
         }),
         'group transition inline-flex items-center gap-x-1',
         className

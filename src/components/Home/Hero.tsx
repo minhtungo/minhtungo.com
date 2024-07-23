@@ -27,11 +27,11 @@ const Hero = () => {
         />
 
         <h2 className='text-sm font-semibold mb-2'>Hi, I am</h2>
-        <div className='flex items-center justify-center md:justify-start overflow-visible'>
+        <div className='flex items-baseline sm:items-center justify-center md:justify-start overflow-visible'>
           <Typography variant='h1' className='text-primary pb-2'>
             Minh Tu Ngo.
           </Typography>
-          <span className='wave text-2xl md:text-4xl lg:text-5xl'>👋</span>
+          <span className='wave text-3xl md:text-4xl lg:text-5xl'>👋</span>
         </div>
 
         <div className='mt-3 font-medium md:mt-4 text-base lg:ml-[2px] lg:text-lg'>
