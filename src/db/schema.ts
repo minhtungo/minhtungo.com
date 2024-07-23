@@ -35,6 +35,28 @@ export const accounts = pgTable(
   })
 );
 
+export const sessions = pgTable('session', {
+  sessionToken: text('sessionToken').primaryKey(),
+  userId: text('userId')
+    .notNull()
+    .references(() => users.id, { onDelete: 'cascade' }),
+  expires: timestamp('expires', { mode: 'date' }).notNull(),
+});
+
+export const verificationTokens = pgTable(
+  'verificationToken',
+  {
+    identifier: text('identifier').notNull(),
+    token: text('token').notNull(),
+    expires: timestamp('expires', { mode: 'date' }).notNull(),
+  },
+  (verificationToken) => ({
+    compositePk: primaryKey({
+      columns: [verificationToken.identifier, verificationToken.token],
+    }),
+  })
+);
+
 export const authenticators = pgTable(
   'authenticator',
   {
@@ -60,9 +82,11 @@ export const guestbooks = pgTable('guestbooks', {
   id: text('id')
     .primaryKey()
     .$defaultFn(() => crypto.randomUUID()),
-  email: text('emmail').notNull(),
+  email: text('email').notNull(),
   image: text('image'),
   content: text('content').notNull(),
   createdBy: text('createdBy').notNull(),
-  createdAt: timestamp('createdAt').notNull(),
+  createdAt: timestamp('createdAt')
+    .notNull()
+    .$defaultFn(() => new Date()),
 });

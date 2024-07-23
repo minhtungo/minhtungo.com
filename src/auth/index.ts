@@ -5,11 +5,8 @@ import Github from 'next-auth/providers/github';
 import Google from 'next-auth/providers/google';
 
 export const config = {
-  adapter: DrizzleAdapter(db, {}),
+  adapter: DrizzleAdapter(db),
   providers: [Google, Github],
-  pages: {
-    signIn: '/login',
-  },
 };
 
 export const { signIn, signOut, handlers, auth } = NextAuth(config);

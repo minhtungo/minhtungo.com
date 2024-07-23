@@ -1,5 +1,6 @@
 import PageTitle from '@/components/common/PageTitle';
-import { Guestbook, Messages } from '@/components/guestbook';
+import Guestbook from '@/components/guestbook/Guestbook';
+import Messages from '@/components/guestbook/Messages';
 import MessageSkeleton from '@/components/guestbook/MessageSkeleton';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -8,16 +9,15 @@ import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Guestbook',
-  description: 'Sign my guestbook and share your thoughts.',
 };
 
 export default async function GuestbookPage() {
   return (
     <>
-      <PageTitle title='Guestbook' subtitle={"I'd love to hear from you! Please leave a message below. "} />
+      <PageTitle title='Guestbook' subtitle={"I'd love to hear from you! Feel free to leave a message below. "} />
       <Suspense
         fallback={
-          <div className='mt-3 flex flex-wrap items-center justify-center gap-2 lg:mt-4'>
+          <div className='flex justify-center gap-2'>
             <Skeleton className='h-[34px] w-[110px]' />
             <Skeleton className='h-[34px] w-[110px]' />
           </div>
@@ -27,7 +27,7 @@ export default async function GuestbookPage() {
       </Suspense>
       <Suspense
         fallback={
-          <div className='mx-auto max-w-3xl'>
+          <div className='mx-auto max-w-3xl space-y-8'>
             {[1, 2, 3].map((_, i) => (
               <MessageSkeleton key={i} />
             ))}

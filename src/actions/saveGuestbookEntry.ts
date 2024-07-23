@@ -1,22 +1,23 @@
 'use server';
 
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import prisma from '@/lib/prismadb';
-import { getServerSession } from 'next-auth';
+import { getCurrentUser } from '@/lib/auth';
 import { revalidatePath } from 'next/cache';
+import { sanitize } from 'isomorphic-dompurify';
+import db from '@/db';
+import { guestbooks } from '@/db/schema';
 
 export async function saveGuestbookEntry(formData: FormData) {
-  const session = await getServerSession(authOptions);
+  const user = await getCurrentUser();
 
-  if (!session?.user) {
-    throw new Error('Unauthorized');
+  if (!user) {
+    return { error: 'Unauthorized' };
   }
 
-  const { email, image, name } = session?.user as {
-    name: string;
-    email: string;
-    image: string;
-  };
+  const { email, image, name } = user;
+
+  if (!email || !image || !name) {
+    return { error: 'Unauthorized' };
+  }
 
   const content = formData.get('content')?.toString();
 
@@ -25,15 +26,12 @@ export async function saveGuestbookEntry(formData: FormData) {
   }
 
   try {
-    await prisma.guestBook.create({
-      data: {
-        email,
-        image,
-        content,
-        createdBy: name,
-      },
+    await db.insert(guestbooks).values({
+      image,
+      content: sanitize(content),
+      email,
+      createdBy: name,
     });
-
     revalidatePath('/guestbook');
   } catch (error) {
     let message = 'Unexpected error';

@@ -13,7 +13,7 @@ interface SubmitButtonProps extends ButtonProps {
 
 const SubmitButton: FC<SubmitButtonProps> = ({ className, label, isPending, type = 'submit', ...props }) => {
   return (
-    <Button type={type} disabled={isPending} className={cn('flex items-center gap-x-2', className)} {...props}>
+    <Button type={type} disabled={isPending} className={cn(className)} {...props}>
       {label}
       {isPending && <Spinner />}
     </Button>

@@ -1,9 +1,8 @@
-import { Contact } from '@/components/contact';
+import Contact from '@/components/contact/Contact';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'List of tools and technologies that I use everyday.',
 };
 
 export default function ContactPage() {

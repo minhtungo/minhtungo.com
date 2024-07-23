@@ -1,7 +1,6 @@
 'use client';
 
 import SubmitButton from '@/components/common/SubmitButton';
-import { Button } from '@/components/ui/Button';
 import { FC } from 'react';
 import { useFormStatus } from 'react-dom';
 
@@ -9,6 +8,7 @@ interface SubmittedButtonProps {}
 
 const SubmittedButton: FC<SubmittedButtonProps> = () => {
   const { pending } = useFormStatus();
+
   return <SubmitButton disabled={pending} isPending={pending} type='submit' label='Sign' />;
 };
 
