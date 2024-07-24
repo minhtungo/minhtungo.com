@@ -21,8 +21,8 @@ const SongPlayedRecently = async () => {
             <Image
               src={song?.thumbnail}
               alt={song?.title}
-              width={267}
-              height={268}
+              width={298}
+              height={298}
               className='object-cover brightness-[.45] group-hover:brightness-[.7] duration-300 ease-in-out rounded-lg group-hover:scale-105'
             />
             <div className='absolute inset-x-0 bottom-4 ml-4 flex items-center space-x-3'>

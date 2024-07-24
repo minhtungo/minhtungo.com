@@ -31,7 +31,7 @@ export default function AboutPage() {
       <Section>
         <TechStack />
       </Section>
-      <Section className='grid lg:grid-cols-5 gap-y-8 lg:gap-x-12'>
+      <Section className='grid lg:grid-cols-5 gap-y-8 lg:gap-x-6'>
         <CodeSnippet className='lg:col-span-2 h-fit' />
         <Experience className='lg:col-span-3' />
       </Section>

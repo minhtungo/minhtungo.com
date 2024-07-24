@@ -6,8 +6,8 @@ import { USED_TECHS } from '@/lib/constants';
 
 const Footer = () => {
   return (
-    <Container tag='footer' className='mt-16 border-t border-border/50 pt-4 space-y-5 pb-6'>
-      <div className='flex gap-y-3 flex-col-reverse sm:flex-row items-center sm:justify-between'>
+    <Container tag='footer' className='mt-16 space-y-5 pb-6'>
+      <div className='flex gap-y-3 border-t border-border/50 pt-4 flex-col-reverse sm:flex-row items-center sm:justify-between'>
         <NowPlaying />
         <SocialIcons />
       </div>

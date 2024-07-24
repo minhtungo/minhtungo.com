@@ -7,6 +7,6 @@ const manrope = Manrope({
 });
 
 const Logo = ({ className }: { className?: string }) => {
-  return <span className={cn('font-medium text-foreground', manrope.className, className)}>Minh Tu Ngo</span>;
+  return <span className={cn('font-semibold text-primary text-lg', manrope.className, className)}>MN</span>;
 };
 export default Logo;
