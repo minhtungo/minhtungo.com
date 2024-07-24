@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import Title from '@/components/common/Title';
-import { buttonVariants } from '@/components/ui/Button';
+import { buttonVariants } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { EMAIL_ADDRESS } from '@/lib/constants';
 import { cn } from '@/lib/utils';

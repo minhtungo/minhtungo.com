@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 import Container from '@/components/common/Container';
 import ThemeToggle from '@/components/common/ThemeToggle';
-import { buttonVariants } from '@/components/ui/Button';
+import { buttonVariants } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { EMAIL_ADDRESS, RESUME_HREF } from '@/lib/constants';
 import { HEADER_LINKS } from '@/lib/routes';

@@ -1,4 +1,4 @@
-import { buttonVariants } from '@/components/ui/Button';
+import { buttonVariants } from '@/components/ui/button';
 import Typography from '@/components/ui/typography';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
