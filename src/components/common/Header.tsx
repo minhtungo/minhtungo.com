@@ -8,12 +8,14 @@ import { useEffect, useState } from 'react';
 import Container from '@/components/common/Container';
 import ThemeToggle from '@/components/common/ThemeToggle';
 import { buttonVariants } from '@/components/ui/Button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import { EMAIL_ADDRESS, RESUME_HREF } from '@/lib/constants';
+import { HEADER_LINKS } from '@/lib/routes';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from './Logo';
 import MobileMenu from './MobileMenu';
-import { HEADER_LINKS } from '@/lib/routes';
 
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);
@@ -40,43 +42,71 @@ const Header = () => {
       )}
     >
       <Container className='flex items-center justify-between h-14'>
-        <motion.div initial='hidden' animate='visible' variants={FadeContainer}>
-          <Link href='/' aria-label='Link to Home Page' className='select-none'>
-            <Logo />
-          </Link>
-        </motion.div>
-        <div className='flex items-center gap-x-3'>
-          <nav className='z-10 hidden md:flex'>
-            <motion.ul
-              initial='hidden'
-              animate='visible'
-              variants={FadeContainer}
-              className='flex items-center lg:gap-x-1'
-            >
-              {HEADER_LINKS.map(({ href, label }) => {
-                return (
-                  <motion.li key={`${label}-nav-item`} variants={PopUp}>
-                    <Link
-                      href={href}
-                      className={cn(
-                        buttonVariants({
-                          variant: 'ghost',
-                          size: 'sm',
-                        }),
-                        'capitalize text-foreground/80 hover:bg-accent/50 hover:text-primary/80',
-                        pathname === href && 'bg-accent text-primary'
-                      )}
-                    >
-                      {label}
-                    </Link>
-                  </motion.li>
-                );
-              })}
-            </motion.ul>
-          </nav>
-          <ThemeToggle />
-          <MobileMenu />
-        </div>
+        <nav className='z-10 '>
+          <motion.ul
+            initial='hidden'
+            animate='visible'
+            variants={FadeContainer}
+            className='flex items-center md:gap-x-2'
+          >
+            <motion.li variants={PopUp} className='mr-4'>
+              <Link href='/' aria-label='Link to Home Page' className='select-none'>
+                <Logo />
+              </Link>
+            </motion.li>
+            {HEADER_LINKS.map(({ href, label }) => {
+              return (
+                <motion.li className='hidden md:flex' key={`${label}-nav-item`} variants={PopUp}>
+                  <Link
+                    href={href}
+                    className={cn(
+                      buttonVariants({
+                        variant: 'ghost',
+                        size: 'sm',
+                      }),
+                      pathname === href && 'bg-accent text-primary'
+                    )}
+                  >
+                    {label}
+                  </Link>
+                </motion.li>
+              );
+            })}
+          </motion.ul>
+        </nav>
+        <TooltipProvider delayDuration={100}>
+          <div className='flex items-center gap-x-2.5 ml-auto'>
+            <ThemeToggle />
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  className={cn(buttonVariants({ variant: 'ghost', size: 'sm' }), 'hidden md:inline-flex')}
+                  href={RESUME_HREF}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Resume
+                </a>
+              </TooltipTrigger>
+              <TooltipContent className='px-2.5 py-1 text-xs'>View my resume</TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <a
+                  className={cn(buttonVariants({ variant: 'default', size: 'sm' }), 'hidden md:inline-flex')}
+                  href={`mailto:${EMAIL_ADDRESS}`}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Say Hello
+                </a>
+              </TooltipTrigger>
+              <TooltipContent>{EMAIL_ADDRESS}</TooltipContent>
+            </Tooltip>
+
+            <MobileMenu />
+          </div>
+        </TooltipProvider>
       </Container>
     </header>
   );

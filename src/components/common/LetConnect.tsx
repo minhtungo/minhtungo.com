@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 import Title from '@/components/common/Title';
 import { buttonVariants } from '@/components/ui/Button';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
-import sparkles from '/public/static/images/sparkles.svg';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { EMAIL_ADDRESS } from '@/lib/constants';
+import { cn } from '@/lib/utils';
+import sparkles from '/public/static/images/sparkles.svg';
 
 const LetConnect = () => {
   return (
@@ -20,18 +20,25 @@ const LetConnect = () => {
         subtitle="Let's connect"
         description={`I'm always open to new projects and opportunities. Whether you're a company looking to hire or you're just looking to chat, I'd love to hear from you.`}
       />
-      <div className='mt-6 text-center'>
-        <a
-          className={cn(
-            buttonVariants({
-              variant: 'default',
-            })
-          )}
-          href={`mailto:${EMAIL_ADDRESS}`}
-        >
-          Say Hello
-        </a>
-      </div>
+      <TooltipProvider delayDuration={100}>
+        <div className='mt-6 text-center'>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <a
+                className={cn(
+                  buttonVariants({
+                    variant: 'default',
+                  })
+                )}
+                href={`mailto:${EMAIL_ADDRESS}`}
+              >
+                Say Hello
+              </a>
+            </TooltipTrigger>
+            <TooltipContent>{EMAIL_ADDRESS}</TooltipContent>
+          </Tooltip>
+        </div>
+      </TooltipProvider>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import TypingAnimation from '../common/TypingAnimation';
 import sparkles from '/public/static/images/sparkles.svg';
+import LazyDogModel from '@/components/model/LazyDogModel';
 
 const Hero = () => {
   return (
@@ -16,7 +17,7 @@ const Hero = () => {
           src={sparkles}
           alt='sparkles'
         />
-        {/* <LazyDogModel /> */}
+        <LazyDogModel />
       </div>
       {/* Hero Text */}
       <div className='relative -mt-14 basis-3/5 text-center md:text-start'>

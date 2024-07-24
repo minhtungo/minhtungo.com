@@ -44,6 +44,11 @@ export const SOCIAL_INFO = [
     href: 'https://linkedin.com/in/minhtungo/',
     text: 'Linkedin',
   },
+  {
+    icon: <Mail className='size-[18px]' />,
+    href: `mailto:${EMAIL_ADDRESS}`,
+    text: 'mn.minhtungo@gmail.com',
+  },
 ];
 
 export const FAVORITE_TECHS = [
