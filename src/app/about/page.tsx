@@ -1,8 +1,8 @@
-import CodeSnippet from '@/components/about/CodeSnippet';
-import Experience from '@/components/about/Experience';
-import ProfileCard from '@/components/about/ProfileCard';
-import SongPlayedRecently from '@/components/about/SongPlayedRecently';
-import TechStack from '@/components/about/TechStack';
+import CodeSnippet from '@/components/profile/CodeSnippet';
+import Experience from '@/components/profile/Experience';
+import ProfileCard from '@/components/profile/ProfileCard';
+import SongPlayedRecently from '@/components/profile/SongPlayedRecently';
+import TechStack from '@/components/profile/TechStack';
 import PageTitle from '@/components/common/PageTitle';
 import Section from '@/components/common/Section';
 import Typography from '@/components/ui/typography';
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div>
+    <>
       <PageTitle title='About' subtitle='Sharing my passions and experiences with the world.' />
       <Section className='lg:gap-18 flex flex-col items-center justify-center gap-8 lg:flex-row-reverse'>
         <ProfileCard className='min-w-[300px]' />
@@ -43,6 +43,6 @@ export default function AboutPage() {
           <SongPlayedRecently />
         </Section>
       </Suspense>
-    </div>
+    </>
   );
 }
