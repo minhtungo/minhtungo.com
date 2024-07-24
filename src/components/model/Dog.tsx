@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { useGLTF } from '@react-three/drei';
 import { GLTF } from 'three-stdlib';
+import { useEffect } from 'react';
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -16,6 +17,17 @@ type GLTFResult = GLTF & {
 export function Dog(props: JSX.IntrinsicElements['group']) {
   // @ts-ignore
   const { nodes, materials } = useGLTF('/model/dog-baked.glb') as GLTFResult;
+
+  // Proper cleanup of resources to prevent memory leaks
+  useEffect(() => {
+    return () => {
+      nodes.main.geometry.dispose();
+      nodes.Plane.geometry.dispose();
+      materials.palette.dispose();
+      materials['Material.001'].dispose();
+    };
+  }, []);
+
   return (
     <group {...props} dispose={null}>
       <mesh
