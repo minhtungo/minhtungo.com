@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body>
+      <body suppressHydrationWarning={true}>
         <Providers>
           <div className='grid min-h-[100dvh] grid-rows-[auto_1fr_auto]'>
             <Header />
