@@ -1,27 +1,27 @@
 'use client';
 
-import { Button, LoadingSpinner } from '@/components/ui';
-import toast from 'react-hot-toast';
-import { FadeContainer } from '@/lib/framerVariants';
 import emailjs from '@emailjs/browser';
-import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
+import toast from 'react-hot-toast';
 
-import Input from './Input';
-import mergeClassNames from '@/lib/mergeClassNames';
+import { cn } from '@/lib/utils';
+import SubmitButton from '@/components/common/SubmitButton';
+import Input from '@/components/contact/Input';
+import { EMAIL_ADDRESS } from '@/lib/constants';
+
+const initialFormState = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+};
 
 const ContactForm = ({ className }: { className: string }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
-  const [message, setMessage] = useState('');
+  const [formState, setFormState] = useState(initialFormState);
   const [isSending, setIsSending] = useState(false);
 
   const reset = () => {
-    setName('');
-    setEmail('');
-    setSubject('');
-    setMessage('');
+    setFormState(initialFormState);
   };
 
   const form = useRef<HTMLFormElement>(null);
@@ -43,7 +43,6 @@ const ContactForm = ({ className }: { className: string }) => {
         reset();
       } catch (error) {
         setIsSending(false);
-        console.error(error);
       }
     };
 
@@ -51,70 +50,53 @@ const ContactForm = ({ className }: { className: string }) => {
 
     toast.promise(sendingPromise, {
       loading: 'Sending...',
-      success:
-        'Thank you for getting in touch! I will get back in touch with you soon. Have a great day!',
-      error:
-        'Something went wrong! Please try again or reach me at mn.minhtungo@gmail.com.',
+      success: 'Thank you for getting in touch! I will get back in touch with you soon. Have a great day!',
+      error: `Something went wrong! Please try again or reach me at ${EMAIL_ADDRESS}.`,
     });
   };
 
   return (
-    <motion.form
-      className={mergeClassNames('flex flex-col rounded-lg', className)}
-      initial='hidden'
-      whileInView='visible'
-      variants={FadeContainer}
-      viewport={{ once: true }}
-      onSubmit={handleSubmit}
-      ref={form}
-    >
+    <form className={cn(className)} onSubmit={handleSubmit} ref={form}>
       <div className='grid w-full sm:grid-cols-2 sm:gap-4 lg:gap-6'>
         <Input
           type='text'
           name='name'
           label='Name'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={formState.name}
+          onChange={(e) => setFormState({ ...formState, name: e.target.value })}
         />
         <Input
           type='email'
           name='email'
           label='Email Address'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={formState.email}
+          onChange={(e) => setFormState({ ...formState, email: e.target.value })}
         />
       </div>
       <Input
         type='subject'
         name='subject'
         label='Subject'
-        value={subject}
-        onChange={(e) => setSubject(e.target.value)}
+        value={formState.subject}
+        onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
       />
       <Input
         textarea
         type='message'
         name='message'
         label='Message'
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        value={formState.message}
+        onChange={(e) => setFormState({ ...formState, message: e.target.value })}
       />
       <div className='flex w-full items-center justify-center'>
-        <Button
-          disabled={isSending || !name || !email || !subject || !message}
+        <SubmitButton
+          label='Send Message'
+          isPending={isSending}
+          disabled={!formState.name || !formState.email || !formState.subject || !formState.message}
           className='mt-6 flex items-center justify-center'
-        >
-          {isSending ? (
-            <>
-              <LoadingSpinner className='mr-3 inline h-4 w-4 animate-spin text-blue-500' />
-              {'Sending...'}
-            </>
-          ) : (
-            'Send Message'
-          )}
-        </Button>
+        />
       </div>
-    </motion.form>
+    </form>
   );
 };
 export default ContactForm;

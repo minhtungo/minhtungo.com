@@ -1,28 +1,56 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'class',
+  darkMode: ['class'],
+  content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
+  prefix: '',
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
       colors: {
-        transparent: 'transparent',
-        white: '#f2f2f2',
-        'off-white': '#f7f8f8',
-        'transparent-white': 'rgba(255, 255, 255, 0.08)',
-        'card-background-light': 'rgba(255, 255, 255, 0.5)',
-        'card-background-dark': 'rgba(38, 38, 38,0.35)',
-        'background-dark': 'rgba(38, 38, 38,0.9)',
-        'background-light': 'rgba(255, 255, 255, 0.95)',
-        'transparent-background-white': 'rgba(255, 255, 255, 0.8)',
-        'custom-border-black': 'rgba(38, 38, 38,0.12)',
-        'transparent-black': 'rgba(38, 38, 38,0.5)',
-        'transparent-background-black': 'rgba(38, 38, 38,0.95)',
-        'transparent-blacker': 'rgba(38, 38, 38,0.7)',
-        'transparent-black-tight': 'rgba(13, 13, 13, 0.1)',
-        background: '#000000',
-        grey: '#c7c8d1',
-        'grey-dark': '#222326',
-        'primary-text': '#c7c8d1',
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
       spacing: {
         'navigation-height': 'var(--navigation-height)',
@@ -33,13 +61,21 @@ module.exports = {
         'hero-pattern': "url('/static/images/sparkles.svg')",
       },
       boxShadow: {
-        primary: 'rgb(80 63 205 / 50%) 0px 1px 40px',
+        customShadow: 'rgb(80 63 205 / 50%) 0px 1px 40px',
       },
       content: {
         react: "url('/icons/react.svg')",
         next: "url('/icons/next.png')",
       },
       keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
         cursor: {
           '0%, 45%': { opacity: 1 },
           '50%, 100%': { opacity: 0 },
@@ -54,22 +90,15 @@ module.exports = {
           '70%': { transform: 'rotate(0.0deg)' },
           '100%': { transform: 'rotate(0.0deg)' },
         },
-        border: {
-          '0%, 100%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-        },
       },
       animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
         cursor: 'cursor .75s infinite',
         wave: 'wave 1.5s ease-in-out infinite [origin-70% 70%]',
         border: 'border 4s ease infinite',
       },
     },
   },
-  variants: {
-    extend: {
-      backgroundImage: ['hover'],
-    },
-  },
-  plugins: [],
+  plugins: [require('tailwindcss-animate')],
 };

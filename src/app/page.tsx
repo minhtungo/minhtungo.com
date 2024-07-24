@@ -1,25 +1,37 @@
-import { Contact } from '@/components/Contact';
-import { Hero, Skills } from '@/components/Home';
-import { Repos } from '@/components/Library';
-import { Projects } from '@/components/Projects';
-import { client, projectHomeQuery } from '@/lib/sanity.client';
+import LetConnect from '@/components/common/LetConnect';
+import Section from '@/components/common/Section';
+import Title from '@/components/common/Title';
+import Repos from '@/components/repo/Repos';
+import FavoriteTechs from '@/components/home/FavoriteTechs';
+import Hero from '@/components/home/Hero';
+import Projects from '@/components/projects/Projects';
+import ViewMoreButton from '@/components/common/ViewMoreButton';
 
-import { Suspense } from 'react';
-
-export default async function HomePage() {
-  const projects = await client.fetch(projectHomeQuery);
-
+export default function HomePage() {
   return (
     <>
       <Hero />
-      <Skills />
-      <Suspense>
-        <Projects home projects={projects} />
-      </Suspense>
-      <Suspense>
-        <Repos home />
-      </Suspense>
-      <Contact home />
+      <Section className='pt-0 sm:pt-0'>
+        <Title title='Technologies I’ve Been Working with Recently' subtitle='Adventures' />
+        <FavoriteTechs />
+      </Section>
+      <Section>
+        <Title title={`Discover What I've Built`} subtitle='Projects' />
+        <Projects start={0} end={4} />
+        <div className='text-center mt-6'>
+          <ViewMoreButton href='/projects' />
+        </div>
+      </Section>
+      <Section>
+        <Title title='Some of My Other Contributions and Projects' subtitle='Repositories' />
+        <Repos />
+        <div className='text-center mt-8'>
+          <ViewMoreButton href='/archive' />
+        </div>
+      </Section>
+      <Section>
+        <LetConnect />
+      </Section>
     </>
   );
 }
