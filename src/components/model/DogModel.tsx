@@ -2,10 +2,11 @@
 
 import { Suspense } from 'react';
 import { OrbitControls } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
+import { Canvas, extend } from '@react-three/fiber';
 import { Dog } from './Dog';
 import { useState, useEffect } from 'react';
 import Spinner from '@/components/common/Spinner';
+extend({ OrbitControls });
 
 const DogModel = () => {
   const [autoRotateSpeed, setAutoRotateSpeed] = useState(0.01);
