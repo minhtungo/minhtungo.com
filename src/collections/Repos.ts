@@ -1,37 +1,27 @@
 import type { CollectionConfig } from 'payload';
 
-export const Projects: CollectionConfig = {
-  slug: 'projects',
+export const Repos: CollectionConfig = {
+  slug: 'repos',
   admin: {
     useAsTitle: 'title',
   },
   fields: [
     {
       name: 'title',
+      label: 'Title',
       type: 'text',
       required: true,
     },
     {
       name: 'description',
+      label: 'Description',
       type: 'text',
       required: true,
     },
     {
-      name: 'previewImage',
-      type: 'upload',
-      relationTo: 'media',
-      required: true,
-    },
-    {
-      name: 'links',
-      type: 'array',
-      fields: [
-        {
-          name: 'href',
-          type: 'text',
-          required: true,
-        },
-      ],
+      name: 'href',
+      label: 'Href',
+      type: 'text',
       required: true,
     },
     {

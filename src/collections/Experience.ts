@@ -1,7 +1,7 @@
 import type { CollectionConfig } from 'payload';
 
-export const Experiences: CollectionConfig = {
-  slug: 'experiences',
+export const Experience: CollectionConfig = {
+  slug: 'experience',
   admin: {
     useAsTitle: 'title',
   },
@@ -37,9 +37,22 @@ export const Experiences: CollectionConfig = {
       required: true,
     },
     {
-      name: 'isPresent',
-      label: 'Is Present',
-      type: 'checkbox',
+      name: 'href',
+      label: 'Href',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'techs',
+      type: 'array',
+      fields: [
+        {
+          name: 'name',
+          type: 'text',
+          required: true,
+        },
+      ],
+      required: true,
     },
   ],
 };
