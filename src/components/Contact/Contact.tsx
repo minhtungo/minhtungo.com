@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import PageTitle from '@/components/common/PageTitle';
 import SocialIcons from '@/components/common/SocialIcons';
-import Title from '@/components/common/Title';
+import ContactForm from '@/components/contact/ContactForm';
 import Typography from '@/components/ui/typography';
 import { CONTACT_INFO } from '@/lib/constants';
 import { cn } from '@/lib/utils';
-import ContactForm from '@/components/contact/ContactForm';
 import sparkles from '/public/static/images/sparkles.svg';
 
 const Contact = ({ home }: { home?: boolean }) => {
@@ -17,7 +17,7 @@ const Contact = ({ home }: { home?: boolean }) => {
         src={sparkles}
         alt='sparkles'
       />
-      <Title title='Get In Touch' subtitle="Let's connect" />
+      <PageTitle title='Get In Touch' subtitle="Let's connect" />
       <div className='relative'>
         <div className='grid grid-cols-1 gap-y-4 md:gap-x-10 md:grid-cols-2'>
           <div>

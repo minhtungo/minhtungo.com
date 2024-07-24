@@ -3,7 +3,7 @@
 import { cn } from '@/lib/utils';
 import { FC } from 'react';
 import Spinner from './Spinner';
-import { Button, ButtonProps } from '@/components/ui/Button';
+import { Button, ButtonProps } from '@/components/ui/button';
 
 interface SubmitButtonProps extends ButtonProps {
   label: string;

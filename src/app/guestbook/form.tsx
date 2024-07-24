@@ -6,7 +6,7 @@ import { saveGuestbookEntry } from '@/actions/saveGuestbookEntry';
 import { signOut } from 'next-auth/react';
 import { DefaultSession } from 'next-auth';
 import Image from 'next/image';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
 
 interface formProps {
   user: DefaultSession['user'];

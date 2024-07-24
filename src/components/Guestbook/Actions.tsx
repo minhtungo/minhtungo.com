@@ -1,7 +1,7 @@
 'use client';
 
 import Google from '@/components/icons/Google';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
 import { Github } from 'lucide-react';
 import { signIn } from 'next-auth/react';
 

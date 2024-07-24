@@ -9,7 +9,7 @@ import { motion } from 'framer-motion';
 import { FileText, Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import astronaut from 'public/static/images/astronaut.gif';
+import astronaut from '/public/static/images/astronaut.gif';
 
 import { TypeAnimation } from 'react-type-animation';
 

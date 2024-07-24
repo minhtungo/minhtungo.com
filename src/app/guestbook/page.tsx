@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Guestbook',
 };
 
-export default async function GuestbookPage() {
+export default function GuestbookPage() {
   return (
     <>
       <PageTitle title='Guestbook' subtitle={"I'd love to hear from you! Feel free to leave a message below."} />
