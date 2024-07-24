@@ -9,29 +9,34 @@ import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 const ProjectItem = ({ project: { title, description, href, techs, imageHref } }: { project: Project }) => {
   return (
-    <div className='relative transition-all group'>
-      <Link
+    <div className='relative transition-all group h-full'>
+      <a
         href={href}
         target='_blank'
         rel='noopener noreferrer'
         className='absolute hover:!bg-transparent duration-200 ease-in w-full h-full inset-0 z-10 group-hover/list:bg-card/40 p-4 pb-6'
       />
-      <Card className='p-4 grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 duration-200 ease-in group-hover:bg-accent/25 group-hover:shadow-lg gap-y-3 gap-x-4'>
+      <Card className='px-3.5 pt-2.5 pb-3.5 grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 duration-200 ease-in group-hover:bg-accent/25 group-hover:shadow-lg gap-y-3 gap-x-4 h-full'>
         <div className='md:col-span-2 lg:col-span-1 mt-2'>
-          <Image src={imageHref} alt={title} width={800} height={800} className='object-cover rounded-lg max-w-full' />
+          <Image
+            src={imageHref}
+            alt={title}
+            width={800}
+            height={800}
+            className='object-cover rounded-lg max-w-full border'
+          />
         </div>
-        <div className='md:col-span-3 lg:col-span-2 space-y-2.5'>
+        <div className='md:col-span-3 lg:col-span-2'>
           <Typography variant='h5' tag='h3'>
             <div className='inline-flex gap-x-1 items-center font-medium leading-tight text-base group-hover:text-primary'>
               <div>{title}</div>
               <ArrowUpRight className='size-3 duration-200 group-hover:-translate-y-[2px] group-hover:translate-x-[2px] motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 shrink-1 translate-y-px' />
             </div>
           </Typography>
-          <Typography className='text-sm text-muted-foreground'>{description}</Typography>
+          <Typography className='text-sm text-muted-foreground mb-2.5 mt-[2px]'>{description}</Typography>
           <ul className='flex flex-wrap gap-1.5' aria-label='Technologies used'>
             {techs.map((tech) => (
               <li key={`${title}-${tech}-project-tech`}>

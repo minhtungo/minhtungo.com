@@ -5,6 +5,7 @@ import { buttonVariants } from '@/components/ui/Button';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import sparkles from '/public/static/images/sparkles.svg';
+import { EMAIL_ADDRESS } from '@/lib/constants';
 
 const LetConnect = () => {
   return (
@@ -20,16 +21,16 @@ const LetConnect = () => {
         description={`I'm always open to new projects and opportunities. Whether you're a company looking to hire or you're just looking to chat, I'd love to hear from you.`}
       />
       <div className='mt-6 text-center'>
-        <Link
+        <a
           className={cn(
             buttonVariants({
               variant: 'default',
             })
           )}
-          href='/contact'
+          href={`mailto:${EMAIL_ADDRESS}`}
         >
           Say Hello
-        </Link>
+        </a>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 'use client';
 
 import { buttonVariants } from '@/components/ui/Button';
-import { Card, CardContent } from '@/components/ui/card';
-import { RESUME_HREF } from '@/lib/constants';
+import { Card } from '@/components/ui/card';
+import { EMAIL_ADDRESS, RESUME_HREF } from '@/lib/constants';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
@@ -67,13 +67,13 @@ const ProfileCard = ({ className }: { className?: string }) => {
               <FileText className='size-4' />
               Resume
             </a>
-            <Link
-              href='mailto:mn.minhtungo@gmail.com'
+            <a
+              href={`mailto:${EMAIL_ADDRESS}`}
               className={cn(buttonVariants({ variant: 'outline', size: 'sm' }), 'flex gap-x-1 items-center')}
             >
               <Mail className='size-4' />
               Message
-            </Link>
+            </a>
           </div>
         </div>
       </Card>

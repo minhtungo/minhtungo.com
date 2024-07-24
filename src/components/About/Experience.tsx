@@ -22,7 +22,7 @@ const Experience: FC<ExperienceProps> = ({ className }) => {
             rel='noopener noreferrer'
             className='absolute hover:!bg-transparent duration-200 ease-in w-full h-full inset-0 z-10 group-hover/list:bg-card/40 p-4 pb-6'
           />
-          <Card className='p-4 pb-6 grid sm:grid-cols-9 duration-200 ease-in group-hover:bg-accent/25 group-hover:shadow-lg gap-y-2'>
+          <Card className='px-3.5 pt-2.5 pb-3.5 grid sm:grid-cols-9 duration-200 ease-in group-hover:bg-accent/25 group-hover:shadow-lg gap-y-2'>
             <header
               className='text-xs text-muted-foreground font-medium tracking-tight sm:col-span-2 mt-1.5 space-y-1.5'
               aria-label={time}

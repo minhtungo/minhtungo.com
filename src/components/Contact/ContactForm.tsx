@@ -7,6 +7,7 @@ import toast from 'react-hot-toast';
 import { cn } from '@/lib/utils';
 import SubmitButton from '@/components/common/SubmitButton';
 import Input from '@/components/contact/Input';
+import { EMAIL_ADDRESS } from '@/lib/constants';
 
 const initialFormState = {
   name: '',
@@ -50,7 +51,7 @@ const ContactForm = ({ className }: { className: string }) => {
     toast.promise(sendingPromise, {
       loading: 'Sending...',
       success: 'Thank you for getting in touch! I will get back in touch with you soon. Have a great day!',
-      error: 'Something went wrong! Please try again or reach me at mn.minhtungo@gmail.com.',
+      error: `Something went wrong! Please try again or reach me at ${EMAIL_ADDRESS}.`,
     });
   };
 

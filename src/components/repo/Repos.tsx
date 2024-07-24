@@ -1,22 +1,13 @@
 import ReposClient from '@/components/repo/Repos.client';
 import { REPOS } from '@/lib/constants';
-import ViewMoreButton from '../common/ViewMoreButton';
 
 interface ReposProps {
-  showButton?: boolean;
+  start?: number;
+  end?: number;
 }
 
-const Repos = async ({ showButton }: ReposProps) => {
-  return (
-    <>
-      <ReposClient repos={REPOS} />
-      {showButton && (
-        <div className='mt-6 text-center lg:mt-12'>
-          <ViewMoreButton href='/library' />
-        </div>
-      )}
-    </>
-  );
+const Repos = async ({ start = 0, end = REPOS.length }: ReposProps) => {
+  return <ReposClient repos={REPOS.slice(start, end)} />;
 };
 
 export default Repos;

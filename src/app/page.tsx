@@ -17,7 +17,7 @@ export default function HomePage() {
       </Section>
       <Section>
         <Title title={`Discover What I've Built`} subtitle='Projects' />
-        <Projects />
+        <Projects start={0} end={4} />
         <div className='text-center mt-6'>
           <ViewMoreButton href='/projects' />
         </div>
@@ -25,7 +25,7 @@ export default function HomePage() {
       <Section>
         <Title title='Some of My Other Contributions and Projects' subtitle='Repositories' />
         <Repos />
-        <div className='text-center mt-6'>
+        <div className='text-center mt-8'>
           <ViewMoreButton href='/archive' />
         </div>
       </Section>

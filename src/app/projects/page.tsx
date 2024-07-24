@@ -12,7 +12,7 @@ export default async function ProjectsPage() {
     <>
       <PageTitle title='Projects' subtitle={`Discover What I've Built.`} />
       <Projects />
-      <div className='text-center mt-6'>
+      <div className='text-center mt-10'>
         <ViewMoreButton href='/archive' title='View Full Project Archive' />
       </div>
     </>

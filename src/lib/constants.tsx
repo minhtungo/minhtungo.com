@@ -18,10 +18,12 @@ import Jotai from '/public/static/images/tech/jotai.png';
 import PayloadCMS from '/public/static/images/tech/payloadcms.png';
 import AuthJS from '/public/static/images/tech/authjs.webp';
 
+export const EMAIL_ADDRESS = 'mn.minhtungo@gmail.com';
+
 export const CONTACT_INFO = [
   {
     icon: <Mail className='size-[18px]' />,
-    href: 'mailto:mn.minhtungo@gmail.com',
+    href: `mailto:${EMAIL_ADDRESS}`,
     text: 'mn.minhtungo@gmail.com',
   },
   {
@@ -176,7 +178,7 @@ export const EXPERIENCES = [
 export const PROJECTS = [
   {
     title: 'Lumi',
-    description: `A SaaS-based educational platform designed as a tutor AI to assist students with their studies. The AI guides students towards the answers, enhancing their critical thinking skills rather than providing direct solutions.`,
+    description: `An educational platform designed as a tutor AI to assist students with their studies, enhancing their critical thinking skills rather than providing direct solutions.`,
     href: 'https://lumi-ai.vercel.app',
     techs: ['React', 'Next.js', 'Jotai', 'Tailwind CSS', 'Drizzle ORM', 'React Query', 'Express', 'Node.js'],
     imageHref: '/static/images/projects/lumi.png',

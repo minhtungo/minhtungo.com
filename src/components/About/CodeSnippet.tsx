@@ -1,7 +1,7 @@
-import Link from 'next/link';
-import { Roboto_Mono } from 'next/font/google';
-import { cn } from '@/lib/utils';
 import { Card } from '@/components/ui/card';
+import { EMAIL_ADDRESS } from '@/lib/constants';
+import { cn } from '@/lib/utils';
+import { Roboto_Mono } from 'next/font/google';
 
 interface CodeSnippetProps {
   className?: string;
@@ -44,13 +44,15 @@ const CodeSnippet = ({ className }: CodeSnippetProps) => {
         <p className='text-gray-700 dark:text-gray-50'>
           &nbsp;&nbsp;&nbsp;&nbsp;email:{' '}
           <span className='text-yellow-600 dark:text-yellow-300'>
-            <Link
-              href='mailto:mn.minhtungo@gmail.com'
+            <a
+              href={`mailto:${EMAIL_ADDRESS}`}
               target='_blank'
               className='text-yellow-600 hover:underline focus:border-none dark:text-yellow-300'
             >
-              {"'"}mn.minhtungo@gmail.com{"'"}
-            </Link>
+              {"'"}
+              {EMAIL_ADDRESS}
+              {"'"}
+            </a>
           </span>
           ,
         </p>

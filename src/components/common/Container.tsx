@@ -10,7 +10,7 @@ const Container = ({
   tag?: 'div' | 'main' | 'footer';
 }) => {
   const Tag = tag ? tag : 'div';
-  return <Tag className={cn('mx-auto w-full max-w-6xl px-4 sm:px-6', className)}>{children}</Tag>;
+  return <Tag className={cn('mx-auto w-full max-w-7xl px-4 sm:px-6', className)}>{children}</Tag>;
 };
 
 export default Container;
