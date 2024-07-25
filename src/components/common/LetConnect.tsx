@@ -11,7 +11,7 @@ const LetConnect = () => {
   return (
     <div className='relative'>
       <Image
-        className='absolute left-0 top-4 mx-auto h-auto w-auto animate-pulse sm:left-[10%] md:left-[15%] lg:-translate-y-1/2 lg:left-[27.5%] select-none'
+        className='absolute left-0 top-4 mx-auto h-auto w-auto animate-pulse sm:left-[10%] md:left-[15%] lg:-translate-y-1/2 lg:left-[27.5%] select-none pointer-events-none'
         src={sparkles}
         alt='sparkles'
       />
@@ -19,6 +19,7 @@ const LetConnect = () => {
         title='Get In Touch'
         subtitle="Let's connect"
         description={`I'm always open to new projects and opportunities. Whether you're a company looking to hire or you're just looking to chat, I'd love to hear from you.`}
+        className='z-10'
       />
       <TooltipProvider delayDuration={100}>
         <div className='mt-6 text-center'>

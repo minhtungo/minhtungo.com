@@ -6,8 +6,9 @@ import toast from 'react-hot-toast';
 
 import { cn } from '@/lib/utils';
 import SubmitButton from '@/components/common/SubmitButton';
-import Input from '@/components/contact/Input';
 import { EMAIL_ADDRESS } from '@/lib/constants';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
 
 const initialFormState = {
   name: '',
@@ -16,7 +17,7 @@ const initialFormState = {
   message: '',
 };
 
-const ContactForm = ({ className }: { className: string }) => {
+const ContactForm = ({ className }: { className?: string }) => {
   const [formState, setFormState] = useState(initialFormState);
   const [isSending, setIsSending] = useState(false);
 
@@ -56,19 +57,19 @@ const ContactForm = ({ className }: { className: string }) => {
   };
 
   return (
-    <form className={cn(className)} onSubmit={handleSubmit} ref={form}>
-      <div className='grid w-full sm:grid-cols-2 sm:gap-4 lg:gap-6'>
+    <form className={cn(className, 'space-y-4')} onSubmit={handleSubmit} ref={form}>
+      <div className='grid w-full sm:grid-cols-2 gap-4'>
         <Input
           type='text'
           name='name'
-          label='Name'
+          placeholder='Name'
           value={formState.name}
           onChange={(e) => setFormState({ ...formState, name: e.target.value })}
         />
         <Input
           type='email'
           name='email'
-          label='Email Address'
+          placeholder='Email'
           value={formState.email}
           onChange={(e) => setFormState({ ...formState, email: e.target.value })}
         />
@@ -76,15 +77,13 @@ const ContactForm = ({ className }: { className: string }) => {
       <Input
         type='subject'
         name='subject'
-        label='Subject'
+        placeholder='Subject'
         value={formState.subject}
         onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
       />
-      <Input
-        textarea
-        type='message'
+      <Textarea
         name='message'
-        label='Message'
+        placeholder='Message'
         value={formState.message}
         onChange={(e) => setFormState({ ...formState, message: e.target.value })}
       />
@@ -93,10 +92,11 @@ const ContactForm = ({ className }: { className: string }) => {
           label='Send Message'
           isPending={isSending}
           disabled={!formState.name || !formState.email || !formState.subject || !formState.message}
-          className='mt-6 flex items-center justify-center'
+          className='mt-2 flex items-center justify-center '
         />
       </div>
     </form>
   );
 };
+
 export default ContactForm;

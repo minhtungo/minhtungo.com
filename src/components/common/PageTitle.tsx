@@ -15,7 +15,7 @@ const PageTitle: FC<PageTitleProps> = ({ title, subtitle, className }) => {
         {title}
       </Typography>
       {subtitle && (
-        <Typography variant='h5' tag='h2' className='mt-4 font-normal text-lg text-muted-foreground'>
+        <Typography variant='h5' tag='h2' className='mt-4 font-normal text-base sm:text-lg text-muted-foreground'>
           {subtitle}
         </Typography>
       )}

@@ -18,7 +18,7 @@ const SocialIcons: FC<SocialIconProps> = ({ className }) => {
               <TooltipTrigger asChild>
                 <Link
                   href={href}
-                  className='text-sm text-muted-foreground flex items-center gap-x-3 hover:text-primary'
+                  className='text-sm text-muted-foreground flex items-center gap-x-2 hover:text-primary'
                 >
                   {icon}
                 </Link>

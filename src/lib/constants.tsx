@@ -22,12 +22,12 @@ export const EMAIL_ADDRESS = 'mn.minhtungo@gmail.com';
 
 export const CONTACT_INFO = [
   {
-    icon: <Mail className='size-[18px]' />,
+    icon: <Mail className='size-4 md:size-[18px] shrink-0' />,
     href: `mailto:${EMAIL_ADDRESS}`,
     text: 'mn.minhtungo@gmail.com',
   },
   {
-    icon: <Phone className='size-[18px]' />,
+    icon: <Phone className='size-4 md:size-[18px] shrink-0' />,
     href: 'tel:613-453-6449',
     text: '613-453-6449',
   },
@@ -44,11 +44,11 @@ export const SOCIAL_INFO = [
     href: 'https://linkedin.com/in/minhtungo/',
     text: 'Linkedin',
   },
-  {
-    icon: <Mail className='size-[18px]' />,
-    href: `mailto:${EMAIL_ADDRESS}`,
-    text: 'mn.minhtungo@gmail.com',
-  },
+  // {
+  //   icon: <Mail className='size-[18px]' />,
+  //   href: `mailto:${EMAIL_ADDRESS}`,
+  //   text: 'mn.minhtungo@gmail.com',
+  // },
 ];
 
 export const FAVORITE_TECHS = [

@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react';
 import Container from '@/components/common/Container';
 import ThemeToggle from '@/components/common/ThemeToggle';
 import { buttonVariants } from '@/components/ui/button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { EMAIL_ADDRESS, RESUME_HREF } from '@/lib/constants';
 import { HEADER_LINKS } from '@/lib/routes';
 import { cn } from '@/lib/utils';
@@ -74,50 +73,37 @@ const Header = () => {
             })}
           </motion.ul>
         </nav>
-        <TooltipProvider delayDuration={100}>
-          <motion.ul
-            initial='hidden'
-            animate='visible'
-            variants={FadeContainer}
-            className='flex items-center gap-x-2.5 ml-auto'
-          >
-            <motion.li variants={PopUp}>
-              <ThemeToggle />
-            </motion.li>
-            <motion.li variants={PopUp}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <a
-                    className={cn(buttonVariants({ variant: 'ghost', size: 'sm' }), 'hidden md:inline-flex')}
-                    href={RESUME_HREF}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    Resume
-                  </a>
-                </TooltipTrigger>
-                <TooltipContent className='px-2.5 py-1 text-xs'>View my resume</TooltipContent>
-              </Tooltip>
-            </motion.li>
-            <motion.li variants={PopUp}>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <a
-                    className={cn(buttonVariants({ variant: 'default', size: 'sm' }), 'hidden md:inline-flex')}
-                    href={`mailto:${EMAIL_ADDRESS}`}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    Say Hello
-                  </a>
-                </TooltipTrigger>
-                <TooltipContent>{EMAIL_ADDRESS}</TooltipContent>
-              </Tooltip>
-            </motion.li>
-
-            <MobileMenu />
-          </motion.ul>
-        </TooltipProvider>
+        <motion.ul
+          initial='hidden'
+          animate='visible'
+          variants={FadeContainer}
+          className='flex items-center gap-x-2.5 ml-auto'
+        >
+          <motion.li variants={PopUp}>
+            <ThemeToggle />
+          </motion.li>
+          <motion.li variants={PopUp}>
+            <a
+              className={cn(buttonVariants({ variant: 'ghost', size: 'sm' }), 'hidden md:inline-flex')}
+              href={RESUME_HREF}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Resume
+            </a>
+          </motion.li>
+          <motion.li variants={PopUp}>
+            <a
+              className={cn(buttonVariants({ variant: 'default', size: 'sm' }), 'hidden md:inline-flex')}
+              href={`mailto:${EMAIL_ADDRESS}`}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Say Hello
+            </a>
+          </motion.li>
+        </motion.ul>
+        <MobileMenu />
       </Container>
     </header>
   );
