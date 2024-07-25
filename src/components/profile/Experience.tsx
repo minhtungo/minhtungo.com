@@ -38,13 +38,7 @@ const Experience: FC<ExperienceProps> = ({ className }) => {
                   <ArrowUpRight className='size-3 duration-200 text-foreground group-hover:-translate-y-[2px] group-hover:translate-x-[2px] motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 shrink-1 translate-y-px' />
                 </div>
               </Typography>
-              <ul className='flex flex-wrap gap-1.5 list-disc marker:text-muted-foreground mt-1 mb-3 pl-4 sm:pl-0'>
-                {description.map((des) => (
-                  <li key={des}>
-                    <Typography className='text-sm text-muted-foreground'>{des}</Typography>
-                  </li>
-                ))}
-              </ul>
+              <Typography className='text-sm text-muted-foreground mt-1 mb-3'>{description}</Typography>
               <ul className='flex flex-wrap gap-1.5' aria-label='Technologies used'>
                 {techs.map((tech) => (
                   <li key={`${tech}-experience-tech`}>
