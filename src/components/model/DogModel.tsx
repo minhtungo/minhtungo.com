@@ -11,9 +11,11 @@ const DogModel = () => {
   useEffect(() => {
     setAutoRotateSpeed(800);
 
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setAutoRotateSpeed(2);
     }, 800);
+
+    return () => clearTimeout(timer);
   }, []);
 
   return (
