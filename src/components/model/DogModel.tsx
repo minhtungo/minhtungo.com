@@ -1,11 +1,9 @@
 'use client';
 
-import { Suspense } from 'react';
 import { OrbitControls } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
+import { Suspense, useEffect, useState } from 'react';
 import { Dog } from './Dog';
-import { useState, useEffect } from 'react';
-import Spinner from '@/components/common/Spinner';
 
 const DogModel = () => {
   const [autoRotateSpeed, setAutoRotateSpeed] = useState(0.01);
@@ -13,7 +11,7 @@ const DogModel = () => {
   useEffect(() => {
     setAutoRotateSpeed(800);
 
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setAutoRotateSpeed(2);
     }, 800);
   }, []);
@@ -28,7 +26,7 @@ const DogModel = () => {
       <pointLight position={[10, 10, 10]} intensity={1} />
       <pointLight position={[-10, -10, 10]} intensity={1} />
       <directionalLight position={[0, 5, 5]} intensity={0.8} />
-      <Suspense fallback={<Spinner />}>
+      <Suspense>
         <Dog />
       </Suspense>
       <OrbitControls autoRotate autoRotateSpeed={autoRotateSpeed} enablePan={false} enableZoom={false} />

@@ -14,7 +14,6 @@ type GLTFResult = GLTF & {
 };
 
 export function Dog(props: JSX.IntrinsicElements['group']) {
-  // @ts-ignore
   const { nodes, materials } = useGLTF('/model/dog-baked.glb') as GLTFResult;
 
   // // Proper cleanup of resources to prevent memory leaks
