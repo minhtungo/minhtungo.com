@@ -126,11 +126,9 @@ export const FAVORITE_TECHS = [
 export const EXPERIENCES = [
   {
     title: 'Web Developer',
-    description: [
+    description:
       'Develop an educational platform designed as a tutor AI to assist students with their studies, enhancing their critical thinking skills rather than providing direct solutions.',
-      'Utilize technologies such as Next.js, Jotai, Tailwind CSS, Drizzle ORM, React Query for frontend development, and Express, Node.js for building robust user service in a microservices architecture.',
-      'Build and maintain user services responsible for user-related functionalities, including authorization and authentication as part of a microservices architecture, ensuring robust security and user management.',
-    ],
+
     href: 'https://lumi-ai.vercel.app',
     company: 'Lumi',
     location: 'Remote',
@@ -140,11 +138,8 @@ export const EXPERIENCES = [
   {
     title: 'Web Developer',
     href: 'https://websitedesignkingston.com',
-    description: [
-      'Developed an eForm for the OSCAR system to digitize the medical documentation process, reducing administrative workload for healthcare professionals and enhancing data efficiency.',
-      'Maintained and optimized multiple WordPress websites, achieving a 20% reduction in downtime and enhancing site performance by 15%.',
-      'Refined an existing event registration export feature, enhancing internal reporting efficiency and providing the company with valuable insights into event attendee data.',
-    ],
+    description:
+      'Built and maintained multiple WordPress websites, specializing in the creation of responsive and user-centric online experiences.',
     company: 'Website Design Kingston',
     location: 'Remote',
     time: 'Aug 2023 – Present',
@@ -152,12 +147,8 @@ export const EXPERIENCES = [
   },
   {
     title: 'Full Stack Developer',
-    description: [
+    description:
       'Built a full stack eCommerce platform with a tailor-made CMS using Next.js for the front end and Medusa.js for a scalable, headless commerce backend.',
-      'Implemented responsive design and ensured web accessibility standards using Tailwind CSS and Radix UI.',
-      'Leveraged Azure cloud services for robust hosting and database, ensuring high availability and scalability.',
-      'Worked closely with the start-up team to understand their needs and requirements, and implemented solutions that met their business goals.',
-    ],
     href: 'http://vietify.shop',
     company: 'Vietify',
     location: 'Remote',
@@ -167,12 +158,8 @@ export const EXPERIENCES = [
   {
     title: 'Front End Developer',
     href: 'https://taubyte.com',
-    description: [
-      'Developed the front end of a cloud platform designed to enable developers to swiftly architect and deploy robust web applications.',
-      'Refactored the codebase and developed test coverage for new features, leading to a 15% decrease in downtime and a 32% decrease in customer complaints.',
-      'Revamped the company website to align with company vision, increasing engagement and recognition.',
-      'Refined performance by 25% by establishing bi-directional communication with WebSocket.',
-    ],
+    description:
+      'Developed a cloud platform designed to enable developers to swiftly architect and deploy robust web applications.',
     company: 'Taubyte',
     location: 'Remote',
     time: 'Sep 2021 – Apr 2022',
@@ -183,14 +170,14 @@ export const EXPERIENCES = [
 export const PROJECTS = [
   {
     title: 'Lumi',
-    description: `An educational platform designed as a tutor AI to assist students with their studies, enhancing their critical thinking skills rather than providing direct solutions.`,
+    description: `An educational platform designed as a tutor AI to assist students, enhancing their critical thinking rather than providing direct solutions.`,
     href: 'https://lumi-ai.vercel.app',
     techs: ['React', 'Next.js', 'Jotai', 'Tailwind CSS', 'Drizzle ORM', 'React Query', 'Express', 'Node.js'],
     imageHref: '/static/images/projects/lumi.png',
   },
   {
     title: 'Vietify',
-    description: `A US-based online Vietnamese bookstore with a tailor-made CMS using Next.js for the front end and Medusa.js for a scalable, headless commerce backend.`,
+    description: `A US-based online Vietnamese bookstore using Medusa.js for a scalable, headless commerce backend.`,
     href: 'http://vietify.shop',
     techs: ['React', 'Next.js', 'Medusa.js', 'Node.js', 'Tailwind CSS', 'TypeScript', 'Prisma'],
     imageHref: '/static/images/projects/vietify.png',
