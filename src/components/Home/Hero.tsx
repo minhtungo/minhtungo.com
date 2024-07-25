@@ -35,7 +35,7 @@ const Hero = () => {
           <span className='wave text-3xl md:text-4xl lg:text-5xl'>👋</span>
         </div>
 
-        <div className='mt-3 font-medium md:mt-4 text-base lg:ml-[2px] lg:text-lg'>
+        <div className='mt-3 font-medium md:mt-4 text-base lg:ml-[2px] lg:text-lg h-7'>
           <TypingAnimation />
         </div>
         <div className='mt-4 text-base text-muted-foreground'>
@@ -46,7 +46,6 @@ const Hero = () => {
           !
         </div>
 
-        {/* buttons */}
         <div className='mt-5 flex flex-col justify-center gap-3 sm:flex-row md:justify-start lg:ml-[2px]'>
           <Link
             href='/about'

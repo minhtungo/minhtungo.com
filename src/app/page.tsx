@@ -24,7 +24,7 @@ export default function HomePage() {
       </Section>
       <Section>
         <Title title='Some of My Other Contributions and Projects' subtitle='Repositories' />
-        <Repos />
+        <Repos start={0} end={3} />
         <div className='text-center mt-8'>
           <ViewMoreButton href='/archive' />
         </div>

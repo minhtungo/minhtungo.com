@@ -58,7 +58,7 @@ export const FAVORITE_TECHS = [
   },
   {
     name: 'Next.js',
-    icon: <Image width={32} height={32} src={Next} alt='nextjs' className='size-8 object-contain' />,
+    icon: <Image width={32} height={32} src={Next} alt='Next.js' className='size-8 object-contain' />,
   },
   {
     name: 'SvelteKit',
@@ -127,13 +127,13 @@ export const EXPERIENCES = [
   {
     title: 'Web Developer',
     description:
-      'Develop an educational platform designed as a tutor AI to assist students with their studies, enhancing their critical thinking skills rather than providing direct solutions.',
+      'Develop an AI-powered tutoring platform to assist students with their studies, enhancing their critical thinking skills rather than providing direct solutions.',
 
     href: 'https://lumi-ai.vercel.app',
     company: 'Lumi',
     location: 'Remote',
     time: 'May 2024 – Present',
-    techs: ['React', 'Next.js', 'Jotai', 'Tailwind CSS', 'Drizzle ORM', 'React Query', 'Express', 'Node.js'],
+    techs: ['React', 'Next.js', 'Jotai', 'Tailwind', 'Drizzle ORM', 'React Query', 'Express', 'Node.js', 'TypeScript'],
   },
   {
     title: 'Web Developer',
@@ -153,7 +153,7 @@ export const EXPERIENCES = [
     company: 'Vietify',
     location: 'Remote',
     time: 'Jul 2023 – Jan 2024',
-    techs: ['React', 'Next.js', 'Medusa.js', 'Tailwind CSS', 'TypeScript', 'Node.js', 'Prisma'],
+    techs: ['React', 'Next.js', 'Medusa.js', 'Tailwind', 'TypeScript', 'Node.js', 'Prisma'],
   },
   {
     title: 'Front End Developer',
@@ -170,30 +170,30 @@ export const EXPERIENCES = [
 export const PROJECTS = [
   {
     title: 'Lumi',
-    description: `An educational platform designed as a tutor AI to assist students, enhancing their critical thinking rather than providing direct solutions.`,
+    description: `An AI-powered tutoring platform, enhancing students' critical thinking skills rather than providing direct solutions.`,
     href: 'https://lumi-ai.vercel.app',
-    techs: ['React', 'Next.js', 'Jotai', 'Tailwind CSS', 'Drizzle ORM', 'React Query', 'Express', 'Node.js'],
+    techs: ['React', 'Next.js', 'Jotai', 'Tailwind', 'React Query', 'Express', 'Node.js', 'Drizzle ORM', 'TypeScript'],
     imageHref: '/static/images/projects/lumi.png',
   },
   {
     title: 'Vietify',
     description: `A US-based online Vietnamese bookstore using Medusa.js for a scalable, headless commerce backend.`,
     href: 'http://vietify.shop',
-    techs: ['React', 'Next.js', 'Medusa.js', 'Node.js', 'Tailwind CSS', 'TypeScript', 'Prisma'],
+    techs: ['React', 'Next.js', 'Medusa.js', 'Node.js', 'Tailwind', 'Prisma', 'TypeScript'],
     imageHref: '/static/images/projects/vietify.png',
   },
   {
     title: 'Similarity-API',
     description: `A full-stack API service website to easily determine the similarity between two pieces of text.`,
     href: 'https://similarity-api-sandy.vercel.app',
-    techs: ['Medusa.js', 'NextJS', 'React', 'Tailwind CSS', 'Vercel'],
+    techs: ['React', 'Next.js', 'Tailwind', 'OpenAI', 'TypeScript'],
     imageHref: '/static/images/projects/similarity-api.png',
   },
   {
     title: 'Job Board',
     description: `Built a minimalist job board to learn Next.js 14 new features.`,
     href: 'https://job-board-minhtungo.vercel.app/',
-    techs: ['NextJS', 'React', 'Tailwind CSS', 'TypeScript'],
+    techs: ['React', 'Next.js', 'Tailwind', 'TypeScript'],
     imageHref: '/static/images/projects/job-board.webp',
   },
   {
@@ -226,13 +226,13 @@ export const REPOS = [
     title: 'SC2 Build Order Manager',
     description: `Learning T3 Stack by building a simple app to manage build order in StarCraft II`,
     href: 'https://github.com/minhtungo/starcraft-build-order',
-    techs: ['NextJS', 'React', 'Tailwind', 'tRPC', 'Prisma', 'TypeScript'],
+    techs: ['Next.js', 'React', 'Tailwind', 'tRPC', 'Prisma'],
   },
   {
     title: 'ChatGPT Clone',
     description: `A backup solution for me when the original ChatGPT becomes unavailable or congested.`,
     href: 'https://github.com/minhtungo/chat-gpt-clone',
-    techs: ['NextJS', 'React', 'Tailwind', 'Firebase'],
+    techs: ['Next.js', 'React', 'Tailwind', 'Firebase'],
   },
   {
     title: 'AI Image Generator',
@@ -259,7 +259,7 @@ export type Repo = (typeof REPOS)[number];
 export const USED_TECHS = [
   {
     name: 'Next.js',
-    icon: <Image src={Next} alt='nextjs' className='size-5 object-contain' />,
+    icon: <Image src={Next} alt='Next.js' className='size-5 object-contain' />,
   },
   {
     name: 'React',
@@ -284,7 +284,7 @@ export const ABOUT_ME = [
     description: `My journey in web development began with the classic "Hello World" console output, which ignited a deep passion for creating exceptional web experiences. Since then, I have continually strived to learn and get feedback to make myself better and improve.`,
   },
   {
-    description: `As a dedicated and passionate Web Developer, I specialize in using cutting-edge technologies such as React and NextJS to build powerful and scalable web application. I am focused on being a valuable part of any team I am on and I love working with dedicated teams to create amazing web applications to make the internet a better place.`,
+    description: `As a dedicated and passionate Web Developer, I specialize in using cutting-edge technologies such as React and Next.js to build powerful and scalable web application. I am focused on being a valuable part of any team I am on and I love working with dedicated teams to create amazing web applications to make the internet a better place.`,
   },
   {
     description: `I am constantly looking for new opportunities to learn and grow as a developer. If you're looking for a driven and enthusiastic team player to help create amazing web applications, let's work together!`,

@@ -4,10 +4,14 @@ export const FadeContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { delayChildren: 0, staggerChildren: 0.1 },
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut",
+      delayChildren: 0.1, 
+      staggerChildren: 0.1, 
+    },
   },
 };
-
 export const PopUp: Variants = {
   hidden: { scale: 0, opacity: 0 },
 
