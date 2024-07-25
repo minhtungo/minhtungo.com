@@ -6,6 +6,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { EMAIL_ADDRESS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import sparkles from '/public/static/images/sparkles.svg';
+import Link from 'next/link';
 
 const LetConnect = () => {
   return (
@@ -25,16 +26,16 @@ const LetConnect = () => {
         <div className='mt-6 text-center'>
           <Tooltip>
             <TooltipTrigger asChild>
-              <a
+              <Link
                 className={cn(
                   buttonVariants({
                     variant: 'default',
                   })
                 )}
-                href={`mailto:${EMAIL_ADDRESS}`}
+                href='/contact'
               >
                 Say Hello
-              </a>
+              </Link>
             </TooltipTrigger>
             <TooltipContent>{EMAIL_ADDRESS}</TooltipContent>
           </Tooltip>

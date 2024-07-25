@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import Container from '@/components/common/Container';
 import ThemeToggle from '@/components/common/ThemeToggle';
 import { buttonVariants } from '@/components/ui/button';
-import { EMAIL_ADDRESS, RESUME_HREF } from '@/lib/constants';
+import { RESUME_HREF } from '@/lib/constants';
 import { HEADER_LINKS } from '@/lib/routes';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -93,14 +93,12 @@ const Header = () => {
             </a>
           </motion.li>
           <motion.li variants={PopUp}>
-            <a
+            <Link
               className={cn(buttonVariants({ variant: 'default', size: 'sm' }), 'hidden md:inline-flex')}
-              href={`mailto:${EMAIL_ADDRESS}`}
-              target='_blank'
-              rel='noopener noreferrer'
+              href='/contact'
             >
               Say Hello
-            </a>
+            </Link>
           </motion.li>
         </motion.ul>
         <MobileMenu />
