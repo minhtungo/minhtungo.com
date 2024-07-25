@@ -1,8 +1,11 @@
 import db from '@/db';
 import { guestbooks } from '@/db/schema';
 import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import { desc } from 'drizzle-orm';
 import Image from 'next/image';
+
+dayjs.extend(relativeTime);
 
 const Messages = async ({}) => {
   const messages = await db.select().from(guestbooks).orderBy(desc(guestbooks.createdAt)).limit(10).execute();
@@ -22,7 +25,7 @@ const Messages = async ({}) => {
             <div className='space-y-1'>
               <div className='flex items-center gap-x-2 text-sm'>
                 <div className='font-medium'>{createdBy}</div>
-                <div className='text-xs text-muted-foreground'>{dayjs(createdAt).format('MMM D, YYYY')}</div>
+                <div className='text-xs text-muted-foreground'>{dayjs(createdAt).fromNow()}</div>
               </div>
               <p className='text-sm text-muted-foreground'>{content}</p>
             </div>

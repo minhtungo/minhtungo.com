@@ -2,10 +2,8 @@
 
 import { signIn, signOut as naSignOut } from '@/auth';
 
-export const signInWithOauth = async ({ provider, redirectURL }: { provider: 'github' | 'google'; redirectURL: string }) => {
-  await signIn(provider, {
-    redirectTo: redirectURL || '/guestbook',
-  });
+export const signInWithOauth = async (provider: 'github' | 'google') => {
+  await signIn(provider)
 };
 
 export const signOut = async () => {

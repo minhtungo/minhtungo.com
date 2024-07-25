@@ -42,7 +42,7 @@ const GuestbookForm: FC<formProps> = ({ user }) => {
       </div>
 
       <div className='mt-1 ml-auto flex gap-2'>
-        <Button variant='outline' onClick={() => signOut()}>
+        <Button type='button' variant='outline' onClick={() => signOut()}>
           Sign Out
         </Button>
         <SubmittedButton />

@@ -15,7 +15,7 @@ const SubmitButton: FC<SubmitButtonProps> = ({ className, label, isPending, type
   return (
     <Button type={type} disabled={isPending} className={cn(className)} {...props}>
       {label}
-      {isPending && <Spinner />}
+      {isPending && <Spinner className='text-foreground' />}
     </Button>
   );
 };
