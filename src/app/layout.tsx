@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     template: '%s | Minh Tu Ngo',
   },
   description:
-    'I am Minh Tu Ngo - A Front End Developer.  I love to create amazing web applications to make the internet a better place.',
+    'I am Minh Tu Ngo.  I love to create amazing web applications to make the internet a better place.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

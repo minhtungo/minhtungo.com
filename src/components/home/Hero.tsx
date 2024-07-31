@@ -1,11 +1,13 @@
+import Spinner from '@/components/common/Spinner';
+import DogModel from '@/components/model/DogModel';
 import { buttonVariants } from '@/components/ui/button';
 import Typography from '@/components/ui/typography';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import TypingAnimation from '../common/TypingAnimation';
 import sparkles from '/public/static/images/sparkles.svg';
-import LazyDogModel from '@/components/model/LazyDogModel';
 
 const Hero = () => {
   return (
@@ -17,7 +19,9 @@ const Hero = () => {
           src={sparkles}
           alt='sparkles'
         />
-        <LazyDogModel />
+        <Suspense fallback={<Spinner />}>
+          <DogModel />
+        </Suspense>
       </div>
       {/* Hero Text */}
       <div className='relative -mt-14 basis-3/5 text-center md:text-start'>
