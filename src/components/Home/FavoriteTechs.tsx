@@ -1,28 +1,23 @@
 'use client';
 
-import { FadeContainer, PopUp } from '@/lib/framerVariants';
+import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
 
+import { Card } from '@/components/ui/card';
 import { FAVORITE_TECHS } from '@/lib/constants';
 import { removeHoverAnimation, showHoverAnimation } from '@/lib/hoverAnimation';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import { Card } from '@/components/ui/card';
+import AnimatedContainer from '@/components/motion/AnimatedContainer';
 
 const FavoriteTechs = () => {
   const { theme } = useTheme();
 
   return (
-    <motion.ul
-      initial='hidden'
-      whileInView='visible'
-      variants={FadeContainer}
-      viewport={{ once: true }}
-      className='grid grid-cols-3 gap-2 sm:gap-2.5 xl:grid-cols-4'
-    >
+    <AnimatedContainer variants={FadeContainer} className='grid grid-cols-3 gap-2 sm:gap-2.5 xl:grid-cols-4' list>
       {FAVORITE_TECHS.map((tech) => (
-        <li key={`${tech.name}-box`}>
+        <li key={`${tech.name}-favorite-tech-box`}>
           <motion.div
-            variants={PopUp}
+            variants={PopUpFromBottom}
             onMouseMove={(e: React.MouseEvent<HTMLDivElement>) => showHoverAnimation(e, theme === 'dark')}
             onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => removeHoverAnimation(e)}
           >
@@ -37,7 +32,7 @@ const FavoriteTechs = () => {
           </motion.div>
         </li>
       ))}
-    </motion.ul>
+    </AnimatedContainer>
   );
 };
 export default FavoriteTechs;

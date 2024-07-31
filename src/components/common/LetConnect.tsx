@@ -2,11 +2,9 @@ import Image from 'next/image';
 
 import Title from '@/components/common/Title';
 import { buttonVariants } from '@/components/ui/button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
-import { EMAIL_ADDRESS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
-import sparkles from '/public/static/images/sparkles.svg';
 import Link from 'next/link';
+import sparkles from '/public/static/images/sparkles.svg';
 
 const LetConnect = () => {
   return (
@@ -22,25 +20,18 @@ const LetConnect = () => {
         description={`I'm always open to new projects and opportunities. Whether you're a company looking to hire or you're just looking to chat, I'd love to hear from you.`}
         className='z-10'
       />
-      <TooltipProvider delayDuration={100}>
-        <div className='mt-6 text-center'>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Link
-                className={cn(
-                  buttonVariants({
-                    variant: 'default',
-                  })
-                )}
-                href='/contact'
-              >
-                Say Hello
-              </Link>
-            </TooltipTrigger>
-            <TooltipContent>{EMAIL_ADDRESS}</TooltipContent>
-          </Tooltip>
-        </div>
-      </TooltipProvider>
+      <div className='mt-6 text-center'>
+        <Link
+          className={cn(
+            buttonVariants({
+              variant: 'default',
+            })
+          )}
+          href='/contact'
+        >
+          Say Hello
+        </Link>
+      </div>
     </div>
   );
 };

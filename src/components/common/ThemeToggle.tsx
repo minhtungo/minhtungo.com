@@ -21,7 +21,7 @@ const ThemeToggle: FC<ThemeToggleProps> = ({ className, variant = 'ghost' }) => 
   }, []);
 
   if (!mounted) {
-    return <Skeleton className={cn('h-10 w-10', className)} />;
+    return <Skeleton className='size-7' />;
   }
 
   return (
@@ -31,6 +31,7 @@ const ThemeToggle: FC<ThemeToggleProps> = ({ className, variant = 'ghost' }) => 
       sunColor='#e6c300'
       onChange={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       size={20}
+      aria-label='Toggle theme between light and dark mode'
     />
   );
 };

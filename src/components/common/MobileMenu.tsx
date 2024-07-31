@@ -10,11 +10,11 @@ const MobileMenu = () => {
   const [open, setOpen] = useState(false);
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger className='md:hidden transition-all text-muted-foreground ml-1'>
+      <PopoverTrigger className='md:hidden transition-all text-muted-foreground ml-1' arial-label='Open menu'>
         {open ? (
           <X className='size-5 duration-300 ease-in' />
         ) : (
-          <EllipsisVertical className='size-5 duration-300 ease-in' />
+          <EllipsisVertical className='size-5 duration-300 ease-in text-primary' />
         )}
       </PopoverTrigger>
       <PopoverContent sideOffset={10} alignOffset={1} align='end' className='w-48 p-1' asChild>
@@ -25,7 +25,7 @@ const MobileMenu = () => {
                 <li
                   className='relative flex items-center rounded-lg px-3 py-2 transition-colors hover:bg-accent hover:text-accent-foreground gap-x-2 text-base'
                   onClick={() => setOpen(false)}
-                  key={`${href}-mobile-menu`}
+                  key={`${label}-mobile-menu`}
                 >
                   {icon}
                   {label === 'Resume' ? (

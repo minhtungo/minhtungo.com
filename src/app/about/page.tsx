@@ -18,7 +18,7 @@ export default function AboutPage() {
   return (
     <>
       <PageTitle title='About' subtitle='Sharing my passions and experiences with the world.' />
-      <Section className='lg:gap-18 flex flex-col items-center justify-center gap-8 lg:flex-row-reverse'>
+      <Section className='lg:gap-18 flex flex-col items-center justify-center gap-8 lg:flex-row-reverse pt-0 sm:pt-0'>
         <ProfileCard className='min-w-[300px]' />
         <div className='space-y-4'>
           {ABOUT_ME.map(({ description }, index) => (
@@ -35,14 +35,14 @@ export default function AboutPage() {
         <CodeSnippet className='lg:col-span-2 h-fit' />
         <Experience className='lg:col-span-3' />
       </Section>
-      <Suspense>
-        <Section>
-          <Typography className='mb-6' variant='h3'>
-            Recently Played Songs
-          </Typography>
+      <Section>
+        <Typography className='mb-6' variant='h3'>
+          Recently Played Songs
+        </Typography>
+        <Suspense>
           <SongPlayedRecently />
-        </Section>
-      </Suspense>
+        </Suspense>
+      </Section>
     </>
   );
 }

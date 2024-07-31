@@ -1,6 +1,6 @@
 'use client';
 
-import { Div } from '@/components/motion';
+import AnimatedContainer from '@/components/motion/AnimatedContainer';
 import { Card } from '@/components/ui/card';
 import Typography from '@/components/ui/typography';
 import type { TechItem, TechItemList } from '@/lib/constants';
@@ -47,7 +47,7 @@ const TechItemList = ({ techList }: { techList: TechItemList }) => {
       <Typography variant='h3' className='mb-4'>
         {techList.title}
       </Typography>
-      <Div
+      <AnimatedContainer
         variants={FadeContainer}
         className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 items-stretch '
         list
@@ -57,7 +57,7 @@ const TechItemList = ({ techList }: { techList: TechItemList }) => {
             <Item item={item} />
           </motion.li>
         ))}
-      </Div>
+      </AnimatedContainer>
     </>
   );
 };

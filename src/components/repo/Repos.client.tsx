@@ -1,6 +1,6 @@
 'use client';
 
-import { Div } from '@/components/motion';
+import AnimatedContainer from '@/components/motion/AnimatedContainer';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import Typography from '@/components/ui/typography';
@@ -40,13 +40,17 @@ const RepoItem = ({ repo: { title, description, href, techs } }: { repo: Repo })
 
 const Repos = ({ repos }: { repos: Repo[] }) => {
   return (
-    <Div variants={FadeContainer} className='grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 group/list' list>
+    <AnimatedContainer
+      variants={FadeContainer}
+      className='grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 group/list'
+      list
+    >
       {repos?.map((repo) => (
         <motion.li variants={PopUpFromBottom} key={`${repo.title}-repo-card`}>
           <RepoItem repo={repo} />
         </motion.li>
       ))}
-    </Div>
+    </AnimatedContainer>
   );
 };
 

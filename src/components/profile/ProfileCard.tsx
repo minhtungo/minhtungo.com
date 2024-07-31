@@ -5,20 +5,21 @@ import { Card } from '@/components/ui/card';
 import { EMAIL_ADDRESS, RESUME_HREF } from '@/lib/constants';
 import { PopUpFromBottom } from '@/lib/framerVariants';
 import { cn } from '@/lib/utils';
-import { motion } from 'framer-motion';
 import { FileText, Mail } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import astronaut from '/public/static/images/astronaut.gif';
 
+import AnimatedContainer from '@/components/motion/AnimatedContainer';
 import { TypeAnimation } from 'react-type-animation';
 
 const ProfileCard = ({ className }: { className?: string }) => {
   return (
-    <motion.div
-      className={cn('rounded-lg border bg-muted/[0.075] border-border/50 text-card-foreground shadow-sm', className)}
-      initial='hidden'
-      whileInView='visible'
+    <AnimatedContainer
+      className={cn(
+        'rounded-lg border bg-muted/[0.075] border-border/50 text-card-foreground shadow-sm min-h-[305px]',
+        className
+      )}
       variants={PopUpFromBottom}
     >
       <Link href='https://tenor.com/bCgDy.gif' target='_blank' rel='noopener noreferrer'>
@@ -30,16 +31,16 @@ const ProfileCard = ({ className }: { className?: string }) => {
           data-credit="GIF courtesy of Author's Dudun from https://tenor.com/bCgDy.gif"
         />
       </Link>
-      <Card className='p-6 pt-0'>
+      <div className='p-6 pt-0'>
         <div className='-mt-8 flex justify-center'>
           <Link href='https://linkedin.com/in/minhtungo/' target='_blank' rel='noopener noreferrer'>
-            <div className='primary-gradient z-50 -mt-3 w-full animate-border rounded-full bg-gradient-to-r bg-[length:400%_400%] p-[2px]'>
+            <div className='border-2 border-primary rounded-full'>
               <Image
                 src='/static/images/avatar.png'
                 alt='Avatar'
                 height={96}
                 width={96}
-                className='h-24 w-24 rounded-full bg-blue-200 dark:bg-gray-700 md:h-[4.6rem] md:w-[4.6rem]'
+                className='h-24 w-24 rounded-full bg-accent md:h-[4.6rem] md:w-[4.6rem]'
               />
             </div>
           </Link>
@@ -76,8 +77,8 @@ const ProfileCard = ({ className }: { className?: string }) => {
             </a>
           </div>
         </div>
-      </Card>
-    </motion.div>
+      </div>
+    </AnimatedContainer>
   );
 };
 

@@ -15,7 +15,7 @@ const Hero = () => {
       {/* Dog Model */}
       <div className='relative z-10 mx-auto mt-4 flex h-[270px] w-[270px] basis-2/5 justify-center sm:h-[360px] sm:w-[360px] md:order-2 md:mx-0 md:mt-[6.6rem] md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[550px]'>
         <Image
-          className='absolute top-0 h-auto w-auto animate-pulse sm:-top-1 md:left-0 md:-top-12 select-none'
+          className='absolute top-0 h-auto w-auto animate-pulse sm:-top-1 md:left-0 md:-top-12 rotate-180 select-none'
           src={sparkles}
           alt='sparkles'
         />
@@ -26,7 +26,7 @@ const Hero = () => {
       {/* Hero Text */}
       <div className='relative -mt-14 basis-3/5 text-center md:text-start'>
         <Image
-          className='absolute -top-4 h-auto w-auto animate-pulse sm:-top-[3rem] sm:left-[10%] md:left-0 md:-top-20 select-none'
+          className='absolute -top-4 h-auto w-auto animate-pulse sm:-top-[3rem] sm:left-[10%] md:left-0 md:-top-24 select-none'
           src={sparkles}
           alt='sparkles'
         />

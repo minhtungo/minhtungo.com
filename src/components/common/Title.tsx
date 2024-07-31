@@ -16,7 +16,9 @@ const Title = ({ title, subtitle, description, className }: TitleProps) => {
           {subtitle}
         </Typography>
       )}
-      <Typography variant='h2'>{title}</Typography>
+      <Typography variant='h2' tag='p'>
+        {title}
+      </Typography>
       {description && (
         <Typography variant='p' className='text-muted-foreground max-w-2xl mt-3 mx-auto text-lg'>
           {description}

@@ -1,6 +1,6 @@
 'use client';
 
-import { Div } from '@/components/motion';
+import AnimatedContainer from '@/components/motion/AnimatedContainer';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import Typography from '@/components/ui/typography';
@@ -52,13 +52,13 @@ const ProjectItem = ({ project: { title, description, href, techs, imageHref } }
 
 const Projects = ({ projects }: { projects: Project[] }) => {
   return (
-    <Div variants={FadeContainer} className='grid lg:grid-cols-2 gap-3 group/list' list>
+    <AnimatedContainer variants={FadeContainer} className='grid lg:grid-cols-2 gap-3 group/list' list>
       {projects?.map((project) => (
         <motion.li variants={PopUpFromBottom} key={`${project.title}-project-card`}>
           <ProjectItem project={project} />
         </motion.li>
       ))}
-    </Div>
+    </AnimatedContainer>
   );
 };
 

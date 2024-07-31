@@ -14,7 +14,7 @@ const NowPlaying = () => {
   const progress = useMemo(() => currentSong && (currentSong.progress / currentSong.duration) * 100, [currentSong]);
 
   return (
-    <div className='relative flex items-center whitespace-pre-wrap break-words text-sm gap-x-3'>
+    <div className='relative flex items-center whitespace-pre-wrap break-words text-sm gap-x-2'>
       <a
         href={
           currentSong?.isPlaying
@@ -29,17 +29,19 @@ const NowPlaying = () => {
               src={currentSong.thumbnail}
               width={60}
               height={60}
-              className='rounded-full size-14 object-contain'
+              className='rounded-full size-12 object-contain'
             />
           </div>
         ) : (
-          <Spotify className='size-8 fill-[#1DB954]' />
+          <Spotify className='size-7 fill-[#1DB954]' />
         )}
       </a>
       <div className='max-w-[250px]'>
-        <div className='font-semibold text-foreground text-ellipsis overflow-hidden'>
-          {currentSong?.isPlaying ? currentSong.title : 'Not Listening'}
-        </div>
+        {currentSong?.isPlaying ? (
+          <div className='font-medium text-foreground text-ellipsis overflow-hidden'></div>
+        ) : (
+          <div className='text-muted-foreground'>Not Listening</div>
+        )}
         {currentSong && currentSong.isPlaying && (
           <div className='text-xs font-medium text-muted-foreground'>{currentSong.artist}</div>
         )}
