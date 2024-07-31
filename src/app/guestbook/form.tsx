@@ -28,7 +28,7 @@ const GuestbookForm: FC<formProps> = ({ user }) => {
           src={user?.image!}
           width={60}
           height={60}
-          className='hidden h-10 w-10 rounded-full sm:block'
+          className='hidden size-8 rounded-full sm:block'
           alt={user?.name!}
         />
         <input
@@ -37,15 +37,15 @@ const GuestbookForm: FC<formProps> = ({ user }) => {
           aria-label='Your message'
           required
           name='content'
-          className='peer mt-2 block w-full appearance-none border-b-[1.55px] border-transparent-black-tight bg-transparent py-2 px-1.5 text-sm  text-gray-800 focus:border-neutral-500/80 focus:outline-none focus:ring-0 dark:border-transparent-white dark:text-gray-300 dark:focus:border-neutral-400'
+          className='peer mt-2 block w-full appearance-none py-2 px-3 text-sm focus:outline-none focus:ring-0 bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 border-b border-input focus:border-accent-foreground'
         />
       </div>
 
       <div className='mt-1 ml-auto flex gap-2'>
-        <Button type='button' variant='outline' onClick={() => signOut()}>
+        <Button type='button' variant='outline' size='sm' onClick={() => signOut()}>
           Sign Out
         </Button>
-        <SubmittedButton />
+        <SubmittedButton size='sm' />
       </div>
     </form>
   );

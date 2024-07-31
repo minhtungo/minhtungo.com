@@ -284,7 +284,7 @@ export const ABOUT_ME = [
     description: `My journey in web development began with the classic "Hello World" console output, which ignited a deep passion for creating exceptional web experiences. Since then, I have continually strived to learn and get feedback to make myself better and improve.`,
   },
   {
-    description: `As a dedicated and passionate Web Developer, I specialize in using cutting-edge technologies such as React and Next.js to build powerful and scalable web application. I am focused on being a valuable part of any team I am on and I love working with dedicated teams to create amazing web applications to make the internet a better place.`,
+    description: ` I am focused on being a valuable part of any team I am on and I love working with dedicated teams to create amazing web applications to make the internet a better place.`,
   },
   {
     description: `I am constantly looking for new opportunities to learn and grow as a developer. If you're looking for a driven and enthusiastic team player to help create amazing web applications, let's work together!`,

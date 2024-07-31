@@ -1,3 +1,4 @@
+import GuestbookForm from '@/app/guestbook/form';
 import PageTitle from '@/components/common/PageTitle';
 import Guestbook from '@/components/guestbook/Guestbook';
 import Messages from '@/components/guestbook/Messages';
@@ -14,7 +15,11 @@ export const metadata: Metadata = {
 export default function GuestbookPage() {
   return (
     <>
-      <PageTitle title='Guestbook' subtitle={"I'd love to hear from you! Feel free to leave a message below."} />
+      <PageTitle
+        title='Guestbook'
+        subtitle="I'd love to hear from you! Feel free to leave a message below."
+        className='mb-6'
+      />
       <Suspense
         fallback={
           <div className='flex justify-center gap-2'>

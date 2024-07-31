@@ -31,7 +31,7 @@ const Hero = () => {
           alt='sparkles'
         />
 
-        <h2 className='text-sm font-semibold mb-2'>Hi, I am</h2>
+        <h2 className='text-sm font-semibold mb-2 ml-[2px]'>Hi, I am</h2>
         <div className='flex items-baseline sm:items-center justify-center md:justify-start overflow-visible'>
           <Typography variant='h1' className='text-primary pb-2'>
             Minh Tu Ngo.

@@ -9,11 +9,19 @@ interface SubmitButtonProps extends ButtonProps {
   label: string;
   isPending?: boolean;
   type?: 'submit' | 'button';
+  size?: 'sm' | 'default' | 'lg';
 }
 
-const SubmitButton: FC<SubmitButtonProps> = ({ className, label, isPending, type = 'submit', ...props }) => {
+const SubmitButton: FC<SubmitButtonProps> = ({
+  className,
+  label,
+  isPending,
+  type = 'submit',
+  size = 'default',
+  ...props
+}) => {
   return (
-    <Button type={type} disabled={isPending} className={cn(className)} {...props}>
+    <Button type={type} disabled={isPending} className={cn(className)} size={size} {...props}>
       {label}
       {isPending && <Spinner className='text-foreground' />}
     </Button>

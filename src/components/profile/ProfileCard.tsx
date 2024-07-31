@@ -46,12 +46,12 @@ const ProfileCard = ({ className }: { className?: string }) => {
           </Link>
         </div>
         <div className='space-y-1 px-3 pb-4 pt-2 text-center'>
-          <h2 className='text-lg font-semibold text-gray-700 dark:text-gray-200 '>Minh Tu Ngo</h2>
-          <p className='text-sm text-gray-600 dark:text-gray-300'>
+          <p className='text-lg font-semibold text-foreground'>Minh Tu Ngo</p>
+          <p className='text-sm text-muted-foreground'>
             <TypeAnimation
               cursor={true}
               speed={65}
-              sequence={['Web Developer', 1000, 'Frontend Developer', 1000, 'Passionate', 1000, '']}
+              sequence={['Welcome to my website', 1000, 'Hope you like my work', 1000, 'Passionate', 1000, '']}
               wrapper='span'
               repeat={Infinity}
             />

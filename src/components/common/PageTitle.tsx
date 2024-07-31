@@ -12,9 +12,9 @@ interface PageTitleProps {
 
 const PageTitle: FC<PageTitleProps> = ({ title, subtitle, className }) => {
   return (
-    <div className={cn('mx-auto max-w-xl text-center my-8 mb-12 relative', className)}>
+    <div className={cn('mx-auto max-w-3xl text-center my-8 mb-12 relative', className)}>
       <Image
-        className='absolute left-0 sm:left-8 top-4 mx-auto h-auto w-auto animate-pulse  lg:-translate-y-1/2 select-none pointer-events-none'
+        className='absolute left-0 sm:left-8 top-4 mx-auto h-auto w-auto animate-pulse sm:translate-x-[20%] sm:-translate-y-1/2 select-none pointer-events-none'
         src={sparkles}
         alt='sparkles'
       />
