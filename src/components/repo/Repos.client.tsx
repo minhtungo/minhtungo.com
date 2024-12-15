@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import Typography from '@/components/ui/typography';
 import type { Repo } from '@/lib/constants';
-import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
+import { FadeContainer, PopUpFromBottom } from '@/lib/motion';
 import { motion } from 'framer-motion';
 import { Folder } from 'lucide-react';
 

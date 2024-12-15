@@ -1,10 +1,10 @@
 'use client';
 
-import { FadeContainer, PopUpFromBottom } from '@/lib/framerVariants';
+import { FadeContainer, PopUpFromBottom } from '@/lib/motion';
 
 import { Card } from '@/components/ui/card';
 import { FAVORITE_TECHS } from '@/lib/constants';
-import { removeHoverAnimation, showHoverAnimation } from '@/lib/hoverAnimation';
+import { removeHoverAnimation, showHoverAnimation } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import AnimatedContainer from '@/components/common/AnimatedContainer';

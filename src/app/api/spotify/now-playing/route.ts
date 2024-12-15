@@ -1,4 +1,4 @@
-import { getNowPlaying, normalizeCurrentlyListening } from '@/lib/song';
+import { getNowPlaying, normalizeCurrentlyListening } from '@/lib/spotify';
 
 export const dynamic = 'force-dynamic';
 

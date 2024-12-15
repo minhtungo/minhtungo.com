@@ -1,6 +1,6 @@
 'use client';
 
-import { FadeContainer, PopUp } from '@/lib/framerVariants';
+import { FadeContainer, PopUp } from '@/lib/motion';
 import { motion } from 'framer-motion';
 import debounce from 'lodash.debounce';
 import { useEffect, useState } from 'react';

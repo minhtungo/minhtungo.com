@@ -1,4 +1,4 @@
-import { getRecentlyPlayedSongs } from '@/lib/song';
+import { getRecentlyPlayedSongs } from '@/lib/spotify';
 import { Song } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';

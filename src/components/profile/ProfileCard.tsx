@@ -3,7 +3,7 @@
 import { buttonVariants } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { EMAIL_ADDRESS, RESUME_HREF } from '@/lib/constants';
-import { PopUpFromBottom } from '@/lib/framerVariants';
+import { PopUpFromBottom } from '@/lib/motion';
 import { cn } from '@/lib/utils';
 import { FileText, Mail } from 'lucide-react';
 import Image from 'next/image';
