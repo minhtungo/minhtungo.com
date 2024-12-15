@@ -1,25 +1,25 @@
 'use client';
 
+import { signInWithOauth } from '@/actions/auth';
 import { saveGuestbookEntry } from '@/actions/saveGuestbookEntry';
+import Github from '@/components/icons/Github';
+import Google from '@/components/icons/Google';
+import LoaderButton from '@/components/LoaderButton';
 import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 import { User } from 'next-auth';
 import { signOut } from 'next-auth/react';
 import Image from 'next/image';
-import { use, useRef } from 'react';
-import SubmittedButton from '../app/guestbook/SubmittedButton';
-import { signInWithOauth } from '@/actions/auth';
-import Github from '@/components/icons/Github';
-import Google from '@/components/icons/Google';
-import { cn } from '@/lib/utils';
+import { use, useActionState } from 'react';
 
 interface GuestbookProps {
   userPromise: Promise<User | undefined>;
 }
 
-const Guestbook = ({ userPromise }: GuestbookProps) => {
+const GuestbookForm = ({ userPromise }: GuestbookProps) => {
   const user = use(userPromise);
 
-  return <>{user ? <GuestbookForm user={user} className='mb-6' /> : <Actions className='mb-6' />}</>;
+  return <>{user ? <MessageForm user={user} className='mb-6' /> : <Actions className='mb-6' />}</>;
 };
 
 interface GuestbookFormProps {
@@ -27,17 +27,13 @@ interface GuestbookFormProps {
   className?: string;
 }
 
-const GuestbookForm = ({ user, className }: GuestbookFormProps) => {
-  const formRef = useRef<HTMLFormElement>(null);
+const MessageForm = ({ user, className }: GuestbookFormProps) => {
+  const [state, action, isPending] = useActionState(saveGuestbookEntry, {
+    error: '',
+  });
+
   return (
-    <form
-      action={async (formData) => {
-        await saveGuestbookEntry(formData);
-        formRef.current?.reset();
-      }}
-      ref={formRef}
-      className={cn('mx-auto mt-8 flex w-full max-w-3xl flex-col items-center gap-2', className)}
-    >
+    <form action={action} className={cn('mx-auto mt-8 flex w-full max-w-3xl flex-col items-center gap-2', className)}>
       <div className='flex w-full items-center gap-0 sm:gap-2'>
         <Image
           src={user?.image!}
@@ -56,11 +52,15 @@ const GuestbookForm = ({ user, className }: GuestbookFormProps) => {
         />
       </div>
 
+      {state.error && <p className='text-destructive text-sm mt-3'>{state.error}</p>}
+
       <div className='mt-1 ml-auto flex gap-2'>
         <Button type='button' variant='outline' size='sm' onClick={() => signOut()}>
           Sign Out
         </Button>
-        <SubmittedButton size='sm' />
+        <LoaderButton size='sm' type='submit' isPending={isPending}>
+          Submit
+        </LoaderButton>
       </div>
     </form>
   );
@@ -81,4 +81,4 @@ const Actions = ({ className }: { className?: string }) => {
   );
 };
 
-export default Guestbook;
+export default GuestbookForm;

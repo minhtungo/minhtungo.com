@@ -1,12 +1,16 @@
 'use server';
 
+import { insertGuestbookEntry } from '@/db/mutations';
 import { getCurrentUser } from '@/lib/auth';
+import DOMPurify from 'isomorphic-dompurify';
 import { revalidatePath } from 'next/cache';
-import { sanitize } from 'isomorphic-dompurify';
-import db from '@/db';
-import { guestbooks } from '@/db/schema';
 
-export async function saveGuestbookEntry(formData: FormData) {
+export async function saveGuestbookEntry(
+  previousData: {
+    error: string;
+  },
+  formData: FormData
+) {
   const user = await getCurrentUser();
 
   if (!user) {
@@ -26,13 +30,14 @@ export async function saveGuestbookEntry(formData: FormData) {
   }
 
   try {
-    await db.insert(guestbooks).values({
+    await insertGuestbookEntry({
       image,
-      content: sanitize(content),
+      content: DOMPurify.sanitize(content),
       email,
       createdBy: name,
     });
     revalidatePath('/guestbook');
+    return { error: '' };
   } catch (error) {
     let message = 'Unexpected error';
     if (error instanceof Error) {

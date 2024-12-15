@@ -90,3 +90,6 @@ export const guestbooks = pgTable('guestbooks', {
     .notNull()
     .$defaultFn(() => new Date()),
 });
+
+export type InsertGuestBooks = typeof guestbooks.$inferInsert;
+export type SelectGuestBooks = typeof guestbooks.$inferSelect;

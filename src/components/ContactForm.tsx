@@ -5,7 +5,7 @@ import { useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { cn } from '@/lib/utils';
-import SubmitButton from '@/components/SubmitButton';
+import LoaderButton from '@/components/LoaderButton';
 import { EMAIL_ADDRESS } from '@/lib/constants';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -88,7 +88,7 @@ const ContactForm = ({ className }: { className?: string }) => {
         onChange={(e) => setFormState({ ...formState, message: e.target.value })}
       />
       <div className='flex w-full items-center justify-center'>
-        <SubmitButton
+        <LoaderButton
           label='Send Message'
           isPending={isSending}
           disabled={!formState.name || !formState.email || !formState.subject || !formState.message}

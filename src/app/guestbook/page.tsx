@@ -1,8 +1,9 @@
 import PageTitle from '@/components/common/PageTitle';
-import Guestbook from '@/components/Guestbook';
+import GuestbookForm from '@/components/GuestbookForm';
 import Messages from '@/components/Messages';
-import MessageSkeleton from '@/components/MessageSkeleton';
-import { Skeleton } from '@/components/ui/skeleton';
+
+import GuestBookFormSkeleton from '@/components/skeletons/GuestBookFormSkeleton';
+import MessagesSkeleton from '@/components/skeletons/MessagesSkeleton';
 
 import { getCurrentUser } from '@/lib/auth';
 import type { Metadata } from 'next';
@@ -22,25 +23,10 @@ export default function GuestbookPage() {
         subtitle="I'd love to hear from you! Feel free to leave a message below."
         className='mb-6'
       />
-      <Suspense
-        fallback={
-          <div className='flex justify-center gap-2'>
-            <Skeleton className='h-[34px] w-[110px]' />
-            <Skeleton className='h-[34px] w-[110px]' />
-          </div>
-        }
-      >
-        <Guestbook userPromise={userPromise} />
+      <Suspense fallback={<GuestBookFormSkeleton />}>
+        <GuestbookForm userPromise={userPromise} />
       </Suspense>
-      <Suspense
-        fallback={
-          <div className='mx-auto max-w-3xl space-y-8'>
-            {[1, 2, 3].map((_, i) => (
-              <MessageSkeleton key={i} />
-            ))}
-          </div>
-        }
-      >
+      <Suspense fallback={<MessagesSkeleton />}>
         <Messages />
       </Suspense>
     </>
