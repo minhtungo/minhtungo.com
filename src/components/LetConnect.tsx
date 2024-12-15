@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import Title from '@/components/common/Title';
+import Title from '@/components/Title';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';

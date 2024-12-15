@@ -4,7 +4,7 @@ import AnimatedContainer from '@/components/common/AnimatedContainer';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import Typography from '@/components/ui/typography';
-import type { Repo } from '@/lib/constants';
+import { REPOS, type Repo } from '@/lib/constants';
 import { FadeContainer, PopUpFromBottom } from '@/lib/motion';
 import { motion } from 'framer-motion';
 import { Folder } from 'lucide-react';
@@ -38,7 +38,14 @@ const RepoItem = ({ repo: { title, description, href, techs } }: { repo: Repo })
   );
 };
 
-const Repos = ({ repos }: { repos: Repo[] }) => {
+interface ReposProps {
+  start?: number;
+  end?: number;
+}
+
+const Repos = ({ start = 0, end = REPOS.length }: ReposProps) => {
+  const repos = REPOS.slice(start, end);
+
   return (
     <AnimatedContainer
       variants={FadeContainer}

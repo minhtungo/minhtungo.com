@@ -2,7 +2,7 @@ import PageTitle from '@/components/common/PageTitle';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import SocialIcons from '@/components/common/SocialIcons';
+import SocialIcons from '@/components/SocialIcons';
 import ContactForm from '@/components/ContactForm';
 import { CONTACT_INFO } from '@/lib/constants';
 

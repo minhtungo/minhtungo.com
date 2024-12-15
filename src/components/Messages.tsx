@@ -1,14 +1,13 @@
-import db from '@/db';
-import { guestbooks } from '@/db/schema';
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import { desc } from 'drizzle-orm';
+import { getMessages } from '@/db/queries';
+import dayjs from '@/lib/dayjs';
 import Image from 'next/image';
 
-dayjs.extend(relativeTime);
+interface MessagesProps {
+  messagesPromise: Promise<any>;
+}
 
-const Messages = async ({}) => {
-  const messages = await db.select().from(guestbooks).orderBy(desc(guestbooks.createdAt)).limit(10).execute();
+const Messages = async () => {
+  const messages = await getMessages();
 
   return (
     <ul className='mx-auto max-w-3xl'>

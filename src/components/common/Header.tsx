@@ -6,15 +6,15 @@ import debounce from 'lodash.debounce';
 import { useEffect, useState } from 'react';
 
 import Container from '@/components/common/Container';
-import ThemeToggle from '@/components/common/ThemeToggle';
+import ThemeToggle from '@/components/ThemeToggle';
 import { buttonVariants } from '@/components/ui/button';
 import { RESUME_HREF } from '@/lib/constants';
 import { HEADER_LINKS } from '@/lib/routes';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Logo from './Logo';
-import MobileMenu from './MobileMenu';
+import Logo from '../Logo';
+import MobileMenu from '../MobileMenu';
 
 const Header = () => {
   const [scrolling, setScrolling] = useState(false);

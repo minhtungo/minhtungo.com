@@ -1,4 +1,4 @@
-import Spinner from '@/components/common/Spinner';
+import Spinner from '@/components/Spinner';
 import DogModel from '@/components/model/DogModel';
 import { buttonVariants } from '@/components/ui/button';
 import Typography from '@/components/ui/typography';
@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import TypingAnimation from './common/TypingAnimation';
+import TypingAnimation from './TypingAnimation';
 import sparkles from '/public/static/images/sparkles.svg';
 
 const Hero = () => {

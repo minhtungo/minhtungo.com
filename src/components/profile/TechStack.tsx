@@ -1,5 +1,5 @@
 import Typography from '@/components/ui/typography';
-import Marquees from '../common/Marquees';
+import Marquees from '../Marquees';
 import { FAVORITE_TECHS } from '@/lib/constants';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 

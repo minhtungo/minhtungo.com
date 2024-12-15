@@ -1,11 +1,11 @@
-import LetConnect from '@/components/common/LetConnect';
+import LetConnect from '@/components/LetConnect';
 import Section from '@/components/common/Section';
-import Title from '@/components/common/Title';
-import Repos from '@/components/repo/Repos';
+import Title from '@/components/Title';
+import Repos from '@/components/Repos';
 import FavoriteTechs from '@/components/FavoriteTechs';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
-import ViewMoreButton from '@/components/common/ViewMoreButton';
+import ViewMoreButton from '@/components/ViewMoreButton';
 
 export default function HomePage() {
   return (

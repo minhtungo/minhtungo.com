@@ -1,6 +1,6 @@
 'use client';
 
-import Spinner from '@/components/common/Spinner';
+import Spinner from '@/components/Spinner';
 import dynamic from 'next/dynamic';
 
 const DogModel = dynamic(() => import('./DogModel'), {

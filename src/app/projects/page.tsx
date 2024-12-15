@@ -1,5 +1,5 @@
 import PageTitle from '@/components/common/PageTitle';
-import ViewMoreButton from '@/components/common/ViewMoreButton';
+import ViewMoreButton from '@/components/ViewMoreButton';
 import Projects from '@/components/Projects';
 import type { Metadata } from 'next';
 

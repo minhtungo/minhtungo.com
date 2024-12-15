@@ -1,6 +1,6 @@
 import Container from '@/components/common/Container';
-import NowPlaying from '@/components/common/NowPlaying';
-import SocialIcons from '@/components/common/SocialIcons';
+import NowPlaying from '@/components/NowPlaying';
+import SocialIcons from '@/components/SocialIcons';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { USED_TECHS } from '@/lib/constants';
 

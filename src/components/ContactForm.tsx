@@ -5,7 +5,7 @@ import { useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 
 import { cn } from '@/lib/utils';
-import SubmitButton from '@/components/common/SubmitButton';
+import SubmitButton from '@/components/SubmitButton';
 import { EMAIL_ADDRESS } from '@/lib/constants';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';

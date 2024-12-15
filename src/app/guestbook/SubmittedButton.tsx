@@ -1,6 +1,6 @@
 'use client';
 
-import SubmitButton from '@/components/common/SubmitButton';
+import SubmitButton from '@/components/SubmitButton';
 import { FC } from 'react';
 import { useFormStatus } from 'react-dom';
 
