@@ -21,7 +21,11 @@ export default function ContactPage() {
         <div className='space-y-4 sm:col-span-1'>
           {CONTACT_INFO.map(({ icon, href, text }) => {
             return (
-              <Link href={href} className='flex items-center gap-x-2 hover:text-primary text-sm text-muted-foreground'>
+              <Link
+                href={href}
+                className='flex items-center gap-x-2 hover:text-primary text-sm text-muted-foreground'
+                key={`contact-${text}`}
+              >
                 {icon}
                 {text}
               </Link>
