@@ -1,16 +1,14 @@
 import Typography from '@/components/ui/typography';
 import { cn } from '@/lib/utils';
-import { FC } from 'react';
-import sparkles from '/public/static/images/sparkles.svg';
 import Image from 'next/image';
+import sparkles from '/public/static/images/sparkles.svg';
 
-interface PageTitleProps {
+interface PageTitleProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   subtitle?: string;
-  className?: string;
 }
 
-const PageTitle: FC<PageTitleProps> = ({ title, subtitle, className }) => {
+const PageTitle = ({ title, subtitle, className }: PageTitleProps) => {
   return (
     <div className={cn('mx-auto max-w-3xl text-center my-8 mb-12 relative', className)}>
       <Image
