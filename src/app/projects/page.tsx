@@ -1,6 +1,6 @@
 import PageTitle from '@/components/common/PageTitle';
 import ViewMoreButton from '@/components/common/ViewMoreButton';
-import Projects from '@/components/projects/Projects';
+import Projects from '@/components/Projects';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

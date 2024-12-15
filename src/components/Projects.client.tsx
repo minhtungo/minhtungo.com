@@ -1,6 +1,6 @@
 'use client';
 
-import AnimatedContainer from '@/components/motion/AnimatedContainer';
+import AnimatedContainer from '@/components/common/AnimatedContainer';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import Typography from '@/components/ui/typography';

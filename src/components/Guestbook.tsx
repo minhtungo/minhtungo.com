@@ -1,5 +1,5 @@
 import GuestbookForm from '@/app/guestbook/form';
-import Actions from '@/components/guestbook/Actions';
+import Actions from '@/components/Actions';
 import { getCurrentUser } from '@/lib/auth';
 
 const Guestbook = async () => {

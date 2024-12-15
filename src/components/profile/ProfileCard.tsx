@@ -10,7 +10,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import astronaut from '/public/static/images/astronaut.gif';
 
-import AnimatedContainer from '@/components/motion/AnimatedContainer';
+import AnimatedContainer from '@/components/common/AnimatedContainer';
 import { TypeAnimation } from 'react-type-animation';
 
 const ProfileCard = ({ className }: { className?: string }) => {

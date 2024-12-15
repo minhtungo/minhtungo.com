@@ -2,9 +2,9 @@ import LetConnect from '@/components/common/LetConnect';
 import Section from '@/components/common/Section';
 import Title from '@/components/common/Title';
 import Repos from '@/components/repo/Repos';
-import FavoriteTechs from '@/components/home/FavoriteTechs';
-import Hero from '@/components/home/Hero';
-import Projects from '@/components/projects/Projects';
+import FavoriteTechs from '@/components/FavoriteTechs';
+import Hero from '@/components/Hero';
+import Projects from '@/components/Projects';
 import ViewMoreButton from '@/components/common/ViewMoreButton';
 
 export default function HomePage() {

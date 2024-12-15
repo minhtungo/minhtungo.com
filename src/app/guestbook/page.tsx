@@ -1,8 +1,8 @@
 import GuestbookForm from '@/app/guestbook/form';
 import PageTitle from '@/components/common/PageTitle';
-import Guestbook from '@/components/guestbook/Guestbook';
-import Messages from '@/components/guestbook/Messages';
-import MessageSkeleton from '@/components/guestbook/MessageSkeleton';
+import Guestbook from '@/components/Guestbook';
+import Messages from '@/components/Messages';
+import MessageSkeleton from '@/components/MessageSkeleton';
 import { Skeleton } from '@/components/ui/skeleton';
 
 import type { Metadata } from 'next';

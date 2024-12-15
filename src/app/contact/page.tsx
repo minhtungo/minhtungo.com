@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import SocialIcons from '@/components/common/SocialIcons';
-import ContactForm from '@/components/contact/ContactForm';
+import ContactForm from '@/components/ContactForm';
 import { CONTACT_INFO } from '@/lib/constants';
 
 export const metadata: Metadata = {

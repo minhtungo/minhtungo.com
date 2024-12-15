@@ -7,7 +7,7 @@ import { FAVORITE_TECHS } from '@/lib/constants';
 import { removeHoverAnimation, showHoverAnimation } from '@/lib/hoverAnimation';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
-import AnimatedContainer from '@/components/motion/AnimatedContainer';
+import AnimatedContainer from '@/components/common/AnimatedContainer';
 
 const FavoriteTechs = () => {
   const { theme } = useTheme();
