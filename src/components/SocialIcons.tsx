@@ -14,7 +14,7 @@ const SocialIcons: FC<SocialIconProps> = ({ className }) => {
       <div className={cn('flex items-center gap-3', className)}>
         {SOCIAL_INFO.map(({ icon, href, text }) => {
           return (
-            <Tooltip>
+            <Tooltip key={`${href}-tooltip-social-icon`}>
               <TooltipTrigger asChild>
                 <Link
                   href={href}

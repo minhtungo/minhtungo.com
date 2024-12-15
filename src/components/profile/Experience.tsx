@@ -13,8 +13,8 @@ interface ExperienceProps {
 const Experience: FC<ExperienceProps> = ({ className }) => {
   return (
     <ul className={cn('space-y-3 group/list', className)}>
-      {EXPERIENCES.map(({ title, description, company, location, time, techs, href }) => (
-        <li key={`${title}-experience`} className='relative transition-all group'>
+      {EXPERIENCES.map(({ title, description, company, location, time, techs, href }, index) => (
+        <li key={`${title}-experience-${index}`} className='relative transition-all group'>
           <a
             href={href}
             target='_blank'

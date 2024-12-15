@@ -2,12 +2,11 @@
 
 import { FadeContainer, PopUp } from '@/lib/motion';
 import { motion } from 'framer-motion';
-import debounce from 'lodash.debounce';
-import { useEffect, useState } from 'react';
 
 import Container from '@/components/common/Container';
 import ThemeToggle from '@/components/ThemeToggle';
 import { buttonVariants } from '@/components/ui/button';
+import { useScroll } from '@/hooks/useScroll';
 import { RESUME_HREF } from '@/lib/constants';
 import { HEADER_LINKS } from '@/lib/routes';
 import { cn } from '@/lib/utils';
@@ -17,21 +16,8 @@ import Logo from '../Logo';
 import MobileMenu from '../MobileMenu';
 
 const Header = () => {
-  const [scrolling, setScrolling] = useState(false);
+  const { scrolling } = useScroll();
   const pathname = usePathname();
-
-  const handleScroll = debounce(() => {
-    if (window.scrollY > 20) {
-      setScrolling(true);
-    } else {
-      setScrolling(false);
-    }
-  }, 10);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <header
