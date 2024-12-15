@@ -20,7 +20,7 @@ const Footer = () => {
           <div className='flex items-center gap-3'>
             {USED_TECHS.map(({ name, icon }) => {
               return (
-                <Tooltip>
+                <Tooltip key={`tech-used-${name}`}>
                   <TooltipTrigger>{icon}</TooltipTrigger>
                   <TooltipContent>{name}</TooltipContent>
                 </Tooltip>

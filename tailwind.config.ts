@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
   darkMode: ['class'],
   content: ['./pages/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './app/**/*.{ts,tsx}', './src/**/*.{ts,tsx}'],
   prefix: '',
@@ -77,8 +78,8 @@ module.exports = {
           to: { height: '0' },
         },
         cursor: {
-          '0%, 45%': { opacity: 1 },
-          '50%, 100%': { opacity: 0 },
+          '0%, 45%': { opacity: '1' },
+          '50%, 100%': { opacity: '0' },
         },
         wave: {
           '0%': { transform: 'rotate(0.0deg)' },
@@ -102,3 +103,5 @@ module.exports = {
   },
   plugins: [require('tailwindcss-animate')],
 };
+
+export default config;

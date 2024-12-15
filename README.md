@@ -1,10 +1,10 @@
-# 🏠My personal website – Built with:
+# 🏠My personal website:
 
 - Next.js
 - Tailwind
 - TypeScript
 - Drizzle ORM
-- [Shadcn](https://ui.shadcn.com/)
+- Shadcn
 
 ## Credits
 
