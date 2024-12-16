@@ -19,9 +19,7 @@ const Hero = () => {
           src={sparkles}
           alt='sparkles'
         />
-        <Suspense fallback={<Spinner />}>
-          <DogModel />
-        </Suspense>
+        <DogModel />
       </div>
       {/* Hero Text */}
       <div className='relative -mt-14 basis-3/5 text-center md:text-start'>
