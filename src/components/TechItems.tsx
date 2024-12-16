@@ -3,7 +3,7 @@
 import AnimatedContainer from '@/components/common/AnimatedContainer';
 import { Card } from '@/components/ui/card';
 import Typography from '@/components/ui/typography';
-import type { TechItem, TechItemList } from '@/lib/constants';
+import type { TechItem } from '@/lib/constants';
 import { FadeContainer, PopUpFromBottom } from '@/lib/motion';
 import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
@@ -41,25 +41,20 @@ const Item = ({ item: { name, description, imageHref, href } }: { item: TechItem
   );
 };
 
-const TechItemList = ({ techList }: { techList: TechItemList }) => {
+const TechItems = ({ items }: { items: TechItem[] }) => {
   return (
-    <>
-      <Typography variant='h3' className='mb-4'>
-        {techList.title}
-      </Typography>
-      <AnimatedContainer
-        variants={FadeContainer}
-        className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 items-stretch '
-        list
-      >
-        {techList.items?.map((item) => (
-          <motion.li variants={PopUpFromBottom} key={`${item.name}-tech-card`}>
-            <Item item={item} />
-          </motion.li>
-        ))}
-      </AnimatedContainer>
-    </>
+    <AnimatedContainer
+      variants={FadeContainer}
+      className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 items-stretch '
+      list
+    >
+      {items?.map((item) => (
+        <motion.li variants={PopUpFromBottom} key={`${item.name}-tech-card`}>
+          <Item item={item} />
+        </motion.li>
+      ))}
+    </AnimatedContainer>
   );
 };
 
-export default TechItemList;
+export default TechItems;

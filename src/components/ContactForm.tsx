@@ -89,11 +89,12 @@ const ContactForm = ({ className }: { className?: string }) => {
       />
       <div className='flex w-full items-center justify-center'>
         <LoaderButton
-          label='Send Message'
           isPending={isSending}
           disabled={!formState.name || !formState.email || !formState.subject || !formState.message}
           className='mt-2 flex items-center justify-center '
-        />
+        >
+          Send Message
+        </LoaderButton>
       </div>
     </form>
   );
