@@ -49,6 +49,7 @@ const MessageForm = ({ user, className }: GuestbookFormProps) => {
           required
           name='content'
           className='peer mt-2 block w-full appearance-none py-2 px-3 text-sm focus:outline-none focus:ring-0 bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 border-b border-input focus:border-accent-foreground'
+          disabled={isPending}
         />
       </div>
 
