@@ -13,7 +13,7 @@ const DogModel = () => {
 
   return (
     <div ref={ref} className='canvasContainer'>
-      <Suspense fallback={<Spinner />}>
+      <Suspense fallback={<Spinner className='mb-24 xl:mb-20' />}>
         {inView && (
           <Canvas
             camera={{ position: [15, 8, 28], fov: 22 }}
