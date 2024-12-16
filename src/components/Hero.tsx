@@ -16,6 +16,7 @@ const Hero = () => {
           className='absolute top-0 h-auto w-auto animate-pulse sm:-top-1 md:left-0 md:-top-12 rotate-180 select-none'
           src={sparkles}
           alt='sparkles'
+          priority
         />
         <DogModel />
       </div>
@@ -25,8 +26,8 @@ const Hero = () => {
           className='absolute -top-4 h-auto w-auto animate-pulse sm:-top-[3rem] sm:left-[10%] md:left-0 md:-top-24 select-none'
           src={sparkles}
           alt='sparkles'
+          priority
         />
-
         <h2 className='text-sm font-semibold mb-2 ml-[2px]'>Hi, I am</h2>
         <div className='flex items-baseline sm:items-center justify-center md:justify-start overflow-visible'>
           <Typography variant='h1' className='text-primary pb-2'>

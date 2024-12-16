@@ -18,6 +18,7 @@ const ProjectItem = ({ project: { title, description, href, techs, imageHref } }
         target='_blank'
         rel='noopener noreferrer'
         className='absolute hover:!bg-transparent duration-200 ease-in w-full h-full inset-0 z-10 lg:group-hover/list:bg-card/40 p-4 pb-6'
+        arial-label={`Check out the ${title} project`}
       />
       <Card className='px-3.5 pt-2.5 pb-3.5 grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 duration-200 ease-in group-hover:bg-accent/25 group-hover:shadow-lg gap-y-3 gap-x-4 h-full'>
         <div className='md:col-span-2 lg:col-span-1 mt-2'>
@@ -25,7 +26,7 @@ const ProjectItem = ({ project: { title, description, href, techs, imageHref } }
             src={imageHref}
             alt={title}
             width={800}
-            height={800}
+            height={400}
             className='object-cover rounded-lg max-w-full border'
           />
         </div>

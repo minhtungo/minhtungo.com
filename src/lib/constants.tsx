@@ -58,7 +58,7 @@ export const FAVORITE_TECHS = [
   },
   {
     name: 'Next.js',
-    icon: <Image width={32} height={32} src={Next} alt='Next.js' className='size-8 object-contain' />,
+    icon: <Image src={Next} alt='Next.js' className='size-8 object-contain' />,
   },
   {
     name: 'SvelteKit',
