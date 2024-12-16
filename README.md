@@ -1,4 +1,4 @@
-# 🏠My personal website:
+# 🏠My personal website
 
 - Next.js
 - Tailwind

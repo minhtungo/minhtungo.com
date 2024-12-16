@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   experimental: {
     reactCompiler: true,
   },
+  output: 'standalone',
   transpilePackages: ['three'],
   reactStrictMode: true,
   typescript: {
