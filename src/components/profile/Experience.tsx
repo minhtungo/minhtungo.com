@@ -1,3 +1,4 @@
+import StyledCard from '@/components/StyledCard';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import Typography from '@/components/ui/typography';
@@ -14,14 +15,8 @@ const Experience: FC<ExperienceProps> = ({ className }) => {
   return (
     <ul className={cn('space-y-3 group/list', className)}>
       {EXPERIENCES.map(({ title, description, company, location, time, techs, href }, index) => (
-        <li key={`${title}-experience-${index}`} className='relative transition-all group'>
-          <a
-            href={href}
-            target='_blank'
-            rel='noopener noreferrer'
-            className='absolute hover:!bg-transparent duration-200 ease-in w-full h-full inset-0 z-10 lg:group-hover/list:bg-card/40 p-4 pb-6'
-          />
-          <Card className='px-4 sm:px-6 pt-4 pb-6 grid sm:grid-cols-9 duration-200 ease-in group-hover:bg-card/40 group-hover:shadow-lg gap-y-2'>
+        <li key={`${title}-experience-${index}`}>
+          <StyledCard className='grid sm:grid-cols-9 gap-y-2' href={href} title={title}>
             <header
               className='text-xs text-muted-foreground font-medium tracking-tight sm:col-span-2 mt-1.5 space-y-1.5'
               aria-label={time}
@@ -47,7 +42,7 @@ const Experience: FC<ExperienceProps> = ({ className }) => {
                 ))}
               </ul>
             </div>
-          </Card>
+          </StyledCard>
         </li>
       ))}
     </ul>

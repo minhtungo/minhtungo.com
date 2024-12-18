@@ -10,11 +10,11 @@ const SongPlayedRecently = async () => {
     songs &&
     songs.length > 0 && (
       <div className='flex items-center gap-3 w-full overflow-x-auto'>
-        {songs?.map((song) => (
+        {songs?.map((song, index) => (
           <Link
             className='group relative shrink-0 text-card-foreground/80 shadow-sm hover:text-card-foreground transition-all rounded-lg overflow-hidden'
             href={song?.url}
-            key={song?.url}
+            key={`${song?.title}-song-${index}`}
             target='_blank'
             rel='noopener noreferrer'
           >
