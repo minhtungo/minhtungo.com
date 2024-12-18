@@ -1,19 +1,22 @@
 'use client';
 
 import Spinner from '@/components/Spinner';
-import dynamic from 'next/dynamic';
+import { Suspense, lazy } from 'react';
+import { useInView } from 'react-intersection-observer';
 
-const DogModel = dynamic(() => import('./DogModel'), {
-  ssr: false,
-  loading: () => (
-    <div role='status' className='mt-[98px] lg:ml-[90px] lg:mt-[140px]'>
-      <Spinner />
-    </div>
-  ),
-});
+const DogModel = lazy(() => import('./DogModel'));
 
 const LazyDogModel = () => {
-  return <DogModel />;
-};
+  const { ref, inView } = useInView();
 
+  return (
+    <div ref={ref} className='canvasContainer'>
+      {inView && (
+        <Suspense fallback={<Spinner className='mb-24 xl:mb-20' />}>
+          <DogModel />
+        </Suspense>
+      )}
+    </div>
+  );
+};
 export default LazyDogModel;
