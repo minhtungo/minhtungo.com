@@ -1,26 +1,13 @@
 'use client';
 
-import { signInWithOauth } from '@/actions/auth';
 import { saveGuestbookEntry } from '@/actions/saveGuestbookEntry';
-import Github from '@/components/icons/Github';
-import Google from '@/components/icons/Google';
 import LoaderButton from '@/components/LoaderButton';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { User } from 'next-auth';
 import { signOut } from 'next-auth/react';
 import Image from 'next/image';
-import { use, useActionState } from 'react';
-
-interface GuestbookProps {
-  userPromise: Promise<User | undefined>;
-}
-
-const GuestbookForm = ({ userPromise }: GuestbookProps) => {
-  const user = use(userPromise);
-
-  return <>{user ? <MessageForm user={user} className='mb-6' /> : <Actions className='mb-6' />}</>;
-};
+import { useActionState } from 'react';
 
 interface GuestbookFormProps {
   user: User | undefined;
@@ -67,19 +54,4 @@ const MessageForm = ({ user, className }: GuestbookFormProps) => {
   );
 };
 
-const Actions = ({ className }: { className?: string }) => {
-  return (
-    <div className={cn('mt-3 flex flex-wrap items-center justify-center gap-2 lg:mt-4', className)}>
-      <Button variant='outline' size='sm' onClick={() => signInWithOauth('github')}>
-        <Github className='size-4' />
-        <span>Github</span>
-      </Button>
-      <Button variant='outline' size='sm' onClick={() => signInWithOauth('google')}>
-        <Google className='size-4' />
-        <span>Google</span>
-      </Button>
-    </div>
-  );
-};
-
-export default GuestbookForm;
+export default MessageForm;

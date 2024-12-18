@@ -1,11 +1,10 @@
 import PageTitle from '@/components/common/PageTitle';
-import GuestbookForm from '@/components/GuestbookForm';
+import GuestBook from '@/components/GuestBook';
 import Messages from '@/components/Messages';
 
 import GuestBookFormSkeleton from '@/components/skeletons/GuestBookFormSkeleton';
 import MessagesSkeleton from '@/components/skeletons/MessagesSkeleton';
 
-import { getCurrentUser } from '@/lib/auth';
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 
@@ -14,8 +13,6 @@ export const metadata: Metadata = {
 };
 
 export default function GuestbookPage() {
-  const userPromise = getCurrentUser();
-
   return (
     <>
       <PageTitle
@@ -24,7 +21,7 @@ export default function GuestbookPage() {
         className='mb-6'
       />
       <Suspense fallback={<GuestBookFormSkeleton />}>
-        <GuestbookForm userPromise={userPromise} />
+        <GuestBook />
       </Suspense>
       <Suspense fallback={<MessagesSkeleton />}>
         <Messages />
