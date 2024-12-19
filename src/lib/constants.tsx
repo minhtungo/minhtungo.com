@@ -223,6 +223,12 @@ export type Project = (typeof PROJECTS)[number];
 
 export const REPOS = [
   {
+    title: 'Turborepo Nextjs Express Starter',
+    description: `A full-stack monorepo using Turborepo with Next.js and Express`,
+    href: 'https://github.com/minhtungo/nextjs-express-turborepo-starter',
+    techs: ['Next.js', 'Express', 'Tailwind', 'Drizzle', 'Turborepo'],
+  },
+  {
     title: 'SC2 Build Order Manager',
     description: `Learning T3 Stack by building a simple app to manage build order in StarCraft II`,
     href: 'https://github.com/minhtungo/starcraft-build-order',

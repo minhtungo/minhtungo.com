@@ -1,4 +1,4 @@
-import DogModel from '@/components/model/DogModel';
+import LazyDogModel from '@/components/model/LazyDogModel';
 import { buttonVariants } from '@/components/ui/button';
 import Typography from '@/components/ui/typography';
 import { cn } from '@/lib/utils';
@@ -18,7 +18,7 @@ const Hero = () => {
           alt='sparkles'
           priority
         />
-        <DogModel />
+        <LazyDogModel />
       </div>
       {/* Hero Text */}
       <div className='relative -mt-14 basis-3/5 text-center md:text-start'>
