@@ -1,10 +1,9 @@
-import LetConnect from '@/components/LetConnect';
 import PageSection from '@/components/common/PageSection';
-import Title from '@/components/Title';
-import Repos from '@/components/Repos';
 import FavoriteTechs from '@/components/FavoriteTechs';
 import Hero from '@/components/Hero';
+import LetConnect from '@/components/LetConnect';
 import Projects from '@/components/Projects';
+import Repos from '@/components/Repos';
 import ViewMoreButton from '@/components/ViewMoreButton';
 
 export default function HomePage() {
@@ -14,17 +13,21 @@ export default function HomePage() {
       <PageSection className='pt-0 sm:pt-0' title='Technologies I’ve Been Working with Recently' subtitle='Adventures'>
         <FavoriteTechs />
       </PageSection>
-      <PageSection title={`Discover What I've Built`} subtitle='Projects'>
+      <PageSection
+        title={`Discover What I've Built`}
+        subtitle='Projects'
+        className='flex flex-col items-center gap-y-6'
+      >
         <Projects start={0} end={4} />
-        <div className='text-center mt-6'>
-          <ViewMoreButton href='/projects' />
-        </div>
+        <ViewMoreButton href='/projects' />
       </PageSection>
-      <PageSection title='Some of My Other Contributions and Projects' subtitle='Repositories'>
+      <PageSection
+        title='Some of My Other Contributions and Projects'
+        subtitle='Repositories'
+        className='flex flex-col items-center gap-y-6'
+      >
         <Repos start={0} end={3} />
-        <div className='text-center mt-8'>
-          <ViewMoreButton href='/archive' />
-        </div>
+        <ViewMoreButton href='/archive' />
       </PageSection>
       <PageSection>
         <LetConnect />

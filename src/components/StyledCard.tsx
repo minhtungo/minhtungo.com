@@ -1,5 +1,3 @@
-import { Repo } from '@/lib/constants';
-
 import { Card } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 

@@ -47,8 +47,8 @@ const Header = () => {
                         variant: 'ghost',
                         size: 'sm',
                       }),
-                      'hover:bg-accent hover:text-primary',
-                      pathname === href && 'bg-accent text-primary'
+                      'hover:text-primary',
+                      pathname === href && 'text-primary'
                     )}
                   >
                     {label}

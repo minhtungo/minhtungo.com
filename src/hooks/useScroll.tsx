@@ -4,15 +4,14 @@ import { useEffect, useState } from 'react';
 export const useScroll = () => {
   const [scrolling, setScrolling] = useState(false);
 
-  const handleScroll = debounce(() => {
-    if (window.scrollY > 20) {
-      setScrolling(true);
-    } else {
-      setScrolling(false);
-    }
-  }, 10);
-
   useEffect(() => {
+    const handleScroll = debounce(() => {
+      if (window.scrollY > 20) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    }, 10);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
