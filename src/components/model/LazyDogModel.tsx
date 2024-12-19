@@ -12,7 +12,7 @@ const LazyDogModel = () => {
   return (
     <div ref={ref} className='canvasContainer'>
       {inView && (
-        <Suspense fallback={<Spinner className='mb-24 xl:mb-20' />}>
+        <Suspense fallback={<Spinner className='mt-20 xl:mt-24' />}>
           <DogModel />
         </Suspense>
       )}
