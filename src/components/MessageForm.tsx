@@ -3,19 +3,30 @@
 import { saveGuestbookEntry } from '@/actions/saveGuestbookEntry';
 import LoaderButton from '@/components/LoaderButton';
 import { Button } from '@/components/ui/button';
+import { SelectGuestBooks } from '@/db/schema';
 import { cn } from '@/lib/utils';
 import { User } from 'next-auth';
 import { signOut } from 'next-auth/react';
 import Image from 'next/image';
 import { useActionState } from 'react';
 
-interface GuestbookFormProps {
+interface GuestbookFormProps extends React.HTMLAttributes<HTMLFormElement> {
   user: User | undefined;
-  className?: string;
+  addOptimisticMessage: (newMessage: string) => void;
 }
 
-const MessageForm = ({ user, className }: GuestbookFormProps) => {
-  const [state, action, isPending] = useActionState(saveGuestbookEntry, {
+const MessageForm = ({ user, className, addOptimisticMessage }: GuestbookFormProps) => {
+  const onSubmitForm = async (
+    _: {
+      error: string;
+    },
+    formData: FormData
+  ) => {
+    addOptimisticMessage(formData.get('content') as string);
+    return await saveGuestbookEntry(formData);
+  };
+
+  const [state, action, isPending] = useActionState(onSubmitForm, {
     error: '',
   });
 

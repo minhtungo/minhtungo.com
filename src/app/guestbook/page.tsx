@@ -1,6 +1,5 @@
 import PageTitle from '@/components/common/PageTitle';
-import GuestBook from '@/components/GuestBook';
-import Messages from '@/components/Messages';
+import GuestBookServer from '@/components/GuestBook.server';
 
 import GuestBookFormSkeleton from '@/components/skeletons/GuestBookFormSkeleton';
 import MessagesSkeleton from '@/components/skeletons/MessagesSkeleton';
@@ -20,11 +19,15 @@ export default function GuestbookPage() {
         subtitle="I'd love to hear from you! Feel free to leave a message below."
         className='mb-6'
       />
-      <Suspense fallback={<GuestBookFormSkeleton />}>
-        <GuestBook />
-      </Suspense>
-      <Suspense fallback={<MessagesSkeleton />}>
-        <Messages />
+      <Suspense
+        fallback={
+          <div className='grid space-y-6'>
+            <GuestBookFormSkeleton />
+            <MessagesSkeleton />
+          </div>
+        }
+      >
+        <GuestBookServer />
       </Suspense>
     </>
   );

@@ -20,4 +20,5 @@ const DogModel = () => {
     </Canvas>
   );
 };
+
 export default DogModel;

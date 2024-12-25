@@ -5,12 +5,7 @@ import { getCurrentUser } from '@/lib/auth';
 import DOMPurify from 'isomorphic-dompurify';
 import { revalidatePath } from 'next/cache';
 
-export async function saveGuestbookEntry(
-  previousData: {
-    error: string;
-  },
-  formData: FormData
-) {
+export async function saveGuestbookEntry(formData: FormData) {
   const user = await getCurrentUser();
 
   if (!user) {

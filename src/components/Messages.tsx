@@ -1,19 +1,21 @@
-import { getMessages } from '@/db/queries';
+import { SelectGuestBooks } from '@/db/schema';
 import dayjs from '@/lib/dayjs';
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 interface MessagesProps {
-  messagesPromise: Promise<any>;
+  messages: (SelectGuestBooks & { isPending?: boolean })[];
 }
 
-const Messages = async () => {
-  const messages = await getMessages();
-
+const Messages = ({ messages }: MessagesProps) => {
   return (
     <ul className='mx-auto max-w-3xl'>
       {messages &&
-        messages.map(({ id, image, createdBy, createdAt, content }) => (
-          <li className='py-4 flex gap-x-3 border-b border-border/50 last:border-none' key={`${id}-message`}>
+        messages.map(({ id, image, createdBy, createdAt, content, isPending }) => (
+          <li
+            className={cn('py-4 flex gap-x-3 border-b border-border/50 last:border-none', isPending && 'opacity-60')}
+            key={`${id}-message`}
+          >
             <Image
               className='size-9 object-contain sm:size-10 rounded-full'
               width={40}

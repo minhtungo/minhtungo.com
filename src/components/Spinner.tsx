@@ -5,11 +5,11 @@ interface SpinnerProps {
   className?: string;
 }
 
-const Spinner: FC<SpinnerProps> = ({ className }) => {
+const Spinner = ({ className }: SpinnerProps) => {
   return (
     <div
       className={cn(
-        'text-primary inline-block h-4 w-4 animate-spin rounded-full border-[3px] border-current border-t-transparent',
+        'text-primary inline-block h-4 w-4 animate-spin rounded-full border-[3px] border-primary-foreground',
         className
       )}
       role='status'
