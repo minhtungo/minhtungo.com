@@ -12,8 +12,8 @@ import { HEADER_LINKS } from '@/lib/routes';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Logo from '../Logo';
-import MobileMenu from '../MobileMenu';
+import Logo from '@/components/Logo';
+import MobileMenu from '@/components/MobileMenu';
 
 const Header = () => {
   const { scrolling } = useScroll();
@@ -47,7 +47,7 @@ const Header = () => {
                         variant: 'ghost',
                         size: 'sm',
                       }),
-                      'hover:text-primary',
+                      'hover:text-primary hover:bg-transparent',
                       pathname === href && 'text-primary'
                     )}
                   >

@@ -3,7 +3,6 @@
 import { saveGuestbookEntry } from '@/actions/saveGuestbookEntry';
 import LoaderButton from '@/components/LoaderButton';
 import { Button } from '@/components/ui/button';
-import { SelectGuestBooks } from '@/db/schema';
 import { cn } from '@/lib/utils';
 import { User } from 'next-auth';
 import { signOut } from 'next-auth/react';
@@ -17,13 +16,15 @@ interface GuestbookFormProps extends React.HTMLAttributes<HTMLFormElement> {
 
 const MessageForm = ({ user, className, addOptimisticMessage }: GuestbookFormProps) => {
   const onSubmitForm = async (
-    _: {
+    {
+      error,
+    }: {
       error: string;
     },
     formData: FormData
   ) => {
     addOptimisticMessage(formData.get('content') as string);
-    return await saveGuestbookEntry(formData);
+    return await saveGuestbookEntry({ error }, formData);
   };
 
   const [state, action, isPending] = useActionState(onSubmitForm, {

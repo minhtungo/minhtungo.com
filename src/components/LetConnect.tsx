@@ -1,9 +1,7 @@
 import Image from 'next/image';
 
+import ContactForm from '@/components/ContactForm';
 import Title from '@/components/Title';
-import { buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import Link from 'next/link';
 import sparkles from '/public/static/images/sparkles.svg';
 
 const LetConnect = () => {
@@ -20,7 +18,8 @@ const LetConnect = () => {
         description={`I'm always open to new projects and opportunities. Whether you're a company looking to hire or you're just looking to chat, I'd love to hear from you.`}
         className='z-10'
       />
-      <div className='mt-6 text-center'>
+      <ContactForm className='mt-4 max-w-3xl mx-auto' />
+      {/* <div className='mt-6 text-center'>
         <Link
           className={cn(
             buttonVariants({
@@ -31,7 +30,7 @@ const LetConnect = () => {
         >
           Say Hello
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };
