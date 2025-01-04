@@ -1,10 +1,10 @@
-# 🏠My personal website
+# My site
 
-- Next.js
-- Tailwind
-- TypeScript
-- Drizzle ORM
-- Shadcn
+- **Framework**: Next.js
+- **Database**: Postgres
+- **ORM**: Drizzle
+- **Deployment**: Vercel
+- **Styling**: Tailwind CSS
 
 ## Credits
 
