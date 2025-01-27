@@ -1,4 +1,3 @@
-import { Song } from '@/types';
 import querystring from 'query-string';
 
 const { SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET, SPOTIFY_REFRESH_TOKEN } = process.env;
@@ -23,6 +22,16 @@ const getAccessToken = async () => {
   return await response.json();
 };
 
+export type Song = {
+  title: string;
+  artist: string;
+  album: string;
+  thumbnail: string;
+  url: string;
+  playedAt: string;
+  duration: number;
+};
+
 export const normalizeRecentlyPlayed = ({ track, played_at }: { track: any; played_at: string }): Song => ({
   title: track.name,
   artist: track.artists?.map(({ name }: { name: string }) => name).join(' - '),
@@ -33,7 +42,7 @@ export const normalizeRecentlyPlayed = ({ track, played_at }: { track: any; play
   duration: track.duration_ms,
 });
 
-export const getRecentlyPlayedSongs = async () => {
+export const getRecentlyPlayedSongs = async (): Promise<Song[]> => {
   const LIMIT = 4;
   const before = new Date().getTime();
 
@@ -42,7 +51,7 @@ export const getRecentlyPlayedSongs = async () => {
   const { access_token: accessToken } = await getAccessToken();
 
   if (!accessToken) {
-    return;
+    return [];
   }
 
   const response = await fetch(recentlyPlayedEndpoint, {
@@ -53,10 +62,7 @@ export const getRecentlyPlayedSongs = async () => {
   });
 
   if (!response.ok) {
-    return {
-      error: 'Something went wrong',
-      status: response.status,
-    };
+    return [];
   }
 
   const data = await response.json();

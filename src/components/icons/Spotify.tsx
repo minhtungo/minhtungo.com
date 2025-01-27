@@ -1,8 +1,6 @@
 import { cn } from '@/lib/utils';
-import { FC } from 'react';
-import { IconProps } from '@/types';
-
-const Spotify: FC<IconProps> = ({ className, ...props }) => {
+import type { IconProps } from '@/types';
+const Spotify = ({ className, ...props }: IconProps) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'

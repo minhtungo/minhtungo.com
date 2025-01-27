@@ -1,8 +1,7 @@
 import { cn } from '@/lib/utils';
-import { IconProps } from '@/types';
-import { FC } from 'react';
+import type { IconProps } from '@/types';
 
-const Google: FC<IconProps> = ({ className, ...props }) => {
+const Google = ({ className, ...props }: IconProps) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
