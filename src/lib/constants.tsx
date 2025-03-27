@@ -122,17 +122,6 @@ export const FAVORITE_TECHS = [
 export const EXPERIENCES = [
   {
     title: 'Web Developer',
-    description:
-      'Develop an AI-powered tutoring platform to assist students with their studies, enhancing their critical thinking skills rather than providing direct solutions.',
-
-    href: 'https://lumi-ai.vercel.app',
-    company: 'Lumi',
-    location: 'Remote',
-    time: 'May 2024 – Present',
-    techs: ['React', 'Next.js', 'Jotai', 'Tailwind', 'Drizzle ORM', 'React Query', 'Express', 'Node.js', 'TypeScript'],
-  },
-  {
-    title: 'Web Developer',
     href: 'https://websitedesignkingston.com',
     description:
       'Built and maintained multiple WordPress websites, specializing in the creation of responsive and user-centric online experiences.',
@@ -164,13 +153,6 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
-  {
-    title: 'Lumi',
-    description: `An AI-powered tutoring platform, enhancing students' critical thinking skills rather than providing direct solutions.`,
-    href: 'https://lumi-ai.vercel.app',
-    techs: ['React', 'Next.js', 'Jotai', 'Tailwind', 'React Query', 'Express', 'Node.js', 'Drizzle ORM', 'TypeScript'],
-    imageHref: '/static/images/projects/lumi.png',
-  },
   {
     title: 'Vietify',
     description: `A US-based online Vietnamese bookstore using Medusa.js for a scalable, headless commerce backend.`,

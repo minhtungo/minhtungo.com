@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body suppressHydrationWarning>
         <Providers>
-          <div className='grid min-h-[100dvh] grid-rows-[auto_1fr_auto]'>
+          <div className='grid min-h-[100dvh] grid-rows-[auto_1fr_auto] grid-col'>
             <Header />
             <Container tag='main'>{children}</Container>
             <Footer />
